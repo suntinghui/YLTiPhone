@@ -75,11 +75,8 @@
 //    NSString *enStr = [SecurityUtil DESEncryptWithData:psw AndKey:key];
     NSLog(@"enStr %@",enStr);
     
-    NSString *enctracks = [NSString stringWithFormat:@"01%@%@",[AppDataCenter sharedAppDataCenter].__RANDOM,[AppDataCenter sharedAppDataCenter].__ENCTRACKS];
-    
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:enStr forKey:@"AISHUAPIN"];
-    [dic setObject:enctracks forKey:@"ENCTRACKS"];
     [dic setObject:self.moneyStr forKey:@"field4"];
     
     [[Transfer sharedTransfer] startTransfer:@"020022" fskCmd:nil paramDic:dic];

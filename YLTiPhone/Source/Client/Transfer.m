@@ -362,7 +362,7 @@ static Transfer *instance = nil;
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
                     NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
                     
-                    NSData *tmpData = [_reqData subdataWithRange:NSMakeRange(11, _reqData.length-8-11)];
+                    NSData *tmpData = [_reqData subdataWithRange:NSMakeRange(13, _reqData.length-13-8)];
                     NSString *tmpString = [ConvertUtil data2HexString:tmpData];
                     
                     NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];
@@ -370,9 +370,9 @@ static Transfer *instance = nil;
                     NSMutableData *sendData = [[NSMutableData alloc] init];
                     [sendData appendData:[_reqData subdataWithRange:NSMakeRange(0, _reqData.length-8)]];
                     [sendData appendData:macValueData];
-                    _reqData = [NSData dataWithData:sendData];
+//                    _reqData = [NSData dataWithData:sendData];
                     
-                    [self sendPacket];
+                    [self sendRequestEFET];
                     
                 } else {
                     NSMutableData *data = [[NSMutableData alloc] init];
@@ -656,6 +656,8 @@ static Transfer *instance = nil;
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
 	NSLog(@"socket:didConnectToHost:%@ port:%d", IP, PORT);
+    
+    NSLog(@"REQ_Data:%@", self.reqData);
     
     [self.asyncSocket writeData:self.reqData withTimeout:-1 tag:0];
     

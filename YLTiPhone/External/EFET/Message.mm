@@ -95,34 +95,41 @@
         NSData *bitmapData = [ConvertUtil hexStrTOData:bitmapHex];
         [msgData appendData:bitmapData];
         
+        NSLog(@"000000:%@", msgData);
+        
         // 排序
         NSArray *sortedKeys = [[self.fieldDic allKeys] sortedArrayUsingSelector: @selector(compare:)];
         
         // 紧跟位图后面，位图所有域的值
         for (NSNumber *num in sortedKeys){
-            NSLog(@"===%@",  num);
-            
             EFETFieldModel *field = [self.fieldDic objectForKey:num];
             
+            int length = field.value.length;
+            
+            if (length == 0) {
+                continue;
+            }
+            
+            NSLog(@"===%@",  num);
+            
             if ([num intValue] != 52) {
-                unsigned long length = field.value.length;
                 
                 if ([field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLNVAR]]) {
-                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%02luu", length]];
+                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%02d", length]];
                     [msgData appendData:tempData];
-                    NSLog(@"1111111:%@", msgData);
+                    NSLog(@"111111:%@", msgData);
                     
                 } else if ([field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLLVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLLNVAR]]) {
-                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%04lu", length]];
+                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%04d", length]];
                     [msgData appendData:tempData];
-                    NSLog(@"2222222:%@", msgData);
+                    NSLog(@"222222:%@", msgData);
                 }
             }
             
             if ([field.dataType isEqualToString:[FieldType fieldTypeEnumToString:NUMERIC]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLNVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLLNVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:AMOUNT]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:DATE10]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:DATE4]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:DATE_EXP]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:TIME]]) {
                 // BCD压缩
                 [msgData appendData:[ConvertUtil toBCD:[field description] fieldId:[num intValue]]];
-                NSLog(@"3333333:%@", msgData);
+                NSLog(@"333333:%@", msgData);
                 
             } else {
                 [msgData appendData:[[field description] dataUsingEncoding:NSUTF8StringEncoding]];

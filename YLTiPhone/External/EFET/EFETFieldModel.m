@@ -33,7 +33,7 @@
     if (value == nil){
         NSLog(@"Value is null !!!");
         
-        return @"VALUE_IS_NULL";
+        return @"";
     }
     
     NSString *str = @"";
