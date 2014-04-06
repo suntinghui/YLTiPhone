@@ -36,15 +36,20 @@
         return @"VALUE_IS_NULL";
     }
     
+    NSString *str = @"";
+    
     if ([self.dataType isEqualToString:[FieldType fieldTypeEnumToString:AMOUNT]])
     {
-        return [FormatUtil formatAmount:self.value];
+        str = [FormatUtil formatAmount:self.value];
+        return str;
     } else if ([self.dataType isEqualToString:[FieldType fieldTypeEnumToString:NUMERIC]]) {
         // 数字长度不足左补0
-        return [FormatUtil formatNumeric:self.value withLength:self.length];
+        str = [FormatUtil formatNumeric:self.value withLength:self.length];
+        return str;
     } else if ([self.dataType isEqualToString:[FieldType fieldTypeEnumToString:ALPHA]]) {
         // 长度不足右补空格
-        return [FormatUtil formatAlpha:self.value withLength:self.length];
+        str = [FormatUtil formatAlpha:self.value withLength:self.length];
+        return str;
     }
     
     return self.value;

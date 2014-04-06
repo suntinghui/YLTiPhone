@@ -15,27 +15,16 @@
 + (NSString *) formatAmount:(NSString *)amount
 {
     NSString *tempStr = [amount stringByReplacingOccurrencesOfString:@"," withString:@""];
-    NSMutableString *tempMutableStr = [NSMutableString stringWithString:tempStr];
-    if ([tempStr rangeOfString:@"."].location == NSNotFound) {
-        [tempMutableStr appendString:@"00"];
-        
-    } else if ([tempStr rangeOfString:@"."].location == tempStr.length - 1) {
-        [tempMutableStr appendString:@"00"];
-        
-    } else if ([tempStr rangeOfString:@"."].location == tempStr.length - 2) {
-        [tempMutableStr appendString:@"0"];
-        
-    } else if ([tempStr rangeOfString:@"."].location == tempStr.length - 3) {
+    
+    if ([tempStr stringByReplacingOccurrencesOfString:@"." withString:@""].length == 12) {
+        return tempStr;
     }
     
-    tempMutableStr = [NSMutableString stringWithString:[tempMutableStr stringByReplacingOccurrencesOfString:@"." withString:@""]];
+    double tempDouble = [tempStr doubleValue];
+    long tempLong = tempDouble * 100;
+    NSString *result = [NSString stringWithFormat:@"%012ld", tempLong];
     
-    int l = 12 - [tempMutableStr length];
-    for (int i=0; i<l; i++) {
-        [tempMutableStr insertString:@"0" atIndex:0];
-    }
-    
-    return tempMutableStr;
+    return result;
 }
 
 // 左补0

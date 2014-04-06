@@ -100,27 +100,33 @@
         
         // 紧跟位图后面，位图所有域的值
         for (NSNumber *num in sortedKeys){
+            NSLog(@"===%@",  num);
+            
             EFETFieldModel *field = [self.fieldDic objectForKey:num];
             
             if ([num intValue] != 52) {
-                int length = field.value.length;
+                unsigned long length = field.value.length;
                 
                 if ([field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLNVAR]]) {
-                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%02d", length]];
+                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%02luu", length]];
                     [msgData appendData:tempData];
+                    NSLog(@"1111111:%@", msgData);
                     
                 } else if ([field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLLVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLLNVAR]]) {
-                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%04d", length]];
+                    NSData *tempData = [ConvertUtil decStr2BCDRight:[NSString stringWithFormat:@"%04lu", length]];
                     [msgData appendData:tempData];
+                    NSLog(@"2222222:%@", msgData);
                 }
             }
             
             if ([field.dataType isEqualToString:[FieldType fieldTypeEnumToString:NUMERIC]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLNVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:LLLNVAR]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:AMOUNT]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:DATE10]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:DATE4]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:DATE_EXP]] || [field.dataType isEqualToString:[FieldType fieldTypeEnumToString:TIME]]) {
                 // BCD压缩
                 [msgData appendData:[ConvertUtil toBCD:[field description] fieldId:[num intValue]]];
+                NSLog(@"3333333:%@", msgData);
                 
             } else {
                 [msgData appendData:[[field description] dataUsingEncoding:NSUTF8StringEncoding]];
+                NSLog(@"444444:%@", msgData);
             }
         }
         
