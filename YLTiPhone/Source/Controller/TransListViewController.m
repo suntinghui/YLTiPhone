@@ -108,9 +108,11 @@
 {
     if (!self.array || [self.array count] == 0) {
         [self.myTableView setHidden:YES];
-        UIImageView *emptyView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emptyImage"]];
-        [emptyView setFrame:CGRectMake(97, 180, 126, 80)];
-        [self.view addSubview:emptyView];
+//        UIImageView *emptyView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emptyImage"]];
+//        [emptyView setFrame:CGRectMake(97, 180, 126, 80)];
+//        [self.view addSubview:emptyView];
+        
+        [ApplicationDelegate showText:@"没有交易数据"];
     }else {
         if (self.myTableView == nil) {
             self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, VIEWHEIGHT - 30) style:UITableViewStylePlain];
