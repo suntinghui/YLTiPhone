@@ -7,7 +7,12 @@
 //
 
 #import "AbstractViewController.h"
+#import "TransferDetailModel.h"
 
-@interface TradeDetailTableViewController : AbstractViewController
+@interface TradeDetailTableViewController : AbstractViewController<UITableViewDataSource,
+UITableViewDelegate>
+
+@property(nonatomic, strong)UITableView *myTableView;
+@property (strong, nonatomic) TransferDetailModel *detailModel;
 
 @end

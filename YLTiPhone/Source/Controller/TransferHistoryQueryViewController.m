@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.hasTopView = true;
     self.title = @"历史查询";
     
@@ -77,12 +77,12 @@
 -(IBAction)confirmAction:(id)sender
 {
     if ([self checkValue]) {
-//        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-//        [dic setObject:[[self.beginDateTF value] stringByReplacingOccurrencesOfString:@"-" withString:@""] forKey:@"BeginDate"]; // 开始日期
-//        [dic setObject:[[self.endDateTF value] stringByReplacingOccurrencesOfString:@"-" withString:@""] forKey:@"EndDate"]; // 结束日期
-//        
-//        
-//        [[Transfer sharedTransfer] startTransfer:@"600000001" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
+        //        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        //        [dic setObject:[[self.beginDateTF value] stringByReplacingOccurrencesOfString:@"-" withString:@""] forKey:@"BeginDate"]; // 开始日期
+        //        [dic setObject:[[self.endDateTF value] stringByReplacingOccurrencesOfString:@"-" withString:@""] forKey:@"EndDate"]; // 结束日期
+        //
+        //
+        //        [[Transfer sharedTransfer] startTransfer:@"600000001" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
         
         TransListViewController *transListController = [[TransListViewController alloc]init];
         transListController.pageType = 1;

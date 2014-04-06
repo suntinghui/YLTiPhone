@@ -370,11 +370,11 @@
         if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
             NSString *jsonStr = [[self.receDic objectForKey:@"apires"] objectFromJSONString];
             NSString *jsonStr1 = [[self.receDic objectForKey:@"apires"] objectFromJSONString];
-//            NSDictionary *dic0 = [jsonStr1 objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
-//            NSString *tmp0 = [dic0 objectForKey:@"page_count"];
+            //            NSDictionary *dic0 = [jsonStr1 objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
+            //            NSString *tmp0 = [dic0 objectForKey:@"page_count"];
             NSDictionary *jsonStr0 = [[self.receDic objectForKey:@"apires"] objectFromJSONString];
-//            NSDictionary *dic = [];
-//            NSDictionary *dic_apires = [[NSMutableDictionary alloc]initWithDictionary:[NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]  options:NSJSONReadingMutableContainers error:nil]];
+            //            NSDictionary *dic = [];
+            //            NSDictionary *dic_apires = [[NSMutableDictionary alloc]initWithDictionary:[NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]  options:NSJSONReadingMutableContainers error:nil]];
             
             NSString *page_count = [jsonStr0 objectForKey:@"page_count"];
             NSArray *jsonArray = [jsonStr0 objectForKey:@"object"];
@@ -393,11 +393,17 @@
                     model.localdate = [picsObj objectForKey:@"localdate"];
                     model.localtime = [picsObj objectForKey:@"localtime"];
                     model.snd_cycle = [picsObj objectForKey:@"snd_cycle"];
+                    model.snd_log = [picsObj objectForKey:@"snd_log"];
                     
                     model.systransid = [picsObj objectForKey:@"systransid"];
                     model.rspmsg = [picsObj objectForKey:@"rspmsg"];
                     model.flag = [picsObj objectForKey:@"flag"];
                     model.account1 = [picsObj objectForKey:@"account1"];
+                    
+                    model.merchant_id = picsObj[@"merchant_id"];
+                    model.merchant_name = picsObj[@"merchant_name"];
+                    model.terminal_id = picsObj[@"terminal_id"];
+                    model.note = picsObj[@"note"];
                     
                     [transModelArray addObject:model];
                 }
@@ -408,13 +414,23 @@
             [mapDic setObject:page_count forKey:@"page_count"];
             [mapDic setObject:transModelArray forKey:@"list"];
             
+            ((TransListViewController*)[ApplicationDelegate topViewController]).totalCount = page_count;
             ((TransListViewController*)[ApplicationDelegate topViewController]).array = transModelArray;
+            
+            //            if (((TransListViewController*)[ApplicationDelegate topViewController]).array ==nil)
+            //            {
+            //                ((TransListViewController*)[ApplicationDelegate topViewController]).array = [NSMutableArray arrayWithArray:transModelArray];
+            //            }
+            //            else
+            //            {
+            //                [((TransListViewController*)[ApplicationDelegate topViewController]).array addObjectsFromArray:transModelArray];
+            //            }
             [(TransListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
         }else{
             [(TransListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
         }
     }
-
+    
 }
 
 //获取商户注册信息
