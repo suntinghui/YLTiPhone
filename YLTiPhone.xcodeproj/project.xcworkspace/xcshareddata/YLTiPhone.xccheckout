@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>21C82817-7ACD-4406-A434-857AA9BC0C53</string>
+	<string>81741CA7-28BF-4CF4-B206-6FBD58A7EED8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>YLTiPhone</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4476E91E-F975-481D-AB53-220945D0A919</key>
+		<key>C98126D7-796C-4701-B8ED-E956855E095A</key>
 		<string>ssh://github.com/liaojia/YLTiPhone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>YLTiPhone.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4476E91E-F975-481D-AB53-220945D0A919</key>
+		<key>C98126D7-796C-4701-B8ED-E956855E095A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4476E91E-F975-481D-AB53-220945D0A919</string>
+	<string>C98126D7-796C-4701-B8ED-E956855E095A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4476E91E-F975-481D-AB53-220945D0A919</string>
+			<string>C98126D7-796C-4701-B8ED-E956855E095A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>YLTiPhone</string>
 		</dict>

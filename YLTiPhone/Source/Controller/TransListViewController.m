@@ -12,6 +12,7 @@
 #import "TradeDetail.h"
 #import "TransferHistoryQueryViewController.h"
 #import "TransferDetailModel.h"
+#import "TradeDetailTableViewController.h"
 
 #define HEIGHTFORROW 100
 
@@ -44,21 +45,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"交易明细列表";
+    
     self.hasTopView = true;
     
     _pageNo = @"1";
     _pageSize = @"5";
     
-    UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 45, 80, 30)];
-    [confirmButton setTitle:@"历史查询" forState:UIControlStateNormal];
-    [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-    [confirmButton addTarget:self action:@selector(queryDataAction:) forControlEvents:UIControlEventTouchUpInside];
-    [confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonNomal.png"] forState:UIControlStateNormal];
-    [confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:confirmButton];
+    if (self.pageType==0)
+    {
+        self.navigationItem.title = @"交易明细列表";
+        
+        UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [confirmButton setFrame:CGRectMake(10, 45, 80, 30)];
+        [confirmButton setTitle:@"历史查询" forState:UIControlStateNormal];
+        [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+        [confirmButton addTarget:self action:@selector(queryDataAction:) forControlEvents:UIControlEventTouchUpInside];
+        [confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonNomal.png"] forState:UIControlStateNormal];
+        [confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:confirmButton];
+        
+    }
+    else
+    {
+        self.navigationItem.title = @"历史明细列表";
+    }
     
     [self requestAction];
 }
@@ -81,7 +92,7 @@
         self.beginString = [ApplicationDelegate getDateStrWithDate:[NSDate date] withCutStr:nil hasTime:NO];
         self.endString = self.beginString;
     }
-   
+    
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     [dic setObject:self.pageNo forKey:@"page_current"]; //当前页面
@@ -97,7 +108,7 @@
 {
     if (!self.array || [self.array count] == 0) {
         [self.myTableView setHidden:YES];
-        UIImageView *emptyView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emptyImage.png"]];
+        UIImageView *emptyView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emptyImage"]];
         [emptyView setFrame:CGRectMake(97, 180, 126, 80)];
         [self.view addSubview:emptyView];
     }else {
@@ -107,6 +118,7 @@
             self.myTableView.dataSource = self;
             [self.myTableView setBackgroundColor:[UIColor clearColor]];
             [self.view addSubview:self.myTableView];
+            
             
             self.pageView = [[PageView alloc] initWithFrame:CGRectMake(0, VIEWHEIGHT + 11, 320, 30)];
             int total = self.totalCount.intValue;
@@ -152,18 +164,18 @@
     }
     if (self.array && [self.array count] != 0) {
         
-//        NSString *detailStr =  (NSString*)[self.array objectAtIndex:indexPath.row];
-//        TradeDetail *detail = [[TradeDetail alloc] initWithString:detailStr];
-//        cell.typeLabel.text = [[AppDataCenter sharedAppDataCenter].transferNameDic objectForKey:detail.tranCode];
-//        cell.amountLabel.text = detail.tranAmt;
-//        cell.timeLabel.text = [NSString stringWithFormat:@"%@ %@", detail.tranDate, detail.tranTime];
-//        cell.accountLabel.text = detail.cardNo;
+        //        NSString *detailStr =  (NSString*)[self.array objectAtIndex:indexPath.row];
+        //        TradeDetail *detail = [[TradeDetail alloc] initWithString:detailStr];
+        //        cell.typeLabel.text = [[AppDataCenter sharedAppDataCenter].transferNameDic objectForKey:detail.tranCode];
+        //        cell.amountLabel.text = detail.tranAmt;
+        //        cell.timeLabel.text = [NSString stringWithFormat:@"%@ %@", detail.tranDate, detail.tranTime];
+        //        cell.accountLabel.text = detail.cardNo;
         
         TransferDetailModel *model = self.array[indexPath.row];
         cell.accountLabel.text = model.account1;
         cell.amountLabel.text = [NSString stringWithFormat:@"￥%@",model.amount];
         cell.typeLabel.text = model.snd_log;
-
+        
     }
     
     
@@ -175,14 +187,18 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (self.array && [self.array count] != 0) {
-        
-        NSString *detailStr =  (NSString*)[self.array objectAtIndex:indexPath.row];
-        TradeDetail *detail = [[TradeDetail alloc] initWithString:detailStr];
-        TransListDetailViewController *vc = [[TransListDetailViewController alloc] initWithNibName:nil bundle:nil];
-        vc.detail = detail;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    //    if (self.array && [self.array count] != 0) {
+    //
+    //        NSString *detailStr =  (NSString*)[self.array objectAtIndex:indexPath.row];
+    //        TradeDetail *detail = [[TradeDetail alloc] initWithString:detailStr];
+    //        TransListDetailViewController *vc = [[TransListDetailViewController alloc] initWithNibName:nil bundle:nil];
+    //        vc.detail = detail;
+    //        [self.navigationController pushViewController:vc animated:YES];
+    //    }
+    
+    TradeDetailTableViewController *tradeDetailController = [[TradeDetailTableViewController alloc]init];
+    tradeDetailController.detailModel = [self.array objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:tradeDetailController animated:YES];
     
 }
 #pragma mark - PageDelegate

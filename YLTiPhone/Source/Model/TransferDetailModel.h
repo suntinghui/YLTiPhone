@@ -38,4 +38,10 @@
 @property (nonatomic, strong) NSString          *rspmsg;
 @property (nonatomic, strong) NSString          *flag;
 
+@property (nonatomic, strong) NSString          *merchant_name;//商户名
+@property (nonatomic, strong) NSString          *merchant_id;//商户编号
+@property (nonatomic, strong) NSString          *terminal_id;//终端号码
+@property (nonatomic, strong) NSString          *note;
+
+
 @end
