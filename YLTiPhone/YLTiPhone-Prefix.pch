@@ -1,0 +1,29 @@
+//
+// Prefix header for all source files of the 'YLTiPhone' target in the 'YLTiPhone' project
+//
+
+#import <Availability.h>
+
+//静态代码切换　注释时为动态
+//#define DEMO   621
+
+//UITextField类中
+//下面这个方法报警告 内容是："used as the previous parameter rather than as part the selector"
+//原因是此种方法已经不被新版本接受
+//- (void) hideKeyBoard:(UIView*)view:(NSInteger)index hasNavBar:(BOOL)hasNavBar;
+//加一句下面的语句可以忽略掉这个警告
+#pragma clang diagnostic ignored "-Wmissing-selector-name"
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    #import "Constants.h"
+    #import "Transfer.h"
+    #import "AppDataCenter.h"
+
+#endif
