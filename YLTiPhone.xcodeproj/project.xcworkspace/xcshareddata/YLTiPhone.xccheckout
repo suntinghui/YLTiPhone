@@ -5,34 +5,55 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>C1CF28E5-9512-4556-9650-AEAB73DBA1EE</string>
+=======
+	<string>DBE0E6E5-5DB3-43B1-BB12-F36659D55B1E</string>
+>>>>>>> d225908f26c1e2396b0cf903bf906861e0cfd0c5
 	<key>IDESourceControlProjectName</key>
 	<string>YLTiPhone</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>90EEADD1-2D83-48F8-84B4-FD6F43E33FE9</key>
 		<string>ssh://github.com/suntinghui/YLTiPhone.git</string>
+=======
+		<key>C98126D7-796C-4701-B8ED-E956855E095A</key>
+		<string>ssh://github.com/liaojia/YLTiPhone.git</string>
+>>>>>>> d225908f26c1e2396b0cf903bf906861e0cfd0c5
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>YLTiPhone.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>90EEADD1-2D83-48F8-84B4-FD6F43E33FE9</key>
+=======
+		<key>C98126D7-796C-4701-B8ED-E956855E095A</key>
+>>>>>>> d225908f26c1e2396b0cf903bf906861e0cfd0c5
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/suntinghui/YLTiPhone.git</string>
+	<string>ssh://github.com/liaojia/YLTiPhone.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
+<<<<<<< HEAD
 	<string>90EEADD1-2D83-48F8-84B4-FD6F43E33FE9</string>
+=======
+	<string>C98126D7-796C-4701-B8ED-E956855E095A</string>
+>>>>>>> d225908f26c1e2396b0cf903bf906861e0cfd0c5
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
 			<string>90EEADD1-2D83-48F8-84B4-FD6F43E33FE9</string>
+=======
+			<string>C98126D7-796C-4701-B8ED-E956855E095A</string>
+>>>>>>> d225908f26c1e2396b0cf903bf906861e0cfd0c5
 			<key>IDESourceControlWCCName</key>
 			<string>YLTiPhone</string>
 		</dict>

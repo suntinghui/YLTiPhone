@@ -44,16 +44,19 @@
     _bankDic = [[NSMutableDictionary alloc] init];
     _items = [[NSMutableArray alloc] init];
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 150+ ios7_h, 300, VIEWHEIGHT-40) style:UITableViewStyleGrouped];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 90+ ios7_h, 320, VIEWHEIGHT-50) style:UITableViewStyleGrouped];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     [self.myTableView setBackgroundColor:[UIColor clearColor]];
     self.myTableView.backgroundView = nil;
     [self.view addSubview:self.myTableView];
     
+    UIView *footView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 35)];
+    footView.backgroundColor = [UIColor clearColor];
+    
     //加载更多按钮
     moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [moreButton setFrame:CGRectMake(10, 0, 270, 40)];
+    [moreButton setFrame:CGRectMake(10, 0, 300, 35)];
     moreButton.layer.cornerRadius = 5.0f;
     moreButton.layer.borderColor = [UIColor grayColor].CGColor;
     moreButton.layer.borderWidth = 1.0f;
@@ -62,10 +65,15 @@
     [moreButton addTarget:self action:@selector(addItem) forControlEvents:UIControlEventTouchUpInside];
     moreButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [moreButton setBackgroundColor:[UIColor clearColor]];
-    self.myTableView.tableFooterView = moreButton;
+    [footView addSubview:moreButton];
+    self.myTableView.tableFooterView = footView;
+    
+    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(8, 50+ios7_h, 200, 35)];
+    [textFieldImage1 setImage:[UIImage imageNamed:@"textInput.png"]];
+    [self.view addSubview:textFieldImage1];
     
     //搜索
-    self.searchTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 90+ios7_h, 200, 35) isLong:true];
+    self.searchTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 50+ios7_h, 200, 35) isLong:true];
     [self.searchTF.contentTF setPlaceholder:@"输入关键字"];
     self.searchTF.contentTF.delegate = self;
     [self.searchTF.contentTF setFont:[UIFont systemFontOfSize:15]];
@@ -73,12 +81,10 @@
 //    [self.searchTF.contentTF hideKeyBoard:self.view:3 hasNavBar:YES];
     [self.view addSubview:self.searchTF];
     
-    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(8, 90+ios7_h, 200, 35)];
-    [textFieldImage1 setImage:[UIImage imageNamed:@"textInput.png"]];
-    [self.view addSubview:textFieldImage1];
+   
     
     UIButton *selectBankButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [selectBankButton setFrame:CGRectMake(220, 90+ios7_h, 80, 35)];
+    [selectBankButton setFrame:CGRectMake(230, 50+ios7_h, 80, 35)];
     [selectBankButton setTitle:@"搜索" forState:UIControlStateNormal];
     [selectBankButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     selectBankButton.titleLabel.font = [UIFont systemFontOfSize:18];
@@ -222,6 +228,7 @@
 //}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     //选择一个支行 结果传回上个界面
     BankModel *bank = [_items objectAtIndex:indexPath.row];
     addAccountVC.respBankName = bank.name;
