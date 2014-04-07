@@ -82,7 +82,10 @@
 
 -(IBAction)confirmButtonAction:(id)sender
 {
-    [[Transfer sharedTransfer] startTransfer:@"020001" fskCmd:@"Request_GetExtKsn#Request_VT#Request_GetDes#Request_GetPin|string:0" paramDic:nil];
+    if (ApplicationDelegate.isAishua)
+    {
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
+    }
 }
 /*
 <input

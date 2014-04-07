@@ -341,6 +341,7 @@
 		6CB1F39018EFF104009E2287 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1F38718EFF104009E2287 /* README.txt */; };
 		8D281C9218F2F8DF00457792 /* receipt_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D281C9018F2F8DF00457792 /* receipt_bg.png */; };
 		8D281C9318F2F8DF00457792 /* yinlian.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D281C9118F2F8DF00457792 /* yinlian.png */; };
+		8D281C9618F308F100457792 /* InputPwdQueryBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D281C9518F308F100457792 /* InputPwdQueryBalanceViewController.m */; };
 		8D32CA5118E7FB6B00633FEF /* icon_hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D32CA5018E7FB6B00633FEF /* icon_hand.png */; };
 		8D32CA5318E7FFCA00633FEF /* explain.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D32CA5218E7FFCA00633FEF /* explain.png */; };
 		8D3B939E18EA467B00A8C1CD /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B939C18EA467B00A8C1CD /* app.png */; };
@@ -912,6 +913,8 @@
 		6CB1F38718EFF104009E2287 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		8D281C9018F2F8DF00457792 /* receipt_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = receipt_bg.png; sourceTree = "<group>"; };
 		8D281C9118F2F8DF00457792 /* yinlian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinlian.png; sourceTree = "<group>"; };
+		8D281C9418F308F100457792 /* InputPwdQueryBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPwdQueryBalanceViewController.h; sourceTree = "<group>"; };
+		8D281C9518F308F100457792 /* InputPwdQueryBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPwdQueryBalanceViewController.m; sourceTree = "<group>"; };
 		8D32CA5018E7FB6B00633FEF /* icon_hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hand.png; sourceTree = "<group>"; };
 		8D32CA5218E7FFCA00633FEF /* explain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explain.png; sourceTree = "<group>"; };
 		8D3B939C18EA467B00A8C1CD /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
@@ -1953,6 +1956,8 @@
 				0554B14918711E6F00C75DCD /* InputMoneyViewController.xib */,
 				B85A141D18E5AAB700804152 /* InputPasswordViewController.h */,
 				B85A141E18E5AAB700804152 /* InputPasswordViewController.m */,
+				8D281C9418F308F100457792 /* InputPwdQueryBalanceViewController.h */,
+				8D281C9518F308F100457792 /* InputPwdQueryBalanceViewController.m */,
 				8D78DA7918E91FE900072BBB /* QueryBalancePwdViewController.h */,
 				8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */,
 			);
@@ -2275,6 +2280,7 @@
 				05578CD1186AB33500475B9C /* LeftImageTextField.m in Sources */,
 				0537AEAE18583E1B005F84D1 /* FMDatabase.m in Sources */,
 				0537AEAF18583E1B005F84D1 /* FMDatabaseAdditions.m in Sources */,
+				8D281C9618F308F100457792 /* InputPwdQueryBalanceViewController.m in Sources */,
 				0537AEB018583E1B005F84D1 /* FMDatabasePool.m in Sources */,
 				8DAF435D18E33BDE001D0195 /* TransferHistoryQueryViewController.m in Sources */,
 				0537AEB118583E1B005F84D1 /* FMDatabaseQueue.m in Sources */,
