@@ -494,15 +494,16 @@ static Transfer *instance = nil;
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
                     NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
                     
-                    NSData *tmpData = [_receData subdataWithRange:NSMakeRange(11, _receData.length-8-11)];
+                    NSData *tmpData = [_receData subdataWithRange:NSMakeRange(11, _receData.length-11-8)];
                     NSString *tmpString = [ConvertUtil data2HexString:tmpData];
                     
                     NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];
                     
                     NSString *macStr = [ConvertUtil data2HexString:macValueData];
-                    
+
+                    NSString *tmp_str = [ConvertUtil stringFromHexString:macStr];
 //                    [[NSString alloc] initWithData:macData encoding:NSUTF8StringEncoding];
-                    if ([macStr isEqualToString:[_receDic objectForKey:@"field64"]]) {
+                    if ([tmp_str isEqualToString:[_receDic objectForKey:@"field64"]]) {
                         [self checkField39];
                     }else{
                         [ApplicationDelegate gotoFailureViewController:@"MAC校验失败"];
@@ -708,6 +709,9 @@ static Transfer *instance = nil;
     }else if ([field39 isEqualToString:@"A1"]) {
         str_error = @"A1";
     }else if([field39 caseInsensitiveCompare:@"xx"] == NSOrderedSame){
+        NSData *data = [_receDic objectForKey:@"field63"];
+        NSString *tmp_str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"-----%@", [NSString stringWithFormat:@"%@", [_receDic objectForKey:@"field63"]]);
         str_error = [_receDic objectForKey:@"field63"] != NULL ? [_receDic objectForKey:@"field63"] :@"";
     }else {
         int field = [[NSString stringWithFormat:@"%@",field39] intValue];
@@ -827,6 +831,6 @@ static Transfer *instance = nil;
                 break;
         }
     }
-    return [NSString stringWithFormat:@"%@ （%@）", str_error, field39];
+    return [NSString stringWithFormat:@"%@(%@)", str_error, field39];
 }
 @end

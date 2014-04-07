@@ -47,7 +47,7 @@
 - (void)requestAction
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+    [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     //公告查询 089004
     [[Transfer sharedTransfer] startTransfer:@"089004" fskCmd:nil paramDic:dic];
 }

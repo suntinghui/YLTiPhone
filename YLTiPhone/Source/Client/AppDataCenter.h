@@ -47,6 +47,7 @@
     NSDictionary                    *_reversalDic;
     
     NSString                        *status;
+    BOOL                            hasSign;
 }
 
 @property (nonatomic, strong) NSString                              *__PSAMNO;
@@ -85,6 +86,7 @@
 @property (nonatomic, strong) NSString                              *__ENCTRACKS;
 
 @property (nonatomic, strong) NSString * status;
+@property (nonatomic)         BOOL                                  hasSign;
 
 + (AppDataCenter *) sharedAppDataCenter;
 

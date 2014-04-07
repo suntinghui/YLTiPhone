@@ -128,10 +128,6 @@
         //修改提款账户
         [self modifyBankAccountDone];
         
-    } else if([self.transferCode isEqualToString:@"086001"]) {
-        //签到
-        //[self signDone];
-        
     } else if ([self.transferCode isEqualToString:@"020001"]) {
         //余额查询
         [self queryBalanceDone];
@@ -328,11 +324,10 @@
                 [(AnnouncementListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
             }
             @catch (NSException *exception) {
-                NSLog(@"--%@", [exception callStackSymbols]);
-                [ApplicationDelegate gotoFailureViewController:@"获取公告功能，服务器返回异常。"];
+            
             }
         }else if([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"]){
-            [ApplicationDelegate gotoFailureViewController:@"获取公告失败"];
+
         }
     }
 }
@@ -352,13 +347,12 @@
                 [(AccountCollectCashViewController*)[ApplicationDelegate topViewController] refreshTabelView];
                 
             }else{
-                [ApplicationDelegate gotoFailureViewController:@"获取提款银行账号失败"];
+
             }
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"--%@", [exception callStackSymbols]);
-        [ApplicationDelegate gotoFailureViewController:@"获取提款银行账号失败"];
+        
     }
 
 }
@@ -471,10 +465,10 @@
             }
             @catch (NSException *exception) {
                 NSLog(@"--%@", [exception callStackSymbols]);
-                [ApplicationDelegate gotoFailureViewController:@"获取商户注册信息功能，服务器返回异常。"];
+
             }
         }else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"]){
-            [ApplicationDelegate gotoFailureViewController:@"找回密码失败"];
+
         }
     }
 }
@@ -861,6 +855,7 @@
         
         if (ApplicationDelegate.isAishua)
         {
+            [AppDataCenter sharedAppDataCenter].hasSign = true;
             [ApplicationDelegate gotoSuccessViewController:@"签到成功"];
         }
         else
