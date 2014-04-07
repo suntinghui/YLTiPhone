@@ -362,7 +362,7 @@ static Transfer *instance = nil;
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
                     NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
                     
-                    NSData *tmpData = [_reqData subdataWithRange:NSMakeRange(14, _reqData.length-13-8)];
+                    NSData *tmpData = [_reqData subdataWithRange:NSMakeRange(13, _reqData.length-13-8)];
                     NSString *tmpString = [ConvertUtil data2HexString:tmpData];
                     
                     NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];

@@ -69,20 +69,16 @@
     //NSString *random = [AppDataCenter sharedAppDataCenter].__RANDOM;
     //NSString *encTracks = [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
     
-    NSString *temKey = [NSString stringWithFormat:@"%@%@", [AppDataCenter sharedAppDataCenter].pinKey,[AppDataCenter sharedAppDataCenter].__ENCTRACKS];
+    NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[AppDataCenter sharedAppDataCenter].pinKey];
     NSString *key = [SecurityUtil encryptUseXOR16:temKey];
     
     NSString *psw = [NSString stringWithFormat:@"%@00",pswTxtField.inputStr];
     NSString *keyResult = [NSString stringWithFormat:@"%@%@",key,[key substringToIndex:16]];
-    NSString *enStr = [SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult];
-    //    NSString *enStr = [SecurityUtil DESEncryptWithData:psw AndKey:key];
+    NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
     NSLog(@"enStr %@",enStr);
-    
-    NSString *enctracks = [NSString stringWithFormat:@"01%@%@",[AppDataCenter sharedAppDataCenter].__RANDOM,[AppDataCenter sharedAppDataCenter].__ENCTRACKS];
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:enStr forKey:@"AISHUAPIN"];
-    [dic setObject:enctracks forKey:@"ENCTRACKS"];
     [dic setObject:self.moneyStr forKey:@"field4"];
     
     [[Transfer sharedTransfer] startTransfer:@"080003" fskCmd:nil paramDic:dic];

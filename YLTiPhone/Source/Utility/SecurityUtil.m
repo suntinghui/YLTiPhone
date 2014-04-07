@@ -48,10 +48,9 @@
                                           buffer, 1024,
                                           &numBytesEncrypted);
     if (cryptStatus == kCCSuccess) {
-//        NSLog(@"DES加密成功");
+        //NSLog(@"DES加密成功");
         NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-        Byte* bb = (Byte*)[data bytes];
-        ciphertext = [ConvertUtil parseByteArray2HexString:bb];
+        ciphertext = [ConvertUtil data2HexString:data];
     }else{
         NSLog(@"DES加密失败");
     }
@@ -211,7 +210,7 @@
 {
     NSMutableString *str = [[NSMutableString alloc] initWithString:data];
     while (str.length % 16 != 0) {
-        [str appendString:@"0"];
+        [str appendString:@"00"];
     }
     
     
@@ -219,11 +218,11 @@
         return [SecurityUtil encryptUseXOR:str withKey:str];
         
     } else if (str.length == 32){
-        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:16] withKey:[str substringToIndex:32]];
+        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:16] withKey:[str substringFromIndex:16]];
         return temp;
         
     } else {
-        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:16] withKey:[str substringToIndex:32]];
+        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:16] withKey:[str substringFromIndex:16]];
         
         unsigned long count = str.length/16-1;
         for (int i=2; i<count+1; i++) {
@@ -240,7 +239,7 @@
 {
     NSMutableString *str = [[NSMutableString alloc] initWithString:data];
     while (str.length % 32 != 0) {
-        [str appendString:@"0"];
+        [str appendString:@"00"];
     }
     
     
@@ -248,11 +247,11 @@
         return [SecurityUtil encryptUseXOR:str withKey:str];
         
     } else if (str.length == 64){
-        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:32] withKey:[str substringToIndex:64]];
+        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:32] withKey:[str substringFromIndex:32]];
         return temp;
         
     } else {
-        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:32] withKey:[str substringToIndex:64]];
+        NSString *temp = [SecurityUtil encryptUseXOR:[str substringToIndex:32] withKey:[str substringFromIndex:32]];
         
         unsigned long count = str.length/32-1;
         for (int i=2; i<count+1; i++) {
