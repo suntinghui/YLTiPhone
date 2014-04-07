@@ -114,6 +114,8 @@ static AppDataCenter *instance = nil;
         return [self getMercherName];
     } else if([property isEqualToString:@"__FIELD35"]) {
         return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
+    }else if ([property isEqualToString:@"__TERID"]){
+        return self.__TERID;
     } else {
         SEL selector = NSSelectorFromString(property);
         if ([self respondsToSelector:selector]) {

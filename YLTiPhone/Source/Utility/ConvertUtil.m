@@ -658,7 +658,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return hexString ;
 }
 
-<<<<<<< HEAD
+
 // 十六进制转换为普通字符串的。
 + (NSString *)stringFromHexString:(NSString *)hexString { //
     
@@ -678,38 +678,27 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     
 }
 
-+ (NSString *)replaceUnicode:(NSString *)unicodeStr {
-=======
+
 + (NSString *)replaceUnicode:(NSString *)unicodeStr
 {
->>>>>>> 27d6696876fe54c75db05e00d22886f6d0a11c96
     
     NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u" withString:@"\\U"];
     NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
     NSString *tempStr3 = [[@"\"" stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
-<<<<<<< HEAD
-    NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
-=======
+
     NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
     NSData *tempData = [tempStr3 dataUsingEncoding:NSUnicodeStringEncoding];
->>>>>>> 27d6696876fe54c75db05e00d22886f6d0a11c96
     NSString* returnStr = [NSPropertyListSerialization propertyListFromData:tempData
                                                            mutabilityOption:NSPropertyListImmutable
                                                                      format:NULL
                                                            errorDescription:NULL];
     
-<<<<<<< HEAD
-    //NSLog(@"Output = %@", returnStr);
-    
-    return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
-}
-=======
+
     NSLog(@"Output = %@", returnStr);
     
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
 }
 
->>>>>>> 27d6696876fe54c75db05e00d22886f6d0a11c96
 /*
  bool StrToBCD(const char *Src,char *Des,int iDesLen)
  
