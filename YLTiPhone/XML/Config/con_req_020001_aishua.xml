@@ -22,7 +22,7 @@
 	<field key="field49" value="156" />
 	<field key="field52" value="__AISHUAPIN" /><!-- 个人PIN，受约束项 -->
 	<field key="field60" value="01#__BATCHNUM#" />
-	<field key="field62" value="__ENCTRACKS" />
+	<field key="field62" value="01#__RANDOM#__ENCTRACKS" />
 	<field key="field64" value="00000000" />
 	
 </root>

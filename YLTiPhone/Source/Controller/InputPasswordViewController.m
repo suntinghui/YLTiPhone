@@ -71,8 +71,7 @@
     
     NSString *psw = [NSString stringWithFormat:@"%@00",pswTxtField.inputStr];
     NSString *keyResult = [NSString stringWithFormat:@"%@%@",key,[key substringToIndex:16]];
-    NSString *enStr = [SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:key];
-//    NSString *enStr = [SecurityUtil DESEncryptWithData:psw AndKey:key];
+    NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
     NSLog(@"enStr %@",enStr);
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
