@@ -181,28 +181,28 @@
     [self.signPanel setNeedsDisplay];
 }
 
-//// IOS5默认支持竖屏
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-//}
-//
-//// IOS6默认不开启旋转，如果subclass需要支持屏幕旋转，重写这个方法return YES即可
-//- (BOOL)shouldAutorotate
-//{
-//    return NO;
-//}
-//
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskLandscape;
-//}
-//
-//// IOS6默认支持竖屏
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-//{
-//    return UIInterfaceOrientationLandscapeRight;
-//}
+// IOS5默认支持竖屏
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+// IOS6默认不开启旋转，如果subclass需要支持屏幕旋转，重写这个方法return YES即可
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+// IOS6默认支持竖屏
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationLandscapeRight;
+}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -238,5 +238,6 @@
     }
     return returnImage;
 }
+
 
 @end

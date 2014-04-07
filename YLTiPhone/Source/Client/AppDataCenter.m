@@ -32,7 +32,7 @@
 @synthesize __TRACEAUDITNUM,__BATCHNUM,__ADDRESS,__PHONENUM,__CURRENTVERSION,__VERSIONCODE,__SERVEREDATE;
 @synthesize transferNameDic = _transferNameDic;
 @synthesize reversalDic = _reversalDic;
-
+@synthesize hasSign = _hasSign;
 @synthesize __FIELD35,__FIELD36;
 
 @synthesize __RANDOM, __ENCTRACKS;
@@ -61,6 +61,8 @@ static AppDataCenter *instance = nil;
         __ADDRESS = @"UNKNOWN";
         __FIELD22 = @"021";
         __SERVEREDATE = [DateUtil getSystemDate2];
+        _hasSign = false;
+
     }
     
     return self;
