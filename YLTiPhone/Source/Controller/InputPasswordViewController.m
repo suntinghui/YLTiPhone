@@ -66,12 +66,12 @@
     
     //NSDictionary *cardInfo = [AppDataCenter sharedAppDataCenter].cardInfoDict;
     
-    NSString *temKey = [NSString stringWithFormat:@"%@%@", [AppDataCenter sharedAppDataCenter].pinKey,[AppDataCenter sharedAppDataCenter].__ENCTRACKS];
+    NSString *temKey = [NSString stringWithFormat:@"%@%@", [AppDataCenter sharedAppDataCenter].__ENCTRACKS, [AppDataCenter sharedAppDataCenter].pinKey ];
     NSString *key = [SecurityUtil encryptUseXOR16:temKey];
     
     NSString *psw = [NSString stringWithFormat:@"%@00",pswTxtField.inputStr];
     NSString *keyResult = [NSString stringWithFormat:@"%@%@",key,[key substringToIndex:16]];
-    NSString *enStr = [SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult];
+    NSString *enStr = [SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:key];
 //    NSString *enStr = [SecurityUtil DESEncryptWithData:psw AndKey:key];
     NSLog(@"enStr %@",enStr);
     

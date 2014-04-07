@@ -499,13 +499,15 @@ static Transfer *instance = nil;
                     
                     NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];
                     
-                    NSString *macStr = [[NSString alloc] initWithData:macData encoding:NSUTF8StringEncoding];
+                    NSString *macStr = [ConvertUtil data2HexString:macValueData];
+                    
+//                    [[NSString alloc] initWithData:macData encoding:NSUTF8StringEncoding];
                     if ([macStr isEqualToString:[_receDic objectForKey:@"field64"]]) {
                         [self checkField39];
+                    }else{
+                        [ApplicationDelegate gotoFailureViewController:@"MAC校验失败"];
                     }
-                    NSMutableData *sendData = [[NSMutableData alloc] init];
-                    [sendData appendData:[_receData subdataWithRange:NSMakeRange(0, _receData.length-8)]];
-                    [sendData appendData:macValueData];
+                    
                     
                     
                 }else{
@@ -700,202 +702,131 @@ static Transfer *instance = nil;
 
 - (NSString *) failMessageOfField39:(NSString *)field39
 {
-    int field = [[NSString stringWithFormat:@"%@",field39] intValue];
-    switch (field) {
-        case 01:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 02:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 03:
-            return @"商户未登记";
-            break;
-        case 04:
-            return @"没收卡,请联系收单行";
-            break;
-        case 05:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 06:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 07:
-            return @"没收卡,请联系收单行";
-            break;
-            //以0开头表示8进制  所以此句报错
-            //        case 09:
-            //            return @"交易失败,请重试";
-            //            break;
-        case 12:
-            return @"交易失败,请重试";
-            break;
-        case 13:
-            return @"交易金额超限,请重试";
-            break;
-        case 14:
-            return @"无效卡号,请联系发卡行";
-            break;
-        case 15:
-            return @"此卡不能受理";
-            break;
-        case 19:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 20:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 21:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 22:
-            return @"操作有误,请重试";
-            break;
-        case 23:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 25:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 30:
-            return @"交易失败,请重试";
-            break;
-        case 31:
-            return @"此卡不能受理";
-            break;
-        case 33:
-            return @"过期卡,请联系发卡行";
-            break;
-        case 34:
-            return @"没收卡,请联系收单行";
-            break;
-        case 35:
-            return @"非会员卡或会员信息错";
-            break;
-        case 36:
-            return @"非会员卡,不能做此交易";
-            break;
-        case 37:
-            return @"没收卡,请联系收单行";
-            break;
-            //
-        case 38:
-            return @"密码错误次数超限";
-            break;
-        case 39:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 40:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 41:
-            return @"没收卡,请联系收单行";
-            break;
-        case 42:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 43:
-            return @"没收卡,请联系收单行";
-            break;
-        case 44:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 51:
-            return @"余额不足,请查询";
-            break;
-        case 52:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 53:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 54:
-            return @"过期卡,请联系发卡行";
-            break;
-        case 55:
-            return @"密码错,请重试";
-            break;
-        case 56:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 57:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 58:
-            return @"终端无效,请联系收单行或银联";
-            break;
-        case 59:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 60:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 61:
-            return @"金额太大";
-            break;
-        case 62:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 63:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 64:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 65:
-            return @"超出取款次数限制";
-            break;
-        case 66:
-            return @"交易失败,请联系收单行或银联";
-            break;
-        case 67:
-            return @"没收卡";
-            break;
-        case 68:
-            return @"交易超时,请重试";
-            break;
-        case 75:
-            return @"密码错误次数超限";
-            break;
-        case 77:
-            return @"请向网络中心签到";
-            break;
-        case 79:
-            return @"POS 终端重传脱机数据";
-            break;
-        case 90:
-            return @"交易失败,请稍后重试";
-            break;
-        case 91:
-            return @"交易失败,请稍后重试";
-            break;
-        case 92:
-            return @"交易失败,请稍后重试";
-            break;
-        case 93:
-            return @"交易失败,请联系发卡行";
-            break;
-        case 94:
-            return @"交易失败,请稍后重试";
-            break;
-        case 95:
-            return @"交易失败,请稍后重试";
-            break;
-        case 96:
-            return @"交易失败,请稍后重试";
-            break;
-        case 97:
-            return @"终端未登记,请联系收单行或银联";
-            break;
-        case 98:
-            return @"交易超时,请重试";
-            break;
-        case 99:
-            return @"校验错,请重新签到";
-            break;
-        default:
-            return @"未知错误，请重试";
-            break;
+    NSString *str_error = @"交易失败，请重试!";
+    if ([field39 isEqualToString:@"A0"]) {
+        str_error = @"校验错，请重新签到！";
+    }else if ([field39 isEqualToString:@"A1"]) {
+        str_error = @"A1";
+    }else if([field39 caseInsensitiveCompare:@"xx"] == NSOrderedSame){
+        str_error = [_receDic objectForKey:@"field63"] != NULL ? [_receDic objectForKey:@"field63"] :@"";
+    }else {
+        int field = [[NSString stringWithFormat:@"%@",field39] intValue];
+        switch (field) {
+            case 03:
+                str_error = @"商户未登记";
+                break;
+            case 04:
+            case 07:
+            case 34:
+            case 37:
+            case 41:
+            case 43:
+                str_error = @"没收卡,请联系收单行";
+                break;
+            case 13:
+                str_error = @"交易金额超限,请重试";
+                break;
+            case 14:
+                str_error = @"无效卡号,请联系发卡行";
+                break;
+            case 31:
+            case 15:
+                str_error = @"此卡不能受理";
+                break;
+            case 22:
+                str_error = @"操作有误,请重试";
+                break;
+            case 33:
+            case 54:
+                str_error = @"过期卡,请联系发卡行";
+                break;
+            case 35:
+                str_error = @"非会员卡或会员信息错";
+                break;
+            case 36:
+                str_error = @"非会员卡,不能做此交易";
+                break;
+            case 38:
+                str_error = @"密码错误次数超限";
+                break;
+            case 55:
+                str_error = @"密码错,请重试";
+                break;
+            case 58:
+                str_error = @"终端无效,请联系收单行或银联";
+                break;
+            case 61:
+                str_error = @"金额太大";
+                break;
+            case 65:
+                str_error = @"超出取款次数限制";
+                break;
+            case 67:
+                str_error = @"没收卡";
+                break;
+            case 68:
+                str_error = @"交易超时,请重试";
+                break;
+            case 75:
+                str_error = @"密码错误次数超限";
+                break;
+            case 77:
+                str_error = @"请向网络中心签到";
+                break;
+            case 79:
+                str_error = @"POS 终端重传脱机数据";
+                break;
+            case 01:
+            case 02:
+            case 05:
+            case 06:
+            case 19:
+            case 20:
+            case 21:
+            case 23:
+            case 25:
+            case 39:
+            case 40:
+            case 42:
+            case 44:
+            case 52:
+            case 53:
+            case 56:
+            case 57:
+            case 59:
+            case 60:
+            case 62:
+            case 63:
+            case 64:
+            case 93:
+                str_error = @"交易失败，请联系发卡行！";
+                break;
+            case 9:
+            case 12:
+            case 30:
+            case 90:
+            case 91:
+            case 92:
+            case 94:
+            case 95:
+            case 96:
+            case 98:
+                str_error = @"交易失败，请重试!";
+                break;
+            case 51:
+                str_error = @"余额不足,请查询";
+                break;
+            case 99:
+                str_error = @"校验错，请重新签到！";
+                break;
+            case 97:
+                str_error = @"终端未登记,请联系收单行或银联";
+                break;
+            default:
+                return @"未知错误，请重试";
+                break;
+        }
     }
+    return [NSString stringWithFormat:@"%@ （%@）", str_error, field39];
 }
 @end
