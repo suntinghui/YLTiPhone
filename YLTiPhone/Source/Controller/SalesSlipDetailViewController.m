@@ -11,7 +11,7 @@
 #import "StringUtil.h"
 #import "DateUtil.h"
 #import "EncryptionUtil.h"
-
+#define left_w  100
 @interface SalesSlipDetailViewController ()
 
 @end
@@ -39,14 +39,31 @@
     self.navigationItem.title = @"签购单";
     self.hasTopView = YES;
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, VIEWHEIGHT+40)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10+ios7_h, 320, VIEWHEIGHT+40)];
     [self.scrollView setContentSize:CGSizeMake(320, 560)];
     self.scrollView.showsVerticalScrollIndicator = false;
     [self.view addSubview:self.scrollView];
     
     self.bgImageView = [[UIImageView alloc] initWithImage:[self stretchImage:[UIImage imageNamed:@"salesslip.png"]]];
-    [self.bgImageView setFrame:CGRectMake(5, 0, 310, 540)];
+    [self.bgImageView setFrame:CGRectMake(5, 10+ios7_h, 310, 540)];
     [self.scrollView addSubview:self.bgImageView];
+    
+    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 86, 54)];
+    [iv_logo setImage:[UIImage imageNamed:@"yinlian"]];
+    [self.scrollView addSubview:iv_logo];
+    
+    UILabel *label_sign = [[UILabel alloc] initWithFrame:CGRectMake(110, 10, 100, 40)];
+    [label_sign setBackgroundColor:[UIColor clearColor]];
+    [label_sign setText:@"签购单"];
+    [label_sign setTextAlignment:NSTextAlignmentCenter];
+    [label_sign setFont:[UIFont boldSystemFontOfSize:17]];
+    [self.scrollView addSubview:label_sign];
+    
+    UILabel *label_right = [[UILabel alloc] initWithFrame:CGRectMake(200, 30, 100, 40)];
+    [label_right setBackgroundColor:[UIColor clearColor]];
+    [label_right setText:@"持卡人存根"];
+    [label_right setFont:[UIFont systemFontOfSize:14]];
+    [self.scrollView addSubview:label_right];
     
     //bg1
     UIImage *image1 = [UIImage imageNamed:@"textInput.png"];
@@ -54,7 +71,7 @@
     [bgIV1 setFrame:CGRectMake(28, 10, 253, 100)];
     [self.bgImageView addSubview:bgIV1];
     
-    UILabel *tmpNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 70, 30)];
+    UILabel *tmpNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, left_w, 30)];
     [tmpNameLabel setText:@"商户名称："];
     [self setLabelStyle:tmpNameLabel];
     [bgIV1 addSubview:tmpNameLabel];
@@ -64,7 +81,7 @@
     [self setLabelStyle:nameLabel];
     [bgIV1 addSubview:nameLabel];
     
-    UILabel *tmpNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 70, 30)];
+    UILabel *tmpNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, left_w, 30)];
     [tmpNumLabel setText:@"商户编号："];
     [self setLabelStyle:tmpNumLabel];
     [bgIV1 addSubview:tmpNumLabel];
@@ -74,7 +91,7 @@
     [self setLabelStyle:numLabel];
     [bgIV1 addSubview:numLabel];
     
-    UILabel *tmpTerminalNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 55, 70, 30)];
+    UILabel *tmpTerminalNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 55, left_w, 30)];
     [tmpTerminalNumLabel setText:@"终端编号："];
     [self setLabelStyle:tmpTerminalNumLabel];
     [bgIV1 addSubview:tmpTerminalNumLabel];
@@ -110,7 +127,7 @@
     [self setLabelStyle:cardBankLabel];
     [bgIV2 addSubview:cardBankLabel];
     
-    UILabel *tmpValidityLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 55, 70, 30)];
+    UILabel *tmpValidityLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 55, left_w, 30)];
     [tmpValidityLabel setText:@"卡有效期："];
     [self setLabelStyle:tmpValidityLabel];
     [bgIV2 addSubview:tmpValidityLabel];
@@ -120,7 +137,7 @@
     [self setLabelStyle:validityLabel];
     [bgIV2 addSubview:validityLabel];
     
-    UILabel *tmptradeDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 70, 30)];
+    UILabel *tmptradeDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, left_w, 30)];
     [tmptradeDateLabel setText:@"交易日期："];
     [self setLabelStyle:tmptradeDateLabel];
     [bgIV2 addSubview:tmptradeDateLabel];
@@ -130,7 +147,7 @@
     [self setLabelStyle:tradeDateLabel];
     [bgIV2 addSubview:tradeDateLabel];
     
-    UILabel *tmpTradeStyleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 105, 70, 30)];
+    UILabel *tmpTradeStyleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 105, left_w, 30)];
     [tmpTradeStyleLabel setText:@"交易类型："];
     [self setLabelStyle:tmpTradeStyleLabel];
     [bgIV2 addSubview:tmpTradeStyleLabel];
@@ -140,7 +157,7 @@
     [self setLabelStyle:tradeStyleLabel];
     [bgIV2 addSubview:tradeStyleLabel];
     
-    UILabel *tmpFlowNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 130, 100, 30)];
+    UILabel *tmpFlowNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 130, left_w, 30)];
     [tmpFlowNumLabel setText:@"交易流水号："];
     [self setLabelStyle:tmpFlowNumLabel];
     [bgIV2 addSubview:tmpFlowNumLabel];
@@ -150,7 +167,7 @@
     [self setLabelStyle:flowNumLabel];
     [bgIV2 addSubview:flowNumLabel];
     
-    UILabel *tmpAuthenticationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 155, 70, 30)];
+    UILabel *tmpAuthenticationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 155, left_w, 30)];
     [tmpAuthenticationLabel setText:@"授权号："];
     [self setLabelStyle:tmpAuthenticationLabel];
     [bgIV2 addSubview:tmpAuthenticationLabel];
@@ -160,7 +177,7 @@
     [self setLabelStyle:authenticationLabel];
     [bgIV2 addSubview:authenticationLabel];
     
-    UILabel *tmpReferenceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 180, 70, 30)];
+    UILabel *tmpReferenceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 180, left_w, 30)];
     [tmpReferenceLabel setText:@"参考号："];
     [self setLabelStyle:tmpReferenceLabel];
     [bgIV2 addSubview:tmpReferenceLabel];
@@ -170,7 +187,7 @@
     [self setLabelStyle:referenceLabel];
     [bgIV2 addSubview:referenceLabel];
     
-    UILabel *tmpbatchNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 205, 70, 30)];
+    UILabel *tmpbatchNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 205, left_w, 30)];
     [tmpbatchNumLabel setText:@"批次号："];
     [self setLabelStyle:tmpbatchNumLabel];
     [bgIV2 addSubview:tmpbatchNumLabel];
@@ -180,7 +197,7 @@
     [self setLabelStyle:batchNumLabel];
     [bgIV2 addSubview:batchNumLabel];
     
-    UILabel *tmpTradeMoneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 233, 70, 30)];
+    UILabel *tmpTradeMoneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 233, left_w, 30)];
     [tmpTradeMoneyLabel setText:@"交易金额："];
     [self setLabelStyle:tmpTradeMoneyLabel];
     [bgIV2 addSubview:tmpTradeMoneyLabel];
