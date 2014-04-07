@@ -81,8 +81,12 @@
         NSArray *fieldIdArray = [self.fieldDic allKeys];
         std::bitset<64> bm(0);
         for (NSNumber *num in fieldIdArray) {
-            int pos = [num intValue];
-            bm.set(64-pos);
+            EFETFieldModel *field = [self.fieldDic objectForKey:num];
+            int length = field.value.length;
+            if (length > 0) {
+                int pos = [num intValue];
+                bm.set(64-pos);
+            }
         }
         std::string bmStr = bm.to_string();
         
