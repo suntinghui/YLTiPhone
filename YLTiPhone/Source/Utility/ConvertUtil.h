@@ -73,4 +73,6 @@
 
 + (NSString*) data2HexString:(NSData *) data;
 
++ (NSString *)replaceUnicode:(NSString *)unicodeStr;
+
 @end
