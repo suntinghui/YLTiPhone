@@ -271,7 +271,7 @@
  */
 - (void)onGetKsnCompleted:(NSString *)ksn
 {
-    [AppDataCenter sharedAppDataCenter].__PSAMNO = ksn;
+    [AppDataCenter sharedAppDataCenter].__PSAMNO = [StringUtil ASCII2Hex:ksn];
 }
 
 -(void)onDecodeCompleted:(NSString*) formatID
@@ -312,6 +312,7 @@
     
     //[AppDataCenter sharedAppDataCenter].cardInfoDict = cardInfo;
     
+    [AppDataCenter sharedAppDataCenter].__PSAMNO = [StringUtil ASCII2Hex:ksn];
     [AppDataCenter sharedAppDataCenter].__RANDOM = randomNumber;
     [AppDataCenter sharedAppDataCenter].__ENCTRACKS = encTracks;
     
@@ -346,29 +347,6 @@
             [AppDataCenter sharedAppDataCenter].__PSAMNO = [StringUtil ASCII2Hex:[self.m_vcom HexValue:vs->psamno Len:vs->psamnoLen]];
             NSLog(@"App Data:%@", [AppDataCenter sharedAppDataCenter].__PSAMNO);
         }
-        
-        //add by wenbin 20140322 获取爱刷KSN
-        char * retData = [self.m_vcom GetKsnRetData];
-        if (retData!=nil)
-        {
-            NSString *retDataStr = [[NSString alloc] initWithUTF8String:retData];
-            NSString *resKSN = [retDataStr substringWithRange:NSMakeRange(18, 16)];
-            resKSN = [resKSN uppercaseString];
-            //KSN做隔一位获取处理
-            NSMutableString *ksn = [[NSMutableString alloc]init];
-            for(int i=1;i<resKSN.length;i+=2)
-            {
-                NSString *sub = [resKSN substringWithRange:NSMakeRange(i,1)];
-                if (sub!=nil)
-                {
-                   [ksn appendString:[resKSN substringWithRange:NSMakeRange(i,1)]];
-                }
-            }
-            NSLog(@"ksn:%@",ksn);
-            [AppDataCenter sharedAppDataCenter].__PSAMNO = ksn;
-        }
-        
-        
         
         // 设备号
         if (vs->hardSerialNoLen > 0) {

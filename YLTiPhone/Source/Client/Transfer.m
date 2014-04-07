@@ -362,7 +362,7 @@ static Transfer *instance = nil;
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
                     NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
                     
-                    NSData *tmpData = [_reqData subdataWithRange:NSMakeRange(13, _reqData.length-13-8)];
+                    NSData *tmpData = [_reqData subdataWithRange:NSMakeRange(14, _reqData.length-13-8)];
                     NSString *tmpString = [ConvertUtil data2HexString:tmpData];
                     
                     NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];
@@ -370,7 +370,7 @@ static Transfer *instance = nil;
                     NSMutableData *sendData = [[NSMutableData alloc] init];
                     [sendData appendData:[_reqData subdataWithRange:NSMakeRange(0, _reqData.length-8)]];
                     [sendData appendData:macValueData];
-//                    _reqData = [NSData dataWithData:sendData];
+                    _reqData = [NSData dataWithData:sendData];
                     
                     [self sendRequestEFET];
                     
@@ -499,13 +499,15 @@ static Transfer *instance = nil;
                     
                     NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];
                     
-                    NSString *macStr = [[NSString alloc] initWithData:macData encoding:NSUTF8StringEncoding];
+                    NSString *macStr = [ConvertUtil data2HexString:macValueData];
+                    
+//                    [[NSString alloc] initWithData:macData encoding:NSUTF8StringEncoding];
                     if ([macStr isEqualToString:[_receDic objectForKey:@"field64"]]) {
                         [self checkField39];
+                    }else{
+                        [ApplicationDelegate gotoFailureViewController:@"MAC校验失败"];
                     }
-                    NSMutableData *sendData = [[NSMutableData alloc] init];
-                    [sendData appendData:[_receData subdataWithRange:NSMakeRange(0, _receData.length-8)]];
-                    [sendData appendData:macValueData];
+                    
                     
                     
                 }else{
@@ -687,12 +689,14 @@ static Transfer *instance = nil;
 
 }
 
+/*
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
 {
 	// Since we requested HTTP/1.0, we expect the server to close the connection as soon as it has sent the response.
 	
 	NSLog(@"socketDidDisconnect:withError: \"%@\"", err);
 }
+ */
 
 #pragma mark - end AsyncSocketDelegate
 

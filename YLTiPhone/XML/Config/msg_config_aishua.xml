@@ -65,10 +65,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -96,10 +96,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -126,10 +126,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -178,8 +178,8 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="AMOUNT" length="12" />
 		<field id="11" datatype="NUMERIC" length="6"  isOk="true"/>
-		<field id="13" datatype="DATE4" isOk="false"/>
-		<field id="14" datatype="DATE_EXP" />
+		<field id="13" datatype="DATE4" length="4" isOk="false"/>
+		<field id="14" datatype="DATE_EXP" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
 		<field id="26" datatype="NUMERIC" length="2" />
@@ -199,10 +199,10 @@
 	    <field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="AMOUNT" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" /> 
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" /> 
 		<field id="25" datatype="NUMERIC" length="2" />
 		<field id="32" datatype="LLNVAR" />
 		<field id="37" datatype="ALPHA" length="12" />
@@ -245,10 +245,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="AMOUNT" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" /> 
+		<field id="12" datatype="TIME" length="6"/>
+		<field id="13" datatype="DATE4" length="4"/>
+		<field id="14" datatype="DATE_EXP" length="4"/>
+		<field id="15" datatype="DATE4" length="4"/>
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -278,10 +278,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -310,10 +310,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -343,8 +343,8 @@
 		<field id="2" datatype="LLVAR" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="32" datatype="LLNVAR" />
@@ -362,8 +362,8 @@
 		<field id="2" datatype="LLVAR" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="32" datatype="LLNVAR" />
@@ -382,10 +382,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="AMOUNT" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4"/>
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4"/>
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -412,10 +412,10 @@
 		<field id="3" datatype="NUMERIC" length="6" />
 		<field id="4" datatype="NUMERIC" length="12" />
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="14" datatype="DATE_EXP" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="14" datatype="DATE_EXP" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="22" datatype="NUMERIC" length="3" />
 		<field id="23" datatype="NUMERIC" length="3" />
 		<field id="25" datatype="NUMERIC" length="2" />
@@ -440,9 +440,9 @@
 
 	<parseinfo msgtypeid="0500">
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="32" datatype="LLNVAR" />
 		<field id="37" datatype="ALPHA" length="12" />
 		<field id="41" datatype="ALPHA" length="8" />
@@ -454,9 +454,9 @@
 	</parseinfo>
 	<parseinfo msgtypeid="0510">
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
-		<field id="15" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
+		<field id="15" datatype="DATE4" length="4" />
 		<field id="32" datatype="LLNVAR" /> 
 		<field id="37" datatype="ALPHA" length="12" />
 		<field id="41" datatype="ALPHA" length="8" />
@@ -469,8 +469,8 @@
 	
 	<parseinfo msgtypeid="0820">
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
 		<field id="37" datatype="ALPHA" length="12" />
 		<field id="39" datatype="ALPHA" length="2" />
 		<field id="41" datatype="ALPHA" length="8" />
@@ -483,8 +483,8 @@
 
 	<parseinfo msgtypeid="0830">
 		<field id="11" datatype="NUMERIC" length="6" />
-		<field id="12" datatype="TIME" />
-		<field id="13" datatype="DATE4" />
+		<field id="12" datatype="TIME" length="6" />
+		<field id="13" datatype="DATE4" length="4" />
 		<field id="32" datatype="LLNVAR" />
 		<field id="37" datatype="ALPHA" length="12" />
 		<field id="39" datatype="ALPHA" length="2" />
