@@ -33,7 +33,7 @@
     @try {
         NSString *value = @"";
         
-        NSLog(@"parse resp postion:%d", postion);
+        //NSLog(@"parse resp postion:%d", postion);
         
         if (fieldId == 2 || fieldId == 22|| fieldId == 32|| fieldId == 35 || fieldId == 36 || fieldId == 48 || fieldId == 60 || fieldId == 61) {
             
@@ -74,7 +74,7 @@
                 self.length = len;
             }
             
-        } else {
+        } else { // 其他域
             if ([type isEqualToString:[FieldType fieldTypeEnumToString:ALPHA]]) {
                 NSData *tempData = [respData subdataWithRange:NSMakeRange(postion, self.length)];
                 value = [[NSString alloc] initWithData:tempData encoding:NSASCIIStringEncoding];
@@ -180,7 +180,7 @@
             
         }
         
-        NSLog(@"<field%d -- %@>", fieldId, value);
+        //NSLog(@"<field%d -- %@>", fieldId, value);
         
         EFETFieldModel *model = [[EFETFieldModel alloc] initWithDatatype:self.type value:value length:self.length];
         return model;

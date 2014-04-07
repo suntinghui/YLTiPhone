@@ -92,7 +92,6 @@ static MessageFactory *instance;
     
     NSLog(@"位图:%@", bitmapHexStr);
     NSLog(@"位图:%@", bitmapBinaryStr);
-    NSLog(@"位图:%d", bitmapBinaryStr.length);
     
     NSMutableArray *fieldArray = [NSMutableArray array];
     
