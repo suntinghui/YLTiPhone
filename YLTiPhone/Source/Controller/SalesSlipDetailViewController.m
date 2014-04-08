@@ -204,6 +204,7 @@
     UILabel *tradeMoneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 230, 150, 40)];
     [tradeMoneyLabel setTextAlignment:NSTextAlignmentRight];
     [tradeMoneyLabel setText:[StringUtil string2SymbolAmount:[[Transfer sharedTransfer].receDic objectForKey:@"field4"]]];
+   
     [tradeMoneyLabel setBackgroundColor:[UIColor clearColor]];
     [tradeMoneyLabel setTextColor:[UIColor blueColor]];
     [tradeMoneyLabel setFont:[UIFont systemFontOfSize:17]];

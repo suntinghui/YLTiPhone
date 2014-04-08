@@ -129,11 +129,11 @@
     //缺少刷卡步骤  所以缺少数据
     // 添加数据
     // TODO 手机号
-//    [[Transfer sharedTransfer].receDic setObject:(self.phoneNumTF.text ? self.phoneNumTF.text:@"") forKey:@"receivePhoneNo"];
-//    [[Transfer sharedTransfer].receDic setObject:imageBase64 forKey:@"fieldImage"];
-//    [[Transfer sharedTransfer].receDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__UUID"] forKey:@"imei"];
-//    
-//    [[Transfer sharedTransfer] uploadSignImageAction];
+    [[Transfer sharedTransfer].receDic setObject:(self.phoneNumTF.text ? self.phoneNumTF.text:@"") forKey:@"receivePhoneNo"];
+    [[Transfer sharedTransfer].receDic setObject:imageBase64 forKey:@"fieldImage"];
+    [[Transfer sharedTransfer].receDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__UUID"] forKey:@"imei"];
+    
+    [[Transfer sharedTransfer] uploadSignImageAction];
     
     [ApplicationDelegate hideProcess];
     

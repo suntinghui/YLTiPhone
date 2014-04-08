@@ -44,7 +44,7 @@
     _bankDic = [[NSMutableDictionary alloc] init];
     _items = [[NSMutableArray alloc] init];
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 90+ ios7_h, 320, VIEWHEIGHT-50) style:UITableViewStyleGrouped];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 140+ ios7_h, 300, VIEWHEIGHT-110) style:UITableViewStyleGrouped];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     [self.myTableView setBackgroundColor:[UIColor clearColor]];
@@ -56,7 +56,7 @@
     
     //加载更多按钮
     moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [moreButton setFrame:CGRectMake(10, 0, 300, 35)];
+    [moreButton setFrame:CGRectMake(10, 0, 270, 35)];
     moreButton.layer.cornerRadius = 5.0f;
     moreButton.layer.borderColor = [UIColor grayColor].CGColor;
     moreButton.layer.borderWidth = 1.0f;
@@ -73,7 +73,7 @@
     [self.view addSubview:textFieldImage1];
     
     //搜索
-    self.searchTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 50+ios7_h, 200, 35) isLong:true];
+    self.searchTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 100+ios7_h, 200, 35) isLong:true];
     [self.searchTF.contentTF setPlaceholder:@"输入关键字"];
     self.searchTF.contentTF.delegate = self;
     [self.searchTF.contentTF setFont:[UIFont systemFontOfSize:15]];
@@ -84,7 +84,7 @@
    
     
     UIButton *selectBankButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [selectBankButton setFrame:CGRectMake(230, 50+ios7_h, 80, 35)];
+    [selectBankButton setFrame:CGRectMake(230, 100+ios7_h, 80, 35)];
     [selectBankButton setTitle:@"搜索" forState:UIControlStateNormal];
     [selectBankButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     selectBankButton.titleLabel.font = [UIFont systemFontOfSize:18];

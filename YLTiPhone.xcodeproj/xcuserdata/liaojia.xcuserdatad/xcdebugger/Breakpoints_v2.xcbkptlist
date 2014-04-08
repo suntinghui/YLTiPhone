@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418309031.608405"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "-sendPacket"
             landmarkType = "5">
          </BreakpointContent>
@@ -134,7 +134,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Controller/TradeDetailTableViewController.m"
@@ -166,7 +166,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
@@ -182,7 +182,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
@@ -198,7 +198,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418309031.608405"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
             landmarkName = "-sendPacket"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418309031.608405"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
             landmarkName = "-sendPacket"
             landmarkType = "5">
          </BreakpointContent>
@@ -262,7 +262,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418309031.608405"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "-sendPacket"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418309031.608405"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
             landmarkName = "-sendPacket"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418548010.149018"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "637"
-            endingLineNumber = "637"
+            startingLineNumber = "654"
+            endingLineNumber = "654"
             landmarkName = "-getProcessMessage"
             landmarkType = "5">
          </BreakpointContent>
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418548010.149018"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "698"
+            endingLineNumber = "698"
             landmarkName = "-socket:didReadData:withTag:"
             landmarkType = "5">
          </BreakpointContent>
@@ -554,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418548010.149018"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "673"
-            endingLineNumber = "673"
+            startingLineNumber = "690"
+            endingLineNumber = "690"
             landmarkName = "-socket:didWriteDataWithTag:"
             landmarkType = "5">
          </BreakpointContent>
@@ -648,11 +648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418548010.149018"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "658"
-            endingLineNumber = "658"
+            startingLineNumber = "675"
+            endingLineNumber = "675"
             landmarkName = "@implementation Transfer"
             landmarkType = "3">
          </BreakpointContent>
@@ -664,11 +664,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Controller/LoginViewController.m"
-            timestampString = "418358006.153479"
+            timestampString = "418616384.308231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-loginAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -726,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418369448.164446"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "@implementation Transfer"
             landmarkType = "3">
          </BreakpointContent>
@@ -742,11 +742,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418372821.140216"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "@implementation Transfer"
             landmarkType = "3">
          </BreakpointContent>
@@ -898,11 +898,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418441562.839631"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "-parse"
             landmarkType = "5">
          </BreakpointContent>
@@ -914,11 +914,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418442060.330373"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "482"
-            endingLineNumber = "482"
+            startingLineNumber = "499"
+            endingLineNumber = "499"
             landmarkName = "-parse"
             landmarkType = "5">
             <Locations>
@@ -1006,11 +1006,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418548045.559808"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "519"
+            endingLineNumber = "519"
             landmarkName = "-parse"
             landmarkType = "5">
          </BreakpointContent>
@@ -1022,11 +1022,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418548757.076259"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "498"
-            endingLineNumber = "498"
+            startingLineNumber = "515"
+            endingLineNumber = "515"
             landmarkName = "-parse"
             landmarkType = "5">
          </BreakpointContent>
@@ -1038,11 +1038,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418550170.882623"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "520"
+            endingLineNumber = "520"
             landmarkName = "-parse"
             landmarkType = "5">
          </BreakpointContent>
@@ -1054,11 +1054,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "418553932.648998"
+            timestampString = "418619171.576273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "714"
-            endingLineNumber = "714"
+            startingLineNumber = "731"
+            endingLineNumber = "731"
             landmarkName = "-failMessageOfField39:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1092,6 +1092,254 @@
             startingLineNumber = "312"
             endingLineNumber = "312"
             landmarkName = "-getAnnounceListDone"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Controller/RegisterViewController.m"
+            timestampString = "418616518.065337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-confirmButtonAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer.m"
+            timestampString = "418619171.576273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "-packet"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer.m"
+            timestampString = "418619171.576273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
+            landmarkName = "-packet"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer.m"
+            timestampString = "418617627.118351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "-packet"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer.m"
+            timestampString = "418619171.576273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
+            landmarkName = "-packet"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer.m"
+            timestampString = "418619171.576273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "-packet"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer+FSK.mm"
+            timestampString = "418631495.101661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Transfer(FSK) onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:]"
+                  moduleName = "&#20248;&#20048;&#36890;"
+                  urlString = "file:///Users/liaojia/Desktop/iosPros/YLTiPhone/YLTiPhone/Source/Client/Transfer+FSK.mm"
+                  timestampString = "418631570.925019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "316"
+                  endingLineNumber = "316"
+                  offsetFromSymbolStart = "1358">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Transfer(FSK) onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:]"
+                  moduleName = "&#20248;&#20048;&#36890;"
+                  urlString = "file:///Users/liaojia/Desktop/iosPros/YLTiPhone/YLTiPhone/Source/Client/Transfer+FSK.mm"
+                  timestampString = "418631570.925257"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "316"
+                  endingLineNumber = "316"
+                  offsetFromSymbolStart = "2444">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer+FSK.mm"
+            timestampString = "418631495.101661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "-onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Transfer(FSK) onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:]"
+                  moduleName = "&#20248;&#20048;&#36890;"
+                  urlString = "file:///Users/liaojia/Desktop/iosPros/YLTiPhone/YLTiPhone/Source/Client/Transfer+FSK.mm"
+                  timestampString = "418631570.925649"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
+                  offsetFromSymbolStart = "1214">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Transfer(FSK) onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:]"
+                  moduleName = "&#20248;&#20048;&#36890;"
+                  urlString = "file:///Users/liaojia/Desktop/iosPros/YLTiPhone/YLTiPhone/Source/Client/Transfer+FSK.mm"
+                  timestampString = "418631570.925883"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
+                  offsetFromSymbolStart = "1966">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Transfer(FSK) onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:]"
+                  moduleName = "&#20248;&#20048;&#36890;"
+                  urlString = "file:///Users/liaojia/Desktop/iosPros/YLTiPhone/YLTiPhone/Source/Client/Transfer+FSK.mm"
+                  timestampString = "418631570.926239"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
+                  offsetFromSymbolStart = "2380">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Transfer(FSK) onDecodeCompleted:andKsn:andencTracks:andTrack1Length:andTrack2Length:andTrack3Length:andRandomNumber:andMaskedPAN:andExpiryDate:andCardHolderName:]"
+                  moduleName = "&#20248;&#20048;&#36890;"
+                  urlString = "file:///Users/liaojia/Desktop/iosPros/YLTiPhone/YLTiPhone/Source/Client/Transfer+FSK.mm"
+                  timestampString = "418631570.926509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
+                  offsetFromSymbolStart = "2460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Client/Transfer.m"
+            timestampString = "418619252.867257"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "406"
+            endingLineNumber = "406"
+            landmarkName = "-DataTOjsonString:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Controller/SalesSlipDetailViewController.m"
+            timestampString = "418633275.264141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

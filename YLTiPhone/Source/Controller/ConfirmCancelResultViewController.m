@@ -36,7 +36,7 @@
     // TODO 下面的delegate做何用
     // self.navigationController.delegate = self;
     //
-    self.title = @"交易成功";
+    self.title = @"收款";
     
     [self.navigationItem setHidesBackButton:YES]; //隐藏返回按纽
     
@@ -60,7 +60,7 @@
     [scrollView addSubview:errorLabel];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 205 +(iPhone5?18:0), 297, 42)];
+    [confirmButton setFrame:CGRectMake(10, 190 +(iPhone5?18:0), 297, 42)];
     if (ApplicationDelegate.printVersion) {
         [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     } else {
