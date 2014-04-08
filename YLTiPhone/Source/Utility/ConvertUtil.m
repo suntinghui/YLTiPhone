@@ -658,6 +658,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return hexString ;
 }
 
+
 // 十六进制转换为普通字符串的。
 + (NSString *)stringFromHexString:(NSString *)hexString { //
     
@@ -677,8 +678,9 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     
 }
 
-+ (NSString *)replaceUnicode:(NSString *)unicodeStr {
 
++ (NSString *)replaceUnicode:(NSString *)unicodeStr
+{
     
     NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u" withString:@"\\U"];
     NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
@@ -691,7 +693,8 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
                                                                      format:NULL
                                                            errorDescription:NULL];
     
-    //NSLog(@"Output = %@", returnStr);
+
+    NSLog(@"Output = %@", returnStr);
     
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
 }

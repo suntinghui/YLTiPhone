@@ -5,44 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B756BBEC-A94E-4E26-9DB2-2BF3A2B7D3C7</string>
+	<string>9134CED4-4EA1-45F8-89CF-13E123957371</string>
 	<key>IDESourceControlProjectName</key>
 	<string>YLTiPhone</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1AF27E54-5899-4ED2-A9D0-D067B1AB38EE</key>
-		<string>ssh://github.com/suntinghui/YLTiPhone.git</string>
+		<key>EE7DF77B-C86F-4192-9C2F-68B971FCA7C6</key>
+		<string>https://github.com/suntinghui/YLTiPhone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>YLTiPhone.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1AF27E54-5899-4ED2-A9D0-D067B1AB38EE</key>
+		<key>EE7DF77B-C86F-4192-9C2F-68B971FCA7C6</key>
 		<string>../..</string>
-		<key>66E27907-2E47-4EFC-A5D4-950576441DED</key>
-		<string>../../YLTiPhone</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/suntinghui/YLTiPhone.git</string>
+	<string>https://github.com/suntinghui/YLTiPhone.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1AF27E54-5899-4ED2-A9D0-D067B1AB38EE</string>
+	<string>EE7DF77B-C86F-4192-9C2F-68B971FCA7C6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1AF27E54-5899-4ED2-A9D0-D067B1AB38EE</string>
-			<key>IDESourceControlWCCName</key>
-			<string>YLTiPhone</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>66E27907-2E47-4EFC-A5D4-950576441DED</string>
+			<string>EE7DF77B-C86F-4192-9C2F-68B971FCA7C6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>YLTiPhone</string>
 		</dict>
