@@ -173,7 +173,7 @@
         [UserDefaults synchronize];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[[self.phoneNumTF contentTF] text] forKey:@"tel"];
-        [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"logpass"];//这个可以
+        [dic setObject:self.passwordTF.md5Value forKey:@"logpass"];//这个可以
 
         //[[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
         [[Transfer sharedTransfer] startTransfer:@"089016" fskCmd:nil paramDic:dic];
