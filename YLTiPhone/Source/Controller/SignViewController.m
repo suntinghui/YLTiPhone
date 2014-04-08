@@ -37,6 +37,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIDeviceOrientationLandscapeRight animated:YES];
+    CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
+    //设置旋转动画
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:duration];
+    //设置导航栏旋转
+    self.navigationController.navigationBar.frame = CGRectMake(-224, 224, 480, 32);
+    self.navigationController.navigationBar.transform = CGAffineTransformMakeRotation(M_PI*1.5);
+    //设置视图旋转
+    self.view.bounds = CGRectMake(0, -54, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.transform = CGAffineTransformMakeRotation(M_PI*1.5);
+    [UIView commitAnimations];
+    
     self.navigationItem.title = @"请您签名";
     
     UINavigationBar *navBar = self.navigationController.navigationBar;
@@ -73,7 +87,7 @@
     self.navigationItem.leftBarButtonItem = backButton;
     
     // 签名面板
-    self.signPanel = [[HandSignPanel alloc] initWithFrame:CGRectMake(0, 37, 480 + (iPhone5?88:0), 195) withText:[[Transfer sharedTransfer].receDic objectForKey:@"MD5"]];
+    self.signPanel = [[HandSignPanel alloc] initWithFrame:CGRectMake(0, 17, 480 + (iPhone5?88:0), 195) withText:[[Transfer sharedTransfer].receDic objectForKey:@"MD5"]];
     [self.view addSubview:self.signPanel];
     
     //    UIImageView *bottomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_bottom.png"]];
@@ -197,7 +211,6 @@
 {
     return UIInterfaceOrientationMaskLandscape;
 }
-
 // IOS6默认支持竖屏
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {

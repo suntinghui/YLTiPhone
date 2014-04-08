@@ -39,16 +39,16 @@
     self.navigationItem.title = @"签购单";
     self.hasTopView = YES;
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10+ios7_h, 320, VIEWHEIGHT+40)];
-    [self.scrollView setContentSize:CGSizeMake(320, 560)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20+ios7_h, 320, VIEWHEIGHT+40)];
+    [self.scrollView setContentSize:CGSizeMake(320, 640)];
     self.scrollView.showsVerticalScrollIndicator = false;
     [self.view addSubview:self.scrollView];
     
     self.bgImageView = [[UIImageView alloc] initWithImage:[self stretchImage:[UIImage imageNamed:@"salesslip.png"]]];
-    [self.bgImageView setFrame:CGRectMake(5, 10+ios7_h, 310, 540)];
+    [self.bgImageView setFrame:CGRectMake(5, 10+ios7_h, 310, 570)];
     [self.scrollView addSubview:self.bgImageView];
     
-    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 86, 54)];
+    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(32, 12, 86, 54)];
     [iv_logo setImage:[UIImage imageNamed:@"yinlian"]];
     [self.scrollView addSubview:iv_logo];
     
@@ -68,7 +68,7 @@
     //bg1
     UIImage *image1 = [UIImage imageNamed:@"textInput.png"];
     UIImageView *bgIV1 = [[UIImageView alloc] initWithImage:[self stretchImage:image1]];
-    [bgIV1 setFrame:CGRectMake(28, 10, 253, 100)];
+    [bgIV1 setFrame:CGRectMake(28, 60, 253, 100)];
     [self.bgImageView addSubview:bgIV1];
     
     UILabel *tmpNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, left_w, 30)];
@@ -104,7 +104,7 @@
     //bg2
     UIImage *image2 = [UIImage imageNamed:@"textInput.png"];
     UIImageView *bgIV2 = [[UIImageView alloc] initWithImage:[self stretchImage:image2]];
-    [bgIV2 setFrame:CGRectMake(28, 120, 253, 310)];
+    [bgIV2 setFrame:CGRectMake(28, 170, 253, 310)];
     [self.bgImageView addSubview:bgIV2];
     
     UILabel *tmpCardNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 70, 30)];
@@ -220,17 +220,18 @@
     [self setLabelStyle:commentLabel];
     [bgIV2 addSubview:commentLabel];
     
-    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 435, 253, 30)];
+    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 480, 253, 30)];
     [instructionLabel setTextColor:[UIColor grayColor]];
     [instructionLabel setBackgroundColor:[UIColor clearColor]];
     [instructionLabel setFont:[UIFont systemFontOfSize:15]];
     instructionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     instructionLabel.numberOfLines = 0;
+    instructionLabel.textAlignment = UITextAlignmentCenter;
     [instructionLabel setText:@"本人确认以上信息同意将其计入本卡账户"];
     [self.bgImageView addSubview:instructionLabel];
     
     self.gotoSignButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.gotoSignButton setFrame:CGRectMake(35, 485, 250, 40)];
+    [self.gotoSignButton setFrame:CGRectMake(35, 525, 250, 40)];
     [self.gotoSignButton setTitle:@"请持卡人签名" forState:UIControlStateNormal];
     [self.gotoSignButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.gotoSignButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -240,10 +241,10 @@
     [self.gotoSignButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
     [self.scrollView addSubview:self.gotoSignButton];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(35, 470, 250, 90)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(35, 488, 250, 90)];
     
     self.confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.confirmButton setFrame:CGRectMake(35, 575, 250, 40)];
+    [self.confirmButton setFrame:CGRectMake(35, 592, 250, 40)];
     [self.confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [self.confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -291,7 +292,7 @@
     
     [self.gotoSignButton removeFromSuperview];
     
-    [self.scrollView setContentSize:CGSizeMake(320, 650)];
+    [self.scrollView setContentSize:CGSizeMake(320, 660)];
     [self.bgImageView setFrame:CGRectMake(5, 0, 310, 640)];
     self.bgImageView = [[UIImageView alloc] initWithImage:[self stretchImage:[UIImage imageNamed:@"salesslip.png"]]];
     [self.imageView setImage:obj];
