@@ -73,13 +73,9 @@
 
 + (NSString*) data2HexString:(NSData *) data;
 
-<<<<<<< HEAD
 // 十六进制转换为普通字符串的。
-+ (NSString *)stringFromHexString:(NSString *)hexString ;
++ (NSString *)stringFromHexString:(NSString *)hexString;
 
-+ (NSString *)replaceUnicode:(NSString *)unicodeStr;
-=======
-+ (NSString *)replaceUnicode:(NSString *)unicodeStr;
++ (NSString *) GBKToUTF8:(NSString *) str;
 
->>>>>>> 27d6696876fe54c75db05e00d22886f6d0a11c96
 @end
