@@ -76,12 +76,6 @@
 // 十六进制转换为普通字符串的。
 + (NSString *)stringFromHexString:(NSString *)hexString;
 
-<<<<<<< HEAD
 + (NSString *) GBKToUTF8:(NSString *) str;
 
-=======
-+ (NSString *)replaceUnicode:(NSString *)unicodeStr;
-
-
->>>>>>> 078f4359f9f62e30c7724f04ef70fff050858a9f
 @end
