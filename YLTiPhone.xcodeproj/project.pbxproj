@@ -402,6 +402,7 @@
 		8D56565E18E950D200CBC002 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D56565D18E950D200CBC002 /* Default-568h@2x.png */; };
 		8D56566018E9517A00CBC002 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D56565F18E9517A00CBC002 /* Default@2x.png */; };
 		8D56ACE718DD88930082E444 /* catalog_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8D56ACE618DD88930082E444 /* catalog_aishua.xml */; };
+		8D56BC2418F57E7300E49E0B /* MerchantQueryBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D56BC2318F57E7300E49E0B /* MerchantQueryBalanceViewController.m */; };
 		8D78DA7B18E91FE900072BBB /* QueryBalancePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */; };
 		8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D801CA318EBA3F800CEE39B /* beginguide03.png */; };
 		8D801CA918EBA3F800CEE39B /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D801CA418EBA3F800CEE39B /* beginguide04.png */; };
@@ -975,6 +976,8 @@
 		8D56565D18E950D200CBC002 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8D56565F18E9517A00CBC002 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8D56ACE618DD88930082E444 /* catalog_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = catalog_aishua.xml; sourceTree = "<group>"; };
+		8D56BC2218F57E7300E49E0B /* MerchantQueryBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantQueryBalanceViewController.h; sourceTree = "<group>"; };
+		8D56BC2318F57E7300E49E0B /* MerchantQueryBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantQueryBalanceViewController.m; sourceTree = "<group>"; };
 		8D78DA7918E91FE900072BBB /* QueryBalancePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryBalancePwdViewController.h; sourceTree = "<group>"; };
 		8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryBalancePwdViewController.m; sourceTree = "<group>"; };
 		8D801CA318EBA3F800CEE39B /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
@@ -1201,6 +1204,8 @@
 				FC712CFD18ED08BA00094BF8 /* BeginGuideViewController.m */,
 				0537AE6018583DB3005F84D1 /* CatalogViewController.h */,
 				0537AE6118583DB3005F84D1 /* CatalogViewController.m */,
+				8D56BC2218F57E7300E49E0B /* MerchantQueryBalanceViewController.h */,
+				8D56BC2318F57E7300E49E0B /* MerchantQueryBalanceViewController.m */,
 				05578CD2186ABC9200475B9C /* ComplementRegisterInfoViewController.h */,
 				05578CD3186ABC9200475B9C /* ComplementRegisterInfoViewController.m */,
 				8DAF435618E2EE87001D0195 /* ComplementRegisterModifyController.h */,
@@ -2357,6 +2362,7 @@
 				0537AF0A18583F05005F84D1 /* RechargeModel.m in Sources */,
 				0537AF0B18583F05005F84D1 /* CatalogModel.m in Sources */,
 				B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */,
+				8D56BC2418F57E7300E49E0B /* MerchantQueryBalanceViewController.m in Sources */,
 				0537AF0C18583F05005F84D1 /* AnnouncementModel.m in Sources */,
 				6CB1F38818EFF104009E2287 /* DDAbstractDatabaseLogger.m in Sources */,
 				0537AF0D18583F05005F84D1 /* TradeDetail.m in Sources */,
@@ -2504,11 +2510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
-<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
-=======
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
->>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2520,11 +2522,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-<<<<<<< HEAD
 				PROVISIONING_PROFILE = "5FA921B5-814E-463C-8053-A23D60A21B9E";
-=======
-				PROVISIONING_PROFILE = "16F0557F-C69E-4483-A1E4-69A594338C7A";
->>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2534,11 +2532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
-<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
-=======
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
->>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2550,11 +2544,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-<<<<<<< HEAD
 				PROVISIONING_PROFILE = "5FA921B5-814E-463C-8053-A23D60A21B9E";
-=======
-				PROVISIONING_PROFILE = "16F0557F-C69E-4483-A1E4-69A594338C7A";
->>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};

@@ -12,8 +12,7 @@
 	<field key="field42" value="__VENDOR"  />
 	<field key="field49" value="156" />
 	<field key="field60" value="00#__BATCHNUM#003000"/>
-	<field key="field62" value="__RANDROM" />
+	<field key="field62" value="__RANDROMSTR" />
 	<field key="field63" value="__PHONENUM#__pwd"/>
 	<field key="field64" value="00000000" />
-    
 </root>

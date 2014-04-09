@@ -30,6 +30,7 @@
 #import "QueryBalancePwdViewController.h"
 #import "BeginGuideViewController.h"
 #import "AppDataCenter.h"
+#import "MerchantQueryBalanceViewController.h"
 #define kSCNavBarImageTag 10
 
 @interface CatalogViewController ()
@@ -435,7 +436,7 @@
 //                [alertView show];
 //                return;
 //            }
-            QueryBalancePwdViewController *vc = [[QueryBalancePwdViewController alloc] init];
+            MerchantQueryBalanceViewController *vc = [[MerchantQueryBalanceViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
