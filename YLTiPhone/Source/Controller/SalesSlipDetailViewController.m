@@ -39,7 +39,7 @@
     self.navigationItem.title = @"签购单";
     self.hasTopView = YES;
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20+ios7_h, 320, VIEWHEIGHT+40)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, 320, VIEWHEIGHT+40)];
     [self.scrollView setContentSize:CGSizeMake(320, 640)];
     self.scrollView.showsVerticalScrollIndicator = false;
     [self.view addSubview:self.scrollView];
@@ -48,18 +48,18 @@
     [self.bgImageView setFrame:CGRectMake(5, 10+ios7_h, 310, 570)];
     [self.scrollView addSubview:self.bgImageView];
     
-    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(32, 12, 86, 54)];
+    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(32, 12+ios7_h, 86, 54)];
     [iv_logo setImage:[UIImage imageNamed:@"yinlian"]];
     [self.scrollView addSubview:iv_logo];
     
-    UILabel *label_sign = [[UILabel alloc] initWithFrame:CGRectMake(110, 10, 100, 40)];
+    UILabel *label_sign = [[UILabel alloc] initWithFrame:CGRectMake(110, 10+ios7_h, 100, 40)];
     [label_sign setBackgroundColor:[UIColor clearColor]];
     [label_sign setText:@"签购单"];
     [label_sign setTextAlignment:NSTextAlignmentCenter];
     [label_sign setFont:[UIFont boldSystemFontOfSize:17]];
     [self.scrollView addSubview:label_sign];
     
-    UILabel *label_right = [[UILabel alloc] initWithFrame:CGRectMake(200, 30, 100, 40)];
+    UILabel *label_right = [[UILabel alloc] initWithFrame:CGRectMake(200, 30+ios7_h, 100, 40)];
     [label_right setBackgroundColor:[UIColor clearColor]];
     [label_right setText:@"持卡人存根"];
     [label_right setFont:[UIFont systemFontOfSize:14]];
@@ -231,7 +231,7 @@
     [self.bgImageView addSubview:instructionLabel];
     
     self.gotoSignButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.gotoSignButton setFrame:CGRectMake(35, 525, 250, 40)];
+    [self.gotoSignButton setFrame:CGRectMake(35, 525+ios7_h, 250, 40)];
     [self.gotoSignButton setTitle:@"请持卡人签名" forState:UIControlStateNormal];
     [self.gotoSignButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.gotoSignButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
