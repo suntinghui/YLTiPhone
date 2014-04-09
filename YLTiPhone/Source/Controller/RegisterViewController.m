@@ -39,23 +39,23 @@
 //    self.hasTopView = true;
     
     //手机号码
-    self.phoneNumTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) leftImage:@"phoneNum.png" leftImageFrame:CGRectMake(15, 10, 20, 20) prompt:@"手机号码" keyBoardType:UIKeyboardTypePhonePad];
+    self.phoneNumTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 30, 300, 44) leftImage:@"phoneNum.png" leftImageFrame:CGRectMake(15, 10, 20, 20) prompt:@"手机号码" keyBoardType:UIKeyboardTypePhonePad];
     self.phoneNumTF.contentTF.delegate = self;
     [self.phoneNumTF.contentTF hideKeyBoard:self.view:3 hasNavBar:YES];
     [self.view addSubview:self.phoneNumTF];
     
-    self.passwordTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 110, 300, 44) left:@"" prompt:@"新密码"];
+    self.passwordTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 90, 300, 44) left:@"" prompt:@"新密码"];
     [self.view addSubview:self.passwordTF];
     
-    self.confirmPasswordTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 170, 300, 44) left:@"" prompt:@"确认新密码"];
+    self.confirmPasswordTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 150, 300, 44) left:@"" prompt:@"确认新密码"];
     [self.view addSubview:self.confirmPasswordTF];
     
     //短信校验码输入框背景
-    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 230, 150, 44)];
+    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 210, 150, 44)];
     [textFieldImage1 setImage:[UIImage imageNamed:@"textInput.png"]];
     [self.view addSubview:textFieldImage1];
     
-    self.securityCodeTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 230, 150, 44) isLong:FALSE];
+    self.securityCodeTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 210, 150, 44) isLong:FALSE];
     [self.securityCodeTF.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
     [self.securityCodeTF.contentTF setPlaceholder:@"短信校验码"];
     [self.securityCodeTF.contentTF setFont:[UIFont systemFontOfSize:15]];
@@ -64,7 +64,7 @@
     [self.view addSubview:self.securityCodeTF];
     
     securityCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [securityCodeButton setFrame:CGRectMake(175, 230, 130, 44)];
+    [securityCodeButton setFrame:CGRectMake(175, 210, 130, 44)];
     [securityCodeButton setTitle:@"获取短信校验码" forState:UIControlStateNormal];
     [securityCodeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     securityCodeButton.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -76,19 +76,19 @@
     //记住密码复选框
     agreeButtonTouch = NO;
     UIButton *agreeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [agreeButton setFrame:CGRectMake(15, 290, 20, 20)];
+    [agreeButton setFrame:CGRectMake(15, 270, 20, 20)];
     [agreeButton setBackgroundImage:[UIImage imageNamed:@"btn_comment_sametime_unselect.png"] forState:UIControlStateNormal];
     [agreeButton addTarget:self action:@selector(agreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:agreeButton];
     
-    UILabel *agreeLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 285, 170, 30)];
+    UILabel *agreeLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 265, 170, 30)];
     agreeLabel.backgroundColor = [UIColor clearColor];
     agreeLabel.font = [UIFont systemFontOfSize:15.0f];
     agreeLabel.text = @"同意《优乐通服务协议》";
     [self.view addSubview:agreeLabel];
     
     UIButton *serviceDelegateButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [serviceDelegateButton setFrame:CGRectMake(220, 285, 100, 30)];
+    [serviceDelegateButton setFrame:CGRectMake(220, 265, 100, 30)];
     [serviceDelegateButton setTitle:@"服务协议" forState:UIControlStateNormal];
     [serviceDelegateButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     serviceDelegateButton.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -96,7 +96,7 @@
     [self.view addSubview:serviceDelegateButton];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 350, 297, 42)];
+    [confirmButton setFrame:CGRectMake(10, 330, 297, 42)];
     [confirmButton setTitle:@"立即注册" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];

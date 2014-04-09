@@ -44,12 +44,17 @@
     _bankDic = [[NSMutableDictionary alloc] init];
     _items = [[NSMutableArray alloc] init];
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 140+ ios7_h, 300, VIEWHEIGHT-110) style:UITableViewStyleGrouped];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 140, 300, VIEWHEIGHT-110) style:UITableViewStyleGrouped];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     [self.myTableView setBackgroundColor:[UIColor clearColor]];
     self.myTableView.backgroundView = nil;
     [self.view addSubview:self.myTableView];
+
+    if (DeviceVersion>=7){
+        self.myTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.myTableView.bounds.size.width, 0.01f)];
+    }
     
     UIView *footView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 35)];
     footView.backgroundColor = [UIColor clearColor];
@@ -68,12 +73,12 @@
     [footView addSubview:moreButton];
     self.myTableView.tableFooterView = footView;
     
-    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(8, 50+ios7_h, 200, 35)];
+    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(8, 70, 200, 35)];
     [textFieldImage1 setImage:[UIImage imageNamed:@"textInput.png"]];
     [self.view addSubview:textFieldImage1];
     
     //搜索
-    self.searchTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 100+ios7_h, 200, 35) isLong:true];
+    self.searchTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 70, 200, 35) isLong:true];
     [self.searchTF.contentTF setPlaceholder:@"输入关键字"];
     self.searchTF.contentTF.delegate = self;
     [self.searchTF.contentTF setFont:[UIFont systemFontOfSize:15]];
@@ -84,7 +89,7 @@
    
     
     UIButton *selectBankButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [selectBankButton setFrame:CGRectMake(230, 100+ios7_h, 80, 35)];
+    [selectBankButton setFrame:CGRectMake(230, 70, 80, 35)];
     [selectBankButton setTitle:@"搜索" forState:UIControlStateNormal];
     [selectBankButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     selectBankButton.titleLabel.font = [UIFont systemFontOfSize:18];
@@ -93,7 +98,7 @@
     [selectBankButton setBackgroundImage:[UIImage imageNamed:@"selectBank_highlight.png"] forState:UIControlStateSelected];
     [selectBankButton setBackgroundImage:[UIImage imageNamed:@"selectBank_highlight.png"] forState:UIControlStateHighlighted];
     [self.view addSubview:selectBankButton];
-
+    
     
     //说是从第一页开始
     pageCurrent = 1;
@@ -104,6 +109,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
 }
 
 - (void)requestAction
@@ -155,8 +164,6 @@
         [ApplicationDelegate showErrorPrompt:@"无更多信息"];
     }
 }
-
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

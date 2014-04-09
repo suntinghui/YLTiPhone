@@ -43,12 +43,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIColor whiteColor],
+                                NSForegroundColorAttributeName,[UIFont boldSystemFontOfSize:22],NSFontAttributeName, [UIColor colorWithWhite:0.0 alpha:0.0], NSBackgroundColorAttributeName, nil];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     self.navigationItem.title = @"登  录";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"loginshade-5.png"]];
     self.navigationItem.hidesBackButton = YES;
     
+
     UIView *loginView = [[UIView alloc] init];
     
     loginView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height );
