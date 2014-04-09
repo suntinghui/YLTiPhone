@@ -9,6 +9,7 @@
 #import "FieldParserInfo.h"
 #import "FieldType.h"
 #import "ConvertUtil.h"
+#import "Util/Util.h"
 
 @implementation FieldParserInfo
 
@@ -77,7 +78,8 @@
         } else { // 其他域
             if ([type isEqualToString:[FieldType fieldTypeEnumToString:ALPHA]]) {
                 NSData *tempData = [respData subdataWithRange:NSMakeRange(postion, self.length)];
-                value = [[NSString alloc] initWithData:tempData encoding:NSASCIIStringEncoding];
+                //value = [[NSString alloc] initWithData:tempData encoding:NSASCIIStringEncoding];
+                value = [[NSString alloc] initWithData:tempData encoding:GBKENC];
                 
             } else if ([type isEqualToString:[FieldType fieldTypeEnumToString:NUMERIC]]) {
                 NSData *tempData = [respData subdataWithRange:NSMakeRange(postion, self.length%2==0?self.length/2:(self.length/2+self.length%2))];
@@ -93,7 +95,7 @@
                 self.length = len;
                 
                 NSData *tempData = [respData subdataWithRange:NSMakeRange(postion+1, self.length)];
-                value = [[NSString alloc] initWithData:tempData encoding:NSASCIIStringEncoding];
+                value = [[NSString alloc] initWithData:tempData encoding:GBKENC];
                 
             } else if ([type isEqualToString:[FieldType fieldTypeEnumToString:LLLVAR]]) {
                 NSData *lenData = [respData subdataWithRange:NSMakeRange(postion, 2)];
@@ -106,7 +108,7 @@
                     value = [ConvertUtil byteToHex:tempData];
                 } else {
                     NSData *tempData = [respData subdataWithRange:NSMakeRange(postion+2, self.length)];
-                    value = [[NSString alloc] initWithData:tempData encoding:NSASCIIStringEncoding];
+                    value = [[NSString alloc] initWithData:tempData encoding:GBKENC];
                 }
             } else if ([type isEqualToString:[FieldType fieldTypeEnumToString:LLNVAR]]) {
                 NSData *lenData = [respData subdataWithRange:NSMakeRange(postion, 1)];

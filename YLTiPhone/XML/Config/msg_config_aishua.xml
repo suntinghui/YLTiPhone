@@ -172,6 +172,7 @@
 		<field id="60" datatype="LLLNVAR" /> 
 		<!-- 当39域为“00”时必选，为24字节的PIK和MAK -->
 		<field id="62" datatype="LLLVAR" />
+        <field id="63" datatype="LLLVAR"/> 
 	</parseinfo>
 
 	<parseinfo msgtypeid="0800">

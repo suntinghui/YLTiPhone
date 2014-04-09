@@ -228,17 +228,14 @@
     //    return UIInterfaceOrientationMaskLandscapeLeft;
     return UIInterfaceOrientationMaskLandscapeRight;
 }
-<<<<<<< HEAD
 
 - (BOOL) shouldAutorotate {
     return YES;
 }
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-=======
+
 // IOS6默认支持竖屏
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
->>>>>>> 2e9c60723df37b4c5187337cb04c2fc9f1cb6693
     return UIInterfaceOrientationLandscapeRight;
     //    return UIInterfaceOrientationPortrait;
 }

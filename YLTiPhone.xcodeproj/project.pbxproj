@@ -2504,7 +2504,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2516,7 +2520,11 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "5FA921B5-814E-463C-8053-A23D60A21B9E";
+=======
+				PROVISIONING_PROFILE = "16F0557F-C69E-4483-A1E4-69A594338C7A";
+>>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2526,7 +2534,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2538,7 +2550,11 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "5FA921B5-814E-463C-8053-A23D60A21B9E";
+=======
+				PROVISIONING_PROFILE = "16F0557F-C69E-4483-A1E4-69A594338C7A";
+>>>>>>> 2baa2d82970a426bf372b2aa62f136eeb1475a88
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};

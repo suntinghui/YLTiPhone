@@ -1,6 +1,8 @@
 #ifndef _UTIL_H
 #define _UTIL_H
 
+#define GBKENC (CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000))
+
 #define char2num(in) ((in > '9') ? (in - 'A' + 10) : (in - '0'))
 	
 typedef unsigned char u8;

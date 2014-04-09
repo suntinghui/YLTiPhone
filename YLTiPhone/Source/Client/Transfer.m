@@ -726,10 +726,7 @@ static Transfer *instance = nil;
     }else if ([field39 isEqualToString:@"A1"]) {
         str_error = @"A1";
     }else if([field39 caseInsensitiveCompare:@"xx"] == NSOrderedSame){
-        NSData *data = [_receDic objectForKey:@"field63"];
-        NSString *tmp_str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"-----%@", [NSString stringWithFormat:@"%@", [_receDic objectForKey:@"field63"]]);
-        str_error = [_receDic objectForKey:@"field63"] != NULL ? [_receDic objectForKey:@"field63"] :@"";
+        str_error = [_receDic objectForKey:@"field63"];
     }else {
         int field = [[NSString stringWithFormat:@"%@",field39] intValue];
         switch (field) {
