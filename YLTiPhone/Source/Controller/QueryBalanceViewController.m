@@ -70,7 +70,7 @@
     explainLabel.lineBreakMode = NSLineBreakByWordWrapping;
     explainLabel.numberOfLines = 0;
     
-    explainLabel.text = @"使用说明\n1、您可以查到银行卡余额信息\n2、银行卡余额信息将显示到刷卡器上";
+    explainLabel.text = @"使用说明\n1、您可以查到银行卡余额信息";
     [explainIV addSubview:explainLabel];
 }
 
