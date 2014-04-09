@@ -16,7 +16,9 @@
 #define CELL_CONTENT_WIDTH 240.0f
 #define CELL_CONTENT_MARGIN 10.0f
 
-@interface AnnouncementListViewController ()
+@interface AnnouncementListViewController (){
+    NSIndexPath *selectedCellIndexPath;
+}
 
 @end
 
@@ -105,30 +107,59 @@
         AnnouncementModel *model = [self.announcementList objectAtIndex:indexPath.section];
         CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
         
-        cell.titleLabel.text = [NSString stringWithFormat:@"%@",model.notice_title];
         CGSize titlesize = [model.notice_title sizeWithFont:[UIFont systemFontOfSize:TITLE_FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
         NSLog(@"%f",titlesize.height);
-        cell.titleLabel.frame = CGRectMake(10, 5, 280, titlesize.height);
-        
-        cell.contentLabel.text = model.notice_content;
-        CGSize size = [model.notice_content sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
-        cell.contentLabel.frame = CGRectMake(10, 35, 275, size.height);
-        
-        cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",[DateUtil formatDateString:model.notice_date],[DateUtil formatTimeString:model.notice_time]];
-        cell.dateLabel.frame = CGRectMake(140, size.height-30, 150, 30);
+        cell.titleLabel.frame = CGRectMake(10+ios7_x, 5, 280, titlesize.height);
+        if (selectedCellIndexPath != nil&&[selectedCellIndexPath compare:indexPath] == NSOrderedSame) {
+            cell.titleLabel.text = [NSString stringWithFormat:@"%@",model.notice_title];
+            cell.contentLabel.text = model.notice_content;
+            CGSize size = [model.notice_content sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+            cell.contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.contentLabel.numberOfLines = 0;
+            cell.contentLabel.frame = CGRectMake(10+ios7_x, 35, 275, size.height);
+            
+            cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",[DateUtil formatDateString:model.notice_date],[DateUtil formatTimeString:model.notice_time]];
+            cell.dateLabel.frame = CGRectMake(140, size.height+titlesize.height, 150, 30);
+        }
+        else{
+            cell.titleLabel.text = [NSString stringWithFormat:@"<<<%@",model.notice_title];
+            cell.contentLabel.text = model.notice_content;
+            cell.contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+            cell.contentLabel.numberOfLines = 3;
+            cell.contentLabel.frame = CGRectMake(10+ios7_x, 35, 275, 90);
+            
+            cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",[DateUtil formatDateString:model.notice_date],[DateUtil formatTimeString:model.notice_time]];
+            cell.dateLabel.frame = CGRectMake(140, 90+titlesize.height, 150, 30);
+        }
+
     }
     return cell;
 }
 
 //动态判断cell高度
--(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AnnouncementModel *model = [self.announcementList objectAtIndex:indexPath.section];
     CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
-    CGSize size = [model.notice_content sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
-//    [cell setFrame:CGRectMake(90, CELL_CONTENT_MARGIN, CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2)-30, MAX(size.height, 44.0f))];
-    CGFloat height = MAX(size.height, 44.0f);
+    
+    CGSize titlesize = [model.notice_title sizeWithFont:[UIFont systemFontOfSize:TITLE_FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+    //    [cell setFrame:CGRectMake(90, CELL_CONTENT_MARGIN, CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2)-30, MAX(size.height, 44.0f))];
+    if (selectedCellIndexPath != nil&&[selectedCellIndexPath compare:indexPath] == NSOrderedSame) {
+        CGSize size = [model.notice_content sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+        CGFloat height = MAX(size.height+titlesize.height+30, 44.0f);
+        return height;
+    }
+    CGFloat height = MAX(titlesize.height+90+30, 44.0f);
     return height;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    selectedCellIndexPath = indexPath;
+    
+    // Forces the table view to callheightForRowAtIndexPath
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]withRowAnimation:UITableViewRowAnimationNone];
+}
+
 
 @end

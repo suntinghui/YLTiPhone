@@ -259,6 +259,10 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+}
+
 -(IBAction)confirmButtonAction:(id)sender
 {
     [[Transfer sharedTransfer].receDic setObject:[self getMD5Value] forKey:@"MD5"];
