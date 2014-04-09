@@ -7,7 +7,6 @@
 //
 
 #import "AboutSystemViewController.h"
-#import "UIDevice+Resolutions.h"
 
 @interface AboutSystemViewController ()
 
@@ -29,7 +28,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"关于系统";
-    
     self.hasTopView = true;
     
     UIImageView *aboutSystemBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"aboutSystemBg.png"]];
@@ -37,7 +35,7 @@
     [self.view addSubview:aboutSystemBg];
     
     
-    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 380+([UIDevice isRunningOniPhone5] ? 88:0), 100, 30)];
+    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 380, 100, 30)];
     versionLabel.backgroundColor = [UIColor clearColor];
     versionLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     versionLabel.text = @"V1.0.0";

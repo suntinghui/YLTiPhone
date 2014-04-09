@@ -25,7 +25,6 @@
 #define VIEWHEIGHT                          [UIScreen mainScreen].bounds.size.height - 105
 
 #define ios7_h                              (DeviceVersion>=7 ? -50:0)
-#define ios7_x                              (DeviceVersion>=7 ? 10:0)
 //判断设备是否是iPhone5
 #define iPhone5                             ([UIScreen instancesRespondToSelector:@selector (currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136),[[UIScreen mainScreen] currentMode].size) : NO)
 

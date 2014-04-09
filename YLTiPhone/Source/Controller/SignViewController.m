@@ -44,7 +44,7 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:duration];
     //设置导航栏旋转
-    self.navigationController.navigationBar.frame = CGRectMake(-224, 224+ios7_h, 480, 32);
+    self.navigationController.navigationBar.frame = CGRectMake(-224, 224, 480, 32);
     self.navigationController.navigationBar.transform = CGAffineTransformMakeRotation(M_PI*1.5);
     //设置视图旋转
     self.view.bounds = CGRectMake(0, -54, self.view.frame.size.width, self.view.frame.size.height);

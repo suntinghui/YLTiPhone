@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"签到";
     self.hasTopView = true;
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, 320, VIEWHEIGHT)];
     [scrollView setContentSize:CGSizeMake(320, VIEWHEIGHT)];
     scrollView.showsVerticalScrollIndicator = false;

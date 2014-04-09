@@ -39,21 +39,21 @@
     self.navigationItem.title = @"修改登录密码";
     
     self.hasTopView = true;
-    self.originalPwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 70, 300, 44) left:@"" prompt:@"请输入原登录密码"];
+    self.originalPwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 100+ios7_h, 300, 44) left:@"" prompt:@"请输入原登录密码"];
     [self.view addSubview:self.originalPwdTF];
     
-    self.freshPwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 130, 300, 44) left:@"" prompt:@"请输入6位登录密码"];
+    self.freshPwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 160+ios7_h, 300, 44) left:@"" prompt:@"请输入6位登录密码"];
     [self.view addSubview:self.freshPwdTF];
     
-    self.confirmPwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 190, 300, 44) left:@"" prompt:@"请再次输入登录密码"];
+    self.confirmPwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 220+ios7_h, 300, 44) left:@"" prompt:@"请再次输入登录密码"];
     [self.view addSubview:self.confirmPwdTF];
     
     //短信校验码输入框背景
-    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 250, 150, 44)];
+    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 280+ios7_h, 150, 44)];
     [textFieldImage1 setImage:[UIImage imageNamed:@"textInput.png"]];
     [self.view addSubview:textFieldImage1];
     
-    self.securityCodeTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 250, 150, 44) isLong:FALSE];
+    self.securityCodeTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 280+ios7_h, 150, 44) isLong:FALSE];
     [self.securityCodeTF.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
     [self.securityCodeTF.contentTF setPlaceholder:@"短信校验码"];
     [self.securityCodeTF.contentTF setFont:[UIFont systemFontOfSize:15]];
@@ -62,7 +62,7 @@
     [self.view addSubview:self.securityCodeTF];
     
     securityCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [securityCodeButton setFrame:CGRectMake(175, 250, 130, 44)];
+    [securityCodeButton setFrame:CGRectMake(175, 280+ios7_h, 130, 44)];
     [securityCodeButton setTitle:@"获取短信校验码" forState:UIControlStateNormal];
     [securityCodeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     securityCodeButton.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -72,7 +72,7 @@
     
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 320, 297, 42)];
+    [confirmButton setFrame:CGRectMake(10, 350+ios7_h, 297, 42)];
     [confirmButton setTitle:@"确    定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];

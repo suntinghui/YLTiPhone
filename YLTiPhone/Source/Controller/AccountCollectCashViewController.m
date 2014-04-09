@@ -41,7 +41,7 @@
     self.navigationItem.title = @"账户提现";
     self.hasTopView = YES;
     
-    scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40+ios7_h, 320, 480)];
+    scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [scroll setContentSize:CGSizeMake(320, 550)];
     [self.view addSubview:scroll];
     

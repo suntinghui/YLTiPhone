@@ -40,36 +40,36 @@
     self.hasTopView = true;
     
     //手机号码
-    self.phoneNumTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 70, 300, 44) leftImage:@"phoneNum.png" leftImageFrame:CGRectMake(15, 10, 20, 20) prompt:@"手机号码" keyBoardType:UIKeyboardTypePhonePad];
+    self.phoneNumTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 100+ios7_h, 300, 44) leftImage:@"phoneNum.png" leftImageFrame:CGRectMake(15, 10, 20, 20) prompt:@"手机号码" keyBoardType:UIKeyboardTypePhonePad];
     self.phoneNumTF.contentTF.delegate = self;
     [self.phoneNumTF.contentTF hideKeyBoard:self.view:3 hasNavBar:YES];
     [self.view addSubview:self.phoneNumTF];
     
-    UILabel *userInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 124, 200, 40)];
+    UILabel *userInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 154+ios7_h, 200, 40)];
     userInfoLabel.text = @"用户信息";
     userInfoLabel.backgroundColor = [UIColor clearColor];
     userInfoLabel.font = [UIFont systemFontOfSize:17.0f];
     [self.view addSubview:userInfoLabel];
     
     //真实姓名
-    self.realNameTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 175, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 15, 19, 22) prompt:@"真实姓名" keyBoardType:UIKeyboardTypeDefault];
+    self.realNameTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 205+ios7_h, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 15, 19, 22) prompt:@"真实姓名" keyBoardType:UIKeyboardTypeDefault];
     self.realNameTF.contentTF.delegate = self;
     [self.realNameTF.contentTF hideKeyBoard:self.view:3 hasNavBar:YES];
     [self.view addSubview:self.realNameTF];
     
     //身份证号码
-    self.cardIDTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 225, 300, 44) leftImage:@"cardID.png" leftImageFrame:CGRectMake(15, 15, 23, 15) prompt:@"身份证号码" keyBoardType:UIKeyboardTypeDefault];
+    self.cardIDTF = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 255+ios7_h, 300, 44) leftImage:@"cardID.png" leftImageFrame:CGRectMake(15, 15, 23, 15) prompt:@"身份证号码" keyBoardType:UIKeyboardTypeDefault];
     self.cardIDTF.contentTF.delegate = self;
     [self.cardIDTF.contentTF hideKeyBoard:self.view:3 hasNavBar:YES];
     [self.view addSubview:self.cardIDTF];
     
     
     //短信校验码输入框背景
-    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 280, 150, 44)];
+    UIImageView *textFieldImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 310+ios7_h, 150, 44)];
     [textFieldImage1 setImage:[UIImage imageNamed:@"textInput.png"]];
     [self.view addSubview:textFieldImage1];
     
-    self.securityCodeTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 280, 150, 44) isLong:FALSE];
+    self.securityCodeTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 310+ios7_h, 150, 44) isLong:FALSE];
     [self.securityCodeTF.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
     [self.securityCodeTF.contentTF setPlaceholder:@"短信校验码"];
     [self.securityCodeTF.contentTF setFont:[UIFont systemFontOfSize:15]];
@@ -78,7 +78,7 @@
     [self.view addSubview:self.securityCodeTF];
     
     securityCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [securityCodeButton setFrame:CGRectMake(175, 280, 130, 44)];
+    [securityCodeButton setFrame:CGRectMake(175, 260, 130, 44)];
     [securityCodeButton setTitle:@"获取短信校验码" forState:UIControlStateNormal];
     [securityCodeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     securityCodeButton.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -88,7 +88,7 @@
     
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 340, 297, 42)];
+    [confirmButton setFrame:CGRectMake(10, 370+ios7_h, 297, 42)];
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];

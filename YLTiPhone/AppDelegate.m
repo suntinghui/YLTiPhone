@@ -42,6 +42,7 @@
     //SalesSlipDetailViewController *loginViewController = [[SalesSlipDetailViewController alloc] initWithNibName:nil bundle:nil];
     self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     self.window.rootViewController = self.rootNavigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
