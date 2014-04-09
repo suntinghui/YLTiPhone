@@ -19,17 +19,20 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         //标题
-        titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 310, 25)];
+        titleLabel = [[UILabel alloc] init];
         [titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
         titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        titleLabel.numberOfLines = 0;
         //日期
         dateLabel = [[UILabel alloc] init];
         dateLabel.backgroundColor = [UIColor clearColor];
         [dateLabel setTextAlignment:NSTextAlignmentRight];
         [dateLabel setFont:[UIFont systemFontOfSize:15]];
         //内容
-//        contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, self.frame.size.width - 20, self.frame.size.height)];
+//        contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 52, self.frame.size.width - 20, self.frame.size.height)];
         contentLabel = [[UILabel alloc] init];
+        
         contentLabel.backgroundColor = [UIColor clearColor];
         [contentLabel setFont:[UIFont systemFontOfSize:15]];
         contentLabel.lineBreakMode = NSLineBreakByWordWrapping;

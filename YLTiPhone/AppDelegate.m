@@ -24,6 +24,8 @@
 #import "DDTTYLogger.h"
 #import "DDDispatchQueueLogFormatter.h"
 
+//#import "SalesSlipDetailViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -37,6 +39,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    //SalesSlipDetailViewController *loginViewController = [[SalesSlipDetailViewController alloc] initWithNibName:nil bundle:nil];
     self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     self.window.rootViewController = self.rootNavigationController;
     
@@ -91,6 +94,11 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
+
+//- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+//{
+//    return UIInterfaceOrientationMaskAll;
+//}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
