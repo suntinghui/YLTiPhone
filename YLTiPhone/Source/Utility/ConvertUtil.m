@@ -658,10 +658,6 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return hexString ;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 078f4359f9f62e30c7724f04ef70fff050858a9f
 // 十六进制转换为普通字符串的。
 + (NSString *)stringFromHexString:(NSString *)hexString { //
     
