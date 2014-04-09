@@ -658,6 +658,10 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return hexString ;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 078f4359f9f62e30c7724f04ef70fff050858a9f
 // 十六进制转换为普通字符串的。
 + (NSString *)stringFromHexString:(NSString *)hexString { //
     
@@ -678,9 +682,28 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 }
 
 
+<<<<<<< HEAD
 + (NSString *) GBKToUTF8:(NSString *) str
 {
     NSData *valueData = [ConvertUtil parseHexToByteArray:str];
+=======
++ (NSString *)replaceUnicode:(NSString *)unicodeStr
+{
+    
+    NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u" withString:@"\\U"];
+    NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString *tempStr3 = [[@"\"" stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
+
+    NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSData *tempData = [tempStr3 dataUsingEncoding:NSUnicodeStringEncoding];
+    NSString* returnStr = [NSPropertyListSerialization propertyListFromData:tempData
+                                                           mutabilityOption:NSPropertyListImmutable
+                                                                     format:NULL
+                                                           errorDescription:NULL];
+    
+
+    NSLog(@"Output = %@", returnStr);
+>>>>>>> 078f4359f9f62e30c7724f04ef70fff050858a9f
     
     NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
     NSString *result= [[NSString alloc] initWithData:valueData encoding:enc];
@@ -688,7 +711,10 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return result;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 078f4359f9f62e30c7724f04ef70fff050858a9f
 /*
  bool StrToBCD(const char *Src,char *Des,int iDesLen)
  

@@ -155,13 +155,31 @@
 {
     if ([self checkValue])
     {
-        //发送数据 走8583
-        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-        [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
-        [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
-        [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
-        //080002 商户提款
-        [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
+        if (ApplicationDelegate.isAishua)
+        {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+//            int randomNum = arc4random() % 89999 + 10000;
+//            这是一个五位数的随机数；
+            
+            int randomNum = arc4random() % 8999999999999999 + 1000000000000000;
+            [dic setObject:[NSString stringWithFormat:@"01%d",randomNum] forKey:@"RANDROMSTR"];
+            [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
+            [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+            //080002 商户提款
+            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
+        }
+        else
+        {
+            //发送数据 走8583
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
+            [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+            //080002 商户提款
+            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
+        }
+      
     }
 }
 @end

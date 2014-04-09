@@ -12,6 +12,7 @@
 #import "DateUtil.h"
 
 #define FONT_SIZE 15.0f
+#define TITLE_FONT_SIZE 16.0f
 #define CELL_CONTENT_WIDTH 240.0f
 #define CELL_CONTENT_MARGIN 10.0f
 
@@ -102,15 +103,19 @@
     if (self.announcementList && [self.announcementList count] != 0)
     {
         AnnouncementModel *model = [self.announcementList objectAtIndex:indexPath.section];
-        cell.titleLabel.text = [NSString stringWithFormat:@">>>%@",model.notice_title];
-        cell.contentLabel.text = model.notice_content;
-        cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",[DateUtil formatDateString:model.notice_date],[DateUtil formatTimeString:model.notice_time]];
-        
         CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
-        CGSize size = [model.notice_content sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
-        cell.contentLabel.frame = CGRectMake(10, 3, 300, size.height);
         
-        cell.dateLabel.frame = CGRectMake(150, size.height-30, 130, 30);
+        cell.titleLabel.text = [NSString stringWithFormat:@"%@",model.notice_title];
+        CGSize titlesize = [model.notice_title sizeWithFont:[UIFont systemFontOfSize:TITLE_FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+        NSLog(@"%f",titlesize.height);
+        cell.titleLabel.frame = CGRectMake(10, 5, 280, titlesize.height);
+        
+        cell.contentLabel.text = model.notice_content;
+        CGSize size = [model.notice_content sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
+        cell.contentLabel.frame = CGRectMake(10, 35, 275, size.height);
+        
+        cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",[DateUtil formatDateString:model.notice_date],[DateUtil formatTimeString:model.notice_time]];
+        cell.dateLabel.frame = CGRectMake(140, size.height-30, 150, 30);
     }
     return cell;
 }

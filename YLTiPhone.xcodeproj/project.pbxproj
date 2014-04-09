@@ -339,6 +339,9 @@
 		6CB1F38E18EFF104009E2287 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F38418EFF104009E2287 /* DDDispatchQueueLogFormatter.m */; };
 		6CB1F38F18EFF104009E2287 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F38618EFF104009E2287 /* DDMultiFormatter.m */; };
 		6CB1F39018EFF104009E2287 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1F38718EFF104009E2287 /* README.txt */; };
+		8D281C9218F2F8DF00457792 /* receipt_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D281C9018F2F8DF00457792 /* receipt_bg.png */; };
+		8D281C9318F2F8DF00457792 /* yinlian.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D281C9118F2F8DF00457792 /* yinlian.png */; };
+		8D281C9618F308F100457792 /* InputPwdQueryBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D281C9518F308F100457792 /* InputPwdQueryBalanceViewController.m */; };
 		8D32CA5118E7FB6B00633FEF /* icon_hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D32CA5018E7FB6B00633FEF /* icon_hand.png */; };
 		8D32CA5318E7FFCA00633FEF /* explain.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D32CA5218E7FFCA00633FEF /* explain.png */; };
 		8D3B939E18EA467B00A8C1CD /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B939C18EA467B00A8C1CD /* app.png */; };
@@ -908,6 +911,10 @@
 		6CB1F38518EFF104009E2287 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		6CB1F38618EFF104009E2287 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
 		6CB1F38718EFF104009E2287 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8D281C9018F2F8DF00457792 /* receipt_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = receipt_bg.png; sourceTree = "<group>"; };
+		8D281C9118F2F8DF00457792 /* yinlian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinlian.png; sourceTree = "<group>"; };
+		8D281C9418F308F100457792 /* InputPwdQueryBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPwdQueryBalanceViewController.h; sourceTree = "<group>"; };
+		8D281C9518F308F100457792 /* InputPwdQueryBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPwdQueryBalanceViewController.m; sourceTree = "<group>"; };
 		8D32CA5018E7FB6B00633FEF /* icon_hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hand.png; sourceTree = "<group>"; };
 		8D32CA5218E7FFCA00633FEF /* explain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explain.png; sourceTree = "<group>"; };
 		8D3B939C18EA467B00A8C1CD /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
@@ -1181,12 +1188,13 @@
 		0537AE5D18583DB3005F84D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B85A141C18E5AA6000804152 /* ReceviMony */,
-				B85598DA18DD795D00F4E883 /* SellerWithdra */,
 				0554B19F1871458E00C75DCD /* AboutSystemViewController.h */,
 				0554B1A01871458E00C75DCD /* AboutSystemViewController.m */,
 				0537AE5E18583DB3005F84D1 /* AbstractViewController.h */,
 				0537AE5F18583DB3005F84D1 /* AbstractViewController.m */,
+				8DE4E85318EFA662003F222E /* AgreementViewController.h */,
+				8DE4E85418EFA662003F222E /* AgreementViewController.m */,
+				8DE4E85518EFA662003F222E /* AgreementViewController.xib */,
 				0537AF7F185842AF005F84D1 /* AnnouncementListViewController.h */,
 				0537AF80185842B0005F84D1 /* AnnouncementListViewController.m */,
 				FC712CFC18ED08BA00094BF8 /* BeginGuideViewController.h */,
@@ -1201,10 +1209,10 @@
 				0537AF711858425A005F84D1 /* ConfirmCancelResultViewController.m */,
 				0554B19C1871417100C75DCD /* ConfirmCancelViewController.h */,
 				0554B19D1871417100C75DCD /* ConfirmCancelViewController.m */,
-				05582673186C13650002AE2E /* FindoutPaymentPwdViewController.h */,
-				05582674186C13650002AE2E /* FindoutPaymentPwdViewController.m */,
 				8DCB872018EABC930063CA78 /* FindLoginPwdViewController.h */,
 				8DCB872118EABC930063CA78 /* FindLoginPwdViewController.m */,
+				05582673186C13650002AE2E /* FindoutPaymentPwdViewController.h */,
+				05582674186C13650002AE2E /* FindoutPaymentPwdViewController.m */,
 				0537AF6A185841ED005F84D1 /* ForgetPasswordViewController.h */,
 				0537AF6B185841ED005F84D1 /* ForgetPasswordViewController.m */,
 				0554B1991871411700C75DCD /* GatherCancelTableViewController.h */,
@@ -1221,13 +1229,11 @@
 				0554B129187115B200C75DCD /* QueryBalanceViewController.m */,
 				054253E9188BDA4700F84CBA /* RealnameLegalizeViewController.h */,
 				054253EA188BDA4700F84CBA /* RealnameLegalizeViewController.m */,
+				B85A141C18E5AA6000804152 /* ReceviMony */,
 				0537AF7918584291005F84D1 /* RegesterSuccessViewController.h */,
 				0537AF7A18584291005F84D1 /* RegesterSuccessViewController.m */,
 				05582681186C20560002AE2E /* RegisterViewController.h */,
 				05582682186C20560002AE2E /* RegisterViewController.m */,
-				8DE4E85318EFA662003F222E /* AgreementViewController.h */,
-				8DE4E85418EFA662003F222E /* AgreementViewController.m */,
-				8DE4E85518EFA662003F222E /* AgreementViewController.xib */,
 				0537AF651858419D005F84D1 /* ResultViewController.h */,
 				0537AF661858419D005F84D1 /* ResultViewController.m */,
 				0537AF671858419D005F84D1 /* ResultViewController.xib */,
@@ -1235,6 +1241,7 @@
 				0554B1BB18715C1400C75DCD /* SalesSlipDetailViewController.m */,
 				0554B1B7187158B700C75DCD /* SelectPOSViewController.h */,
 				0554B1B8187158B700C75DCD /* SelectPOSViewController.m */,
+				B85598DA18DD795D00F4E883 /* SellerWithdra */,
 				0537AF6D18584245005F84D1 /* SettingPasswordViewController.h */,
 				0537AF6E18584245005F84D1 /* SettingPasswordViewController.m */,
 				0537AF7618584282005F84D1 /* SettleAccountResultViewController.h */,
@@ -1246,12 +1253,12 @@
 				0554B1BF18715C7600C75DCD /* SignViewController.xib */,
 				0537AF7318584272005F84D1 /* TradeDetailTableViewController.h */,
 				0537AF7418584272005F84D1 /* TradeDetailTableViewController.m */,
+				8DAF435B18E33BDE001D0195 /* TransferHistoryQueryViewController.h */,
+				8DAF435C18E33BDE001D0195 /* TransferHistoryQueryViewController.m */,
 				0554B132187118D600C75DCD /* TransListDetailViewController.h */,
 				0554B133187118D600C75DCD /* TransListDetailViewController.m */,
 				0554B12F187118BB00C75DCD /* TransListViewController.h */,
 				0554B130187118BB00C75DCD /* TransListViewController.m */,
-				8DAF435B18E33BDE001D0195 /* TransferHistoryQueryViewController.h */,
-				8DAF435C18E33BDE001D0195 /* TransferHistoryQueryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1601,6 +1608,8 @@
 			children = (
 				8D801CA318EBA3F800CEE39B /* beginguide03.png */,
 				8D801CA418EBA3F800CEE39B /* beginguide04.png */,
+				8D281C9018F2F8DF00457792 /* receipt_bg.png */,
+				8D281C9118F2F8DF00457792 /* yinlian.png */,
 				8D801CA518EBA3F800CEE39B /* beginguide05.png */,
 				8D801CA618EBA3F800CEE39B /* beginguide01.png */,
 				8D801CA718EBA3F800CEE39B /* beginguide02.png */,
@@ -1947,6 +1956,8 @@
 				0554B14918711E6F00C75DCD /* InputMoneyViewController.xib */,
 				B85A141D18E5AAB700804152 /* InputPasswordViewController.h */,
 				B85A141E18E5AAB700804152 /* InputPasswordViewController.m */,
+				8D281C9418F308F100457792 /* InputPwdQueryBalanceViewController.h */,
+				8D281C9518F308F100457792 /* InputPwdQueryBalanceViewController.m */,
 				8D78DA7918E91FE900072BBB /* QueryBalancePwdViewController.h */,
 				8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */,
 			);
@@ -2038,6 +2049,7 @@
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
 				8D3CA18218C6C9C800C119DA /* con_req_200001111.xml in Resources */,
+				8D281C9218F2F8DF00457792 /* receipt_bg.png in Resources */,
 				8D3CA16618C6C9C800C119DA /* con_req_089007.xml in Resources */,
 				0554B1AF18714C7300C75DCD /* collectCashButton_highlight@2x.png in Resources */,
 				0554B1D218715E0500C75DCD /* suffix_normal@2x.png in Resources */,
@@ -2187,6 +2199,7 @@
 				0554B18718711EEC00C75DCD /* digit_little_9.png in Resources */,
 				8D3CA15E18C6C9C800C119DA /* con_req_020001_aishua.xml in Resources */,
 				052079601863DE45004BF055 /* RegisterButton_highlight.png in Resources */,
+				8D281C9318F2F8DF00457792 /* yinlian.png in Resources */,
 				8D3CA15B18C6C9C800C119DA /* con_req_089014.xml in Resources */,
 				0554B1CB18715DD600C75DCD /* sign_ok_btn.png in Resources */,
 				0554B18618711EEC00C75DCD /* digit_little_8.png in Resources */,
@@ -2267,6 +2280,7 @@
 				05578CD1186AB33500475B9C /* LeftImageTextField.m in Sources */,
 				0537AEAE18583E1B005F84D1 /* FMDatabase.m in Sources */,
 				0537AEAF18583E1B005F84D1 /* FMDatabaseAdditions.m in Sources */,
+				8D281C9618F308F100457792 /* InputPwdQueryBalanceViewController.m in Sources */,
 				0537AEB018583E1B005F84D1 /* FMDatabasePool.m in Sources */,
 				8DAF435D18E33BDE001D0195 /* TransferHistoryQueryViewController.m in Sources */,
 				0537AEB118583E1B005F84D1 /* FMDatabaseQueue.m in Sources */,
@@ -2489,8 +2503,8 @@
 		0537AE4618583B39005F84D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2502,7 +2516,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "5FA921B5-814E-463C-8053-A23D60A21B9E";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2511,8 +2525,8 @@
 		0537AE4718583B39005F84D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2524,7 +2538,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "5FA921B5-814E-463C-8053-A23D60A21B9E";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};

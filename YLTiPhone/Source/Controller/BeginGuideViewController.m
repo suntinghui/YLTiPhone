@@ -58,7 +58,7 @@
     
     self.navigationController.navigationBarHidden = YES;
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
-        //因为iphone5的特殊性，需要一些配置
+        //因为ios7.0的特殊性，需要一些配置
         UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, viewwide, viewheight+20)];
         _scrollView = scrollView;
     }

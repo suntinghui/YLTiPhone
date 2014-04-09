@@ -70,7 +70,7 @@
     explainLabel.lineBreakMode = NSLineBreakByWordWrapping;
     explainLabel.numberOfLines = 0;
     
-    explainLabel.text = @"使用说明\n1、您可以查到银行卡余额信息\n2、银行卡余额信息将显示到刷卡器上";
+    explainLabel.text = @"使用说明\n1、您可以查到银行卡余额信息";
     [explainIV addSubview:explainLabel];
 }
 
@@ -82,7 +82,10 @@
 
 -(IBAction)confirmButtonAction:(id)sender
 {
-    [[Transfer sharedTransfer] startTransfer:@"020001" fskCmd:@"Request_GetExtKsn#Request_VT#Request_GetDes#Request_GetPin|string:0" paramDic:nil];
+    if (ApplicationDelegate.isAishua)
+    {
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
+    }
 }
 /*
 <input

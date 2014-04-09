@@ -341,6 +341,8 @@ static Transfer *instance = nil;
                 [macString appendString:[UserDefaults objectForKey:MD5KEY]];
             }
             //把 jsonDic中的数据转换格式 变为json格式
+//            NSLog(@"%@", [self.jsonDic JSONString]);
+            NSLog(@"------%@", [self DataTOjsonString:self.jsonDic]);
             [self.sendDic setObject:[self.jsonDic JSONString] forKey:@"arg"];
             if (![tmp_mac isEqualToString:@""]) {
                 [self.sendDic setObject:[EncryptionUtil MD5Encrypt:macString] forKey:@"mac"];
@@ -398,6 +400,21 @@ static Transfer *instance = nil;
     }
 }
 
+
+-(NSString*)DataTOjsonString:(id)object
+{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
 //json 连服务器 发送数据 接收数据
 - (void) sendPacket
 {

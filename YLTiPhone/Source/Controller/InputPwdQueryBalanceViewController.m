@@ -1,21 +1,19 @@
 //
-//  QueryBalancePwdViewController.m
+//  InputPwdQueryBalanceViewController.m
 //  YLTiPhone
 //
-//  Created by liao jia on 14-3-31.
+//  Created by liao jia on 14-4-8.
 //  Copyright (c) 2014年 xushuang. All rights reserved.
 //
 
-#import "QueryBalancePwdViewController.h"
-#import "ConvertUtil.h"
-#import "SecurityUtil.h"
 #import "InputPwdQueryBalanceViewController.h"
-
-@interface QueryBalancePwdViewController ()
+#import "SecurityUtil.h"
+#import "ConvertUtil.h"
+@interface InputPwdQueryBalanceViewController ()
 
 @end
 
-@implementation QueryBalancePwdViewController
+@implementation InputPwdQueryBalanceViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,12 +30,11 @@
     // Do any additional setup after loading the view from its nib.
     self.hasTopView = YES;
     self.navigationItem.title = @"余额查询";
-    
     pswTxtField = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) left:@"密码" prompt:@"请输入密码"];
     [self.view addSubview:pswTxtField];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 360, 297, 42)];
+    [confirmButton setFrame:CGRectMake(10, 230, 297, 42)];
     [confirmButton setTitle:@"确    定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -67,10 +64,8 @@
     }
     
     //NSDictionary *cardInfo = [AppDataCenter sharedAppDataCenter].cardInfoDict;
-    //NSString *random = [AppDataCenter sharedAppDataCenter].__RANDOM;
-    //NSString *encTracks = [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
     
-    NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[AppDataCenter sharedAppDataCenter].pinKey];
+    NSString *temKey = [NSString stringWithFormat:@"%@%@", [AppDataCenter sharedAppDataCenter].__ENCTRACKS, [AppDataCenter sharedAppDataCenter].pinKey ];
     NSString *key = [SecurityUtil encryptUseXOR16:temKey];
     
     NSString *psw = [NSString stringWithFormat:@"%@00",pswTxtField.inputStr];
@@ -80,17 +75,8 @@
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:enStr forKey:@"AISHUAPIN"];
-    [dic setObject:self.moneyStr forKey:@"field4"];
     
     [[Transfer sharedTransfer] startTransfer:@"020001" fskCmd:nil paramDic:dic];
-    
-}
-
-#pragma mark - 功能函数
-- (void)setCardInfoDic:(NSDictionary *)cardInfoDic
-{
-    InputPwdQueryBalanceViewController *vc = [[InputPwdQueryBalanceViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
     
 }
 @end
