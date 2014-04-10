@@ -48,7 +48,7 @@
     [self.bgImageView setFrame:CGRectMake(5, 10+ios7_h, 310, 570)];
     [self.scrollView addSubview:self.bgImageView];
     
-    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(32, 12+ios7_h, 86, 54)];
+    UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(47, 22+ios7_h, 86/2, 54/2)];
     [iv_logo setImage:[UIImage imageNamed:@"yinlian"]];
     [self.scrollView addSubview:iv_logo];
     

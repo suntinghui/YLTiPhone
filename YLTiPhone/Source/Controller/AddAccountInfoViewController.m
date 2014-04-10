@@ -293,6 +293,9 @@
         respBankName = @"请选择支行";
     }
     [self.banksBranchButton setTitle:respBankName forState:UIControlStateNormal];
+    if (DeviceVersion>=7){
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 -(BOOL)checkValue
