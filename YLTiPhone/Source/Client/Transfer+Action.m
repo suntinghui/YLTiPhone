@@ -48,6 +48,7 @@
 #import "SearchBankViewController.h"
 #import "ComplementRegisterInfoViewController.h"
 #import "RealnameLegalizeViewController.h"
+#import "MerchantQueryBalanceResultViewController.h"
 @implementation Transfer (Action)
 
 
@@ -135,6 +136,10 @@
     } else if ([self.transferCode isEqualToString:@"020022"]) {
         //收款
         [self inputMoneyDone];
+       
+    } else if ([self.transferCode isEqualToString:@"080003"]) {
+        //商户余额查询
+        [self MerchantQueryBalaceDone];
         
     }
     else if([self.transferCode isEqualToString:@"086000"]) //add wenbin 20140322
@@ -939,6 +944,23 @@
     } else {
         NSLog(@"交易成功但写入数据库时操作失败。。。");
     }
+}
+
+
+/**
+ 商户余额查询成功
+ **/
+-(void)MerchantQueryBalaceDone
+{
+    if (self.receDic) {
+        
+        MerchantQueryBalanceResultViewController *resultVC = [[MerchantQueryBalanceResultViewController alloc] init];
+        resultVC.dic_rece = self.receDic;
+        [[ApplicationDelegate topViewController].navigationController pushViewController:resultVC animated:YES];
+    }else{
+        [ApplicationDelegate gotoFailureViewController:@"余额查询服务器返回数据错误"];
+    }
+    
 }
 
 /**

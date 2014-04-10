@@ -403,6 +403,7 @@
 		8D56566018E9517A00CBC002 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D56565F18E9517A00CBC002 /* Default@2x.png */; };
 		8D56ACE718DD88930082E444 /* catalog_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8D56ACE618DD88930082E444 /* catalog_aishua.xml */; };
 		8D56BC2418F57E7300E49E0B /* MerchantQueryBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D56BC2318F57E7300E49E0B /* MerchantQueryBalanceViewController.m */; };
+		8D65E98718F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D65E98518F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m */; };
 		8D78DA7B18E91FE900072BBB /* QueryBalancePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */; };
 		8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D801CA318EBA3F800CEE39B /* beginguide03.png */; };
 		8D801CA918EBA3F800CEE39B /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D801CA418EBA3F800CEE39B /* beginguide04.png */; };
@@ -978,6 +979,8 @@
 		8D56ACE618DD88930082E444 /* catalog_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = catalog_aishua.xml; sourceTree = "<group>"; };
 		8D56BC2218F57E7300E49E0B /* MerchantQueryBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantQueryBalanceViewController.h; sourceTree = "<group>"; };
 		8D56BC2318F57E7300E49E0B /* MerchantQueryBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantQueryBalanceViewController.m; sourceTree = "<group>"; };
+		8D65E98418F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantQueryBalanceResultViewController.h; sourceTree = "<group>"; };
+		8D65E98518F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantQueryBalanceResultViewController.m; sourceTree = "<group>"; };
 		8D78DA7918E91FE900072BBB /* QueryBalancePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryBalancePwdViewController.h; sourceTree = "<group>"; };
 		8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryBalancePwdViewController.m; sourceTree = "<group>"; };
 		8D801CA318EBA3F800CEE39B /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
@@ -1206,6 +1209,8 @@
 				0537AE6118583DB3005F84D1 /* CatalogViewController.m */,
 				8D56BC2218F57E7300E49E0B /* MerchantQueryBalanceViewController.h */,
 				8D56BC2318F57E7300E49E0B /* MerchantQueryBalanceViewController.m */,
+				8D65E98418F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.h */,
+				8D65E98518F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m */,
 				05578CD2186ABC9200475B9C /* ComplementRegisterInfoViewController.h */,
 				05578CD3186ABC9200475B9C /* ComplementRegisterInfoViewController.m */,
 				8DAF435618E2EE87001D0195 /* ComplementRegisterModifyController.h */,
@@ -2397,6 +2402,7 @@
 				0537AF3D18583F44005F84D1 /* UpdateAppHelper.m in Sources */,
 				0537AF581858401C005F84D1 /* NSObject+MutPerformSel.m in Sources */,
 				0537AF591858401C005F84D1 /* NSString+TKUtilities.m in Sources */,
+				8D65E98718F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m in Sources */,
 				6CB1F36B18EFD449009E2287 /* SecurityUtil.m in Sources */,
 				0537AF5A1858401C005F84D1 /* UIImage+TKUtilities.m in Sources */,
 				0537AF5B1858401C005F84D1 /* UIImage+Scaling.m in Sources */,

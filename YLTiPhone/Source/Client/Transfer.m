@@ -361,6 +361,7 @@ static Transfer *instance = nil;
             if ([self.transferModel.shouldMac isEqualToString:@"true"]) {// 需要进行MAC计算
                 if (ApplicationDelegate.isAishua) {
                     NSData *randomData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].__RANDOM];
+                    NSLog(@"random--- %@", [AppDataCenter sharedAppDataCenter].__RANDOM);
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
                     NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
                     
