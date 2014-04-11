@@ -202,4 +202,11 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont boldSystemFontOfSize:15]];
 }
+
+-(void)showError:(NSString *) error{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:error delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+    [alertView show];
+    return;
+
+}
 @end

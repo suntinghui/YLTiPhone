@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.hasTopView = NO;
+    //self.hasTopView = NO;
     self.navigationItem.title = @"输入金额";
     
     self.des = 0.00;
@@ -155,6 +155,7 @@
     {
         InputPasswordViewController *inputPasswordController = [[InputPasswordViewController alloc]init];
         inputPasswordController.moneyStr = self.moneyStr;
+        inputPasswordController.fromVC = 0;
         [self.navigationController pushViewController:inputPasswordController animated:YES];
     }
     

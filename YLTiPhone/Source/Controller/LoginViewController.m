@@ -18,7 +18,7 @@
 #import "YLTPasswordTextField.h"
 #import "SecurityUtil.h"
 #import "ConvertUtil.h"
-#import "SignViewController.h"
+#import "ShowContentViewController.h"
 
 @interface LoginViewController ()
 
@@ -119,8 +119,11 @@
     
     [self.view addSubview:loginView];
 
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"终端" style:UIBarButtonItemStyleBordered target:self action:@selector(selectPost:)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+//暂时隐藏终端按钮
+//    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"终端" style:UIBarButtonItemStyleBordered target:self action:@selector(selectPost:)];
+//    self.navigationItem.rightBarButtonItem = rightButton;
+//    
+//    [self checkUpdate];
     
 }
 
@@ -186,6 +189,11 @@
     }
 }
 
+-(void)checkUpdate
+{
+//    ShowContentViewController *vc = [[ShowContentViewController alloc] initWithUrl:[respDic objectForKey:@"URL"]];
+//    [self.navigationController pushViewController:vc animated:YES];
+}
 - (IBAction)regesterAction:(id)sender
 {
     RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:nil bundle:nil];

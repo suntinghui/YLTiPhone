@@ -39,7 +39,7 @@ static LocationHelper *instance = nil;
         if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusRestricted) {
             
             self.locationManager = [[CLLocationManager alloc] init];
-            self.locationManager.purpose = @"为保证交易安全，优乐通需要取得您的交易地点，否则无法进行交易";
+            self.locationManager.purpose = @"为保证交易安全，盒付宝需要取得您的交易地点，否则无法进行交易";
             self.locationManager.delegate = self;
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
             self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
@@ -49,16 +49,16 @@ static LocationHelper *instance = nil;
             //[self.locationManager startMonitoringSignificantLocationChanges];
             
         } else {
-            NSLog(@"手机定位服务已打开，但是优乐通没有获得定位权限.");
+            NSLog(@"手机定位服务已打开，但是盒付宝没有获得定位权限.");
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"为了保证交易安全，强烈建议您打开手机定位服务，并允许优乐通访问您的位置。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"为了保证交易安全，强烈建议您打开手机定位服务，并允许盒付宝访问您的位置。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
         }
         
     } else {
         NSLog(@"手机没有打开定位服务.");
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"为了保证交易安全，强烈建议您打开手机定位服务，并允许优乐通访问您的位置。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"为了保证交易安全，强烈建议您打开手机定位服务，并允许盒付宝访问您的位置。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
     }
 }

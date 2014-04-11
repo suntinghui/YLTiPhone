@@ -15,7 +15,7 @@
 #import "ConfirmCancelResultViewController.h"
 #import "ConvertUtil.h"
 #import "InputMoneyViewController.h"
-
+#import "QueryBalanceViewController.h"
 @implementation Transfer (FSK)
 
 - (void) initFSK
@@ -316,7 +316,7 @@
     [AppDataCenter sharedAppDataCenter].__RANDOM = randomNumber;
     [AppDataCenter sharedAppDataCenter].__ENCTRACKS = encTracks;
     
-    if ( [ApplicationDelegate.topViewController isKindOfClass:[InputMoneyViewController class]])
+    if ( [ApplicationDelegate.topViewController isKindOfClass:[InputMoneyViewController class]] || [ApplicationDelegate.topViewController isKindOfClass:[QueryBalanceViewController class]])
     {
         InputMoneyViewController *inputMoneyController = (InputMoneyViewController*)ApplicationDelegate.topViewController;
         inputMoneyController.cardInfoDic = cardInfo;

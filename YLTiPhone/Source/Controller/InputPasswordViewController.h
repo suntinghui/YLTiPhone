@@ -15,4 +15,5 @@
 }
 
 @property (strong, nonatomic) NSString *moneyStr; //前一个页面传过来的金额
+@property (nonatomic) int fromVC;//  0: 收款  1：余额查询
 @end

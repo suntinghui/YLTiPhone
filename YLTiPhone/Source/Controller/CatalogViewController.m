@@ -34,7 +34,6 @@
 #define kSCNavBarImageTag 10
 
 @interface CatalogViewController ()
-
 - (void)initCommonData;
 - (void)doAction:(CatalogModel *)catalog;
 
@@ -116,9 +115,21 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
     
     UINavigationBar *navBar = self.navigationController.navigationBar;
+    
+//    UIImage *navbackground = [UIImage imageNamed:@"navbar.png"];  //获取图片
+//    UIImage *hfbbackground = [UIImage imageNamed:@"catalog_nav.png"];
+//    CGSize finalSize = [navbackground size];
+//    CGSize hfbSize = [hfbbackground size];
+//    UIGraphicsBeginImageContext(finalSize);
+//    [navbackground drawInRect:CGRectMake(0,0,finalSize.width,finalSize.height)];
+//    [hfbbackground drawInRect:CGRectMake(60,0,hfbSize.width,hfbSize.height)];
+//    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    
     if ([navBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
     {
         //if iOS 5.0 and later
+        
         [navBar setBackgroundImage:[UIImage imageNamed:@"catalog_nav.png"] forBarMetrics:UIBarMetricsDefault];
     }
     else
@@ -364,13 +375,13 @@
             break;
         }
             
-        case 15://用户引导
-        {
-            BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
-            
-            [self.navigationController pushViewController:beginGuideViewController animated:YES];
-            break;
-        }
+//        case 15://用户引导
+//        {
+//            BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
+//            
+//            [self.navigationController pushViewController:beginGuideViewController animated:YES];
+//            break;
+//        }
         
           
         case 21://收款 先输入金额

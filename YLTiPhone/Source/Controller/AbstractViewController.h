@@ -24,5 +24,5 @@
 -(void)popToCatalogViewController;
 -(void)popToLoginViewController;
 -(void)setLabelStyle:(UILabel*)label;
-
+-(void)showError:(NSString *) error;
 @end

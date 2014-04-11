@@ -114,16 +114,7 @@
 		<isActive>true</isActive>
 	</catalog>
 	
-	<catalog>
-		<catalogId>15</catalogId>
-		<title>用户引导</title>
-		<parentId>1</parentId>
-		<actionType>alert</actionType>
-		<iconId>15</iconId>
-		<description>无</description>
-		<needReverse>false</needReverse>
-		<isActive>true</isActive>
-	</catalog>
+	
 	
 	<catalog>
 		<catalogId>21</catalogId>
@@ -289,7 +280,7 @@
 	
 	<catalog>
 		<catalogId>66</catalogId>
-		<title>版本号(1.5)</title>
+		<title>版本号(1.0.0)</title>
 		<parentId>6</parentId>
 		<iconId>66</iconId>
 		<description>无</description>

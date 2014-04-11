@@ -1,5 +1,5 @@
 //
-//  QueryBalanceViewController.m
+//  QueryBalanceViewController.m    卡余额查询
 //  YLTiPhone
 //
 //  Created by xushuang on 13-12-30.
@@ -7,7 +7,7 @@
 //
 
 #import "QueryBalanceViewController.h"
-
+#import "InputPasswordViewController.h"
 @interface QueryBalanceViewController ()
 
 @end
@@ -86,6 +86,15 @@
     {
         [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
     }
+}
+
+#pragma mark - 功能函数
+- (void)setCardInfoDic:(NSDictionary *)cardInfoDic
+{
+    InputPasswordViewController *inputPasswordController = [[InputPasswordViewController alloc]init];
+    inputPasswordController.fromVC = 1;
+    [self.navigationController pushViewController:inputPasswordController animated:YES];
+    
 }
 /*
 <input
