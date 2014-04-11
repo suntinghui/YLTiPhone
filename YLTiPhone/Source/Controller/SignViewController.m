@@ -39,13 +39,16 @@
     // Do any additional setup after loading the view from its nib.
     
     [[UIApplication sharedApplication] setStatusBarOrientation:UIDeviceOrientationLandscapeRight animated:YES];
+    
     CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
     //设置旋转动画
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:duration];
+    
     //设置导航栏旋转
     self.navigationController.navigationBar.frame = CGRectMake(-224, 224, 480, 32);
     self.navigationController.navigationBar.transform = CGAffineTransformMakeRotation(M_PI*1.5);
+    
     //设置视图旋转
     self.view.bounds = CGRectMake(0, -54, self.view.frame.size.width, self.view.frame.size.height);
     self.view.transform = CGAffineTransformMakeRotation(M_PI*1.5);
@@ -78,7 +81,7 @@
     
     UIImage *buttonNormalImage = [UIImage imageNamed:@"backbutton_normal.png"];
     UIImage *buttonSelectedImage = [UIImage imageNamed:@"backbutton_selected.png"];
-    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [aButton setImage:buttonNormalImage forState:UIControlStateNormal];
     [aButton setImage:buttonSelectedImage forState:UIControlStateSelected];
     aButton.frame = CGRectMake(0.0,0.0,buttonNormalImage.size.width,buttonNormalImage.size.height);
@@ -93,6 +96,7 @@
     //    UIImageView *bottomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_bottom.png"]];
     //    [bottomImage setFrame:CGRectMake(0, 243, 480 + (iPhone5?88:0), 77)];
     //    [self.view addSubview:bottomImage];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,11 +108,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [[UIApplication sharedApplication]setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[UIApplication sharedApplication]setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIDeviceOrientationPortrait animated:YES];
+    //设置导航栏旋转
+    self.navigationController.navigationBar.transform = CGAffineTransformMakeRotation(0);
+    self.navigationController.navigationBar.frame = CGRectMake(0, 20, 320, 44);
+
 }
 
 
@@ -116,7 +128,7 @@
 //确定
 -(IBAction)finish:(id)sender
 {
-    if (![self.phoneNumTF.text isEqualToString:@""] && self.phoneNumTF.text.length < 11) {
+    if (self.phoneNumTF.text==nil||[self.phoneNumTF.text isEqualToString:@""] ||self.phoneNumTF.text.length < 11) {
         [ApplicationDelegate showErrorPrompt:@"手机号不能少于11位" ViewController:self];
         return ;
     }
@@ -140,7 +152,6 @@
     NSData *data = UIImageJPEGRepresentation(image, 1.0);
     NSString *imageBase64 = [data base64EncodedString];
     
-    //缺少刷卡步骤  所以缺少数据
     // 添加数据
     // TODO 手机号
     [[Transfer sharedTransfer].receDic setObject:(self.phoneNumTF.text ? self.phoneNumTF.text:@"") forKey:@"receivePhoneNo"];
@@ -154,7 +165,7 @@
     // 签购单界面执行delegate方法，并关闭本界面
     [self.delegate abstractViewControllerDone:tempImage];
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //清除
@@ -165,7 +176,8 @@
 
 -(IBAction)close:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -195,28 +207,19 @@
     [self.signPanel setNeedsDisplay];
 }
 
-//// IOS5默认支持竖屏
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-//}
-//
-//// IOS6默认不开启旋转，如果subclass需要支持屏幕旋转，重写这个方法return YES即可
-//- (BOOL)shouldAutorotate
-//{
-//    return NO;
-//}
-//
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskLandscape;
-//}
-//
-//// IOS6默认支持竖屏
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-//{
-//    return UIInterfaceOrientationLandscapeRight;
-//}
+
+
+ //IOS6默认不开启旋转，如果subclass需要支持屏幕旋转，重写这个方法return YES即可
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+ //IOS6默认支持竖屏
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationLandscapeRight;
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -226,19 +229,9 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     //    return UIInterfaceOrientationMaskLandscapeLeft;
-    return UIInterfaceOrientationMaskLandscapeRight;
+    return 0;
 }
 
-- (BOOL) shouldAutorotate {
-    return YES;
-}
-
-// IOS6默认支持竖屏
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return UIInterfaceOrientationLandscapeRight;
-    //    return UIInterfaceOrientationPortrait;
-}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {

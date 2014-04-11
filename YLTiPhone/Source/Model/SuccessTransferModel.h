@@ -12,7 +12,7 @@
 {
     @private
     NSString            *_traceNum;
-    NSString            *transCode;
+    NSString            *_transCode;
     NSString            *_date;
     NSString            *_amount;
     NSDictionary        *_content;

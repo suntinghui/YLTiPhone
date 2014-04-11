@@ -157,6 +157,14 @@
         //版本号
         [self versionDone];
     }
+    else if([self.transferCode isEqualToString:@"080002"]) //商户提款
+    {
+        [ApplicationDelegate gotoSuccessViewController:@"交易成功"];
+    }
+    else if([self.transferCode isEqualToString:@"089014"]) //签购单上传
+    {
+        [ApplicationDelegate showSuccessPrompt:@"上传成功"];
+    }
     else {
         [self transferSuccessDone];
     }
@@ -937,7 +945,7 @@
     SuccessTransferModel *model = [[SuccessTransferModel alloc] init];
     [model setAmount:[self.receDic objectForKey:@"field4"]];
     [model setTraceNum:[self.receDic objectForKey:@"field11"]];
-    [model setTransCode:[self.receDic objectForKey:@"fieldTrancode"]];
+    model.transCode = [self.receDic objectForKey:@"fieldTrancode"];
     [model setDate:[self.receDic objectForKey:@"field13"]];
     [model setContent:self.receDic];
     
@@ -1063,18 +1071,26 @@
     // 将相关数据写入数据库
     NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
     
-    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__TERID"] forKey:@"field41"];
-    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__VENDOR"] forKey:@"field42"];
-    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"termMobile"];
-    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__TERSERIALNO"] forKey:@"ReaderID"];
-    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PSAMNO"] forKey:@"PSAMID"];
+//    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__TERID"] forKey:@"field41"];
+//    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__VENDOR"] forKey:@"field42"];
     
-    [tempDic setObject:[self.sendDic objectForKey:@"field7"] forKey:@"field7"];
+//    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"termMobile"];
+//    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__TERSERIALNO"] forKey:@"ReaderID"];
+//    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PSAMNO"] forKey:@"PSAMID"];
+    
+//    [tempDic setObject:[self.sendDic objectForKey:@"field7"] forKey:@"field7"];
+//    [tempDic setObject:[[self.receDic objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)] forKey:@"batchNum"];
+    
+    [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
+    [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"send_tel"];
     [tempDic setObject:[self.receDic objectForKey:@"field11"] forKey:@"field11"];
-    [tempDic setObject:[[self.receDic objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)] forKey:@"batchNum"];
+    
+    [tempDic setObject:[self.receDic objectForKey:@"field37"] forKey:@"local_log"];
+    [tempDic setObject:[self.receDic objectForKey:@"field42"] forKey:@"merchant_id"];
+
     [tempDic setObject:[self.receDic objectForKey:@"imei"] forKey:@"filedIMEI"];
     [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"fieldMobile"];
-    [tempDic setObject:[self.receDic objectForKey:@"fieldImage"] forKey:@"fieldImage"];
+    [tempDic setObject:[self.receDic objectForKey:@"fieldImage"] forKey:@"img"];
     
     UploadSignImageDBHelper *helper = [[UploadSignImageDBHelper alloc] init];
     BOOL flag = [helper insertATransfer:[tempDic objectForKey:@"field11"] receMobile:[tempDic objectForKey:@"receivePhoneNo"] content:tempDic];
@@ -1099,7 +1115,7 @@
     NSDictionary *dic = [helper queryAUploadSignImageTransfer];
     if (dic) {
         NSLog(@"检测到需要上传的签购单，正在发起上传...");
-        [[Transfer sharedTransfer] startTransfer:@"500000001" fskCmd:nil paramDic:dic];
+        [[Transfer sharedTransfer] startTransfer:@"089014" fskCmd:nil paramDic:dic];
     } else {
         NSLog(@"没有检测到需要上传的签购单，停止后台服务...");
         [self.uploadSignImageTimer invalidate];

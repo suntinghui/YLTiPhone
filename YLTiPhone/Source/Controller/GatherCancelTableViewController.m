@@ -47,7 +47,7 @@
     [ApplicationDelegate hideProcess];
     
     if (self.array && [self.array count] > 0) {
-        self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, VIEWHEIGHT+41) style:UITableViewStylePlain];
+        self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, VIEWHEIGHT+41) style:UITableViewStylePlain];
         self.myTableView.delegate = self;
         self.myTableView.dataSource = self;
         [self.myTableView setBackgroundColor:[UIColor clearColor]];

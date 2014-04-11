@@ -116,7 +116,16 @@ static AppDataCenter *instance = nil;
         return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
     }else if ([property isEqualToString:@"__TERID"]){
         return self.__TERID;
-    } else {
+    }
+    else if([property isEqualToString:@"__TERSERIALNO"])
+    {
+        return self.__TERSERIALNO;
+    }
+    else if([property isEqualToString:@"__PSAMNO"])
+    {
+        return self.__PSAMNO;
+    }
+    else {
         SEL selector = NSSelectorFromString(property);
         if ([self respondsToSelector:selector]) {
             // warning:performSelector may cause a leak because its selector is unknown
@@ -240,7 +249,7 @@ static AppDataCenter *instance = nil;
 
 - (NSString *) getServerDate
 {
-    return [DateUtil formatDateString:__SERVEREDATE];
+    return [DateUtil formatMonthDay:__SERVEREDATE];
 }
 
 - (NSDictionary *)transferNameDic

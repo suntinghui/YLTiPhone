@@ -250,6 +250,7 @@
     if ([self checkValue]) {
         //跳转到确认界面
         AccCollectCashConfirmViewController *vc = [[AccCollectCashConfirmViewController alloc] initWithNibName:nil bundle:nil money:self.inputMoneyTF.contentTF.text];
+        vc.type = type;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

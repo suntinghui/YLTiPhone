@@ -25,5 +25,6 @@
     #import "Constants.h"
     #import "Transfer.h"
     #import "AppDataCenter.h"
+#import "UINavigationController+ios6.h"
 
 #endif

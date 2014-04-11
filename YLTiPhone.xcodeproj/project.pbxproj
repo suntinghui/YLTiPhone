@@ -422,6 +422,7 @@
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
+		B8DA9E8718F7BB3A00A73132 /* UINavigationController+ios6.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */; };
 		FC1FC6C118EC090F004488CF /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BD18EC090F004488CF /* libcrypto.a */; };
 		FC1FC6C218EC090F004488CF /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BE18EC090F004488CF /* libcurl.a */; };
 		FC1FC6C318EC090F004488CF /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BF18EC090F004488CF /* libssl.a */; };
@@ -1010,6 +1011,8 @@
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
+		B8DA9E8518F7BB3A00A73132 /* UINavigationController+ios6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ios6.h"; sourceTree = "<group>"; };
+		B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ios6.m"; sourceTree = "<group>"; };
 		FC1FC6BD18EC090F004488CF /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		FC1FC6BE18EC090F004488CF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = lib/libcurl.a; sourceTree = "<group>"; };
 		FC1FC6BF18EC090F004488CF /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
@@ -1561,6 +1564,8 @@
 		0537AF1118583F44005F84D1 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				B8DA9E8518F7BB3A00A73132 /* UINavigationController+ios6.h */,
+				B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */,
 				0537AF1418583F44005F84D1 /* BaseDBHelper.h */,
 				0537AF1518583F44005F84D1 /* BaseDBHelper.m */,
 				0537AF1618583F44005F84D1 /* PayeeAccountDBHelper.h */,
@@ -2418,6 +2423,7 @@
 				0537AF3D18583F44005F84D1 /* UpdateAppHelper.m in Sources */,
 				0537AF581858401C005F84D1 /* NSObject+MutPerformSel.m in Sources */,
 				0537AF591858401C005F84D1 /* NSString+TKUtilities.m in Sources */,
+				B8DA9E8718F7BB3A00A73132 /* UINavigationController+ios6.m in Sources */,
 				8D65E98718F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m in Sources */,
 				6CB1F36B18EFD449009E2287 /* SecurityUtil.m in Sources */,
 				0537AF5A1858401C005F84D1 /* UIImage+TKUtilities.m in Sources */,

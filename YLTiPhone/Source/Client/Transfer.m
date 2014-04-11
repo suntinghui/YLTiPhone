@@ -284,12 +284,13 @@ static Transfer *instance = nil;
             [field setValue:tempStr];
             
             // 进行一步特殊处理，fieldImage为上传签购单的图片内容，一般为20-30K。我认为在其他地方不会使用该值，所以不在map中保存。
-            if ( ![field.key isEqualToString:@"img"] && ![field.key isEqualToString:@"macstr"]) {
+            //TODO img被注释 by wenbin 20140411
+            if ( /*![field.key isEqualToString:@"img"] && */![field.key isEqualToString:@"macstr"]) {
                 [self.sendDic setObject:field.value forKey:field.key];
             }
   
             //通过fieldTrancode 可以判断发送到服务器的action
-            if (![field.key isEqualToString:@"fieldTrancode"] && ![field.key isEqualToString:@"img"] && ![field.key isEqualToString:@"macstr"])
+            if (![field.key isEqualToString:@"fieldTrancode"] &&/* ![field.key isEqualToString:@"img"] &&*/ ![field.key isEqualToString:@"macstr"])
             {
                 [self.jsonDic setObject:field.value forKey:field.key];
             }
@@ -427,6 +428,10 @@ static Transfer *instance = nil;
                                 [ApplicationDelegate hideProcess];
                                 
                                 self.receDic = [NSMutableDictionary dictionaryWithDictionary:respDic];
+                                
+                                 //TODO add by wenbin 20140311
+                                [self.receDic setObject:self.transferCode forKey:@"fieldTrancode"];
+                                
                                 [self parseJson];
                             }
                                                         errorHandler:^(NSError *error)
@@ -474,8 +479,17 @@ static Transfer *instance = nil;
             }
             
         }else{
-            [((AbstractViewController*)[ApplicationDelegate topViewController]) showError:@"获取数据出错，请重新尝试!"];
-//            [ApplicationDelegate gotoFailureViewController:@"获取数据出错，请重新尝试!"];
+
+            if ([self.transferCode isEqualToString:@"089014"]) //签购单上传特殊处理 不弹出到错误页面
+            {
+            }
+            else
+            {
+                [ApplicationDelegate showErrorPrompt:@"获取数据出错，请重新尝试!"];
+            }
+            
+
+
         }
     }
     @catch (NSException *exception) {
@@ -703,6 +717,10 @@ static Transfer *instance = nil;
     
     self.receData = contentData;
     self.receDic = [NSMutableDictionary dictionaryWithDictionary:[self.action afterProcess:contentData]];
+    
+    //TODO add by wenbin 20140311
+    [self.receDic setObject:self.transferCode forKey:@"fieldTrancode"];
+    
     [self parse];
     [ApplicationDelegate hideProcess];
     
