@@ -93,6 +93,16 @@
     self.securityCodeButton.enabled = NO;
     secondsCountDown = 30;//30秒倒计时 1s执行一次下面方法
     countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES];
+    
+    NSString* date;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY-MM-dd 20hh:mm:ss"];
+    date = [formatter stringFromDate:[NSDate date]];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
+    [dic setObject:@"time" forKey:date];
+    
+    [[Transfer sharedTransfer] startTransfer:@"089006" fskCmd:nil paramDic:dic];
 }
 
 -(void)timeFireMethod

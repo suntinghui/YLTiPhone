@@ -155,6 +155,7 @@
     {
         InputPasswordViewController *inputPasswordController = [[InputPasswordViewController alloc]init];
         inputPasswordController.moneyStr = self.moneyStr;
+        inputPasswordController.fromVC = 0;
         [self.navigationController pushViewController:inputPasswordController animated:YES];
     }
     

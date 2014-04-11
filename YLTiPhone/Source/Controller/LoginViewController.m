@@ -18,6 +18,7 @@
 #import "YLTPasswordTextField.h"
 #import "SecurityUtil.h"
 #import "ConvertUtil.h"
+#import "ShowContentViewController.h"
 
 @interface LoginViewController ()
 
@@ -121,6 +122,8 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"终端" style:UIBarButtonItemStyleBordered target:self action:@selector(selectPost:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
+    [self checkUpdate];
+    
 }
 
 - (void)selectPost:(id)sender
@@ -176,8 +179,8 @@
         [UserDefaults synchronize];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[[self.phoneNumTF contentTF] text] forKey:@"tel"];
-//        [dic setObject:self.passwordTF.md5Value forKey:@"logpass"];
-        [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"logpass"];
+        [dic setObject:self.passwordTF.md5Value forKey:@"logpass"];
+//        [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"logpass"];
 
         //[[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
         [[Transfer sharedTransfer] startTransfer:@"089016" fskCmd:nil paramDic:dic];
@@ -185,6 +188,11 @@
     }
 }
 
+-(void)checkUpdate
+{
+//    ShowContentViewController *vc = [[ShowContentViewController alloc] initWithUrl:[respDic objectForKey:@"URL"]];
+//    [self.navigationController pushViewController:vc animated:YES];
+}
 - (IBAction)regesterAction:(id)sender
 {
     RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:nil bundle:nil];

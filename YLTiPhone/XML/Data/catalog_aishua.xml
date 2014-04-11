@@ -114,16 +114,7 @@
 		<isActive>true</isActive>
 	</catalog>
 	
-	<catalog>
-		<catalogId>15</catalogId>
-		<title>用户引导</title>
-		<parentId>1</parentId>
-		<actionType>alert</actionType>
-		<iconId>15</iconId>
-		<description>无</description>
-		<needReverse>false</needReverse>
-		<isActive>true</isActive>
-	</catalog>
+	
 	
 	<catalog>
 		<catalogId>21</catalogId>

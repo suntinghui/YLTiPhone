@@ -364,13 +364,13 @@
             break;
         }
             
-        case 15://用户引导
-        {
-            BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
-            
-            [self.navigationController pushViewController:beginGuideViewController animated:YES];
-            break;
-        }
+//        case 15://用户引导
+//        {
+//            BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
+//            
+//            [self.navigationController pushViewController:beginGuideViewController animated:YES];
+//            break;
+//        }
         
           
         case 21://收款 先输入金额

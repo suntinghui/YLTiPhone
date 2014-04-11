@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>盒付宝</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
@@ -13,7 +13,7 @@
 		<string>app.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.crbcint.LKOA4iPhone</string>
+	<string>com.yunfu.YLTiPhone</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -373,7 +373,7 @@ static Transfer *instance = nil;
                     NSMutableData *sendData = [[NSMutableData alloc] init];
                     [sendData appendData:[_reqData subdataWithRange:NSMakeRange(0, _reqData.length-8)]];
                     [sendData appendData:macValueData];
-                    _reqData = [NSData dataWithData:sendData];
+                    self.reqData = [NSData dataWithData:sendData];
                     
                     [self sendRequestEFET];
                     
@@ -474,7 +474,8 @@ static Transfer *instance = nil;
             }
             
         }else{
-            [ApplicationDelegate gotoFailureViewController:@"获取数据出错，请重新尝试!"];
+            [((AbstractViewController*)[ApplicationDelegate topViewController]) showError:@"获取数据出错，请重新尝试!"];
+//            [ApplicationDelegate gotoFailureViewController:@"获取数据出错，请重新尝试!"];
         }
     }
     @catch (NSException *exception) {
@@ -509,6 +510,7 @@ static Transfer *instance = nil;
             {
                 if(ApplicationDelegate.isAishua){
                     NSData *randomData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].__RANDOM];
+                    NSLog(@"randon: %@", [AppDataCenter sharedAppDataCenter].__RANDOM);
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
                     NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
                     

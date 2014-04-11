@@ -87,7 +87,7 @@
     explainLabel.lineBreakMode = NSLineBreakByWordWrapping;
     explainLabel.numberOfLines = 0;
     
-    explainLabel.text = @"使用说明\n1、消费(撤销)成功后，交易资金将会转移到你的银行帐户中;\n2、持卡人需要在签购单上正确签名，作为消费(撤销)凭证;\n3、商户可以使用“签购单查询”来调阅签购单,也可以在优乐通门户网站上调阅;\n4、可以将该交易的签购单以短信方式发送给消费者查阅。";
+    explainLabel.text = @"使用说明\n1、消费(撤销)成功后，交易资金将会转移到你的银行帐户中;\n2、持卡人需要在签购单上正确签名，作为消费(撤销)凭证;\n3、商户可以使用“签购单查询”来调阅签购单,也可以在盒付宝门户网站上调阅;\n4、可以将该交易的签购单以短信方式发送给消费者查阅。";
     
     [explainIV addSubview:explainLabel];
 }

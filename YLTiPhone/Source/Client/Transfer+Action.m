@@ -49,6 +49,7 @@
 #import "ComplementRegisterInfoViewController.h"
 #import "RealnameLegalizeViewController.h"
 #import "MerchantQueryBalanceResultViewController.h"
+#import "CardBalanceResultViewController.h"
 @implementation Transfer (Action)
 
 
@@ -130,7 +131,7 @@
         [self modifyBankAccountDone];
         
     } else if ([self.transferCode isEqualToString:@"020001"]) {
-        //余额查询
+        //银行卡余额查询
         [self queryBalanceDone];
         
     } else if ([self.transferCode isEqualToString:@"020022"]) {
@@ -164,41 +165,14 @@
 // 查询银行卡余额
 - (void) queryBalanceDone
 {
-    @try {
+    
+    if (self.receDic) {
         
-        NSString *balance = [self.receDic objectForKey:@"field54"];
-        NSString *availableBalance = [self.receDic objectForKey:@"field4"];
-        
-        NSMutableString *tempStr = [NSMutableString string];
-        if (balance && balance.length == 20) {
-            [tempStr appendFormat:@"账面余额:%@", [StringUtil string2SymbolAmount:[balance substringFromIndex:[balance length] - 12]]];
-        }
-        
-        if (availableBalance && availableBalance.length == 20) {
-            [tempStr appendString:@"\n"];
-            [tempStr appendFormat:@"可用余额:%@", [StringUtil string2SymbolAmount:[availableBalance substringFromIndex:[availableBalance length] - 12]]];
-        }
-        
-        //        NSString *displayMsg = [NSString stringWithFormat:@"账面余额%@\n可用余额%@", [StringUtil string2SymbolAmount:[balance substringFromIndex:[balance length] - 12]], [StringUtil string2SymbolAmount:[availableBalance substringFromIndex:[availableBalance length] - 12]]];
-        
-        // 点击确定按纽后会一直执行这个方法
-        [[Transfer sharedTransfer].m_vcom display:tempStr timer:30];
-        
-        /**
-         // 由于金额带有， 与 反射调用方法中的分隔符冲突，故直接调用该方法
-         [[Transfer sharedTransfer] startTransfer:nil fskCmd:[NSString stringWithFormat:@"Display|string:%@", displayMsg] paramDic:nil];
-         ***/
-        //不知道为什么以下两句为止换了界面会出错
-        [ApplicationDelegate showSuccessPrompt:@"余额已显示在刷卡设备屏幕上"];
-        [ApplicationDelegate gotoSuccessViewController:[self.receDic objectForKey:@"fieldMessage"]];
-        
-        
-    }
-    @catch (NSException *exception) {
-        NSLog(@"--%@", exception);
-        NSLog(@"--%@", [exception callStackSymbols]);
-        
-        [ApplicationDelegate gotoFailureViewController:@"查询余额失败，请重试。"];
+        CardBalanceResultViewController *resultVC = [[CardBalanceResultViewController alloc] init];
+        resultVC.dic_rece = self.receDic;
+        [[ApplicationDelegate topViewController].navigationController pushViewController:resultVC animated:YES];
+    }else{
+        [ApplicationDelegate gotoFailureViewController:@"余额查询服务器返回数据错误"];
     }
 }
 
@@ -685,14 +659,14 @@
             
             // 登陆成功，跳转到菜单界面
             ApplicationDelegate.hasLogin = YES;
-            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
-                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
-                BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
-                [ApplicationDelegate.rootNavigationController pushViewController:beginGuideViewController animated:YES];
-            }else{
+//            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
+//                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
+//                BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
+//                [ApplicationDelegate.rootNavigationController pushViewController:beginGuideViewController animated:YES];
+//            }else{
                 CatalogViewController *controller = [[CatalogViewController alloc] initWithNibName:nil bundle:nil];
                 [ApplicationDelegate.rootNavigationController pushViewController:controller animated:YES];
-            }
+//            }
             
         
             
@@ -908,6 +882,10 @@
                 [ApplicationDelegate gotoFailureViewController:@"用户已被注册"];
             }else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"]){
                 [ApplicationDelegate gotoFailureViewController:@"注册失败"];
+            }else if([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"3"]){
+                [ApplicationDelegate gotoFailureViewController:@"未检测到设备"];
+            }else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"4"]){
+                [ApplicationDelegate gotoFailureViewController:@"设备未录入（无机构号）"];
             }
         }
     }

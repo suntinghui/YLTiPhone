@@ -62,7 +62,7 @@
     }
     
     if(value.length == 6){
-        self.md5Value = [EncryptionUtil MD5Encrypt:value];
+        self.md5Value = [EncryptionUtil MD5Encrypt:[NSString stringWithFormat:@"%@%@",value,INIT_PUBLICKEY_MOD]];
         
     }
     NSMutableString *tmpStr = [[NSMutableString alloc] initWithCapacity:6];
@@ -111,7 +111,7 @@
 - (void) numberKeyBoardAbout
 {
     UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"关于"
-                                                   message:@"优乐通为保护您的密码安全，请您使用定制的键盘输入密码。密码键盘每次随机打乱按键顺序，并且在您输入完6位密码后自动对密码进行加密，全面保护您的账户安全。"
+                                                   message:@"盒付宝为保护您的密码安全，请您使用定制的键盘输入密码。密码键盘每次随机打乱按键顺序，并且在您输入完6位密码后自动对密码进行加密，全面保护您的账户安全。"
                                                   delegate:self
                                          cancelButtonTitle:@"确 定"
                                          otherButtonTitles:nil];

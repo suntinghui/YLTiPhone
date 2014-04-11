@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.hasTopView = YES;
-    self.navigationItem.title = @"消费";
+    self.navigationItem.title = @"输入密码";
     pswTxtField = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) left:@"密码" prompt:@"请输入密码"];
     [self.view addSubview:pswTxtField];
     
@@ -74,11 +74,17 @@
     NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
     NSLog(@"enStr %@",enStr);
     
+    
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:enStr forKey:@"AISHUAPIN"];
-    [dic setObject:self.moneyStr forKey:@"field4"];
-    
-    [[Transfer sharedTransfer] startTransfer:@"020022" fskCmd:nil paramDic:dic];
+
+    NSString *transferCode = @"020022";
+    if (self.fromVC == 0) {// 收款
+        [dic setObject:self.moneyStr forKey:@"field4"];
+    }else if(self.fromVC == 1) {// 余额查询
+        transferCode = @"020001";
+    }
+    [[Transfer sharedTransfer] startTransfer:transferCode fskCmd:nil paramDic:dic];
     
 }
 
