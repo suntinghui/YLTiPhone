@@ -2547,6 +2547,7 @@
 				);
 				PRODUCT_NAME = "优乐通";
 				PROVISIONING_PROFILE = "68E7EAFD-4209-485E-925A-6094BE065277";
+
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2557,6 +2558,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
+
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2569,6 +2571,7 @@
 				);
 				PRODUCT_NAME = "优乐通";
 				PROVISIONING_PROFILE = "68E7EAFD-4209-485E-925A-6094BE065277";
+
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};
