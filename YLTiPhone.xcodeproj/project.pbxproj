@@ -406,6 +406,7 @@
 		8D65E98718F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D65E98518F63AD5004E5D94 /* MerchantQueryBalanceResultViewController.m */; };
 		8D65E98B18F6F539004E5D94 /* CardBalanceResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D65E98A18F6F539004E5D94 /* CardBalanceResultViewController.m */; };
 		8D65E98E18F77F37004E5D94 /* ShowContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D65E98D18F77F37004E5D94 /* ShowContentViewController.m */; };
+		8D65E99018F7DD37004E5D94 /* big_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D65E98F18F7DD37004E5D94 /* big_bg@2x.png */; };
 		8D78DA7B18E91FE900072BBB /* QueryBalancePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */; };
 		8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D801CA318EBA3F800CEE39B /* beginguide03.png */; };
 		8D801CA918EBA3F800CEE39B /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D801CA418EBA3F800CEE39B /* beginguide04.png */; };
@@ -987,6 +988,7 @@
 		8D65E98A18F6F539004E5D94 /* CardBalanceResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBalanceResultViewController.m; sourceTree = "<group>"; };
 		8D65E98C18F77F37004E5D94 /* ShowContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowContentViewController.h; sourceTree = "<group>"; };
 		8D65E98D18F77F37004E5D94 /* ShowContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowContentViewController.m; sourceTree = "<group>"; };
+		8D65E98F18F7DD37004E5D94 /* big_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big_bg@2x.png"; sourceTree = "<group>"; };
 		8D78DA7918E91FE900072BBB /* QueryBalancePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryBalancePwdViewController.h; sourceTree = "<group>"; };
 		8D78DA7A18E91FE900072BBB /* QueryBalancePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryBalancePwdViewController.m; sourceTree = "<group>"; };
 		8D801CA318EBA3F800CEE39B /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
@@ -1705,6 +1707,7 @@
 			isa = PBXGroup;
 			children = (
 				055BA0F118750B7E005E7E7A /* fail@2x.png */,
+				8D65E98F18F7DD37004E5D94 /* big_bg@2x.png */,
 				8D56565F18E9517A00CBC002 /* Default@2x.png */,
 				055BA0F218750B7E005E7E7A /* success@2x.png */,
 				0554B1E01871664D00C75DCD /* selectBank_normal@2x.png */,
@@ -2244,6 +2247,7 @@
 				0520795E1863DE45004BF055 /* LoginButton_highlight.png in Resources */,
 				052079691863DE5B004BF055 /* RegisterButton_normal@2x.png in Resources */,
 				0554B19218711EEC00C75DCD /* inputmoney_button_8@2x.png in Resources */,
+				8D65E99018F7DD37004E5D94 /* big_bg@2x.png in Resources */,
 				0554B1CA18715DD600C75DCD /* sign_clear_btn.png in Resources */,
 				052079841863EC59004BF055 /* button_nomal.png in Resources */,
 				8D3CA16118C6C9C800C119DA /* con_req_020023.xml in Resources */,
@@ -2531,7 +2535,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
-
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2544,7 +2547,6 @@
 				);
 				PRODUCT_NAME = "优乐通";
 				PROVISIONING_PROFILE = "68E7EAFD-4209-485E-925A-6094BE065277";
-
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2555,7 +2557,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
-
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2568,7 +2569,6 @@
 				);
 				PRODUCT_NAME = "优乐通";
 				PROVISIONING_PROFILE = "68E7EAFD-4209-485E-925A-6094BE065277";
-
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				WRAPPER_EXTENSION = app;
 			};

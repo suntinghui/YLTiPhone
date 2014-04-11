@@ -31,7 +31,7 @@
 @synthesize forgetPwdButton = _forgetPwdButton;
 @synthesize loginButton = _loginButton;
 @synthesize registerButton = _registerButton;
-
+@synthesize url= _url;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -190,8 +190,9 @@
 
 -(void)checkUpdate
 {
-//    ShowContentViewController *vc = [[ShowContentViewController alloc] initWithUrl:[respDic objectForKey:@"URL"]];
-//    [self.navigationController pushViewController:vc animated:YES];
+   
+    [[Transfer sharedTransfer] startTransfer:@"089018" fskCmd:nil paramDic:nil];
+    
 }
 - (IBAction)regesterAction:(id)sender
 {
@@ -244,4 +245,29 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+-(void)showAlertViewUpdate:(NSDictionary *) dic {
+    NSDictionary *dic_version = [[dic objectForKey:@"apires"] objectFromJSONString];
+    self.url = [dic_version objectForKey:@"url"];
+    NSString *version = [dic_version objectForKey:@"version"];
+    int version_d = [version intValue];
+    if(version_d > version_num){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"有新版本，是否下载更新？！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
+        alertView.tag = 100;
+        [alertView show];
+    }
+    
+
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 100) {
+        if (buttonIndex == 1) {
+            
+            ShowContentViewController *vc = [[ShowContentViewController alloc] initWithUrl:self.url];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
+}
 @end

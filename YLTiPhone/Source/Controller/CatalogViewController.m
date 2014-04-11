@@ -13,6 +13,8 @@
 #import "Transfer+Action.h"
 #import "TimedoutUtil.h"
 #import "UpdateAppHelper.h"
+#import "JSONKit.h"
+
 
 #import "ComplementRegisterInfoViewController.h"
 #import "ModifyLoginPwdViewController.h"
@@ -31,6 +33,7 @@
 #import "BeginGuideViewController.h"
 #import "AppDataCenter.h"
 #import "MerchantQueryBalanceViewController.h"
+#import "ShowContentViewController.h"
 #define kSCNavBarImageTag 10
 
 @interface CatalogViewController ()
@@ -45,6 +48,7 @@
 @synthesize rightTableView          = _rightTableView;
 @synthesize catalogArray            = _catalogArray;
 @synthesize currentCatalogArray     = _currentCatalogArray;
+@synthesize url = _url;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -513,7 +517,7 @@
         }
         case 65://软件更新
         {
-            
+            [self checkUpdate];
             break;
         }
         case 66://版本号
@@ -535,6 +539,32 @@
     
 }
 
+
+-(void)checkUpdate
+{
+    
+    [[Transfer sharedTransfer] startTransfer:@"089018" fskCmd:nil paramDic:nil];
+    
+}
+
+-(void)showAlertViewUpdate:(NSDictionary *) dic {
+    NSDictionary *dic_version = [[dic objectForKey:@"apires"] objectFromJSONString];
+    self.url = [dic_version objectForKey:@"url"];
+    NSString *version = [dic_version objectForKey:@"version"];
+    int version_d = [version intValue];
+    if(version_d > version_num){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"有新版本，是否下载更新？！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
+        alertView.tag = 400;
+        [alertView show];
+    }else{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"已经是最新版本！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alertView show];
+
+    }
+    
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -559,6 +589,12 @@
         if (buttonIndex == 1) {
             NSDictionary *dict = @{@"username":[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"]};
             [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetKsn" paramDic:dict];
+        }
+    } else if (alertView.tag == 400) {
+        if (buttonIndex == 1) {
+            
+            ShowContentViewController *vc = [[ShowContentViewController alloc] initWithUrl:self.url];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }

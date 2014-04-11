@@ -104,4 +104,6 @@
 
 #define DEVICEID                               @"deviceId"
 
+#define version_num                         101
+
 
