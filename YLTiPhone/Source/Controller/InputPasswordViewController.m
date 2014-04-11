@@ -31,11 +31,12 @@
     // Do any additional setup after loading the view from its nib.
     self.hasTopView = YES;
     self.navigationItem.title = @"输入密码";
+    
     pswTxtField = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) left:@"密码" prompt:@"请输入密码"];
     [self.view addSubview:pswTxtField];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [confirmButton setFrame:CGRectMake(10, 230, 297, 42)];
+    [confirmButton setFrame:CGRectMake(10, 280, 297, 42)];
     [confirmButton setTitle:@"确    定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -43,7 +44,7 @@
     [confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonNomal.png"] forState:UIControlStateNormal];
     [confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
     [self.view addSubview:confirmButton];
-
+    
 }
 - (void)viewWillAppear:(BOOL)animated
 {
