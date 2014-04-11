@@ -261,6 +261,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+//    
+//    [[UIApplication sharedApplication] setStatusBarOrientation:UIDeviceOrientationPortrait animated:YES];
+//    //设置导航栏旋转
+//    self.navigationController.navigationBar.frame = CGRectMake(0, 0, 320, 44);
+//    self.navigationController.navigationBar.transform = CGAffineTransformMakeRotation(0);
+    
 }
 
 -(IBAction)confirmButtonAction:(id)sender
@@ -269,13 +275,19 @@
     
     SignViewController *signVC = [[SignViewController alloc] initWithNibName:@"SignViewController" bundle:nil];
     signVC.delegate = self;
-    UINavigationController *navigationControl = [[UINavigationController alloc] initWithRootViewController:signVC];
-    [self presentModalViewController:navigationControl animated:YES];
+    [ApplicationDelegate.rootNavigationController pushViewController:signVC animated:YES];
+    
 }
 
 -(IBAction)close:(id)sender
 {
     [self popToCatalogViewController];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    //    return UIInterfaceOrientationMaskLandscapeLeft;
+    return 0;
 }
 
 - (NSString *) getMD5Value

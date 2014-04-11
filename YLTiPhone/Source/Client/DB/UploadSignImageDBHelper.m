@@ -113,6 +113,7 @@
         while ([resultSet next]) {
             int count = [resultSet intForColumnIndex:1];
             // 已经成功上传或超过设置的上传签购单的最大次数,则删除该交易
+            NSLog(@"count:%d max:%d",count, [[SystemConfig sharedSystemConfig] maxUploadSignImageCount]);
             if (count==0 || count > [[SystemConfig sharedSystemConfig] maxUploadSignImageCount]){
                 [self deleteATransfer:db traceNum:[resultSet stringForColumnIndex:0]];
             } else {

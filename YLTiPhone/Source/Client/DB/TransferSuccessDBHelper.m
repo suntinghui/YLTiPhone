@@ -50,9 +50,9 @@
     @try {
         NSMutableString *mutableString = [[NSMutableString alloc] init];
         [mutableString appendFormat:@"SELECT content FROM %@ WHERE ", kTransferSuccessTableName];
-        [mutableString appendString:@"transCode = '200000022' AND revoke = 1 AND batchNum = ?  AND datetime(date) = datetime(?)"];
+        [mutableString appendString:@"transCode = '020022' AND revoke = 1 AND batchNum = ?  AND datetime(date) = datetime(?)"];
         FMResultSet *resultSet = [db executeQuery:mutableString, [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__BATCHNUM"], [[AppDataCenter sharedAppDataCenter] getServerDate]];
-        
+    
         while ([resultSet next]) {
             SuccessTransferModel *model = [[SuccessTransferModel alloc] init];
             [model setContent:[StringUtil string2Dictionary:[resultSet stringForColumnIndex:0]]];

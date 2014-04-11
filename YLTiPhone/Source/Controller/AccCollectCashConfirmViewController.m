@@ -88,6 +88,7 @@
     [accountInfoView addSubview:balancelabel];
     
     self.paypassTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 220+ios7_h, 300, 44) left:@"" prompt:@"支付密码"];
+//    [self.paypassTF.pwdTF hideKeyBoard:self.view :1 hasNavBar:YES]; //TODO
     [self.view addSubview:self.paypassTF];
 
     
@@ -158,14 +159,18 @@
         if (ApplicationDelegate.isAishua)
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-//            int randomNum = arc4random() % 89999 + 10000;
-//            这是一个五位数的随机数；
             
-            int randomNum = arc4random() % 8999999999999999 + 1000000000000000;
-            [dic setObject:[NSString stringWithFormat:@"01%d",randomNum] forKey:@"RANDROMSTR"];
+            int random = (arc4random() % 100) + 1;
+            [dic setObject:[NSString stringWithFormat:@"01%016d",random] forKey:@"RANDOM"];
+            [AppDataCenter sharedAppDataCenter].__RANDOM = [NSString stringWithFormat:@"%016d",random];
+            
+            //010000 普通提款  020000快速提款
+            [dic setObject:self.type==0?@"010000":@"020000" forKey:@"field3"];
+            
             [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
             [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
-            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+//            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+            [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"pwd"]; //TODO
             //080002 商户提款
             [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
         }

@@ -298,7 +298,7 @@
     NSString *formatStr = @"con_req_%@.xml";
     if (ApplicationDelegate.isAishua ) {
         if([transferCode isEqualToString:@"086000"] || [transferCode isEqualToString:@"080003"] || [transferCode isEqualToString:@"086002"]
-           || [transferCode isEqualToString:@"020001"] || [transferCode isEqualToString:@"020022"] || [transferCode isEqualToString:@"020023"]){
+           || [transferCode isEqualToString:@"020001"] || [transferCode isEqualToString:@"020022"] || [transferCode isEqualToString:@"020023"]||[transferCode isEqualToString:@"080002"]){
             formatStr = @"con_req_%@_aishua.xml";    
         }
         

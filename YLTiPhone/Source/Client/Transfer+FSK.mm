@@ -351,7 +351,7 @@
         // 设备号
         if (vs->hardSerialNoLen > 0) {
             [AppDataCenter sharedAppDataCenter].__TERSERIALNO = [self.m_vcom HexValue:vs->hardSerialNo Len:vs->hardSerialNoLen];
-            NSLog(@"App Data:%@", [AppDataCenter sharedAppDataCenter].__TERSERIALNO);
+            NSLog(@"App Data __TERSERIALNO:%@", [AppDataCenter sharedAppDataCenter].__TERSERIALNO);
             
             // 以001917开头的是打印设备，以001911开头的是不带打印的点付宝设备
             if ([[AppDataCenter sharedAppDataCenter].__TERSERIALNO hasPrefix:@"001917"]) {

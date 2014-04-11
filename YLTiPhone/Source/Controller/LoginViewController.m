@@ -18,6 +18,7 @@
 #import "YLTPasswordTextField.h"
 #import "SecurityUtil.h"
 #import "ConvertUtil.h"
+#import "SignViewController.h"
 
 @interface LoginViewController ()
 

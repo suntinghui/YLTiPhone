@@ -41,6 +41,7 @@ static SystemConfig *instance = nil;
         self.maxReversalCount       = 3;
         self.maxTransferTimeout     = 30;  //觉得时间太长  更改为30 by xs
         self.maxLockTimeout         = 20;
+        self.maxUploadSignImageCount = 3;
     }
     
     return self;
