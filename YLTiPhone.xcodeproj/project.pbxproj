@@ -1006,6 +1006,7 @@
 		FC1FC6BE18EC090F004488CF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = lib/libcurl.a; sourceTree = "<group>"; };
 		FC1FC6BF18EC090F004488CF /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
 		FC1FC6C018EC090F004488CF /* libvoclib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvoclib.a; path = lib/libvoclib.a; sourceTree = "<group>"; };
+		FC310D4F18F7AF40007645F1 /* app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@3x.png"; sourceTree = "<group>"; };
 		FC712CFC18ED08BA00094BF8 /* BeginGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginGuideViewController.h; sourceTree = "<group>"; };
 		FC712CFD18ED08BA00094BF8 /* BeginGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeginGuideViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1112,6 +1113,7 @@
 				0537AE3318583B39005F84D1 /* YLTiPhone-Info.plist */,
 				8D3B939C18EA467B00A8C1CD /* app.png */,
 				8D3B939D18EA467B00A8C1CD /* app@2x.png */,
+				FC310D4F18F7AF40007645F1 /* app@3x.png */,
 				0537AE3418583B39005F84D1 /* InfoPlist.strings */,
 				0537AE3718583B39005F84D1 /* main.m */,
 				0537AE3918583B39005F84D1 /* YLTiPhone-Prefix.pch */,

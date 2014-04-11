@@ -10,7 +10,10 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>app@3x</string>
+		<string>app@3x.png</string>
 		<string>app.png</string>
+		<string>app@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.crbcint.LKOA4iPhone</string>
