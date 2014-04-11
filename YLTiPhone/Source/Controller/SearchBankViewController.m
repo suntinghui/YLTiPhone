@@ -45,7 +45,6 @@
     _items = [[NSMutableArray alloc] init];
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 140, 300, VIEWHEIGHT-110) style:UITableViewStyleGrouped];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     [self.myTableView setBackgroundColor:[UIColor clearColor]];
@@ -53,6 +52,7 @@
     [self.view addSubview:self.myTableView];
     
     if (DeviceVersion>=7){
+        self.automaticallyAdjustsScrollViewInsets = NO;
         self.myTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.myTableView.bounds.size.width, 0.01f)];
     }
     

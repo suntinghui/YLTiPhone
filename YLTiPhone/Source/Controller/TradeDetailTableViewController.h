@@ -9,10 +9,13 @@
 #import "AbstractViewController.h"
 #import "TransferDetailModel.h"
 
-@interface TradeDetailTableViewController : AbstractViewController<UITableViewDataSource,
-UITableViewDelegate>
+@interface TradeDetailTableViewController : AbstractViewController
 
-@property(nonatomic, strong)UITableView *myTableView;
 @property (strong, nonatomic) TransferDetailModel *detailModel;
+@property (nonatomic, strong) UIScrollView      *scrollView;
+
+@property (nonatomic, strong) UIButton          *confirmButton;
+@property (nonatomic, strong) UIImageView       *imageView;
+@property (nonatomic, strong) UIImageView       *bgImageView;
 
 @end
