@@ -160,7 +160,12 @@
     {
         [ApplicationDelegate showSuccessPrompt:@"上传成功"];
     }
-    else {
+    else if([self.transferCode isEqualToString:@"020023"]) //消费撤销
+    {
+        [ApplicationDelegate showSuccessPrompt:@"交易成功"];
+    }
+    else
+    {
         [self transferSuccessDone];
     }
 }

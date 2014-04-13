@@ -57,22 +57,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Controller/GatherCancelTableViewController.m"
-            timestampString = "418895068.361341"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/DB/TransferSuccessDBHelper.m"
             timestampString = "418899732.145241"
             startingColumnNumber = "9223372036854775807"
@@ -95,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "949"
             endingLineNumber = "949"
-            landmarkName = "-recordSuccessTransfer"
+            landmarkName = "-MerchantQueryBalaceDone"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "941"
             endingLineNumber = "941"
-            landmarkName = "-recordSuccessTransfer"
+            landmarkName = "-MerchantQueryBalaceDone"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

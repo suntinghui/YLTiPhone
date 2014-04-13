@@ -51,6 +51,7 @@
         self.myTableView.delegate = self;
         self.myTableView.dataSource = self;
         [self.myTableView setBackgroundColor:[UIColor clearColor]];
+        self.myTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
         [self.view addSubview:self.myTableView];
     } else {
         UIImageView *emptyView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emptyImage.png"]];
@@ -69,6 +70,12 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - 功能函数
+- (void)gotoNextControl
+{
+    ConfirmCancelViewController *vc = [[ConfirmCancelViewController alloc] initWithModel:[self.array objectAtIndex:selectRow]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark- tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -106,9 +113,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    ConfirmCancelViewController *vc = [[ConfirmCancelViewController alloc] initWithModel:[self.array objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:vc animated:YES];
+    selectRow = indexPath.row;
+    if (ApplicationDelegate.isAishua)
+    {
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
+    }
 }
 
 @end

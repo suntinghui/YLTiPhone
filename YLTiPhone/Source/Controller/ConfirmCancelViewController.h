@@ -1,7 +1,9 @@
 //
 //  ConfirmCancelViewController.h
 //  YLTiPhone
-//
+
+//  收款撤销信息确认页面
+
 //  Created by xushuang on 13-12-30.
 //  Copyright (c) 2013年 xushuang. All rights reserved.
 //
