@@ -123,6 +123,15 @@
 
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+//
+- (BOOL)prefersStatusBarHidden//for iOS7.0
+{
+    return YES;
+}
 
 #pragma mark-  IBAciton Methods
 //确定
