@@ -163,7 +163,7 @@
     }
     else if([self.transferCode isEqualToString:@"089014"]) //签购单上传
     {
-        [ApplicationDelegate showSuccessPrompt:@"上传成功"];
+//        [ApplicationDelegate showSuccessPrompt:@"上传成功"];
     }
     else if([self.transferCode isEqualToString:@"020023"]) //消费撤销
     {

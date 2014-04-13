@@ -424,6 +424,7 @@
 		B8E57F3B18FA7BB1001EBE0B /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3818FA7BB1001EBE0B /* app@2x.png */; };
 		B8E57F3C18FA7BB1001EBE0B /* app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3918FA7BB1001EBE0B /* app@3x.png */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
+		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
 		FC1FC6C118EC090F004488CF /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BD18EC090F004488CF /* libcrypto.a */; };
 		FC1FC6C218EC090F004488CF /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BE18EC090F004488CF /* libcurl.a */; };
 		FC1FC6C318EC090F004488CF /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BF18EC090F004488CF /* libssl.a */; };
@@ -1015,6 +1016,7 @@
 		B8E57F3818FA7BB1001EBE0B /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
 		B8E57F3918FA7BB1001EBE0B /* app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@3x.png"; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		B8E57F3F18FA8B98001EBE0B /* revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revoked.png; sourceTree = "<group>"; };
 		FC1FC6BD18EC090F004488CF /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		FC1FC6BE18EC090F004488CF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = lib/libcurl.a; sourceTree = "<group>"; };
 		FC1FC6BF18EC090F004488CF /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
@@ -1710,6 +1712,7 @@
 		055B2F8D18629C22000373FE /* Image4 */ = {
 			isa = PBXGroup;
 			children = (
+				B8E57F3F18FA8B98001EBE0B /* revoked.png */,
 				055BA0F118750B7E005E7E7A /* fail@2x.png */,
 				8D65E98F18F7DD37004E5D94 /* big_bg@2x.png */,
 				055BA0F218750B7E005E7E7A /* success@2x.png */,
@@ -2233,6 +2236,7 @@
 				0554B17318711EEC00C75DCD /* digit_green_0.png in Resources */,
 				8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */,
 				0554B18818711EEC00C75DCD /* digit_little_dash.png in Resources */,
+				B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */,
 				052079851863EC59004BF055 /* button_select.png in Resources */,
 				0554B18718711EEC00C75DCD /* digit_little_9.png in Resources */,
 				8D3CA15E18C6C9C800C119DA /* con_req_020001_aishua.xml in Resources */,

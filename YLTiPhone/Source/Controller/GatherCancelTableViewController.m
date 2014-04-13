@@ -43,7 +43,7 @@
     //[ApplicationDelegate showProcess:@"正在查询数据"];
     
     TransferSuccessDBHelper *helper = [[TransferSuccessDBHelper alloc] init];
-    self.array = [helper queryNeedRevokeTransfer];
+    self.array = [helper queryAllTransfer];
     [ApplicationDelegate hideProcess];
     
     if (self.array && [self.array count] > 0) {
@@ -102,17 +102,32 @@
         cell = [[GatherCancelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    self.model = (SuccessTransferModel *)[self.array objectAtIndex:indexPath.row];
-    cell.accountLabel.text = [StringUtil formatAccountNo:[self.model.content objectForKey:@"field2"]];
-    cell.timeLabel.text = [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [self.model.content objectForKey:@"field13"], [self.model.content objectForKey:@"field12"]]];
-    cell.amountLabel.text = [StringUtil string2SymbolAmount:[self.model.content objectForKey:@"field4"]];
+   SuccessTransferModel *model = (SuccessTransferModel *)[self.array objectAtIndex:indexPath.row];
+    if (model.Flag == 0)
+    {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(200, 20, 80, 45)];
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.image = [UIImage imageNamed:@"revoked"];
+        [cell.contentView addSubview:imageView];
+    }
+    cell.accountLabel.text = [StringUtil formatAccountNo:[model.content objectForKey:@"field2"]];
+    cell.timeLabel.text = [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [model.content objectForKey:@"field13"], [self.model.content objectForKey:@"field12"]]];
+    cell.amountLabel.text = [StringUtil string2SymbolAmount:[model.content objectForKey:@"field4"]];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SuccessTransferModel *model = (SuccessTransferModel *)[self.array objectAtIndex:indexPath.row];
+    if (model.Flag == 0)
+    {
+        return;
+    }
+
     selectRow = indexPath.row;
     if (ApplicationDelegate.isAishua)
     {

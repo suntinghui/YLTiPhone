@@ -71,6 +71,40 @@
         [db close];
     }
 }
+/**
+ *  查询所有消费
+ *
+ *  @return
+ */
+- (NSArray *) queryAllTransfer
+{
+    FMDatabase *db = [BaseDBHelper getOpenedFMDatabase];
+    NSMutableArray *array = [NSMutableArray array];
+    @try {
+        NSMutableString *mutableString = [[NSMutableString alloc] init];
+        [mutableString appendFormat:@"SELECT content,revoke FROM %@ WHERE ", kTransferSuccessTableName];
+        [mutableString appendString:@"transCode = '020022'  AND batchNum = ?  AND datetime(date) = datetime(?)"];
+        FMResultSet *resultSet = [db executeQuery:mutableString, [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__BATCHNUM"], [[AppDataCenter sharedAppDataCenter] getServerDate]];
+        
+        while ([resultSet next]) {
+            SuccessTransferModel *model = [[SuccessTransferModel alloc] init];
+            [model setContent:[StringUtil string2Dictionary:[resultSet stringForColumnIndex:0]]];
+            model.Flag = [resultSet intForColumnIndex:1];
+            [array addObject:model];
+        }
+        
+        return array;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"exception throw->%@",exception);
+        NSLog(@"exception call stack->%@",[exception callStackSymbols]);
+        
+        return nil;
+    }
+    @finally {
+        [db close];
+    }
+}
 
 - (NSArray *) queryTransfersWithMinAmount:(NSString *) minAmount maxAmount:(NSString *) maxAmount startDate:(NSString *) startDate endDate:(NSString *) endDate
 {   
