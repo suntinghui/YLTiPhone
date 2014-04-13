@@ -56,7 +56,7 @@
     UIView *loginView = [[UIView alloc] init];
     
     loginView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height );
-    loginView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LoginViewBG.png"]];
+    loginView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LoginViewBG"]];
     
     self.phoneNumTF = [[LeftTextField alloc] initWithFrame:CGRectMake(79, 115, 181, 30) isLong:true];
     [self.phoneNumTF.contentTF setPlaceholder:@"请输入注册时的手机号"];

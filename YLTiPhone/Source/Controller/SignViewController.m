@@ -137,7 +137,7 @@
 //确定
 -(IBAction)finish:(id)sender
 {
-    if (![self.phoneNumTF.text isEqualToString:@""]&&self.phoneNumTF.text.length < 11) {
+    if (self.phoneNumTF.text.length >0&&self.phoneNumTF.text.length < 11) {
         [ApplicationDelegate showErrorPrompt:@"手机号不能少于11位" ViewController:self];
         return ;
     }

@@ -134,14 +134,14 @@
     {
         //if iOS 5.0 and later
         
-        [navBar setBackgroundImage:[UIImage imageNamed:@"catalog_nav.png"] forBarMetrics:UIBarMetricsDefault];
+        [navBar setBackgroundImage:[UIImage imageNamed:@"catalog_nav"] forBarMetrics:UIBarMetricsDefault];
     }
     else
     {
         UIImageView *imageView = (UIImageView *)[navBar viewWithTag:kSCNavBarImageTag];
         if (imageView == nil)
         {
-            imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"catalog_nav.png"]];
+            imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"catalog_nav"]];
             [imageView setTag:kSCNavBarImageTag];
             [navBar insertSubview:imageView atIndex:0];
         }

@@ -167,7 +167,7 @@
     }
     else if([self.transferCode isEqualToString:@"020023"]) //消费撤销
     {
-        [ApplicationDelegate showSuccessPrompt:@"交易成功"];
+        [self ConfirmCancelDone];
     }
     else
     {
@@ -1004,7 +1004,7 @@
     [self recordSuccessTransfer];
     
     TransferSuccessDBHelper *helper = [[TransferSuccessDBHelper alloc] init];
-    [helper updateRevokeFalg:[[self.sendDic objectForKey:@"field90"] substringWithRange:NSMakeRange(4, 6)]];
+    [helper updateRevokeFalg:[[self.sendDic objectForKey:@"field61"] substringWithRange:NSMakeRange(6, 6)]];
     
     ConfirmCancelResultViewController *resultVC = [[ConfirmCancelResultViewController alloc] initWithResultMessage:@"收款撤销成功"];
     [[ApplicationDelegate topViewController].navigationController pushViewController:resultVC animated:YES];
