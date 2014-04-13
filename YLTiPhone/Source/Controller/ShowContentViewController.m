@@ -57,7 +57,9 @@
 {
     [super viewDidLoad];
 
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"big_bg"]]];
+//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"big_bg"]]];
+    self.navigationItem.title = @"版本更新路径";
+
     float height = 416.0f;
     if (iPhone5) {
         height = 504.0f;

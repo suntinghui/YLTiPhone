@@ -12,17 +12,19 @@
 
 #import "YLTPasswordTextField.h"
 
-@interface LoginViewController : AbstractViewController<UITextFieldDelegate,UINavigationControllerDelegate>
+@interface LoginViewController : AbstractViewController<UITextFieldDelegate,UINavigationControllerDelegate, UIAlertViewDelegate>
 {
     BOOL            agreeButtonTouch;
+
 }
 @property(nonatomic, strong)IBOutlet LeftTextField    *phoneNumTF;
 @property(nonatomic, strong)IBOutlet YLTPasswordTextField    *passwordTF;
 @property(nonatomic, strong)IBOutlet UIButton   *forgetPwdButton;
 @property(nonatomic, strong)IBOutlet UIButton   *loginButton;
 @property(nonatomic, strong)IBOutlet UIButton   *registerButton;
+@property(nonatomic, strong)NSString *url;
 
 -(IBAction)loginAction:(id)sender;
 -(IBAction)regesterAction:(id)sender;
-
+-(void)showAlertViewUpdate:(NSDictionary *) dic;
 @end

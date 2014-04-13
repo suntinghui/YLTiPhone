@@ -50,6 +50,7 @@
 #import "RealnameLegalizeViewController.h"
 #import "MerchantQueryBalanceResultViewController.h"
 #import "CardBalanceResultViewController.h"
+#import "CatalogViewController.h"
 @implementation Transfer (Action)
 
 
@@ -151,6 +152,10 @@
     {
         //短信
         [self smsDone];
+    }else if([self.transferCode isEqualToString:@"089018"]) //add wenbin 20140322
+    {
+        //版本号
+        [self versionDone];
     }
     else if([self.transferCode isEqualToString:@"080002"]) //商户提款
     {
@@ -174,6 +179,27 @@
 
 -(void) smsDone{
     
+}
+
+//版本号
+-(void) versionDone{
+    @try {
+        if (self.receDic) {
+            if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
+                
+                if ([[ApplicationDelegate topViewController] isKindOfClass:[LoginViewController class]]) {
+                    [(LoginViewController*)[ApplicationDelegate topViewController]  showAlertViewUpdate:self.receDic];
+                }else if ([[ApplicationDelegate topViewController] isKindOfClass:[CatalogViewController class]]) {
+                    [(CatalogViewController*)[ApplicationDelegate topViewController]  showAlertViewUpdate:self.receDic];
+                }
+            }else{
+            }
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"--%@", [exception callStackSymbols]);
+
+    }
 }
 // 查询银行卡余额
 - (void) queryBalanceDone

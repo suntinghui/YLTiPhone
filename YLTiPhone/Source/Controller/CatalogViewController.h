@@ -27,7 +27,8 @@
 @property (nonatomic, retain) UITableView           *rightTableView;
 @property (nonatomic, retain) NSArray               *catalogArray;
 @property (nonatomic, retain) NSMutableArray        *currentCatalogArray;
+@property(nonatomic, strong)NSString *url;
 
 - (void)getMerchantInfoAction;
-
+-(void)showAlertViewUpdate:(NSDictionary *) dic;
 @end
