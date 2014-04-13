@@ -23,6 +23,7 @@
 @property (nonatomic, strong, setter = setDate:) NSString                  *date;
 @property (nonatomic, strong) NSString                  *amount;
 @property (nonatomic, strong) NSDictionary              *content;
+@property (nonatomic, assign) int Flag; //消费的状态 0：未撤销 1：已撤销
 
 - (void) setDate:(NSString *)date;
 

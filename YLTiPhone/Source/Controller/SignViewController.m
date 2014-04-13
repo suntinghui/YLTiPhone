@@ -123,12 +123,21 @@
 
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+//
+- (BOOL)prefersStatusBarHidden//for iOS7.0
+{
+    return YES;
+}
 
 #pragma mark-  IBAciton Methods
 //确定
 -(IBAction)finish:(id)sender
 {
-    if (self.phoneNumTF.text==nil||[self.phoneNumTF.text isEqualToString:@""] ||self.phoneNumTF.text.length < 11) {
+    if (self.phoneNumTF.text.length >0&&self.phoneNumTF.text.length < 11) {
         [ApplicationDelegate showErrorPrompt:@"手机号不能少于11位" ViewController:self];
         return ;
     }

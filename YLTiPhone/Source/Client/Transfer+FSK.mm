@@ -16,6 +16,8 @@
 #import "ConvertUtil.h"
 #import "InputMoneyViewController.h"
 #import "QueryBalanceViewController.h"
+#import "GatherCancelTableViewController.h"
+
 @implementation Transfer (FSK)
 
 - (void) initFSK
@@ -321,6 +323,14 @@
         InputMoneyViewController *inputMoneyController = (InputMoneyViewController*)ApplicationDelegate.topViewController;
         inputMoneyController.cardInfoDic = cardInfo;
         
+    }
+    //消费撤销列表刷卡后
+    else if([ApplicationDelegate.topViewController isKindOfClass:[GatherCancelTableViewController class]])
+    {
+        if ([ApplicationDelegate.topViewController respondsToSelector:@selector(gotoNextControl)])
+       {
+           [ApplicationDelegate.topViewController performSelector:@selector(gotoNextControl) withObject:nil];
+        }
     }
 }
 

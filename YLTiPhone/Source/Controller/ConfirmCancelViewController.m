@@ -13,6 +13,8 @@
 #import "DemoClient.h"
 #import "Transfer.h"
 #import "Transfer+Action.h"
+#import "ConvertUtil.h"
+#import "SecurityUtil.h"
 
 #define HEIGHT          5
 #define ORIGIN_X        130
@@ -206,10 +208,23 @@
         [DemoClient setDemoAmount:[self.model.content objectForKey:@"field4"]];
 #endif
         
+    
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:self.model.content];
-        [dic setObject:[self.pwdTF rsaValue] forKey:@"fieldMerchPWD"];
         
-        [[Transfer sharedTransfer] startTransfer:@"200200023" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetDes#Request_GetPin|string:%@",[self.model.content objectForKey:@"field4"]] paramDic:dic];
+//        [dic setObject:[self.pwdTF rsaValue] forKey:@"fieldMerchPWD"];
+//        
+//        [[Transfer sharedTransfer] startTransfer:@"0020023" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetDes#Request_GetPin|string:%@",[self.model.content objectForKey:@"field4"]] paramDic:dic];
+        
+        NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[AppDataCenter sharedAppDataCenter].pinKey];
+        NSString *key = [SecurityUtil encryptUseXOR16:temKey];
+        
+        NSString *psw = [NSString stringWithFormat:@"%@00",self.pwdTF.inputStr];
+        NSString *keyResult = [NSString stringWithFormat:@"%@%@",key,[key substringToIndex:16]];
+        NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
+        [dic setObject:enStr forKey:@"AISHUAPIN"];
+        
+        [[Transfer sharedTransfer] startTransfer:@"020023" fskCmd:nil paramDic:dic];
+        
     }
 }
 
