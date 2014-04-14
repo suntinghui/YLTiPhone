@@ -123,7 +123,7 @@
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"终端" style:UIBarButtonItemStyleBordered target:self action:@selector(selectPost:)];
 //    self.navigationItem.rightBarButtonItem = rightButton;
 //    
-//    [self checkUpdate];
+    [self checkUpdate];
     
 }
 
