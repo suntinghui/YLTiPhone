@@ -82,27 +82,7 @@
         
     } else if ([self.transferCode isEqualToString:@"089001"]){ //注册
         
-        if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"5"])
-        {
-            [ApplicationDelegate showErrorPrompt:@"该设备已被注册"];
-        }
-        else if([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"2"])
-        {
-            [ApplicationDelegate showErrorPrompt:@"用户已被注册"];
-        }
-        else if([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"3"])
-        {
-            [ApplicationDelegate showErrorPrompt:@"未检测到设备"];
-        }
-        else if([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"4"])
-        {
-            [ApplicationDelegate showErrorPrompt:@"设备未录入"];
-        }
-        else
-        {
-            
-            [self registrDone];
-        }
+        [self registrDone];
         
     } else if ([self.transferCode isEqualToString:@"089002"]) {
         //找回密码
@@ -110,14 +90,7 @@
         
     } else if ([self.transferCode isEqualToString:@"089003"]){  //修改登录，支付密码
        
-        if([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"2"])
-        {
-            [ApplicationDelegate showErrorPrompt:@"原始密码错误"];
-        }
-        else
-        {
-            [self modifyDone];
-        }
+        [self modifyDone];
         
     } else if ([self.transferCode isEqualToString:@"089004"]) {
         //公告查询
@@ -954,6 +927,9 @@
                 [ApplicationDelegate gotoFailureViewController:@"未检测到设备"];
             }else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"4"]){
                 [ApplicationDelegate gotoFailureViewController:@"设备未录入（无机构号）"];
+            }
+            else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"5"]){
+                [ApplicationDelegate gotoFailureViewController:@"设备已被使用"];
             }
         }
     }
