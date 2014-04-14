@@ -694,8 +694,8 @@
             //记录返回数据中的 md5key
             [UserDefaults setObject:[[self.receDic objectForKey:@"apires"] objectForKey:@"md5key"] forKey:MD5KEY];
             [UserDefaults synchronize];
-//            [AppDataCenter sharedAppDataCenter].status = [self.receDic objectForKey:@"status"];
-            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
+            [AppDataCenter sharedAppDataCenter].status = [self.receDic objectForKey:@"status"];
+//            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
 
             
             // 登陆成功，跳转到菜单界面

@@ -160,7 +160,7 @@
     
     if ([self checkValue]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-        [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+        [dic setObject:self.phoneNumTF.contentTF.text forKey:@"tel"];
         [dic setObject:self.securityCodeTF.contentTF.text forKey:@"smscode"];
         [dic setObject:self.cardIDTF.contentTF.text forKey:@"pid"];//身份证
         [dic setObject:self.realNameTF.contentTF.text forKey:@"merchant_name"];//户名

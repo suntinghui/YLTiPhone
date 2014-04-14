@@ -412,17 +412,17 @@
 		8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85518EFA662003F222E /* AgreementViewController.xib */; };
 		8DE4E85918EFC531003F222E /* agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85818EFC531003F222E /* agreement.html */; };
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
-		B80BC78B18FB8B40000373FE /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78218FB8B40000373FE /* aboutSystemBg@2x.png */; };
-		B80BC78C18FB8B40000373FE /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78318FB8B40000373FE /* app.png */; };
-		B80BC78D18FB8B40000373FE /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78418FB8B40000373FE /* app@2x.png */; };
-		B80BC78E18FB8B40000373FE /* app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78518FB8B40000373FE /* app@3x.png */; };
-		B80BC78F18FB8B40000373FE /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78618FB8B40000373FE /* catalog_nav@2x.png */; };
-		B80BC79018FB8B40000373FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78718FB8B40000373FE /* Default-568h@2x.png */; };
-		B80BC79118FB8B40000373FE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78818FB8B40000373FE /* Default@2x.png */; };
-		B80BC79218FB8B40000373FE /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78918FB8B40000373FE /* LoginViewBG@2x.png */; };
-		B80BC79318FB8B40000373FE /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78A18FB8B40000373FE /* navbar@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
+		B8CF8D8618FBAB8C00AF7037 /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D7D18FBAB8C00AF7037 /* aboutSystemBg@2x.png */; };
+		B8CF8D8718FBAB8C00AF7037 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D7E18FBAB8C00AF7037 /* app.png */; };
+		B8CF8D8818FBAB8C00AF7037 /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D7F18FBAB8C00AF7037 /* app@2x.png */; };
+		B8CF8D8918FBAB8C00AF7037 /* catalog_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8018FBAB8C00AF7037 /* catalog_nav.png */; };
+		B8CF8D8A18FBAB8C00AF7037 /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8118FBAB8C00AF7037 /* catalog_nav@2x.png */; };
+		B8CF8D8B18FBAB8C00AF7037 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8218FBAB8C00AF7037 /* Default-568h@2x.png */; };
+		B8CF8D8C18FBAB8C00AF7037 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8318FBAB8C00AF7037 /* Default@2x.png */; };
+		B8CF8D8D18FBAB8C00AF7037 /* LoginViewBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8418FBAB8C00AF7037 /* LoginViewBG.png */; };
+		B8CF8D8E18FBAB8C00AF7037 /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8518FBAB8C00AF7037 /* LoginViewBG@2x.png */; };
 		B8DA9E8718F7BB3A00A73132 /* UINavigationController+ios6.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
 		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
@@ -1003,18 +1003,18 @@
 		8DE4E85518EFA662003F222E /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		8DE4E85818EFC531003F222E /* agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = agreement.html; sourceTree = "<group>"; };
 		8DE4E85F18EFCE15003F222E /* con_req_089001.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = con_req_089001.xml; sourceTree = "<group>"; };
-		B80BC78218FB8B40000373FE /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
-		B80BC78318FB8B40000373FE /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
-		B80BC78418FB8B40000373FE /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
-		B80BC78518FB8B40000373FE /* app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@3x.png"; sourceTree = "<group>"; };
-		B80BC78618FB8B40000373FE /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
-		B80BC78718FB8B40000373FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B80BC78818FB8B40000373FE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B80BC78918FB8B40000373FE /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
-		B80BC78A18FB8B40000373FE /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
+		B8CF8D7D18FBAB8C00AF7037 /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
+		B8CF8D7E18FBAB8C00AF7037 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B8CF8D7F18FBAB8C00AF7037 /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
+		B8CF8D8018FBAB8C00AF7037 /* catalog_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog_nav.png; sourceTree = "<group>"; };
+		B8CF8D8118FBAB8C00AF7037 /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
+		B8CF8D8218FBAB8C00AF7037 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B8CF8D8318FBAB8C00AF7037 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B8CF8D8418FBAB8C00AF7037 /* LoginViewBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginViewBG.png; sourceTree = "<group>"; };
+		B8CF8D8518FBAB8C00AF7037 /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
 		B8DA9E8518F7BB3A00A73132 /* UINavigationController+ios6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ios6.h"; sourceTree = "<group>"; };
 		B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ios6.m"; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
@@ -1996,15 +1996,15 @@
 		B8E57F2A18FA76B3001EBE0B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				B80BC78218FB8B40000373FE /* aboutSystemBg@2x.png */,
-				B80BC78318FB8B40000373FE /* app.png */,
-				B80BC78418FB8B40000373FE /* app@2x.png */,
-				B80BC78518FB8B40000373FE /* app@3x.png */,
-				B80BC78618FB8B40000373FE /* catalog_nav@2x.png */,
-				B80BC78718FB8B40000373FE /* Default-568h@2x.png */,
-				B80BC78818FB8B40000373FE /* Default@2x.png */,
-				B80BC78918FB8B40000373FE /* LoginViewBG@2x.png */,
-				B80BC78A18FB8B40000373FE /* navbar@2x.png */,
+				B8CF8D7D18FBAB8C00AF7037 /* aboutSystemBg@2x.png */,
+				B8CF8D7E18FBAB8C00AF7037 /* app.png */,
+				B8CF8D7F18FBAB8C00AF7037 /* app@2x.png */,
+				B8CF8D8018FBAB8C00AF7037 /* catalog_nav.png */,
+				B8CF8D8118FBAB8C00AF7037 /* catalog_nav@2x.png */,
+				B8CF8D8218FBAB8C00AF7037 /* Default-568h@2x.png */,
+				B8CF8D8318FBAB8C00AF7037 /* Default@2x.png */,
+				B8CF8D8418FBAB8C00AF7037 /* LoginViewBG.png */,
+				B8CF8D8518FBAB8C00AF7037 /* LoginViewBG@2x.png */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2069,7 +2069,7 @@
 				8D3CA18518C6C9C800C119DA /* con_req_400200023.xml in Resources */,
 				0554B19518711EEC00C75DCD /* inputmoney_button_delete@2x.png in Resources */,
 				050B01631867E396009432CD /* icon_5.png in Resources */,
-				B80BC78B18FB8B40000373FE /* aboutSystemBg@2x.png in Resources */,
+				B8CF8D8618FBAB8C00AF7037 /* aboutSystemBg@2x.png in Resources */,
 				0537AE3618583B39005F84D1 /* InfoPlist.strings in Resources */,
 				8D3CA17718C6C9C800C119DA /* con_req_086000_aishua.xml in Resources */,
 				050B01621867E396009432CD /* icon_4.png in Resources */,
@@ -2080,6 +2080,7 @@
 				8D3CA16918C6C9C800C119DA /* con_req_089010.xml in Resources */,
 				05B06D1D187FDFC800757F6C /* bank.xml in Resources */,
 				0558267A186C16A30002AE2E /* pwdinput.png in Resources */,
+				B8CF8D8D18FBAB8C00AF7037 /* LoginViewBG.png in Resources */,
 				8D3CA17F18C6C9C800C119DA /* con_req_100003.xml in Resources */,
 				0558266B186C0E7D0002AE2E /* confirmButtonNomal@2x.png in Resources */,
 				0554B1AC18714C6000C75DCD /* collectCashButton_highlight.png in Resources */,
@@ -2091,7 +2092,7 @@
 				0554B123187113AF00C75DCD /* back_button_normal@2x.png in Resources */,
 				0554B19318711EEC00C75DCD /* inputmoney_button_9@2x.png in Resources */,
 				0558265A186C097C0002AE2E /* cardID@2x.png in Resources */,
-				B80BC78F18FB8B40000373FE /* catalog_nav@2x.png in Resources */,
+				B8CF8D8A18FBAB8C00AF7037 /* catalog_nav@2x.png in Resources */,
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
 				8D3CA18218C6C9C800C119DA /* con_req_200001111.xml in Resources */,
@@ -2099,6 +2100,7 @@
 				8D3CA16618C6C9C800C119DA /* con_req_089007.xml in Resources */,
 				0554B1AF18714C7300C75DCD /* collectCashButton_highlight@2x.png in Resources */,
 				0554B1D218715E0500C75DCD /* suffix_normal@2x.png in Resources */,
+				B8CF8D8918FBAB8C00AF7037 /* catalog_nav.png in Resources */,
 				0554B1E31871664D00C75DCD /* selectBank_highlight@2x.png in Resources */,
 				0554B1D71871602600C75DCD /* salesslip@2x.png in Resources */,
 				0554B18A18711EEC00C75DCD /* inputmoney_button_0@2x.png in Resources */,
@@ -2111,7 +2113,7 @@
 				05B06D1F187FDFC800757F6C /* phonerecharge.xml in Resources */,
 				8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */,
 				0515D2BA188CF51E0092C8E5 /* division.xml in Resources */,
-				B80BC78C18FB8B40000373FE /* app.png in Resources */,
+				B8CF8D8718FBAB8C00AF7037 /* app.png in Resources */,
 				0554B19818711EEC00C75DCD /* inputmoney_show_bg_nonumber@2x.png in Resources */,
 				0554B18B18711EEC00C75DCD /* inputmoney_button_1@2x.png in Resources */,
 				0558264B186BF8660002AE2E /* paymentPwd.png in Resources */,
@@ -2154,7 +2156,6 @@
 				8D3CA15F18C6C9C800C119DA /* con_req_020022_aishua.xml in Resources */,
 				8D3CA17818C6C9C800C119DA /* con_req_086000.xml in Resources */,
 				0554B19718711EEC00C75DCD /* inputmoney_button_submit@2x.png in Resources */,
-				B80BC79318FB8B40000373FE /* navbar@2x.png in Resources */,
 				8D3CA18918C6C9C800C119DA /* con_req_700000001.xml in Resources */,
 				0520796D1863E190004BF055 /* btn_comment_sametime_unselect@2x.png in Resources */,
 				0558266C186C0E7D0002AE2E /* confirmButtonPress@2x.png in Resources */,
@@ -2180,8 +2181,8 @@
 				0558265C186C09F20002AE2E /* paymentPwd@2x.png in Resources */,
 				8D3CA18118C6C9C800C119DA /* con_req_100005.xml in Resources */,
 				0520795F1863DE45004BF055 /* LoginButton_normal.png in Resources */,
+				B8CF8D8C18FBAB8C00AF7037 /* Default@2x.png in Resources */,
 				050B01731867E3A4009432CD /* icon_7@2x.png in Resources */,
-				B80BC79118FB8B40000373FE /* Default@2x.png in Resources */,
 				05578CDA186AC1BF00475B9C /* torn.png in Resources */,
 				05B06D21187FDFC800757F6C /* reversalmap.xml in Resources */,
 				0558267E186C1D160002AE2E /* realname@2x.png in Resources */,
@@ -2194,6 +2195,7 @@
 				050B01611867E396009432CD /* icon_3.png in Resources */,
 				0554B12E187116FA00C75DCD /* swipcard.png in Resources */,
 				0554B18018711EEC00C75DCD /* digit_little_2.png in Resources */,
+				B8CF8D8E18FBAB8C00AF7037 /* LoginViewBG@2x.png in Resources */,
 				8D801CA918EBA3F800CEE39B /* beginguide04.png in Resources */,
 				052079711863E1A0004BF055 /* btn_comment_sametime_unselect.png in Resources */,
 				8D3CA18E18C6C9C800C119DA /* con_req_readme.txt in Resources */,
@@ -2226,7 +2228,7 @@
 				050B01711867E3A4009432CD /* icon_5@2x.png in Resources */,
 				050B01701867E3A4009432CD /* icon_4@2x.png in Resources */,
 				8D3CA16518C6C9C800C119DA /* con_req_089004.xml in Resources */,
-				B80BC78D18FB8B40000373FE /* app@2x.png in Resources */,
+				B8CF8D8818FBAB8C00AF7037 /* app@2x.png in Resources */,
 				8D3CA18618C6C9C800C119DA /* con_req_500000001.xml in Resources */,
 				05582658186C08F10002AE2E /* email@2x.png in Resources */,
 				B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */,
@@ -2238,7 +2240,6 @@
 				050B016D1867E3A4009432CD /* icon_1@2x.png in Resources */,
 				0554B1261871142400C75DCD /* back_button_normal.png in Resources */,
 				0554B17318711EEC00C75DCD /* digit_green_0.png in Resources */,
-				B80BC79218FB8B40000373FE /* LoginViewBG@2x.png in Resources */,
 				8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */,
 				0554B18818711EEC00C75DCD /* digit_little_dash.png in Resources */,
 				B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */,
@@ -2294,10 +2295,9 @@
 				0554B1C118715C7600C75DCD /* SignViewController.xib in Resources */,
 				0554B17918711EEC00C75DCD /* digit_green_6.png in Resources */,
 				05582664186C0DDB0002AE2E /* shade-5.png in Resources */,
-				B80BC78E18FB8B40000373FE /* app@3x.png in Resources */,
 				6CB1F39018EFF104009E2287 /* README.txt in Resources */,
 				8D3CA17218C6C9C800C119DA /* con_req_020022.xml in Resources */,
-				B80BC79018FB8B40000373FE /* Default-568h@2x.png in Resources */,
+				B8CF8D8B18FBAB8C00AF7037 /* Default-568h@2x.png in Resources */,
 				0554B1D318715E0500C75DCD /* suffix_selected@2x.png in Resources */,
 				8D3CA18D18C6C9C800C119DA /* con_req_999000003.xml in Resources */,
 				0520797E1863EC0D004BF055 /* delete_nomal.png in Resources */,
@@ -2572,6 +2572,7 @@
 				PRODUCT_NAME = "优乐通";
 				PROVISIONING_PROFILE = "68E7EAFD-4209-485E-925A-6094BE065277";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2594,6 +2595,7 @@
 				PRODUCT_NAME = "优乐通";
 				PROVISIONING_PROFILE = "68E7EAFD-4209-485E-925A-6094BE065277";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
