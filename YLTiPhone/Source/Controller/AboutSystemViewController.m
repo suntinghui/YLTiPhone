@@ -37,7 +37,7 @@
     [self.view addSubview:aboutSystemBg];
     
     UILabel *webSite = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 320, 44)];
-    webSite.text = @"-- http://www.payhfb.com  --";
+    webSite.text = @"-- http://www.bianfubao.cn  --";
     webSite.backgroundColor = [UIColor clearColor];
     webSite.font = [UIFont boldSystemFontOfSize:17.0f];
     [webSite setTextAlignment:NSTextAlignmentCenter];
