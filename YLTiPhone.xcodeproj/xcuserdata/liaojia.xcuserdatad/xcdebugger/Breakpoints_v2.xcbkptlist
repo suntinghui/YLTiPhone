@@ -607,8 +607,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "@implementation InputPasswordViewController"
-            landmarkType = "3">
+            landmarkName = "-confirmButtonAction:"
+            landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
