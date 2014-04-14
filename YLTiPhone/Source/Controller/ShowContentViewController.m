@@ -59,12 +59,12 @@
 
 //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"big_bg"]]];
     self.navigationItem.title = @"版本更新路径";
-
     float height = 416.0f;
     if (iPhone5) {
         height = 504.0f;
     }
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, height - 63)];
+    [self.webView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"shade-5.png"]]];
     [self.webView setUserInteractionEnabled:YES];
     // YES, 初始太小，但是可以放大；NO，初始可以，但是不再支持手势。 FUCK！！！
     self.webView.scalesPageToFit = YES; // 设置网页和屏幕一样大小，使支持缩放操作

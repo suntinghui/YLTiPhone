@@ -37,7 +37,24 @@
     [self.view addSubview:aboutSystemBg];
     
     UILabel *webSite = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 320, 44)];
-    webSite.text = @"-- http://www.payhfb.com  --";
+    
+    if (APPTYPE == CAppTypeBFB)
+    {
+         webSite.text = @"-- http://www.bianfubao.cn  --";
+    }
+    else if(APPTYPE == CAppTypeHFB)
+    {
+         webSite.text = @"-- http://www.payhfb.com  --";
+    }
+    else if(APPTYPE == CAppTypeYLT)
+    {
+         webSite.text = @"-- www.youlepos.com  --";
+    }
+    else if(APPTYPE == CAppTypeGFB)
+    {
+         webSite.text = @"-- http://www.vastpay.cn  --";
+    }
+   
     webSite.backgroundColor = [UIColor clearColor];
     webSite.font = [UIFont boldSystemFontOfSize:17.0f];
     [webSite setTextAlignment:NSTextAlignmentCenter];

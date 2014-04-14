@@ -414,15 +414,15 @@
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
-		B8CF8D8618FBAB8C00AF7037 /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D7D18FBAB8C00AF7037 /* aboutSystemBg@2x.png */; };
-		B8CF8D8718FBAB8C00AF7037 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D7E18FBAB8C00AF7037 /* app.png */; };
-		B8CF8D8818FBAB8C00AF7037 /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D7F18FBAB8C00AF7037 /* app@2x.png */; };
-		B8CF8D8918FBAB8C00AF7037 /* catalog_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8018FBAB8C00AF7037 /* catalog_nav.png */; };
-		B8CF8D8A18FBAB8C00AF7037 /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8118FBAB8C00AF7037 /* catalog_nav@2x.png */; };
-		B8CF8D8B18FBAB8C00AF7037 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8218FBAB8C00AF7037 /* Default-568h@2x.png */; };
-		B8CF8D8C18FBAB8C00AF7037 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8318FBAB8C00AF7037 /* Default@2x.png */; };
-		B8CF8D8D18FBAB8C00AF7037 /* LoginViewBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8418FBAB8C00AF7037 /* LoginViewBG.png */; };
-		B8CF8D8E18FBAB8C00AF7037 /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8518FBAB8C00AF7037 /* LoginViewBG@2x.png */; };
+		B8CF8D9818FBAE3E00AF7037 /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D8F18FBAE3E00AF7037 /* aboutSystemBg@2x.png */; };
+		B8CF8D9918FBAE3E00AF7037 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9018FBAE3E00AF7037 /* app.png */; };
+		B8CF8D9A18FBAE3E00AF7037 /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9118FBAE3E00AF7037 /* app@2x.png */; };
+		B8CF8D9B18FBAE3E00AF7037 /* catalog_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9218FBAE3E00AF7037 /* catalog_nav.png */; };
+		B8CF8D9C18FBAE3E00AF7037 /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9318FBAE3E00AF7037 /* catalog_nav@2x.png */; };
+		B8CF8D9D18FBAE3E00AF7037 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9418FBAE3E00AF7037 /* Default-568h@2x.png */; };
+		B8CF8D9E18FBAE3E00AF7037 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9518FBAE3E00AF7037 /* Default@2x.png */; };
+		B8CF8D9F18FBAE3E00AF7037 /* LoginViewBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9618FBAE3E00AF7037 /* LoginViewBG.png */; };
+		B8CF8DA018FBAE3E00AF7037 /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CF8D9718FBAE3E00AF7037 /* LoginViewBG@2x.png */; };
 		B8DA9E8718F7BB3A00A73132 /* UINavigationController+ios6.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
 		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
@@ -1006,15 +1006,15 @@
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
-		B8CF8D7D18FBAB8C00AF7037 /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
-		B8CF8D7E18FBAB8C00AF7037 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
-		B8CF8D7F18FBAB8C00AF7037 /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
-		B8CF8D8018FBAB8C00AF7037 /* catalog_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog_nav.png; sourceTree = "<group>"; };
-		B8CF8D8118FBAB8C00AF7037 /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
-		B8CF8D8218FBAB8C00AF7037 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B8CF8D8318FBAB8C00AF7037 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B8CF8D8418FBAB8C00AF7037 /* LoginViewBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginViewBG.png; sourceTree = "<group>"; };
-		B8CF8D8518FBAB8C00AF7037 /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
+		B8CF8D8F18FBAE3E00AF7037 /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
+		B8CF8D9018FBAE3E00AF7037 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B8CF8D9118FBAE3E00AF7037 /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
+		B8CF8D9218FBAE3E00AF7037 /* catalog_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog_nav.png; sourceTree = "<group>"; };
+		B8CF8D9318FBAE3E00AF7037 /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
+		B8CF8D9418FBAE3E00AF7037 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B8CF8D9518FBAE3E00AF7037 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B8CF8D9618FBAE3E00AF7037 /* LoginViewBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginViewBG.png; sourceTree = "<group>"; };
+		B8CF8D9718FBAE3E00AF7037 /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
 		B8DA9E8518F7BB3A00A73132 /* UINavigationController+ios6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ios6.h"; sourceTree = "<group>"; };
 		B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ios6.m"; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
@@ -1996,15 +1996,15 @@
 		B8E57F2A18FA76B3001EBE0B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				B8CF8D7D18FBAB8C00AF7037 /* aboutSystemBg@2x.png */,
-				B8CF8D7E18FBAB8C00AF7037 /* app.png */,
-				B8CF8D7F18FBAB8C00AF7037 /* app@2x.png */,
-				B8CF8D8018FBAB8C00AF7037 /* catalog_nav.png */,
-				B8CF8D8118FBAB8C00AF7037 /* catalog_nav@2x.png */,
-				B8CF8D8218FBAB8C00AF7037 /* Default-568h@2x.png */,
-				B8CF8D8318FBAB8C00AF7037 /* Default@2x.png */,
-				B8CF8D8418FBAB8C00AF7037 /* LoginViewBG.png */,
-				B8CF8D8518FBAB8C00AF7037 /* LoginViewBG@2x.png */,
+				B8CF8D8F18FBAE3E00AF7037 /* aboutSystemBg@2x.png */,
+				B8CF8D9018FBAE3E00AF7037 /* app.png */,
+				B8CF8D9118FBAE3E00AF7037 /* app@2x.png */,
+				B8CF8D9218FBAE3E00AF7037 /* catalog_nav.png */,
+				B8CF8D9318FBAE3E00AF7037 /* catalog_nav@2x.png */,
+				B8CF8D9418FBAE3E00AF7037 /* Default-568h@2x.png */,
+				B8CF8D9518FBAE3E00AF7037 /* Default@2x.png */,
+				B8CF8D9618FBAE3E00AF7037 /* LoginViewBG.png */,
+				B8CF8D9718FBAE3E00AF7037 /* LoginViewBG@2x.png */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2068,9 +2068,11 @@
 				0554B17C18711EEC00C75DCD /* digit_green_9.png in Resources */,
 				8D3CA18518C6C9C800C119DA /* con_req_400200023.xml in Resources */,
 				0554B19518711EEC00C75DCD /* inputmoney_button_delete@2x.png in Resources */,
+				B8CF8DA018FBAE3E00AF7037 /* LoginViewBG@2x.png in Resources */,
 				050B01631867E396009432CD /* icon_5.png in Resources */,
-				B8CF8D8618FBAB8C00AF7037 /* aboutSystemBg@2x.png in Resources */,
+				B8CF8D9918FBAE3E00AF7037 /* app.png in Resources */,
 				0537AE3618583B39005F84D1 /* InfoPlist.strings in Resources */,
+				B8CF8D9F18FBAE3E00AF7037 /* LoginViewBG.png in Resources */,
 				8D3CA17718C6C9C800C119DA /* con_req_086000_aishua.xml in Resources */,
 				050B01621867E396009432CD /* icon_4.png in Resources */,
 				0554B19618711EEC00C75DCD /* inputmoney_button_dot@2x.png in Resources */,
@@ -2080,7 +2082,6 @@
 				8D3CA16918C6C9C800C119DA /* con_req_089010.xml in Resources */,
 				05B06D1D187FDFC800757F6C /* bank.xml in Resources */,
 				0558267A186C16A30002AE2E /* pwdinput.png in Resources */,
-				B8CF8D8D18FBAB8C00AF7037 /* LoginViewBG.png in Resources */,
 				8D3CA17F18C6C9C800C119DA /* con_req_100003.xml in Resources */,
 				0558266B186C0E7D0002AE2E /* confirmButtonNomal@2x.png in Resources */,
 				0554B1AC18714C6000C75DCD /* collectCashButton_highlight.png in Resources */,
@@ -2092,7 +2093,6 @@
 				0554B123187113AF00C75DCD /* back_button_normal@2x.png in Resources */,
 				0554B19318711EEC00C75DCD /* inputmoney_button_9@2x.png in Resources */,
 				0558265A186C097C0002AE2E /* cardID@2x.png in Resources */,
-				B8CF8D8A18FBAB8C00AF7037 /* catalog_nav@2x.png in Resources */,
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
 				8D3CA18218C6C9C800C119DA /* con_req_200001111.xml in Resources */,
@@ -2100,11 +2100,11 @@
 				8D3CA16618C6C9C800C119DA /* con_req_089007.xml in Resources */,
 				0554B1AF18714C7300C75DCD /* collectCashButton_highlight@2x.png in Resources */,
 				0554B1D218715E0500C75DCD /* suffix_normal@2x.png in Resources */,
-				B8CF8D8918FBAB8C00AF7037 /* catalog_nav.png in Resources */,
 				0554B1E31871664D00C75DCD /* selectBank_highlight@2x.png in Resources */,
 				0554B1D71871602600C75DCD /* salesslip@2x.png in Resources */,
 				0554B18A18711EEC00C75DCD /* inputmoney_button_0@2x.png in Resources */,
 				0554B117187110D300C75DCD /* LoginViewBG.png in Resources */,
+				B8CF8D9A18FBAE3E00AF7037 /* app@2x.png in Resources */,
 				05582667186C0E6C0002AE2E /* confirmButtonNomal.png in Resources */,
 				0554B11B187111C500C75DCD /* catalog_nav.png in Resources */,
 				05582640186BF76A0002AE2E /* textInput@2x.png in Resources */,
@@ -2113,7 +2113,6 @@
 				05B06D1F187FDFC800757F6C /* phonerecharge.xml in Resources */,
 				8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */,
 				0515D2BA188CF51E0092C8E5 /* division.xml in Resources */,
-				B8CF8D8718FBAB8C00AF7037 /* app.png in Resources */,
 				0554B19818711EEC00C75DCD /* inputmoney_show_bg_nonumber@2x.png in Resources */,
 				0554B18B18711EEC00C75DCD /* inputmoney_button_1@2x.png in Resources */,
 				0558264B186BF8660002AE2E /* paymentPwd.png in Resources */,
@@ -2121,6 +2120,7 @@
 				052079681863DE5B004BF055 /* RegisterButton_highlight@2x.png in Resources */,
 				8D3CA15D18C6C9C800C119DA /* con_req_080002_aishua.xml in Resources */,
 				05B06D23187FDFC800757F6C /* transfername.xml in Resources */,
+				B8CF8D9818FBAE3E00AF7037 /* aboutSystemBg@2x.png in Resources */,
 				05578CDC186AC1C900475B9C /* torn@2x.png in Resources */,
 				8D3CA16318C6C9C800C119DA /* con_req_089002.xml in Resources */,
 				05582660186C0A3C0002AE2E /* merchantName@2x.png in Resources */,
@@ -2171,17 +2171,18 @@
 				050B01641867E396009432CD /* icon_6.png in Resources */,
 				8D32CA5118E7FB6B00633FEF /* icon_hand.png in Resources */,
 				0554B18D18711EEC00C75DCD /* inputmoney_button_3@2x.png in Resources */,
+				B8CF8D9D18FBAE3E00AF7037 /* Default-568h@2x.png in Resources */,
 				0554B18918711EEC00C75DCD /* digit_little_slash.png in Resources */,
 				05582680186C1D190002AE2E /* realname.png in Resources */,
 				055B2F9618629F11000373FE /* navbar.png in Resources */,
 				0554B18318711EEC00C75DCD /* digit_little_5.png in Resources */,
 				0554B1CF18715DE200C75DCD /* suffix_selected.png in Resources */,
+				B8CF8D9C18FBAE3E00AF7037 /* catalog_nav@2x.png in Resources */,
 				0554B17B18711EEC00C75DCD /* digit_green_8.png in Resources */,
 				B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */,
 				0558265C186C09F20002AE2E /* paymentPwd@2x.png in Resources */,
 				8D3CA18118C6C9C800C119DA /* con_req_100005.xml in Resources */,
 				0520795F1863DE45004BF055 /* LoginButton_normal.png in Resources */,
-				B8CF8D8C18FBAB8C00AF7037 /* Default@2x.png in Resources */,
 				050B01731867E3A4009432CD /* icon_7@2x.png in Resources */,
 				05578CDA186AC1BF00475B9C /* torn.png in Resources */,
 				05B06D21187FDFC800757F6C /* reversalmap.xml in Resources */,
@@ -2195,7 +2196,6 @@
 				050B01611867E396009432CD /* icon_3.png in Resources */,
 				0554B12E187116FA00C75DCD /* swipcard.png in Resources */,
 				0554B18018711EEC00C75DCD /* digit_little_2.png in Resources */,
-				B8CF8D8E18FBAB8C00AF7037 /* LoginViewBG@2x.png in Resources */,
 				8D801CA918EBA3F800CEE39B /* beginguide04.png in Resources */,
 				052079711863E1A0004BF055 /* btn_comment_sametime_unselect.png in Resources */,
 				8D3CA18E18C6C9C800C119DA /* con_req_readme.txt in Resources */,
@@ -2228,7 +2228,6 @@
 				050B01711867E3A4009432CD /* icon_5@2x.png in Resources */,
 				050B01701867E3A4009432CD /* icon_4@2x.png in Resources */,
 				8D3CA16518C6C9C800C119DA /* con_req_089004.xml in Resources */,
-				B8CF8D8818FBAB8C00AF7037 /* app@2x.png in Resources */,
 				8D3CA18618C6C9C800C119DA /* con_req_500000001.xml in Resources */,
 				05582658186C08F10002AE2E /* email@2x.png in Resources */,
 				B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */,
@@ -2263,6 +2262,7 @@
 				8D3CA18B18C6C9C800C119DA /* con_req_999000001.xml in Resources */,
 				0554B1DA1871647400C75DCD /* selectField_normal@2x.png in Resources */,
 				05B06D1E187FDFC800757F6C /* catalog.xml in Resources */,
+				B8CF8D9B18FBAE3E00AF7037 /* catalog_nav.png in Resources */,
 				8D3CA16B18C6C9C800C119DA /* con_req_089012.xml in Resources */,
 				0554B1C318715D8200C75DCD /* sign_middle.png in Resources */,
 				055B2F9018629D3C000373FE /* loginshade-5@2x.png in Resources */,
@@ -2284,6 +2284,7 @@
 				0537AF691858419D005F84D1 /* ResultViewController.xib in Resources */,
 				0520797F1863EC0D004BF055 /* delete_select.png in Resources */,
 				8D3CA17618C6C9C800C119DA /* con_req_082001.xml in Resources */,
+				B8CF8D9E18FBAE3E00AF7037 /* Default@2x.png in Resources */,
 				8D3CA17118C6C9C800C119DA /* con_req_020001.xml in Resources */,
 				8D3CA16F18C6C9C800C119DA /* con_req_089018.xml in Resources */,
 				0554B17518711EEC00C75DCD /* digit_green_2.png in Resources */,
@@ -2297,7 +2298,6 @@
 				05582664186C0DDB0002AE2E /* shade-5.png in Resources */,
 				6CB1F39018EFF104009E2287 /* README.txt in Resources */,
 				8D3CA17218C6C9C800C119DA /* con_req_020022.xml in Resources */,
-				B8CF8D8B18FBAB8C00AF7037 /* Default-568h@2x.png in Resources */,
 				0554B1D318715E0500C75DCD /* suffix_selected@2x.png in Resources */,
 				8D3CA18D18C6C9C800C119DA /* con_req_999000003.xml in Resources */,
 				0520797E1863EC0D004BF055 /* delete_nomal.png in Resources */,
@@ -2557,8 +2557,8 @@
 		0537AE4618583B39005F84D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: hongling sheng (T9JS32ALY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hongling sheng (T9JS32ALY6)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;

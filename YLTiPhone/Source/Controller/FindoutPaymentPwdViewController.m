@@ -116,7 +116,7 @@
     [formatter setDateFormat:@"YYYY-MM-dd 20hh:mm:ss"];
     date = [formatter stringFromDate:[NSDate date]];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
+    [dic setObject:self.phoneNumTF.contentTF.text forKey:@"tel"];
     [dic setObject:@"time" forKey:date];
     
     [[Transfer sharedTransfer] startTransfer:@"089006" fskCmd:nil paramDic:dic];
