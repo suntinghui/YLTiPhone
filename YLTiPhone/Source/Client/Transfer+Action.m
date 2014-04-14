@@ -80,16 +80,16 @@
         //交易明细查询
         [self queryTransListDone];
         
-    } else if ([self.transferCode isEqualToString:@"089001"]){
-        //注册
+    } else if ([self.transferCode isEqualToString:@"089001"]){ //注册
+        
         [self registrDone];
         
     } else if ([self.transferCode isEqualToString:@"089002"]) {
         //找回密码
         [self findPwdDone];
         
-    } else if ([self.transferCode isEqualToString:@"089003"]){
-        //修改登录，支付密码
+    } else if ([self.transferCode isEqualToString:@"089003"]){  //修改登录，支付密码
+       
         [self modifyDone];
         
     } else if ([self.transferCode isEqualToString:@"089004"]) {
@@ -695,6 +695,8 @@
             [UserDefaults setObject:[[self.receDic objectForKey:@"apires"] objectForKey:@"md5key"] forKey:MD5KEY];
             [UserDefaults synchronize];
             [AppDataCenter sharedAppDataCenter].status = [self.receDic objectForKey:@"status"];
+//            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
+
             
             // 登陆成功，跳转到菜单界面
             ApplicationDelegate.hasLogin = YES;
@@ -925,6 +927,9 @@
                 [ApplicationDelegate gotoFailureViewController:@"未检测到设备"];
             }else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"4"]){
                 [ApplicationDelegate gotoFailureViewController:@"设备未录入（无机构号）"];
+            }
+            else if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"5"]){
+                [ApplicationDelegate gotoFailureViewController:@"设备已被使用"];
             }
         }
     }

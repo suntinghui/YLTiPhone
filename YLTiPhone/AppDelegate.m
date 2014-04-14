@@ -40,7 +40,7 @@
 
     NSString *isFirstEnter = [UserDefaults objectForKey:IsFirstEnter];
     
-    if (APPTYPE == CAppTypeHFB&&isFirstEnter==nil)
+    if (APPTYPE == CAppTypeYLT&&isFirstEnter==nil)
     {
         BeginGuideViewController *slitViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
         self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:slitViewController];

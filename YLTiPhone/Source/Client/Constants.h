@@ -23,7 +23,8 @@ typedef enum  //程序类型
 {
     CAppTypeHFB,
     CAppTypeBFB,
-    CAppTypeGFB
+    CAppTypeGFB,
+    CAppTypeYLT
 }CAppType;
 
 #define APPTYPE CAppTypeBFB   //打包时修改成对应标志

@@ -462,23 +462,28 @@ static Transfer *instance = nil;
     //在这处理json字符串是不是好些?
     @try {
         //如果resmsg 是1 则交易成功 返回0则失败
-        if ( ![[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"]) {
+        if ( ![[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"])
+        {
             
-            if ([self.transferModel.shouldMac isEqualToString:@"true"]) {
+            if ([self.transferModel.shouldMac isEqualToString:@"true"])
+            {
                 //此处校验MAC好一些吧
                 //取出返回报文中的 macstr 加上md5key 进行MD5加密 结果与返回值中得mac比较 相同则成功
                 NSMutableString *macstrPlasMd5key = [[NSMutableString alloc] init];
                 [macstrPlasMd5key appendString:[self.receDic objectForKey:@"macstr"]];
                 [macstrPlasMd5key appendString:[UserDefaults objectForKey:MD5KEY]];
                 NSString *md5str = [EncryptionUtil MD5Encrypt:macstrPlasMd5key];
-                if ([md5str isEqualToString:[self.receDic objectForKey:@"mac"]]) {
+                if ([md5str isEqualToString:[self.receDic objectForKey:@"mac"]])
+                {
                     [self actionDone];
                 }
-            }else{
+            }
+            else{
                 [self actionDone];
             }
             
-        }else{
+        }
+        else{
 
             if ([self.transferCode isEqualToString:@"089014"]) //签购单上传特殊处理 不弹出到错误页面
             {
