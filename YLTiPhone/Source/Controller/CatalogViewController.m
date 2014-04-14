@@ -369,11 +369,11 @@
         
         case 14://签到
         {
-//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//                [alertView show];
-//                return;
-//            }
+            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                [alertView show];
+                return;
+            }
             SignInViewController *signInVC = [[SignInViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:signInVC animated:YES];
             break;
@@ -390,16 +390,16 @@
           
         case 21://收款 先输入金额
         {
-//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//                [alertView show];
-//                return;
-//            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//                alertView.tag = 300;
-//                [alertView show];
-//                return;
-//            }
+            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                [alertView show];
+                return;
+            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                alertView.tag = 300;
+                [alertView show];
+                return;
+            }
             InputMoneyViewController *inputMoneyVC = [[InputMoneyViewController alloc] initWithNibName:@"InputMoneyViewController" bundle:nil];
             [self.navigationController pushViewController:inputMoneyVC animated:YES];
             break;
@@ -407,16 +407,16 @@
             
         case 22://收款撤销
         {
-//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//                [alertView show];
-//                return;
-//            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//                alertView.tag = 300;
-//                [alertView show];
-//                return;
-//            }
+            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                [alertView show];
+                return;
+            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                alertView.tag = 300;
+                [alertView show];
+                return;
+            }
             GatherCancelTableViewController *gatherCancelVC = [[GatherCancelTableViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:gatherCancelVC animated:YES];
             break;
@@ -424,16 +424,16 @@
 
         case 31://商户提款
         {
-//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//                [alertView show];
-//                return;
-//            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//                alertView.tag = 300;
-//                [alertView show];
-//                return;
-//            }
+            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                [alertView show];
+                return;
+            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                alertView.tag = 300;
+                [alertView show];
+                return;
+            }
             AccountCollectCashViewController *collectCashVC = [[AccountCollectCashViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:collectCashVC animated:YES];
             break;
@@ -441,16 +441,16 @@
             
         case 32://商户余额查询
         {
-//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//                [alertView show];
-//                return;
-//            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//                alertView.tag = 300;
-//                [alertView show];
-//                return;
-//            }
+            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                [alertView show];
+                return;
+            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                alertView.tag = 300;
+                [alertView show];
+                return;
+            }
             MerchantQueryBalanceViewController *vc = [[MerchantQueryBalanceViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
@@ -458,16 +458,16 @@
             
         case 41://查询银行卡余额
         {
-//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-//                [alertView show];
-//                return;
-//            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//                alertView.tag = 300;
-//                [alertView show];
-//                return;
-//            }
+            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                [alertView show];
+                return;
+            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                alertView.tag = 300;
+                [alertView show];
+                return;
+            }
             QueryBalanceViewController *queryBalanceVC = [[QueryBalanceViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:queryBalanceVC animated:YES];
             break;
