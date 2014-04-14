@@ -54,7 +54,14 @@
     self.view.transform = CGAffineTransformMakeRotation(M_PI*1.5);
     [UIView commitAnimations];
     
-    self.navigationItem.title = @"请您签名";
+//    self.navigationItem.title = @"请您签名";//ios上title没有显示 所以改成了下面的方法
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 32)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"请您签名";
+    label.font = [UIFont boldSystemFontOfSize:15];
+    self.navigationItem.titleView  =label;
     
     UINavigationBar *navBar = self.navigationController.navigationBar;
     
@@ -79,15 +86,16 @@
     
     self.phoneNumTF.delegate = self;
     
-    UIImage *buttonNormalImage = [UIImage imageNamed:@"backbutton_normal.png"];
-    UIImage *buttonSelectedImage = [UIImage imageNamed:@"backbutton_selected.png"];
-    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [aButton setImage:buttonNormalImage forState:UIControlStateNormal];
-    [aButton setImage:buttonSelectedImage forState:UIControlStateSelected];
-    aButton.frame = CGRectMake(0.0,0.0,buttonNormalImage.size.width,buttonNormalImage.size.height);
-    [aButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:aButton];
-    self.navigationItem.leftBarButtonItem = backButton;
+//    UIImage *buttonNormalImage = [UIImage imageNamed:@"backbutton_normal.png"];
+//    UIImage *buttonSelectedImage = [UIImage imageNamed:@"backbutton_selected.png"];
+//    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    [aButton setImage:buttonNormalImage forState:UIControlStateNormal];
+//    [aButton setImage:buttonSelectedImage forState:UIControlStateSelected];
+//    aButton.frame = CGRectMake(0.0,0.0,buttonNormalImage.size.width,buttonNormalImage.size.height);
+//    [aButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+//    self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.hidesBackButton = YES;
     
     // 签名面板
     self.signPanel = [[HandSignPanel alloc] initWithFrame:CGRectMake(0, 17, 480 + (iPhone5?88:0), 195) withText:[[Transfer sharedTransfer].receDic objectForKey:@"MD5"]];

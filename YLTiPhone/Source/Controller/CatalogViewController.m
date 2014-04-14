@@ -369,11 +369,11 @@
         
         case 14://签到
         {
-            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-                [alertView show];
-                return;
-            }
+//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//                [alertView show];
+//                return;
+//            }
             SignInViewController *signInVC = [[SignInViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:signInVC animated:YES];
             break;
@@ -390,16 +390,16 @@
           
         case 21://收款 先输入金额
         {
-            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-                [alertView show];
-                return;
-            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-                alertView.tag = 300;
-                [alertView show];
-                return;
-            }
+//            if (![[AppDataCenter sharedAppDataCenter].status isEqualToString:@"9"]) {
+//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"等待终审！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//                [alertView show];
+//                return;
+//            }else if(![AppDataCenter sharedAppDataCenter].hasSign){
+//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"用户尚未签到，请先签到！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//                alertView.tag = 300;
+//                [alertView show];
+//                return;
+//            }
             InputMoneyViewController *inputMoneyVC = [[InputMoneyViewController alloc] initWithNibName:@"InputMoneyViewController" bundle:nil];
             [self.navigationController pushViewController:inputMoneyVC animated:YES];
             break;
