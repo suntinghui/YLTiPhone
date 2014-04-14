@@ -25,6 +25,7 @@
 @property (nonatomic, assign) BOOL                              isAishua;
 
 @property (nonatomic, assign) BOOL                              printVersion;
+@property (nonatomic, strong) NSString                          *proName; //程序名字
 
 
 - (UIViewController *) topViewController;

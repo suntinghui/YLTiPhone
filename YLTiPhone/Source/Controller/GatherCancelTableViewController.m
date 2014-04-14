@@ -111,7 +111,7 @@
         [cell.contentView addSubview:imageView];
     }
     cell.accountLabel.text = [StringUtil formatAccountNo:[model.content objectForKey:@"field2"]];
-    cell.timeLabel.text = [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [model.content objectForKey:@"field13"], [self.model.content objectForKey:@"field12"]]];
+    cell.timeLabel.text = [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [model.content objectForKey:@"field13"], [model.content objectForKey:@"field12"]]];
     cell.amountLabel.text = [StringUtil string2SymbolAmount:[model.content objectForKey:@"field4"]];
     
     return cell;

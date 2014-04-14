@@ -56,8 +56,9 @@ static TimedoutUtil *instance = nil;
         
         ApplicationDelegate.hasLogin = NO;
         [ApplicationDelegate.rootNavigationController popToRootViewControllerAnimated:YES];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"由于您长时间没有操作盒付宝，系统超时退出，请您重新登陆。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+
+        NSString *mess = [NSString stringWithFormat:@"由于您长时间没有操作%@，系统超时退出，请您重新登陆。",ApplicationDelegate.proName];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:mess delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
     }
 }

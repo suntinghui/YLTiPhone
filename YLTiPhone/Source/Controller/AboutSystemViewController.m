@@ -44,7 +44,8 @@
     [self.view addSubview:webSite];
 
     UILabel *adLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 199, 320, 44)];
-    adLabel1.text = @"你好，我是盒付宝";
+    adLabel1.text = [NSString stringWithFormat:@"你好，我是%@", ApplicationDelegate.proName];
+  
     adLabel1.backgroundColor = [UIColor clearColor];
     adLabel1.font = [UIFont boldSystemFontOfSize:17.0f];
     [adLabel1 setTextAlignment:NSTextAlignmentCenter];

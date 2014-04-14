@@ -57,7 +57,7 @@
     UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(5, 35, 100, 25)];
     label2.backgroundColor = [UIColor clearColor];
     label2.font = [UIFont systemFontOfSize:15];
-    label2.text = @"盒付宝账号";
+    label2.text = [NSString stringWithFormat:@"%@账号",ApplicationDelegate.proName];
     [accountInfoView addSubview:label2];
     
     UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(5, 65, 150, 25)];

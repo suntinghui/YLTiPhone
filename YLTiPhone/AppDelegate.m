@@ -24,7 +24,7 @@
 #import "DDTTYLogger.h"
 #import "DDDispatchQueueLogFormatter.h"
 
-//#import "SalesSlipDetailViewController.h"
+#import "BeginGuideViewController.h"
 
 @implementation AppDelegate
 
@@ -38,9 +38,22 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
-    //SalesSlipDetailViewController *loginViewController = [[SalesSlipDetailViewController alloc] initWithNibName:nil bundle:nil];
-    self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    NSString *isFirstEnter = [UserDefaults objectForKey:IsFirstEnter];
+    
+    if (APPTYPE == CAppTypeHFB&&isFirstEnter==nil)
+    {
+        BeginGuideViewController *slitViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
+        self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:slitViewController];
+        [UserDefaults setObject:@"NO" forKey:IsFirstEnter];
+    }
+    else //集付宝没有提示页
+    {
+        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+        self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    }
+    
+    self.proName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    
     self.window.rootViewController = self.rootNavigationController;
     
     self.window.backgroundColor = [UIColor whiteColor];

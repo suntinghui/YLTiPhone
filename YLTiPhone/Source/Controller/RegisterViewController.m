@@ -84,7 +84,7 @@
     UILabel *agreeLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 265, 170, 30)];
     agreeLabel.backgroundColor = [UIColor clearColor];
     agreeLabel.font = [UIFont systemFontOfSize:15.0f];
-    agreeLabel.text = @"同意《盒付宝服务协议》";
+    agreeLabel.text = [NSString stringWithFormat:@"同意《%@服务协议》",ApplicationDelegate.proName];
     [self.view addSubview:agreeLabel];
     
     UIButton *serviceDelegateButton = [UIButton buttonWithType:UIButtonTypeCustom];

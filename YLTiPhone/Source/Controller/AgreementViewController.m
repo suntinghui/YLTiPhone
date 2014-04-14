@@ -51,9 +51,13 @@
     //文件路径
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"agreement" ofType:@"html"];
     
-    NSString *contents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    NSString *content = [NSString stringWithString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil]];
     
-    return contents;
+    content = [content stringByReplacingOccurrencesOfString:@"盒付宝" withString:ApplicationDelegate.proName];
+    content = [content stringByReplacingOccurrencesOfString:@"集付宝" withString:ApplicationDelegate.proName];
+    content = [content stringByReplacingOccurrencesOfString:@"便付宝" withString:ApplicationDelegate.proName];
+    
+    return content;
 }
 
 - (void)viewDidUnload

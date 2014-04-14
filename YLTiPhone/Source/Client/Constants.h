@@ -19,6 +19,15 @@
 #define FILEURL                             @"http://106.120.253.181:8888/pos/xmlFiles/"
 #define JSONURL                             @"yunpaiApi/api/"
 
+typedef enum  //程序类型
+{
+    CAppTypeHFB,
+    CAppTypeBFB,
+    CAppTypeGFB
+}CAppType;
+
+#define APPTYPE CAppTypeHFB   //打包时修改成对应标志
+
 //原以为iphone4和iphone5的self.view.bounds.size.height是不一样的，但错了，是一样的，都是548
 //所以不能这么设定适配的屏幕高度　4和5没区别
 //#define VIEWHEIGHT                          self.view.bounds.size.height - 105
@@ -105,5 +114,7 @@
 #define DEVICEID                               @"deviceId"
 
 #define version_num                         101
+
+#define IsFirstEnter                       @"ISFIRSTENTER"
 
 
