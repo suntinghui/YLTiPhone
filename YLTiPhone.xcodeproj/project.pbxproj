@@ -412,17 +412,18 @@
 		8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85518EFA662003F222E /* AgreementViewController.xib */; };
 		8DE4E85918EFC531003F222E /* agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85818EFC531003F222E /* agreement.html */; };
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
+		B80BC78B18FB8B40000373FE /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78218FB8B40000373FE /* aboutSystemBg@2x.png */; };
+		B80BC78C18FB8B40000373FE /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78318FB8B40000373FE /* app.png */; };
+		B80BC78D18FB8B40000373FE /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78418FB8B40000373FE /* app@2x.png */; };
+		B80BC78E18FB8B40000373FE /* app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78518FB8B40000373FE /* app@3x.png */; };
+		B80BC78F18FB8B40000373FE /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78618FB8B40000373FE /* catalog_nav@2x.png */; };
+		B80BC79018FB8B40000373FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78718FB8B40000373FE /* Default-568h@2x.png */; };
+		B80BC79118FB8B40000373FE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78818FB8B40000373FE /* Default@2x.png */; };
+		B80BC79218FB8B40000373FE /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78918FB8B40000373FE /* LoginViewBG@2x.png */; };
+		B80BC79318FB8B40000373FE /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80BC78A18FB8B40000373FE /* navbar@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
 		B8DA9E8718F7BB3A00A73132 /* UINavigationController+ios6.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */; };
-		B8E57F2C18FA76D6001EBE0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F2B18FA76D6001EBE0B /* Default-568h@2x.png */; };
-		B8E57F2E18FA772E001EBE0B /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F2D18FA772E001EBE0B /* LoginViewBG@2x.png */; };
-		B8E57F3118FA782A001EBE0B /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F2F18FA782A001EBE0B /* catalog_nav@2x.png */; };
-		B8E57F3418FA7A94001EBE0B /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3318FA7A94001EBE0B /* aboutSystemBg@2x.png */; };
-		B8E57F3618FA7ADB001EBE0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3518FA7ADB001EBE0B /* Default@2x.png */; };
-		B8E57F3A18FA7BB1001EBE0B /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3718FA7BB1001EBE0B /* app.png */; };
-		B8E57F3B18FA7BB1001EBE0B /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3818FA7BB1001EBE0B /* app@2x.png */; };
-		B8E57F3C18FA7BB1001EBE0B /* app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3918FA7BB1001EBE0B /* app@3x.png */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
 		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
 		FC1FC6C118EC090F004488CF /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BD18EC090F004488CF /* libcrypto.a */; };
@@ -1002,19 +1003,20 @@
 		8DE4E85518EFA662003F222E /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		8DE4E85818EFC531003F222E /* agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = agreement.html; sourceTree = "<group>"; };
 		8DE4E85F18EFCE15003F222E /* con_req_089001.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = con_req_089001.xml; sourceTree = "<group>"; };
+		B80BC78218FB8B40000373FE /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
+		B80BC78318FB8B40000373FE /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B80BC78418FB8B40000373FE /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
+		B80BC78518FB8B40000373FE /* app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@3x.png"; sourceTree = "<group>"; };
+		B80BC78618FB8B40000373FE /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
+		B80BC78718FB8B40000373FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B80BC78818FB8B40000373FE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B80BC78918FB8B40000373FE /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
+		B80BC78A18FB8B40000373FE /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
 		B8DA9E8518F7BB3A00A73132 /* UINavigationController+ios6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ios6.h"; sourceTree = "<group>"; };
 		B8DA9E8618F7BB3A00A73132 /* UINavigationController+ios6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ios6.m"; sourceTree = "<group>"; };
-		B8E57F2B18FA76D6001EBE0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B8E57F2D18FA772E001EBE0B /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
-		B8E57F2F18FA782A001EBE0B /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
-		B8E57F3318FA7A94001EBE0B /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
-		B8E57F3518FA7ADB001EBE0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B8E57F3718FA7BB1001EBE0B /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
-		B8E57F3818FA7BB1001EBE0B /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
-		B8E57F3918FA7BB1001EBE0B /* app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@3x.png"; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		B8E57F3F18FA8B98001EBE0B /* revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revoked.png; sourceTree = "<group>"; };
 		FC1FC6BD18EC090F004488CF /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
@@ -1994,14 +1996,15 @@
 		B8E57F2A18FA76B3001EBE0B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				B8E57F3718FA7BB1001EBE0B /* app.png */,
-				B8E57F3818FA7BB1001EBE0B /* app@2x.png */,
-				B8E57F3918FA7BB1001EBE0B /* app@3x.png */,
-				B8E57F3518FA7ADB001EBE0B /* Default@2x.png */,
-				B8E57F3318FA7A94001EBE0B /* aboutSystemBg@2x.png */,
-				B8E57F2F18FA782A001EBE0B /* catalog_nav@2x.png */,
-				B8E57F2D18FA772E001EBE0B /* LoginViewBG@2x.png */,
-				B8E57F2B18FA76D6001EBE0B /* Default-568h@2x.png */,
+				B80BC78218FB8B40000373FE /* aboutSystemBg@2x.png */,
+				B80BC78318FB8B40000373FE /* app.png */,
+				B80BC78418FB8B40000373FE /* app@2x.png */,
+				B80BC78518FB8B40000373FE /* app@3x.png */,
+				B80BC78618FB8B40000373FE /* catalog_nav@2x.png */,
+				B80BC78718FB8B40000373FE /* Default-568h@2x.png */,
+				B80BC78818FB8B40000373FE /* Default@2x.png */,
+				B80BC78918FB8B40000373FE /* LoginViewBG@2x.png */,
+				B80BC78A18FB8B40000373FE /* navbar@2x.png */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2066,6 +2069,7 @@
 				8D3CA18518C6C9C800C119DA /* con_req_400200023.xml in Resources */,
 				0554B19518711EEC00C75DCD /* inputmoney_button_delete@2x.png in Resources */,
 				050B01631867E396009432CD /* icon_5.png in Resources */,
+				B80BC78B18FB8B40000373FE /* aboutSystemBg@2x.png in Resources */,
 				0537AE3618583B39005F84D1 /* InfoPlist.strings in Resources */,
 				8D3CA17718C6C9C800C119DA /* con_req_086000_aishua.xml in Resources */,
 				050B01621867E396009432CD /* icon_4.png in Resources */,
@@ -2087,9 +2091,8 @@
 				0554B123187113AF00C75DCD /* back_button_normal@2x.png in Resources */,
 				0554B19318711EEC00C75DCD /* inputmoney_button_9@2x.png in Resources */,
 				0558265A186C097C0002AE2E /* cardID@2x.png in Resources */,
+				B80BC78F18FB8B40000373FE /* catalog_nav@2x.png in Resources */,
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
-				B8E57F3618FA7ADB001EBE0B /* Default@2x.png in Resources */,
-				B8E57F3118FA782A001EBE0B /* catalog_nav@2x.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
 				8D3CA18218C6C9C800C119DA /* con_req_200001111.xml in Resources */,
 				8D281C9218F2F8DF00457792 /* receipt_bg.png in Resources */,
@@ -2108,6 +2111,7 @@
 				05B06D1F187FDFC800757F6C /* phonerecharge.xml in Resources */,
 				8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */,
 				0515D2BA188CF51E0092C8E5 /* division.xml in Resources */,
+				B80BC78C18FB8B40000373FE /* app.png in Resources */,
 				0554B19818711EEC00C75DCD /* inputmoney_show_bg_nonumber@2x.png in Resources */,
 				0554B18B18711EEC00C75DCD /* inputmoney_button_1@2x.png in Resources */,
 				0558264B186BF8660002AE2E /* paymentPwd.png in Resources */,
@@ -2142,7 +2146,6 @@
 				0554B1CE18715DE200C75DCD /* suffix_normal.png in Resources */,
 				8D801CAA18EBA3F800CEE39B /* beginguide05.png in Resources */,
 				0554B1DE1871647C00C75DCD /* selectField_normal.png in Resources */,
-				B8E57F2E18FA772E001EBE0B /* LoginViewBG@2x.png in Resources */,
 				8D3CA17B18C6C9C800C119DA /* con_req_089005.xml in Resources */,
 				8D3CA16218C6C9C800C119DA /* con_req_080002.xml in Resources */,
 				050B01601867E396009432CD /* icon_2.png in Resources */,
@@ -2151,6 +2154,7 @@
 				8D3CA15F18C6C9C800C119DA /* con_req_020022_aishua.xml in Resources */,
 				8D3CA17818C6C9C800C119DA /* con_req_086000.xml in Resources */,
 				0554B19718711EEC00C75DCD /* inputmoney_button_submit@2x.png in Resources */,
+				B80BC79318FB8B40000373FE /* navbar@2x.png in Resources */,
 				8D3CA18918C6C9C800C119DA /* con_req_700000001.xml in Resources */,
 				0520796D1863E190004BF055 /* btn_comment_sametime_unselect@2x.png in Resources */,
 				0558266C186C0E7D0002AE2E /* confirmButtonPress@2x.png in Resources */,
@@ -2173,11 +2177,11 @@
 				0554B1CF18715DE200C75DCD /* suffix_selected.png in Resources */,
 				0554B17B18711EEC00C75DCD /* digit_green_8.png in Resources */,
 				B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */,
-				B8E57F3B18FA7BB1001EBE0B /* app@2x.png in Resources */,
 				0558265C186C09F20002AE2E /* paymentPwd@2x.png in Resources */,
 				8D3CA18118C6C9C800C119DA /* con_req_100005.xml in Resources */,
 				0520795F1863DE45004BF055 /* LoginButton_normal.png in Resources */,
 				050B01731867E3A4009432CD /* icon_7@2x.png in Resources */,
+				B80BC79118FB8B40000373FE /* Default@2x.png in Resources */,
 				05578CDA186AC1BF00475B9C /* torn.png in Resources */,
 				05B06D21187FDFC800757F6C /* reversalmap.xml in Resources */,
 				0558267E186C1D160002AE2E /* realname@2x.png in Resources */,
@@ -2197,7 +2201,6 @@
 				8D3CA16718C6C9C800C119DA /* con_req_089008.xml in Resources */,
 				0554B18118711EEC00C75DCD /* digit_little_3.png in Resources */,
 				055BA0F418750B7E005E7E7A /* success@2x.png in Resources */,
-				B8E57F3A18FA7BB1001EBE0B /* app.png in Resources */,
 				0554B19118711EEC00C75DCD /* inputmoney_button_7@2x.png in Resources */,
 				8D3CA16C18C6C9C800C119DA /* con_req_089013.xml in Resources */,
 				8D3CA16A18C6C9C800C119DA /* con_req_089011.xml in Resources */,
@@ -2223,6 +2226,7 @@
 				050B01711867E3A4009432CD /* icon_5@2x.png in Resources */,
 				050B01701867E3A4009432CD /* icon_4@2x.png in Resources */,
 				8D3CA16518C6C9C800C119DA /* con_req_089004.xml in Resources */,
+				B80BC78D18FB8B40000373FE /* app@2x.png in Resources */,
 				8D3CA18618C6C9C800C119DA /* con_req_500000001.xml in Resources */,
 				05582658186C08F10002AE2E /* email@2x.png in Resources */,
 				B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */,
@@ -2234,6 +2238,7 @@
 				050B016D1867E3A4009432CD /* icon_1@2x.png in Resources */,
 				0554B1261871142400C75DCD /* back_button_normal.png in Resources */,
 				0554B17318711EEC00C75DCD /* digit_green_0.png in Resources */,
+				B80BC79218FB8B40000373FE /* LoginViewBG@2x.png in Resources */,
 				8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */,
 				0554B18818711EEC00C75DCD /* digit_little_dash.png in Resources */,
 				B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */,
@@ -2256,7 +2261,6 @@
 				8DE4E85918EFC531003F222E /* agreement.html in Resources */,
 				8D3CA18B18C6C9C800C119DA /* con_req_999000001.xml in Resources */,
 				0554B1DA1871647400C75DCD /* selectField_normal@2x.png in Resources */,
-				B8E57F3418FA7A94001EBE0B /* aboutSystemBg@2x.png in Resources */,
 				05B06D1E187FDFC800757F6C /* catalog.xml in Resources */,
 				8D3CA16B18C6C9C800C119DA /* con_req_089012.xml in Resources */,
 				0554B1C318715D8200C75DCD /* sign_middle.png in Resources */,
@@ -2287,13 +2291,13 @@
 				0554B1A5187148E800C75DCD /* aboutSystemBg.png in Resources */,
 				0515D2BE188CF87F0092C8E5 /* city.xml in Resources */,
 				8D3CA17E18C6C9C800C119DA /* con_req_100002.xml in Resources */,
-				B8E57F3C18FA7BB1001EBE0B /* app@3x.png in Resources */,
 				0554B1C118715C7600C75DCD /* SignViewController.xib in Resources */,
 				0554B17918711EEC00C75DCD /* digit_green_6.png in Resources */,
 				05582664186C0DDB0002AE2E /* shade-5.png in Resources */,
+				B80BC78E18FB8B40000373FE /* app@3x.png in Resources */,
 				6CB1F39018EFF104009E2287 /* README.txt in Resources */,
 				8D3CA17218C6C9C800C119DA /* con_req_020022.xml in Resources */,
-				B8E57F2C18FA76D6001EBE0B /* Default-568h@2x.png in Resources */,
+				B80BC79018FB8B40000373FE /* Default-568h@2x.png in Resources */,
 				0554B1D318715E0500C75DCD /* suffix_selected@2x.png in Resources */,
 				8D3CA18D18C6C9C800C119DA /* con_req_999000003.xml in Resources */,
 				0520797E1863EC0D004BF055 /* delete_nomal.png in Resources */,
@@ -2575,8 +2579,8 @@
 		0537AE4718583B39005F84D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
