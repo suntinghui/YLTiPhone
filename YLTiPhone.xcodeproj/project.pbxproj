@@ -2557,8 +2557,8 @@
 		0537AE4618583B39005F84D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2570,7 +2570,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "32645E98-7BF7-48BB-B021-52D070BD9BCA";
+				PROVISIONING_PROFILE = "289C2CC6-BC0D-427B-AF9B-171452A356BE";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2580,8 +2580,8 @@
 		0537AE4718583B39005F84D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2593,7 +2593,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "32645E98-7BF7-48BB-B021-52D070BD9BCA";
+				PROVISIONING_PROFILE = "289C2CC6-BC0D-427B-AF9B-171452A356BE";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

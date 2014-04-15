@@ -185,7 +185,7 @@
 -(void) versionDone{
     @try {
         if (self.receDic) {
-            if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
+            if ([self.receDic objectForKey:@"respmsg"] != NULL && [[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
                 
                 if ([[ApplicationDelegate topViewController] isKindOfClass:[LoginViewController class]]) {
                     [(LoginViewController*)[ApplicationDelegate topViewController]  showAlertViewUpdate:self.receDic];
