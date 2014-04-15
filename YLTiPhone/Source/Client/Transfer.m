@@ -488,6 +488,10 @@ static Transfer *instance = nil;
             if ([self.transferCode isEqualToString:@"089014"]) //签购单上传特殊处理 不弹出到错误页面
             {
             }
+            else if([self.transferCode isEqualToString:@"089001"]) //注册失败
+            {
+                 [ApplicationDelegate gotoFailureViewController:@"注册失败"];
+            }
             else
             {
                 [ApplicationDelegate showErrorPrompt:@"获取数据出错，请重新尝试!"];

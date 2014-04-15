@@ -85,7 +85,7 @@
     }
     
     if(value.length == 6){
-        self.md5Value = [EncryptionUtil MD5Encrypt:value];
+        self.md5Value = [EncryptionUtil MD5Encrypt:[NSString stringWithFormat:@"%@%@",value,INIT_PUBLICKEY_MOD]];
 
     }
     self.inputStr = value;

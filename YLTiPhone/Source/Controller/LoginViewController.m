@@ -180,8 +180,8 @@
         [UserDefaults synchronize];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[[self.phoneNumTF contentTF] text] forKey:@"tel"];
-//        [dic setObject:self.passwordTF.md5Value forKey:@"logpass"];
-        [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"logpass"];
+        [dic setObject:self.passwordTF.md5Value forKey:@"logpass"];
+//        [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"logpass"];
 
         //[[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
         [[Transfer sharedTransfer] startTransfer:@"089016" fskCmd:nil paramDic:dic];
@@ -250,8 +250,13 @@
     NSDictionary *dic_version = [[dic objectForKey:@"apires"] objectFromJSONString];
     self.url = [dic_version objectForKey:@"url"];
     NSString *version = [dic_version objectForKey:@"version"];
+    version = [version stringByReplacingOccurrencesOfString:@"." withString:@""];
+    NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    localVersion = [localVersion stringByReplacingOccurrencesOfString:@"." withString:@""];
     int version_d = [version intValue];
-    if(version_d > version_num){
+    int loacerVer_d = [localVersion intValue];
+
+    if(version_d > loacerVer_d){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"有新版本，是否下载更新？！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
         alertView.tag = 100;
         [alertView show];
