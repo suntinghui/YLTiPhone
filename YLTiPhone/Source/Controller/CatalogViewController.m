@@ -525,14 +525,14 @@
             
             break;
         }
-//        case 62://退出登录
-//        {
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您确定要退出登录吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil, nil];
-//            [alert setTag:100];
-//            [alert show];
-//            
-//            break;
-//        }
+        case 67://退出登录
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您确定要退出登录吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil, nil];
+            [alert setTag:100];
+            [alert show];
+            
+            break;
+        }
         default:
             break;
     }
@@ -582,6 +582,10 @@
 {
     if (alertView.tag == 100) {
         if (buttonIndex == 1) {
+            if (ApplicationDelegate.isAishua)
+            {
+                [AppDataCenter sharedAppDataCenter].hasSign = true;
+            }
             [[TimedoutUtil sharedInstance].timer invalidate];
             ApplicationDelegate.hasLogin = NO;
             [ApplicationDelegate.rootNavigationController popToRootViewControllerAnimated:YES];

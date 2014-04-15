@@ -185,7 +185,7 @@
 -(void) versionDone{
     @try {
         if (self.receDic) {
-            if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
+            if ([self.receDic objectForKey:@"respmsg"] != NULL && [[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
                 
                 if ([[ApplicationDelegate topViewController] isKindOfClass:[LoginViewController class]]) {
                     [(LoginViewController*)[ApplicationDelegate topViewController]  showAlertViewUpdate:self.receDic];
@@ -468,8 +468,8 @@
                 }
                 else if([[ApplicationDelegate topViewController] isKindOfClass:[RealnameLegalizeViewController class]])
                 {
-                    RealnameLegalizeViewController *realnameLegalController = (RealnameLegalizeViewController*)[ApplicationDelegate topViewController];
-                    realnameLegalController.userModel = tmpUserModel;
+                    RealnameLegalizeViewController *vc = (RealnameLegalizeViewController*)[ApplicationDelegate topViewController];
+                    [vc setUserModel:tmpUserModel];
                     
                 }
                 
@@ -808,21 +808,6 @@
  */
 - (void)signWith8583Done
 {
-    /* 签到成功 服务器返回数据
-     RESP DIC:{
-     RESP DIC:{
-     field11 = 980020;
-     field12 = 134722;
-     field13 = 0322;
-     field37 = 000002988036;
-     field39 = 00;
-     field41 = 50000002;
-     field42 = 500000050990002;
-     field60 = 00000001;
-     field62 = 588225C61B3AD0DCF9CAD0CC45D41A59236BB3D4058B0FEB124CC2DE058B0FEB124CC2DEAC977D3F;
-     };
-     */
-    
     
     //保存field41  终端代码
     if ([self.receDic objectForKey:@"field41"]) {

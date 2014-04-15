@@ -26,5 +26,6 @@
 
 - (IBAction)chooseImage:(id)sender;
 - (IBAction)confirmButtonAction:(id)sender;
+- (void)setUserModel:(UserModel *)userModel;
 
 @end
