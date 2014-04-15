@@ -148,7 +148,7 @@
 {
     if ([self checkValue]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-        [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+        [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
         
         [dic setObject:self.originalPwdTF.md5Value forKey:@"old_password"];
         [dic setObject:self.freshPwdTF.md5Value forKey:@"new_password"];
