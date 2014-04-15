@@ -176,35 +176,35 @@
     nameLabel1.text = self.userModel.merchant_name;
     
     NSString *status;
-    if([self.userModel.is_complete isEqualToString:@"0"]){
+    if([self.userModel.status isEqualToString:@"0"]){
         status = @"已注册未完善用户信息";
     }
-    if([self.userModel.is_complete isEqualToString:@"1"]){
+    if([self.userModel.status isEqualToString:@"1"]){
         status = @"已完善未审核";
     }
-    if([self.userModel.is_complete isEqualToString:@"2"]){
+    if([self.userModel.status isEqualToString:@"2"]){
         status = @"初审通过，等待复审";
     }
-    if([self.userModel.is_complete isEqualToString:@"3"]){
+    if([self.userModel.status isEqualToString:@"3"]){
         status = @"复审通过";
     }
-    if([self.userModel.is_complete isEqualToString:@"4"]){
+    if([self.userModel.status isEqualToString:@"4"]){
         status = @"审核不通过";
     }
-    if([self.userModel.is_complete isEqualToString:@"7"]){
+    if([self.userModel.status isEqualToString:@"7"]){
         status = @"已注销";
     }
-    if([self.userModel.is_complete isEqualToString:@"8"]){
+    if([self.userModel.status isEqualToString:@"8"]){
         status = @"已冻结";
     }
-    if([self.userModel.is_complete isEqualToString:@"9"]){
+    if([self.userModel.status isEqualToString:@"9"]){
         status = @"终审通过";
     }
     
     stateLabel.text = status;
     cardTypeLabel.text = self.userModel.pid;
     
-    if(![self.userModel.is_complete isEqualToString:@"9"]){
+    if(![self.userModel.status isEqualToString:@"9"]){
         [nextBtn setHidden:NO];
     }
     

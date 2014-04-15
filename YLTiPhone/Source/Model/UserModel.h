@@ -36,5 +36,6 @@
 
 @property (nonatomic, strong) NSString          *is_identify;
 @property (nonatomic, strong) NSString          *is_complete;
+@property (nonatomic, strong) NSString          *status;
 
 @end

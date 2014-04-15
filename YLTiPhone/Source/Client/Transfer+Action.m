@@ -458,9 +458,10 @@
                 tmpUserModel.merchant_name = [[self.receDic objectForKey:@"apires"] objectForKey:@"merchant_name"];
                 
                 tmpUserModel.pid = [[self.receDic objectForKey:@"apires"] objectForKey:@"pid"];
-                tmpUserModel.is_identify = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_identify"];
-                tmpUserModel.is_complete = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_complete"];
-                tmpUserModel.merchant_id = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_complete"];
+//                tmpUserModel.is_identify = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_identify"];
+//                tmpUserModel.is_complete = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_complete"];
+                tmpUserModel.merchant_id = [[self.receDic objectForKey:@"apires"] objectForKey:@"merchant_id"];
+                tmpUserModel.status = [NSString stringWithFormat:@"%@",[[self.receDic objectForKey:@"apires"] objectForKey:@"status"]];
                 
                 if ([[ApplicationDelegate topViewController] isKindOfClass:[ComplementRegisterInfoViewController class]])
                 {
@@ -694,7 +695,7 @@
             //记录返回数据中的 md5key
             [UserDefaults setObject:[[self.receDic objectForKey:@"apires"] objectForKey:@"md5key"] forKey:MD5KEY];
             [UserDefaults synchronize];
-            [AppDataCenter sharedAppDataCenter].status = [self.receDic objectForKey:@"status"];
+            [AppDataCenter sharedAppDataCenter].status = [NSString stringWithFormat:@"%@",self.receDic[@"apires"][@"status"]];
 //            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
 
             
