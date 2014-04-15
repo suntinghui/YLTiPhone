@@ -381,26 +381,38 @@
 // UINavigationController
 @implementation UINavigationController (Rotation_IOS6)
 
-//- (BOOL)shouldAutorotate {
-//    
-//    return YES;
-//    
-//    return [[self.viewControllers lastObject] shouldAutorotate];
-//    
-//}
-//
-//- (NSUInteger)supportedInterfaceOrientations {
-//    
-//    return UIInterfaceOrientationMaskPortrait;
-//    
-//    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
-//}
-//
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-//    
-//    return UIInterfaceOrientationPortrait;
-//    
-//    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
-//}
+- (BOOL)shouldAutorotate {
+    
+    if ([[self.viewControllers lastObject] isKindOfClass:NSClassFromString(@"")])
+    {
+      return YES;
+    }
+    return NO;
+    
+    return [[self.viewControllers lastObject] shouldAutorotate];
+    
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    
+    if ([[self.viewControllers lastObject] isKindOfClass:NSClassFromString(@"")])
+    {
+        return UIInterfaceOrientationMaskLandscapeRight;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+    
+    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    
+    if ([[self.viewControllers lastObject] isKindOfClass:NSClassFromString(@"")])
+    {
+        return 0;
+    }
+    return UIInterfaceOrientationPortrait;
+    
+    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
+}
 
 @end
