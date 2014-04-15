@@ -66,9 +66,9 @@
     }
     
     //不知道为什么加在这时调用会报错 报值为空
-//    if(value.length == 6){
-//        md5Value = [[NSString alloc] initWithString:[EncryptionUtil MD5Encrypt:value]];
-//    }
+    if(value.length == 6){
+        self.md5Value = [EncryptionUtil MD5Encrypt:[NSString stringWithFormat:@"%@%@",value,INIT_PUBLICKEY_MOD]];
+    }
     NSMutableString *tmpStr = [[NSMutableString alloc] initWithCapacity:6];
     for (int i=0; i<value.length; i++) {
         [tmpStr appendString:@"*"];

@@ -239,7 +239,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
             endingLineNumber = "128"
-            landmarkName = "-initApp"
+            landmarkName = "-applicationWillTerminate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -511,8 +511,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "657"
             endingLineNumber = "657"
-            landmarkName = "@implementation Transfer"
-            landmarkType = "3">
+            landmarkName = "-updateProcess"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -559,7 +559,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "693"
             endingLineNumber = "693"
-            landmarkName = "-socket:didConnectToHost:port:"
+            landmarkName = "-sendRequestEFET"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -653,8 +653,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "678"
             endingLineNumber = "678"
-            landmarkName = "-sendRequestEFET"
-            landmarkType = "5">
+            landmarkName = "@implementation Transfer"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1403,7 +1403,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "579"
             endingLineNumber = "579"
-            landmarkName = "-checkField39"
+            landmarkName = "-parse"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1435,7 +1435,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "580"
             endingLineNumber = "580"
-            landmarkName = "-checkField39"
+            landmarkName = "-parse"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
