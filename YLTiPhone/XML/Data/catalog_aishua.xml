@@ -287,5 +287,15 @@
 		<needReverse>false</needReverse>
 		<isActive>true</isActive>
 	</catalog>
+    
+    <catalog>
+		<catalogId>67</catalogId>
+		<title>退出系统</title>
+		<parentId>6</parentId>
+		<iconId>67</iconId>
+		<description>无</description>
+		<needReverse>false</needReverse>
+		<isActive>true</isActive>
+	</catalog>
 	
 </catalogs>
