@@ -150,10 +150,10 @@
 
         
         nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        nextBtn.frame = CGRectMake(50, 170, 220, 40);
+        nextBtn.frame = CGRectMake(10, 170, 300, 40);
         nextBtn.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        nextBtn.titleLabel.textColor = [UIColor whiteColor];
         [nextBtn setTitle:@"提交材料" forState:UIControlStateNormal];
+        [nextBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [nextBtn setBackgroundImage:[UIImage imageNamed:@"confirmButtonNomal.png"] forState:UIControlStateNormal];
         [nextBtn setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
         [self.view addSubview:nextBtn];
@@ -204,7 +204,7 @@
     stateLabel.text = status;
     cardTypeLabel.text = self.userModel.pid;
     
-    if([self.userModel.is_complete isEqualToString:@"9"]){
+    if(![self.userModel.is_complete isEqualToString:@"9"]){
         [nextBtn setHidden:NO];
     }
     
@@ -327,4 +327,5 @@
         [[Transfer sharedTransfer] startTransfer:@"089020" fskCmd:nil paramDic:dic];
     }
 }
+
 @end

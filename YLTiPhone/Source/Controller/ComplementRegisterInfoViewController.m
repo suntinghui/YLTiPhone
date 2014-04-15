@@ -150,7 +150,7 @@
     }
     
     NSString *status ;
-    if([tmp_model.is_complete isEqualToString:@"9"]){
+    if(![tmp_model.is_complete isEqualToString:@"9"]){
         [btn_edit setHidden:NO];
     }
     

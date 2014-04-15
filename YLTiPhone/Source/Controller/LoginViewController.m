@@ -19,6 +19,7 @@
 #import "SecurityUtil.h"
 #import "ConvertUtil.h"
 #import "ShowContentViewController.h"
+#import "SignViewController.h"
 
 @interface LoginViewController ()
 
@@ -171,6 +172,11 @@
 
 -(IBAction)loginAction:(id)sender
 {
+//    SignViewController *signVC = [[SignViewController alloc] initWithNibName:@"SignViewController" bundle:nil];
+//    signVC.delegate = self;
+//    [ApplicationDelegate.rootNavigationController pushViewController:signVC animated:YES];
+//    return;
+    
     if ([self checkValue])
     {
         [[AppDataCenter sharedAppDataCenter] setPhoneNum:[[self.phoneNumTF contentTF] text]];
