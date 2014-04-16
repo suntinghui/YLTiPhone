@@ -31,7 +31,7 @@
     self.navigationItem.title = @"实名认证";
     self.hasTopView = YES;
 
-    imageFlag = 0;
+    imageFlag = 10001;
     defaultImg = [UIImage imageNamed:@"head_small"];
     
     

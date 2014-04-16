@@ -85,8 +85,22 @@
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [super didReceiveMemoryWarning];//即使没有显示在window上，也不会自动的将self.view释放。
+    // Add code to clean up any of your own resources that are no longer necessary.
+    
+    // 此处做兼容处理需要加上ios6.0的宏开关，保证是在6.0下使用的,6.0以前屏蔽以下代码，否则会在下面使用self.view时自动加载viewDidLoad
+    if ([[[UIDevice currentDevice] systemVersion] floatValue]>=6.0)
+    {
+//        if ([self.view window] == nil)// 是否是正在使用的视图
+//        {
+//            self.view = nil;// 目的是再次进入时能够重新加载调用viewDidLoad函数。
+//        }
+        if ([ApplicationDelegate.topViewController isKindOfClass:[self class]]&&![self isKindOfClass:NSClassFromString(@"RealnameLegalizeViewController")])
+        {
+             self.view = nil;
+        }
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
