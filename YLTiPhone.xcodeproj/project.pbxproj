@@ -420,6 +420,7 @@
 		8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85518EFA662003F222E /* AgreementViewController.xib */; };
 		8DE4E85918EFC531003F222E /* agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85818EFC531003F222E /* agreement.html */; };
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
+		B84AB35A18FE6CDF00CCEDF2 /* head_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
@@ -1009,6 +1010,7 @@
 		8DE4E85518EFA662003F222E /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		8DE4E85818EFC531003F222E /* agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = agreement.html; sourceTree = "<group>"; };
 		8DE4E85F18EFCE15003F222E /* con_req_089001.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = con_req_089001.xml; sourceTree = "<group>"; };
+		B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_small@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
@@ -1713,6 +1715,7 @@
 				0554B1E01871664D00C75DCD /* selectBank_normal@2x.png */,
 				0554B1E11871664D00C75DCD /* selectBank_highlight@2x.png */,
 				0554B1D81871647400C75DCD /* selectField_normal@2x.png */,
+				B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */,
 				0554B1D91871647400C75DCD /* selectField_highlight@2x.png */,
 				0554B1D61871602600C75DCD /* salesslip@2x.png */,
 				0554B1D018715E0500C75DCD /* suffix_normal@2x.png */,
@@ -2135,6 +2138,7 @@
 				8D3CA18718C6C9C800C119DA /* con_req_600000001.xml in Resources */,
 				05582656186C00410002AE2E /* merchantNamebg.png in Resources */,
 				8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */,
+				B84AB35A18FE6CDF00CCEDF2 /* head_small@2x.png in Resources */,
 				0554B18F18711EEC00C75DCD /* inputmoney_button_5@2x.png in Resources */,
 				0554B1CE18715DE200C75DCD /* suffix_normal.png in Resources */,
 				8D801CAA18EBA3F800CEE39B /* beginguide05.png in Resources */,

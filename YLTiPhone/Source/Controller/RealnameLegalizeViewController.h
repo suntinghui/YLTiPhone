@@ -18,6 +18,7 @@
     UIButton *nextBtn;
     UIScrollView *scrollView;
     UIButton *confirmButton;
+    UIImage *defaultImg;
 }
 
 

@@ -138,22 +138,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419248354.753483"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "698"
-            endingLineNumber = "698"
-            landmarkName = "-loginDone"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
             timestampString = "419248758.594534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

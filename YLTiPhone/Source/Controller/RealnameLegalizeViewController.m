@@ -31,7 +31,8 @@
     self.navigationItem.title = @"实名认证";
     self.hasTopView = YES;
 
-    imageFlag = 0;
+    imageFlag = 10001;
+    defaultImg = [UIImage imageNamed:@"head_small"];
     
     
     if (self.pageType == 1){
@@ -44,30 +45,34 @@
     
         
         UIButton *img13Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        img13Button.backgroundColor = [UIColor lightGrayColor];
+        img13Button.backgroundColor = [UIColor clearColor];
         [img13Button setFrame:CGRectMake(150, 10, 130, 160)];
         [img13Button setTag:10001];
         [img13Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
+        [img13Button setBackgroundImage:defaultImg forState:UIControlStateNormal];
         [scrollView addSubview:img13Button];
         
         UIButton *img17Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        img17Button.backgroundColor = [UIColor lightGrayColor];
+        img17Button.backgroundColor = [UIColor clearColor];
         [img17Button setFrame:CGRectMake(150, 180, 130, 160)];
         [img17Button setTag:10002];
         [img17Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
+        [img17Button setBackgroundImage:defaultImg forState:UIControlStateNormal];
         [scrollView addSubview:img17Button];
         
         UIButton *img14Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        img14Button.backgroundColor = [UIColor lightGrayColor];
+        img14Button.backgroundColor = [UIColor clearColor];
         [img14Button setFrame:CGRectMake(150, 350, 130, 160)];
         [img14Button setTag:10003];
         [img14Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
+        [img14Button setBackgroundImage:defaultImg forState:UIControlStateNormal];
         [scrollView addSubview:img14Button];
         
         UIButton *img15Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        img15Button.backgroundColor = [UIColor lightGrayColor];
+        img15Button.backgroundColor = [UIColor clearColor];
         [img15Button setFrame:CGRectMake(150, 520, 130, 160)];
         [img15Button setTag:10004];
+        [img15Button setBackgroundImage:defaultImg forState:UIControlStateNormal];
         [img15Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
         [scrollView addSubview:img15Button];
         
@@ -288,7 +293,7 @@
     for (int i=10001; i<10005; i++)
     {
         UIButton *button = (UIButton*)[scrollView viewWithTag:i];
-        if ([button backgroundImageForState:UIControlStateNormal]==nil)
+        if ([button backgroundImageForState:UIControlStateNormal]==defaultImg)
         {
             [ApplicationDelegate showErrorPrompt:@"请将四张照片补充完整"];
             return NO;
