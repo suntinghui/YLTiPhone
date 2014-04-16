@@ -35,7 +35,7 @@
     self.hasTopView = true;
     
     //商户姓名
-    self.et_merchant_name = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 10, 19, 22) prompt:@"商户名称" keyBoardType:UIKeyboardTypePhonePad];
+    self.et_merchant_name = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 10, 19, 22) prompt:@"商户名称" keyBoardType:UIKeyboardTypeDefault];
     self.et_merchant_name.contentTF.delegate = self;
     [self.et_merchant_name.contentTF hideKeyBoard:self.view:2 hasNavBar:NO];
     [self.view addSubview:self.et_merchant_name];
