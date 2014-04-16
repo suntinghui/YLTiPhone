@@ -271,11 +271,11 @@
     int version_d = [version intValue];
     int loacerVer_d = [localVersion intValue];
 
-    if(version_d > loacerVer_d){
+//    if(version_d > loacerVer_d){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"有新版本，是否下载更新？！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
         alertView.tag = 100;
         [alertView show];
-    }
+//    }
     
 
 

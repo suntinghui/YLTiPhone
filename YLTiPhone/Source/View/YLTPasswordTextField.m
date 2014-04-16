@@ -35,7 +35,16 @@
         [bgIV setImage:[UIImage imageNamed:@"loginInputbg_long.png"]];
         [self addSubview:bgIV];
         
-        pwdTF = [[UITextField alloc] initWithFrame:CGRectMake(10, 3, frame.size.width, frame.size.height)];
+        float y = 3.0;
+        if (DeviceVersion >= 7)
+        {
+            y = 3.0;
+        }
+        else
+        {
+            y = 10.0;
+        }
+        pwdTF = [[UITextField alloc] initWithFrame:CGRectMake(10, y, frame.size.width, frame.size.height)];
         self.backgroundColor = [UIColor clearColor];
         pwdTF.delegate = self;
         [pwdTF setPlaceholder:@"请输入密码"];
