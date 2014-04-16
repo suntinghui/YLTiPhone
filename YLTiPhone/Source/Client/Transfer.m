@@ -454,6 +454,8 @@ static Transfer *instance = nil;
         [self setReqData:_reqData];
         [self sendRequestEFET];
     }
+    
+    [ApplicationDelegate showProcess:@"正在加载..."];
 }
 
 //Json 返回数据解析

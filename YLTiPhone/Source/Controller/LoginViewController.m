@@ -66,8 +66,7 @@
     [loginView addSubview:self.phoneNumTF];
     
     self.passwordTF = [[YLTPasswordTextField alloc] initWithFrame:CGRectMake(79, 166, 181, 30)];
-    NSString *pwd = [UserDefaults stringForKey:PWDLOGIN];
-//    [self.passwordTF.pwdTF setText:pwd];
+ 
     [loginView addSubview:self.passwordTF];
     
     
@@ -79,6 +78,7 @@
     NSString *btn_img ;
     if (agreeButtonTouch) {
         btn_img = @"btn_comment_sametime_select.png";
+        
     }else{
         btn_img = @"btn_comment_sametime_unselect.png";
     }
@@ -126,7 +126,21 @@
     [self checkUpdate];
     
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (agreeButtonTouch)
+    {
+        NSString *pwd = [UserDefaults stringForKey:PWDLOGIN];
+        self.passwordTF.md5Value = pwd;
+        [self.passwordTF setTextFieldValue:@"******"];
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.passwordTF clearInput];
+}
 - (void)selectPost:(id)sender
 {
     SelectPOSViewController *selectPosVC = [[SelectPOSViewController alloc] initWithNibName:nil bundle:nil];
@@ -176,7 +190,7 @@
     {
         [[AppDataCenter sharedAppDataCenter] setPhoneNum:[[self.phoneNumTF contentTF] text]];
 
-        [UserDefaults setObject:self.passwordTF.pwdTF.text forKey:PWDLOGIN];
+        [UserDefaults setObject:self.passwordTF.md5Value forKey:PWDLOGIN];
         [UserDefaults setBool:agreeButtonTouch forKey:REMBERPWD];
         [UserDefaults synchronize];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];

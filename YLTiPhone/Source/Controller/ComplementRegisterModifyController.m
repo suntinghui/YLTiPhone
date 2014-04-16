@@ -76,10 +76,45 @@
     // Dispose of any resources that can be recreated.
     
 }
-
+- (BOOL)checkInput
+{
+    NSString *err  = nil;
+    if (self.et_merchant_name.contentTF.text==nil||
+        [self.et_merchant_name.contentTF.text isEqualToString:@""])
+    {
+        err = @"请输入商户姓名";
+    }
+    else if (self.et_pid.contentTF.text==nil||
+             [self.et_pid.contentTF.text isEqualToString:@""])
+    {
+        err = @"请输入身份证号";
+    }
+    else if (self.et_email.contentTF.text==nil||
+             [self.et_email.contentTF.text isEqualToString:@""])
+    {
+        err = @"请输入邮箱";
+    }
+    else if (self.pwd_pay.rsaValue==nil)
+    {
+        err = @"请输入原支付密码";
+    }
+    else if (self.pwd_pay_confirm.rsaValue==nil)
+    {
+        err = @"请输入支付密码";
+    }
+    
+    if (err!=nil) {
+        [ApplicationDelegate showErrorPrompt:err];
+        return NO;
+    }
+    
+    return YES;
+}
 -(IBAction)confirmAction:(id)sender
 {
-   
+    if (![self checkInput]) {
+        return;
+    }
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     [dic setObject:[et_merchant_name contentTF].text forKey:@"merchant_name"];

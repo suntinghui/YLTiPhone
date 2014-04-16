@@ -22,6 +22,7 @@
 - (void) numberKeyBoardClear;
 - (void) numberKeyBoardAbout;
 - (void) setRsa;
-
+- (void) clearInput;
+- (void)setTextFieldValue:(NSString*)values;
 @end
 
