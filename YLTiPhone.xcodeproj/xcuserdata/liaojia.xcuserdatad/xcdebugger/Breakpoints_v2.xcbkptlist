@@ -669,7 +669,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "-loginAction:"
+            landmarkName = "-checkValue"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1545,7 +1545,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
             endingLineNumber = "173"
-            landmarkName = "-loginAction:"
+            landmarkName = "-checkValue"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1749,7 +1749,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "254"
             endingLineNumber = "254"
-            landmarkName = "-showAlertViewUpdate:"
+            landmarkName = "-shouldAutorotate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
