@@ -82,12 +82,12 @@
     //IOS7把group方式的cell全部拉长，没有了左右10PX的空白 所以需要调整一下
     if (DeviceVersion >= 7)
     {
-        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(90, 15, 220, 480) style:UITableViewStyleGrouped];
+        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(90, 15, 220, VIEWHEIGHT +41 +64) style:UITableViewStyleGrouped];
         _leftScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, 80, VIEWHEIGHT +41 +64)];
     }
     else
     {
-        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(80, 0, 240, 480) style:UITableViewStyleGrouped];
+        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(80, 0, 240, VIEWHEIGHT +41 +64) style:UITableViewStyleGrouped];
         _leftScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 80, VIEWHEIGHT +41 +64)];
     }
     
