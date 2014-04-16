@@ -43,25 +43,29 @@
         [self.view addSubview:scrollView];
     
         
-        UIButton *img13Button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *img13Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        img13Button.backgroundColor = [UIColor lightGrayColor];
         [img13Button setFrame:CGRectMake(150, 10, 130, 160)];
         [img13Button setTag:10001];
         [img13Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
         [scrollView addSubview:img13Button];
         
-        UIButton *img17Button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *img17Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        img17Button.backgroundColor = [UIColor lightGrayColor];
         [img17Button setFrame:CGRectMake(150, 180, 130, 160)];
         [img17Button setTag:10002];
         [img17Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
         [scrollView addSubview:img17Button];
         
-        UIButton *img14Button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *img14Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        img14Button.backgroundColor = [UIColor lightGrayColor];
         [img14Button setFrame:CGRectMake(150, 350, 130, 160)];
         [img14Button setTag:10003];
         [img14Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
         [scrollView addSubview:img14Button];
         
-        UIButton *img15Button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *img15Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        img15Button.backgroundColor = [UIColor lightGrayColor];
         [img15Button setFrame:CGRectMake(150, 520, 130, 160)];
         [img15Button setTag:10004];
         [img15Button addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
