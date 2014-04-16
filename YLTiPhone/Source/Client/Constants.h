@@ -14,8 +14,8 @@
 
 
 // HTTP
-#define HOST                                @"api.vastpay.cn:8443"
-//#define HOST                                @"58.221.92.138:8443"
+//#define HOST                                @"api.vastpay.cn:8443"
+#define HOST                                @"58.221.92.138:8443"
 #define FILEURL                             @"http://106.120.253.181:8888/pos/xmlFiles/"
 #define JSONURL                             @"yunpaiApi/api/"
 
