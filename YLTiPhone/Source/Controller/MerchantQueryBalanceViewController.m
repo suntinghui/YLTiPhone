@@ -32,7 +32,7 @@
     self.hasTopView = YES;
     self.navigationItem.title = @"商户余额查询";
     
-    pswTxtField = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) left:@"密码" prompt:@"请输入密码"];
+    pswTxtField = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) left:@"密码" prompt:@"请输入商户支付密码"];
     [self.view addSubview:pswTxtField];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
