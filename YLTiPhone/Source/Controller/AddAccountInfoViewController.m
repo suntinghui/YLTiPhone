@@ -42,6 +42,10 @@
     if (self.pageType == 0)
     {
         self.navigationItem.title = @"新增账户记录";
+        NSString *merchant_name = self.accountDict[@"merchant_name"];
+        self.accountDict = [[NSMutableDictionary alloc]init];
+        [self.accountDict setObject:merchant_name forKey:@"merchant_name"];
+        
     }
     else
     {
@@ -85,7 +89,7 @@
     [self.reciveAccountNumTF.contentTF setPlaceholder:@"收款账号"];
     self.reciveAccountNumTF.contentTF.delegate = self;
     [self.reciveAccountNumTF.contentTF setFont:[UIFont systemFontOfSize:15]];
-    [self.reciveAccountNumTF.contentTF setKeyboardType:UIKeyboardTypeDefault];
+    [self.reciveAccountNumTF.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
     [self.reciveAccountNumTF.contentTF hideKeyBoard:self.view:3 hasNavBar:YES];
     self.reciveAccountNumTF.contentTF.text = self.accountDict[@"bankaccount"];
     [scrollView addSubview:self.reciveAccountNumTF];
@@ -165,14 +169,14 @@
     UIImageView *textFieldImage2 = [[UIImageView alloc] initWithFrame:CGRectMake(8, 450, 304, 45)];
     [textFieldImage2 setImage:[UIImage imageNamed:@"textInput.png"]];
     [scrollView addSubview:textFieldImage2];
+    
     self.accountInfo = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 457, 300, 35) isLong:true];
     [self.accountInfo.contentTF setPlaceholder:@"账号信息"];
     self.accountInfo.contentTF.delegate = self;
     [self.accountInfo.contentTF setFont:[UIFont systemFontOfSize:15]];
-    [self.accountInfo.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.accountInfo.contentTF setKeyboardType:UIKeyboardTypeDefault];
     [self.accountInfo.contentTF hideKeyBoard:scrollView:2 hasNavBar:YES];
     self.accountInfo.contentTF.text = self.accountDict[@"mastername"];
-    self.accountInfo.contentTF.enabled = NO;
     [scrollView addSubview:self.accountInfo];
 
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -180,10 +184,12 @@
     if (self.pageType == 0)
     {
         [confirmButton setTitle:@"确认添加" forState:UIControlStateNormal];
+        self.accountInfo.contentTF.enabled = YES;
     }
     else
     {
         [confirmButton setTitle:@"确认修改" forState:UIControlStateNormal];
+        self.accountInfo.contentTF.enabled = NO;
     }
     
     [confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -333,8 +339,6 @@
         //检查界面输入情况
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
-        [dic setObject:self.accountDict[@"merchant_name"] forKey:@"merchant_name"];
-        [dic setObject:self.accountDict[@"mastername"] forKey:@"mastername"];
         [dic setObject:self.receiveAcctNumConfirmTF.contentTF.text forKey:@"bankaccount"];//银行卡号
         [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) name] forKey:@"banks"];
         [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankno"];
@@ -343,11 +347,16 @@
         [dic setObject:self.respBankCode forKey:@"addr"];
         if (self.pageType==0)
         {
+            [dic setObject:self.accountDict[@"merchant_name"] forKey:@"merchant_name"];
+            [dic setObject:self.accountInfo.contentTF.text forKey:@"mastername"];
             //新增提款银行账户
             [[Transfer sharedTransfer] startTransfer:@"089008" fskCmd:nil paramDic:dic];
         }
         else
         {
+            [dic setObject:self.accountDict[@"merchant_name"] forKey:@"merchant_name"];
+            [dic setObject:self.accountDict[@"mastername"] forKey:@"mastername"];
+            
             //修改提款银行账户
             [[Transfer sharedTransfer] startTransfer:@"089009" fskCmd:nil paramDic:dic];
         }

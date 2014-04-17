@@ -153,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Controller/LoginViewController.m"
-            timestampString = "419310146.070263"
+            filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
+            timestampString = "419392994.064147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "821"
+            endingLineNumber = "821"
+            landmarkName = "-signWith8583Done"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Controller/LoginViewController.m"
-            timestampString = "419310835.485431"
+            filePath = "YLTiPhone/Source/Controller/AccountCollectCashViewController.m"
+            timestampString = "419397546.059776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-refreshTabelView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419392994.064147"
+            timestampString = "419397402.544806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "821"
-            endingLineNumber = "821"
-            landmarkName = "-signWith8583Done"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
+            landmarkName = "-getBankAccountDone"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

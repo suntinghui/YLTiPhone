@@ -150,7 +150,7 @@
     [tradeTimeLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tradeTimeLabel];
     
-    self.pwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 250, 300, 44) left:@"" prompt:@"请输入6位商户密码"];
+    self.pwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 250, 300, 44) left:@"" prompt:@"请输入卡密码"];
     [scrollView addSubview:self.pwdTF];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
