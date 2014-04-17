@@ -527,8 +527,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "701"
             endingLineNumber = "701"
-            landmarkName = "-socket:didConnectToHost:port:"
-            landmarkType = "5">
+            landmarkName = "@implementation Transfer"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -653,8 +653,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "678"
             endingLineNumber = "678"
-            landmarkName = "@implementation Transfer"
-            landmarkType = "3">
+            landmarkName = "-getProcessMessage"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -903,7 +903,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "509"
             endingLineNumber = "509"
-            landmarkName = "-parse"
+            landmarkName = "-parseJson"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1451,8 +1451,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "958"
             endingLineNumber = "958"
-            landmarkName = "-recordSuccessTransfer"
-            landmarkType = "5">
+            landmarkName = "@implementation Transfer(Action)"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1577,8 +1577,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "514"
             endingLineNumber = "514"
-            landmarkName = "-parse"
-            landmarkType = "5">
+            landmarkName = "@implementation Transfer"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1609,7 +1609,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "683"
             endingLineNumber = "683"
-            landmarkName = "-sendRequestEFET"
+            landmarkName = "-getProcessMessage"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
