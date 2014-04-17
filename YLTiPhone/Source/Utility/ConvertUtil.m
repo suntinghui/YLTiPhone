@@ -173,13 +173,10 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 
 + (NSString *) stringToHex:(NSString *)str
 {
-    const char *inStr = [str UTF8String];
-    char outStr[str.length/4];
-    
+    const char *inStr = [str  UTF8String];
+    char outStr[str.length/4+1];
     binaryToHex(inStr, outStr);
-    
     NSString *hexStr = [[NSString alloc] initWithCString:outStr encoding:NSUTF8StringEncoding];
-    
     return hexStr;
 }
 

@@ -323,8 +323,8 @@
 		6CB1F36A18EFD449009E2287 /* ConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F36518EFD449009E2287 /* ConvertUtil.m */; };
 		6CB1F36B18EFD449009E2287 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F36718EFD449009E2287 /* SecurityUtil.m */; };
 		6CB1F36C18EFD449009E2287 /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F36918EFD449009E2287 /* UIDevice+Resolutions.m */; };
-		6CB1F37218EFF069009E2287 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F36F18EFF069009E2287 /* GCDAsyncSocket.m */; };
-		6CB1F37318EFF069009E2287 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F37118EFF069009E2287 /* GCDAsyncUdpSocket.m */; };
+		6CB1F37218EFF069009E2287 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F36F18EFF069009E2287 /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-O0"; }; };
+		6CB1F37318EFF069009E2287 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F37118EFF069009E2287 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-O0"; }; };
 		6CB1F38818EFF104009E2287 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F37618EFF104009E2287 /* DDAbstractDatabaseLogger.m */; };
 		6CB1F38918EFF104009E2287 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F37818EFF104009E2287 /* DDASLLogger.m */; };
 		6CB1F38A18EFF104009E2287 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1F37A18EFF104009E2287 /* DDFileLogger.m */; };
@@ -2551,8 +2551,8 @@
 		0537AE4618583B39005F84D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
