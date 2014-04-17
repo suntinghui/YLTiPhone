@@ -122,8 +122,11 @@
 
 -(void)refreshTabelView
 {
-    if ([[self.accountDic objectForKey:@"bankaccount"] isEqualToString:@""]) {
+    NSLog(@"ddd %@",self.accountDic);
+    if ([[self.accountDic objectForKey:@"bankaccount"] isEqualToString:@" "])
+    {
         [scroll addSubview:btn_add];
+        self.navigationItem.rightBarButtonItem = nil;
     }else{
         [scroll addSubview:accountView];
         self.nameLabel.text = [self.accountDic objectForKey:@"mastername"];

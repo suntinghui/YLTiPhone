@@ -41,7 +41,7 @@
     self.navigationItem.title = @"账户提现";
     self.hasTopView = YES;
 
-    UIView *accountInfoView = [[UIView alloc] initWithFrame:CGRectMake(10, 50+ios7_h, 300, 220)];
+    UIView *accountInfoView = [[UIView alloc] initWithFrame:CGRectMake(10, 20+ios7_h, 300, 250)];
     accountInfoView.backgroundColor = [UIColor whiteColor];
     accountInfoView.layer.borderWidth = 1;
     accountInfoView.layer.cornerRadius = 5;
@@ -66,25 +66,31 @@
     label3.text = @"当日可提现余额";
     [accountInfoView addSubview:label3];
     
-    UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(5, 95, 100, 25)];
+    UILabel *label8 = [[UILabel alloc] initWithFrame:CGRectMake(5, 95, 150, 25)];
+    label8.backgroundColor = [UIColor clearColor];
+    label8.font = [UIFont systemFontOfSize:15];
+    label8.text = @"不可提现余额";
+    [accountInfoView addSubview:label8];
+    
+    UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(5, 125, 100, 25)];
     label4.backgroundColor = [UIColor clearColor];
     label4.font = [UIFont systemFontOfSize:15];
     label4.text = @"收款银行";
     [accountInfoView addSubview:label4];
     
-    UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(5, 125, 150, 25)];
+    UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(5, 155, 150, 25)];
     label5.backgroundColor = [UIColor clearColor];
     label5.font = [UIFont systemFontOfSize:15];
     label5.text = @"开启行所在城市";
     [accountInfoView addSubview:label5];
     
-    UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(5, 155, 100, 25)];
+    UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(5, 185, 100, 25)];
     label6.backgroundColor = [UIColor clearColor];
     label6.font = [UIFont systemFontOfSize:15];
     label6.text = @"银行账户";
     [accountInfoView addSubview:label6];
     
-    UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(5, 185, 100, 25)];
+    UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(5, 215, 100, 25)];
     label7.backgroundColor = [UIColor clearColor];
     label7.font = [UIFont systemFontOfSize:15];
     label7.text = @"银联号";
@@ -111,7 +117,14 @@
     balancelabel.text = [StringUtil stringWithMoney:[self.receiveDic objectForKey:@"balance"] locale:@"zh_CN"];
     [accountInfoView addSubview:balancelabel];
     
-    UILabel *banklabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 85, 170, 40)];
+    UILabel *unbalancelabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 95, 170, 25)];
+    unbalancelabel.backgroundColor = [UIColor clearColor];
+    unbalancelabel.font = [UIFont systemFontOfSize:15];
+    [unbalancelabel setTextAlignment:NSTextAlignmentRight];
+    unbalancelabel.text = [StringUtil stringWithMoney:[self.receiveDic objectForKey:@"unbalance"] locale:@"zh_CN"];
+    [accountInfoView addSubview:unbalancelabel];
+    
+    UILabel *banklabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 125, 170, 40)];
     banklabel.backgroundColor = [UIColor clearColor];
     banklabel.font = [UIFont systemFontOfSize:15];
     banklabel.numberOfLines = 0;
@@ -120,21 +133,21 @@
     banklabel.text = [self.receiveDic objectForKey:@"banks"];
     [accountInfoView addSubview:banklabel];
     
-    UILabel *citylabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 125, 170, 25)];
+    UILabel *citylabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 155, 170, 25)];
     citylabel.backgroundColor = [UIColor clearColor];
     citylabel.font = [UIFont systemFontOfSize:15];
     [citylabel setTextAlignment:NSTextAlignmentRight];
     citylabel.text = [self.receiveDic objectForKey:@"area"];
     [accountInfoView addSubview:citylabel];
     
-    UILabel *acclabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 155, 170, 25)];
+    UILabel *acclabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 185, 170, 25)];
     acclabel.backgroundColor = [UIColor clearColor];
     acclabel.font = [UIFont systemFontOfSize:15];
     [acclabel setTextAlignment:NSTextAlignmentRight];
     acclabel.text = [self.receiveDic objectForKey:@"bankaccount"];
     [accountInfoView addSubview:acclabel];
     
-    UILabel *ylNumlabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 185, 170, 25)];
+    UILabel *ylNumlabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 215, 170, 25)];
     ylNumlabel.backgroundColor = [UIColor clearColor];
     ylNumlabel.font = [UIFont systemFontOfSize:15];
     [ylNumlabel setTextAlignment:NSTextAlignmentRight];
@@ -143,7 +156,7 @@
     
     scrView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, ios7_h+40, 320, self.view.frame.size.height)];
     [self.view addSubview:scrView];
-    scrView.contentSize = CGSizeMake(320, 520);
+    scrView.contentSize = CGSizeMake(320, 550);
     [scrView addSubview:accountInfoView];
     
     
