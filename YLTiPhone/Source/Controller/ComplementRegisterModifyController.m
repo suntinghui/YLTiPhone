@@ -118,6 +118,7 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     [dic setObject:[et_merchant_name contentTF].text forKey:@"merchant_name"];
+    [dic setObject:[et_merchant_name contentTF].text forKey:@"master_name"];
     [dic setObject:[et_pid contentTF].text forKey:@"pid"];
     [dic setObject:[et_email contentTF].text forKey:@"email"];
     [dic setObject:[pwd_pay_confirm rsaValue] forKey:@"paypass"];

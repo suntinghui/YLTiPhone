@@ -24,6 +24,7 @@
     if (self) {
         // Custom initialization
         _smsCode = smscode;
+        self.type = 0;
     }
     return self;
 }
@@ -81,12 +82,12 @@
 {
     if ([self checkValue]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-        [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+        [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
         
-        [dic setObject:self.freshPwdTF.md5Value forKey:@"paypass"];
+        [dic setObject:self.freshPwdTF.md5Value forKey:@"logpass"];
         //上个界面请求返回数据中 传到此界面的值
         [dic setObject:self.smsCode forKey:@"smscode"];
-        [dic setObject:@"1" forKey:@"type"]; //0是登录密码 1是支付密码
+        [dic setObject:self.type forKey:@"type"]; //0是登录密码 1是支付密码
         
         //089015 修改登录密码
         [[Transfer sharedTransfer] startTransfer:@"089015" fskCmd:nil paramDic:dic];

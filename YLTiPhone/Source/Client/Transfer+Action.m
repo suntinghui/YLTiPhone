@@ -524,6 +524,15 @@
                 //记录里面的smscode 传入下一界面设置密码
                 NSString *smscode = [[self.receDic objectForKey:@"apires"] objectForKey:@"smscode"];
                 SettingPasswordViewController *vc = [[SettingPasswordViewController alloc] initWithNibName:nil bundle:nil smscode:smscode];
+                if ([ApplicationDelegate.topViewController isKindOfClass:NSClassFromString(@"FindoutPaymentPwdViewController")])
+                {
+                    vc.type = @"1";
+                }
+                else
+                {
+                    vc.type = @"0";
+                }
+                
                 [[ApplicationDelegate topViewController].navigationController pushViewController:vc animated:YES];
             }else{
                 [ApplicationDelegate gotoFailureViewController:@"找回密码失败,请重新尝试"];
