@@ -272,6 +272,7 @@ static Transfer *instance = nil;
                     if (nil != self.paramDic && [self.paramDic objectForKey:[value substringFromIndex:2]]){
                         [tempStr appendString:[self.paramDic objectForKey:[value substringFromIndex:2]]];
                     }else{
+                        NSLog(@"[AppDataCenter sharedAppDataCenter] getValueWithKey: %@",value);
                         // 如果不是来自界面，那么就在AppDataCenter中寻找这个值。
                         [tempStr appendString:[[AppDataCenter sharedAppDataCenter] getValueWithKey:value]];
                     }
@@ -710,6 +711,11 @@ static Transfer *instance = nil;
     [self.asyncSocket writeData:self.reqData withTimeout:-1 tag:0];
     
     [self.asyncSocket readDataWithTimeout:-1 tag:0];
+    
+//    [self.asyncSocket writeData:self.reqData withTimeout:30 tag:0]; //TODO
+//
+//    [self.asyncSocket readDataWithTimeout:30 tag:0];
+    
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
@@ -739,14 +745,14 @@ static Transfer *instance = nil;
 
 }
 
-/*
+
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
 {
 	// Since we requested HTTP/1.0, we expect the server to close the connection as soon as it has sent the response.
 	
 	NSLog(@"socketDidDisconnect:withError: \"%@\"", err);
 }
- */
+
 
 #pragma mark - end AsyncSocketDelegate
 

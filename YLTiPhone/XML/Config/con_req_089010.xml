@@ -4,6 +4,7 @@
 	<field key="fieldTrancode" value="089010" />
 	
 	<field key="tel" value="__tel"  />
+    <field key="merchant_type" value="__merchant_type" />
 	<field key="merchant_name" value="__merchant_name" />
     <field key="master_name" value="__master_name" />
 	<field key="pid" value="__pid"/>

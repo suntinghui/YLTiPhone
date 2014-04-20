@@ -112,9 +112,14 @@ static AppDataCenter *instance = nil;
         return [self getCurrentVersion];
     } else if ([property isEqualToString:@"__MERCHERNAME"]){
         return [self getMercherName];
-    } else if([property isEqualToString:@"__FIELD35"]) {
+    }
+//    else if([property isEqualToString:@"__ENCTRACKS"]) {
+//        return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
+//    }
+    else if([property isEqualToString:@"__FIELD35"]) {
         return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
-    }else if ([property isEqualToString:@"__TERID"]){
+    }
+    else if ([property isEqualToString:@"__TERID"]){
         return self.__TERID;
     }
     else if([property isEqualToString:@"__TERSERIALNO"])
