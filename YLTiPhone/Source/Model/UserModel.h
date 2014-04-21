@@ -25,7 +25,10 @@
 }
 
 @property (nonatomic, strong) NSString          *merchant_name;
+@property (nonatomic, strong) NSString          *mastername;
+@property (nonatomic, strong) NSString          *merchant_type;
 @property (nonatomic, strong) NSString          *merchant_id;
+@property (nonatomic, strong) NSString          *email;
 @property (nonatomic, strong) NSString          *pid;
 @property (nonatomic, strong) NSString          *type;
 

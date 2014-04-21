@@ -129,7 +129,7 @@
         self.navigationItem.rightBarButtonItem = nil;
     }else{
         [scroll addSubview:accountView];
-        self.nameLabel.text = [self.accountDic objectForKey:@"mastername"];
+        self.nameLabel.text = [self.accountDic objectForKey:@"accountname"];
         self.accountLabel.text = [self.accountDic objectForKey:@"bankaccount"];
     }
 }

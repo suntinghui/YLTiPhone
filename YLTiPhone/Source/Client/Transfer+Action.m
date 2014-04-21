@@ -456,6 +456,9 @@
                 NSString *jsonStr = [[self.receDic objectForKey:@"apires"] objectFromJSONString];
                 [self.receDic setObject:jsonStr forKey:@"apires"];
                 tmpUserModel.merchant_name = [[self.receDic objectForKey:@"apires"] objectForKey:@"merchant_name"];
+                tmpUserModel.mastername = [[self.receDic objectForKey:@"apires"] objectForKey:@"mastername"];
+                tmpUserModel.merchant_type =[[self.receDic objectForKey:@"apires"] objectForKey:@"merchant_type"];
+                  tmpUserModel.email =[[self.receDic objectForKey:@"apires"] objectForKey:@"email"];
                 
                 tmpUserModel.pid = [[self.receDic objectForKey:@"apires"] objectForKey:@"pid"];
 //                tmpUserModel.is_identify = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_identify"];
@@ -704,8 +707,8 @@
             //记录返回数据中的 md5key
             [UserDefaults setObject:[[self.receDic objectForKey:@"apires"] objectForKey:@"md5key"] forKey:MD5KEY];
             [UserDefaults synchronize];
-            [AppDataCenter sharedAppDataCenter].status = [NSString stringWithFormat:@"%@",self.receDic[@"apires"][@"status"]];
-//            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
+//            [AppDataCenter sharedAppDataCenter].status = [NSString stringWithFormat:@"%@",self.receDic[@"apires"][@"status"]];
+            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
 
             
             // 登陆成功，跳转到菜单界面

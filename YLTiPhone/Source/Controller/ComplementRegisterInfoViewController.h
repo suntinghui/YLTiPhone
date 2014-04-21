@@ -26,6 +26,8 @@
 @property(nonatomic, strong)UILabel *label_status;
 @property(nonatomic, strong)UIButton *btn_edit;
 
+@property(nonatomic, strong)UserModel *userModel;
+
 -(void)fromLogic:(UserModel*) tmp_model;
 
 @end

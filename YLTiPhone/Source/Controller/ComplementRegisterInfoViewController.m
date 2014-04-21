@@ -123,6 +123,7 @@
 -(IBAction)editAction:(id)sender
 {
     ComplementRegisterModifyController *vc = [[ComplementRegisterModifyController alloc] init];
+    vc.userModel = self.userModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning
@@ -142,8 +143,10 @@
 
 -(void)fromLogic:(UserModel*) tmp_model
 {
+    self.userModel = tmp_model;
+    
     if(tmp_model.merchant_name != nil){
-       [label_name setText:tmp_model.merchant_name];
+       [label_name setText:tmp_model.mastername];
     }
     if(tmp_model.pid != nil){
         [label_cardno setText:tmp_model.pid];

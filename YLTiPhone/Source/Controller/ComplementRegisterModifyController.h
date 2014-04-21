@@ -10,6 +10,7 @@
 #import "AbstractViewController.h"
 #import "LeftImageTextField.h"
 #import "PwdLeftTextField.h"
+#import "UserModel.h"
 @interface ComplementRegisterModifyController : AbstractViewController<UITextFieldDelegate,
     UIActionSheetDelegate,
     UIScrollViewDelegate,
@@ -25,5 +26,6 @@
 @property(nonatomic, strong)LeftImageTextField *et_email;
 @property(nonatomic, strong)PwdLeftTextField *pwd_pay;
 @property(nonatomic, strong)PwdLeftTextField *pwd_pay_confirm;
+@property(nonatomic, strong)UserModel *userModel;
 
 @end

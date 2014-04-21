@@ -189,7 +189,7 @@
 - (void)setUserModel:(UserModel *)userModel
 {
     _userModel = userModel;
-    nameLabel1.text = self.userModel.merchant_name;
+    nameLabel1.text = self.userModel.mastername;
     
     NSString *status;
     if([self.userModel.status isEqualToString:@"0"]){
