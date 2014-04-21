@@ -6,7 +6,7 @@
 	<field key="tel" value="__tel"  />
     <field key="merchant_type" value="__merchant_type" />
 	<field key="merchant_name" value="__merchant_name" />
-    <field key="master_name" value="__master_name" />
+    <field key="mastername" value="__mastername" />
 	<field key="pid" value="__pid"/>
 	<field key="email" value="__email"/>
 	<field key="paypass" value="__paypass"/>

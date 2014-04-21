@@ -37,6 +37,7 @@
     self.hasTopView = true;
     type = 1;
     
+    
     scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 40, 320, VIEWHEIGHT)];
     scrollView.contentSize = CGSizeMake(320, 520);
     [self.view addSubview:scrollView];
@@ -61,6 +62,7 @@
     //商户名称
     self.et_merchant_name = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 60, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 10, 19, 22) prompt:@"商户名称" keyBoardType:UIKeyboardTypeDefault];
     self.et_merchant_name.contentTF.delegate = self;
+    self.et_merchant_name.contentTF.enabled = NO;
     [scrollView addSubview:self.et_merchant_name];
     
     //姓名
@@ -108,8 +110,10 @@
     
 }
 
+#pragma mark - UIActionsheetdelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    [self clearInput];
     UIButton *button = (UIButton*)[scrollView viewWithTag:Action_Tag_TypeSelect];
     if (buttonIndex==0)
     {
@@ -117,6 +121,7 @@
         [self.et_name.contentTF setPlaceholder:@"姓名"];
         [self.et_pid.contentTF setPlaceholder:@"身份证号码"];
         type = 1;
+        self.et_merchant_name.contentTF.enabled = NO;
     }
     else if(buttonIndex == 1)
     {
@@ -124,9 +129,18 @@
         [self.et_name.contentTF setPlaceholder:@"法人"];
         [self.et_pid.contentTF setPlaceholder:@"法人身份证号码"];
         type = 2;
+        self.et_merchant_name.contentTF.enabled = YES;
     }
 }
 
+#pragma mark -UITextFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField==self.et_name.contentTF&&type==1&&textField.text.length>0)
+    {
+        self.et_merchant_name.contentTF.text = [NSString stringWithFormat:@"个体户-%@",self.et_name.contentTF.text];
+    }
+}
 
 - (BOOL)checkInput
 {
@@ -168,6 +182,15 @@
     return YES;
 }
 
+- (void)clearInput
+{
+    self.et_merchant_name.contentTF.text = nil;
+    self.et_name.contentTF.text = nil;
+    self.et_pid.contentTF.text = nil;
+    self.pwd_pay.pwdTF.text = nil;
+    self.pwd_pay_confirm.pwdTF.text = nil;
+}
+
 - (void)typeSelect:(UIButton*)button
 {
     UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"个人商户",@"企业商户", nil];
@@ -181,23 +204,12 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     [dic setObject:[et_merchant_name contentTF].text forKey:@"merchant_name"];
-    [dic setObject:[self.et_name contentTF].text forKey:@"master_name"];
+    [dic setObject:[self.et_name contentTF].text forKey:@"mastername"];
     [dic setObject:[et_pid contentTF].text forKey:@"pid"];
     [dic setObject:[et_email contentTF].text forKey:@"email"];
     [dic setObject:[pwd_pay_confirm rsaValue] forKey:@"paypass"];
     [dic setObject:[NSString stringWithFormat:@"%d",type] forKey:@"merchant_type"];
-    
-    if (type==1)
-    {
-        //开户名称
-        [dic setObject:[self.et_name contentTF].text forKey:@"account_name"];
-    }
-    else if(type==2)
-    {
-        [dic setObject:[self.et_merchant_name contentTF].text forKey:@"account_name"];
-    }
-    
-    
+   
     [[Transfer sharedTransfer] startTransfer:@"089010" fskCmd:nil paramDic:dic];
 }
 @end

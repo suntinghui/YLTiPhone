@@ -154,6 +154,7 @@
         [btn_edit setHidden:NO];
     }
     
+    
     if([tmp_model.status isEqualToString:@"0"]){
         status = @"已注册未完善用户信息";
     }
@@ -187,7 +188,7 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
     [dic setObject:self.merchantNameTF.contentTF.text forKey:@"merchant_name"];
-    [dic setObject:self.merchantNameTF.contentTF.text forKey:@"master_name"];
+    [dic setObject:self.merchantNameTF.contentTF.text forKey:@"mastername"];
     
     [dic setObject:self.cardIDNumTF.contentTF.text forKey:@"pid"];
     [dic setObject:self.emailTF.contentTF.text forKey:@"email"];

@@ -107,6 +107,13 @@
 
 - (void)securityCodeButtonAction
 {
+    
+    if (self.phoneNumTF.contentTF.text==nil||
+        [self.phoneNumTF.contentTF.text isEqualToString:@""])
+    {
+        [ApplicationDelegate showErrorPrompt:@"请输入接收手机号"];
+        return;
+    }
     self.securityCodeButton.enabled = NO;
     secondsCountDown = 30;//30秒倒计时 1s执行一次下面方法
     countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES];
@@ -116,7 +123,7 @@
     [formatter setDateFormat:@"YYYY-MM-dd 20hh:mm:ss"];
     date = [formatter stringFromDate:[NSDate date]];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
+    [dic setObject:self.phoneNumTF.contentTF.text forKey:@"tel"];
     [dic setObject:@"time" forKey:date];
     
     [[Transfer sharedTransfer] startTransfer:@"089006" fskCmd:nil paramDic:dic];

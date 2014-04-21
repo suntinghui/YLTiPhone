@@ -12,7 +12,8 @@
 #import "PwdLeftTextField.h"
 @interface ComplementRegisterModifyController : AbstractViewController<UITextFieldDelegate,
     UIActionSheetDelegate,
-    UIScrollViewDelegate>
+    UIScrollViewDelegate,
+    UITextFieldDelegate>
 {
     UIScrollView *scrollView;
     int type;
