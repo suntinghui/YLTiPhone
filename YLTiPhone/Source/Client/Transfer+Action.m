@@ -416,6 +416,7 @@
                     model.merchant_name = picsObj[@"merchant_name"];
                     model.terminal_id = picsObj[@"terminal_id"];
                     model.note = picsObj[@"note"];
+                    model.image = picsObj[@"img"];
                     
                     [transModelArray addObject:model];
                 }

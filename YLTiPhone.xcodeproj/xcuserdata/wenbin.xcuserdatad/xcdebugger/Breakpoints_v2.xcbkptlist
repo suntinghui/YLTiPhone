@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419754858.354519"
+            timestampString = "419763639.704963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "968"
-            endingLineNumber = "968"
+            startingLineNumber = "969"
+            endingLineNumber = "969"
             landmarkName = "@implementation Transfer(Action)"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419754858.354519"
+            timestampString = "419763639.704963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "960"
-            endingLineNumber = "960"
+            startingLineNumber = "961"
+            endingLineNumber = "961"
             landmarkName = "-recordSuccessTransfer"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419754858.354519"
+            timestampString = "419763639.704963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "-getMerchantInfoDone"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419754858.354519"
+            timestampString = "419763639.704963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "833"
-            endingLineNumber = "833"
+            startingLineNumber = "834"
+            endingLineNumber = "834"
             landmarkName = "-signWith8583Done"
             landmarkType = "5">
          </BreakpointContent>
@@ -233,29 +233,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "419501162.552803"
+            filePath = "YLTiPhone/Source/Controller/InputPasswordViewController.m"
+            timestampString = "419760894.616948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "692"
-            endingLineNumber = "692"
-            landmarkName = "-sendRequestEFET"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "419501162.552803"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "728"
-            endingLineNumber = "728"
-            landmarkName = "-socket:didReadData:withTag:"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-confirmButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
