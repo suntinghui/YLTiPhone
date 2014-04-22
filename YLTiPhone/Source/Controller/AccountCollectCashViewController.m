@@ -106,7 +106,7 @@
     explainLabel.numberOfLines = 0;
     explainLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    explainLabel.text = @"用户须知\n注意：使用本服务前需完成实名认证，用户填写信息一经提交不可修改，如确需修改信息，请致电客服热线办理；请仔细核对提款银行信息，如因提款信息错误导致提款失败，提款资金将退回至提款人手机账户。\n1、普通提款：\n提款限额：50万/日（大额交易系统可能自动分拆入账）; 信用卡收款当日下午3时以后(因不同银行处理时间不同，部分银行入账可能出现延迟)；\n2、快速提款：\n提款限额：5000元/日，手续费5元/笔；到账时间：工作时间内提款2小时内到账（因不同银行处理时间不同，部分银行入账可能出现延迟）\n服务热线：4008-0166-88";
+    explainLabel.text = @"用户须知\n注意：使用本服务前需完成实名认证，用户填写信息一经提交不可修改，如确需修改信息，请致电客服热线办理；请仔细核对提款银行信息，如因提款信息错误导致提款失败，提款资金将退回至提款人手机账户。\n1、普通提款：\n提款限额：50万/日（大额交易系统可能自动分拆入账）; 信用卡收款当日下午3时以后(因不同银行处理时间不同，部分银行入账可能出现延迟)；\n2、快速提款：\n提款限额：50000元/日，手续费0.25%；到账时间：工作时间内提款2小时内到账（因不同银行处理时间不同，部分银行入账可能出现延迟）\n服务热线：4008-0166-88";
     [explainIV addSubview:explainLabel];
     
     [self requestAction];
@@ -129,7 +129,7 @@
         self.navigationItem.rightBarButtonItem = nil;
     }else{
         [scroll addSubview:accountView];
-        self.nameLabel.text = [self.accountDic objectForKey:@"mastername"];
+        self.nameLabel.text = [self.accountDic objectForKey:@"accountname"];
         self.accountLabel.text = [self.accountDic objectForKey:@"bankaccount"];
     }
 }

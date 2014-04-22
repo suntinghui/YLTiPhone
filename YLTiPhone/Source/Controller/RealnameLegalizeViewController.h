@@ -19,6 +19,7 @@
     UIScrollView *scrollView;
     UIButton *confirmButton;
     UIImage *defaultImg;
+    UIImagePickerController *imagePickerController;
 }
 
 

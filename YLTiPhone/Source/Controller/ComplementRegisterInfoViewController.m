@@ -123,6 +123,7 @@
 -(IBAction)editAction:(id)sender
 {
     ComplementRegisterModifyController *vc = [[ComplementRegisterModifyController alloc] init];
+    vc.userModel = self.userModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning
@@ -142,8 +143,10 @@
 
 -(void)fromLogic:(UserModel*) tmp_model
 {
+    self.userModel = tmp_model;
+    
     if(tmp_model.merchant_name != nil){
-       [label_name setText:tmp_model.merchant_name];
+       [label_name setText:tmp_model.mastername];
     }
     if(tmp_model.pid != nil){
         [label_cardno setText:tmp_model.pid];
@@ -153,6 +156,7 @@
     if(![tmp_model.status isEqualToString:@"9"]){
         [btn_edit setHidden:NO];
     }
+    
     
     if([tmp_model.status isEqualToString:@"0"]){
         status = @"已注册未完善用户信息";
@@ -187,6 +191,8 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
     [dic setObject:self.merchantNameTF.contentTF.text forKey:@"merchant_name"];
+    [dic setObject:self.merchantNameTF.contentTF.text forKey:@"mastername"];
+    
     [dic setObject:self.cardIDNumTF.contentTF.text forKey:@"pid"];
     [dic setObject:self.emailTF.contentTF.text forKey:@"email"];
     [dic setObject:self.setupPaymentPWDTF.md5Value forKey:@"paypass"];

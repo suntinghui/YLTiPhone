@@ -87,7 +87,7 @@
     balancelabel.text = [NSString stringWithFormat:@"￥%@",self.moneyString];
     [accountInfoView addSubview:balancelabel];
     
-    self.paypassTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 220+ios7_h, 300, 44) left:@"" prompt:@"支付密码"];
+    self.paypassTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 220+ios7_h, 300, 44) left:@"" prompt:@"请输入商户支付密码"];
 //    [self.paypassTF.pwdTF hideKeyBoard:self.view :1 hasNavBar:YES]; //TODO
     [self.view addSubview:self.paypassTF];
 

@@ -110,7 +110,7 @@
     [tmpCardNumLabel setText:@"卡号："];
     [self setLabelStyle:tmpCardNumLabel];
     [bgIV2 addSubview:tmpCardNumLabel];
-    UILabel *cardNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 5, 150, 30)];
+    UILabel *cardNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 5, 190, 30)];
     [cardNumLabel setTextAlignment:NSTextAlignmentRight];
     [cardNumLabel setText:self.detailModel.account1];
     [self setLabelStyle:cardNumLabel];
@@ -192,25 +192,27 @@
     [bgIV2 addSubview:tmpCommentLabel];
     UILabel *commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 205, 150, 30)];
     [commentLabel setTextAlignment:NSTextAlignmentRight];
-    [commentLabel setText:self.detailModel.terminal_id];
+    [commentLabel setText:self.detailModel.note];
     [self setLabelStyle:commentLabel];
     [bgIV2 addSubview:commentLabel];
 
     //bg3
     UIImage *image3 = [UIImage imageNamed:@"textInput.png"];
     UIImageView *bgIV3 = [[UIImageView alloc] initWithImage:[self stretchImage:image3]];
-    [bgIV3 setFrame:CGRectMake(28, 430, 253, 45)];
+    [bgIV3 setFrame:CGRectMake(28, 430, 253, 60)];
     [self.bgImageView addSubview:bgIV3];
     
-    UILabel *tmpSignatureLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 70, 30)];
+    UILabel *tmpSignatureLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, 70, 30)];
     [tmpSignatureLabel setText:@"签名："];
     [self setLabelStyle:tmpSignatureLabel];
     [bgIV3 addSubview:tmpSignatureLabel];
-    UILabel *signatureLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 5, 150, 30)];
-    [signatureLabel setTextAlignment:NSTextAlignmentRight];
-    [signatureLabel setText:self.detailModel.terminal_id];
-    [self setLabelStyle:signatureLabel];
-    [bgIV3 addSubview:signatureLabel];
+    
+    NSData *data = [NSData dataFromBase64String:self.detailModel.image];
+    UIImage *image = [UIImage imageWithData:data scale:1];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(90, 5, 150, 50)];
+    imgView.backgroundColor = [UIColor clearColor];
+    imgView.image = image;
+    [bgIV3 addSubview:imgView];
     
     self.confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.confirmButton setFrame:CGRectMake(35, 505+ios7_h, 250, 40)];

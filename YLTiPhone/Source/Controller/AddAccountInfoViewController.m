@@ -280,7 +280,7 @@
     [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankid"];//银行卡号
     [dic setObject:@"1" forKey:@"page_current"];
     [dic setObject:[NSString stringWithFormat:@"%d",kOnePageSize] forKey:@"page_size"];
-    [dic setObject:@"15101532374" forKey:@"tel"];
+    [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     
     SearchBankViewController *searchBank = [[SearchBankViewController alloc] initWithNibName:nil bundle:nil bankDic:dic];
     searchBank.addAccountVC = self;

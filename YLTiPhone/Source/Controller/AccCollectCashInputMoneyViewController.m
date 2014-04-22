@@ -99,7 +99,7 @@
     UILabel *namelabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 170, 25)];
     namelabel.backgroundColor = [UIColor clearColor];
     namelabel.font = [UIFont systemFontOfSize:15];
-    namelabel.text = [self.receiveDic objectForKey:@"mastername"];
+    namelabel.text = [self.receiveDic objectForKey:@"accountname"];
     [namelabel setTextAlignment:NSTextAlignmentRight];
     [accountInfoView addSubview:namelabel];
     

@@ -37,6 +37,13 @@
     
     if (self.pageType == 1){
         //未进行实名认证
+        
+         imagePickerController = [[UIImagePickerController alloc] init];
+        
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
         //scrollview 上面4个label  4个imageview 上面放4个button
         scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, 320, VIEWHEIGHT)];
         [scrollView setContentSize:CGSizeMake(320, 700)];
@@ -182,7 +189,7 @@
 - (void)setUserModel:(UserModel *)userModel
 {
     _userModel = userModel;
-    nameLabel1.text = self.userModel.merchant_name;
+    nameLabel1.text = self.userModel.mastername;
     
     NSString *status;
     if([self.userModel.status isEqualToString:@"0"]){
@@ -216,6 +223,7 @@
     if(![self.userModel.status isEqualToString:@"9"]){
         [nextBtn setHidden:NO];
     }
+    
     
 }
 
@@ -254,12 +262,6 @@
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
 
-        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        
-        imagePickerController.delegate = self;
-        imagePickerController.allowsEditing = YES;
-        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
         [self presentViewController:imagePickerController animated:YES completion:^{}];
     }
 }
@@ -279,7 +281,9 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     UIButton *button = (UIButton*)[scrollView viewWithTag:imageFlag];
-    [button setBackgroundImage:image forState:UIControlStateNormal];
+    [button setBackgroundImage:[self imageWithImage:image scaledToSize:CGSizeMake(640, 960)] forState:UIControlStateNormal];
+//     [button setBackgroundImage:image forState:UIControlStateNormal];
+    
 
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -287,6 +291,15 @@
 	[self dismissViewControllerAnimated:YES completion:^{}];
 }
 
+- (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize
+{
+	UIGraphicsBeginImageContext(newSize);
+	[image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+	UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return newImage;
+}
 
 -(BOOL)checkValue
 {

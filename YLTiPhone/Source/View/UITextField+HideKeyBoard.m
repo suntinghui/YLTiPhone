@@ -76,7 +76,15 @@
     [UIView setAnimationDuration:animationDuration];
 //    CGRect rect = CGRectMake(0.0f, 0.0f,320,460);
     //iphone5适配更改为下　by xs　2013/09/12
-    CGRect rect = CGRectMake(0.0f, 0.0f,320,[UIScreen mainScreen].bounds.size.height -20);
+    CGRect rect;
+    if (DeviceVersion>=7)
+    {
+       rect = CGRectMake(0.0f, 0.0f,320,[UIScreen mainScreen].bounds.size.height);
+    }
+    else
+    {
+        rect = CGRectMake(0.0f, 0.0f,320,[UIScreen mainScreen].bounds.size.height -20);
+    }
     self.superview.superview.frame = rect;
     [UIView commitAnimations];
     

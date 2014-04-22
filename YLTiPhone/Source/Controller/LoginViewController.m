@@ -272,14 +272,15 @@
     int loacerVer_d = [localVersion intValue];
 
     if(version_d > loacerVer_d){
+<<<<<<< HEAD
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"有新版本，是否下载更新？！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
 
+=======
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"有新版本，是否下载更新？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
+>>>>>>> f899581e5f4d85e2308448958a593d4439c302c8
         alertView.tag = 100;
         [alertView show];
     }
-    
-
-
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

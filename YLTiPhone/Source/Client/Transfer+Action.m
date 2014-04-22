@@ -416,6 +416,7 @@
                     model.merchant_name = picsObj[@"merchant_name"];
                     model.terminal_id = picsObj[@"terminal_id"];
                     model.note = picsObj[@"note"];
+                    model.image = picsObj[@"img"];
                     
                     [transModelArray addObject:model];
                 }
@@ -456,6 +457,9 @@
                 NSString *jsonStr = [[self.receDic objectForKey:@"apires"] objectFromJSONString];
                 [self.receDic setObject:jsonStr forKey:@"apires"];
                 tmpUserModel.merchant_name = [[self.receDic objectForKey:@"apires"] objectForKey:@"merchant_name"];
+                tmpUserModel.mastername = [[self.receDic objectForKey:@"apires"] objectForKey:@"mastername"];
+                tmpUserModel.merchant_type =[[self.receDic objectForKey:@"apires"] objectForKey:@"merchant_type"];
+                  tmpUserModel.email =[[self.receDic objectForKey:@"apires"] objectForKey:@"email"];
                 
                 tmpUserModel.pid = [[self.receDic objectForKey:@"apires"] objectForKey:@"pid"];
 //                tmpUserModel.is_identify = [[self.receDic objectForKey:@"apires"] objectForKey:@"is_identify"];
@@ -524,6 +528,15 @@
                 //记录里面的smscode 传入下一界面设置密码
                 NSString *smscode = [[self.receDic objectForKey:@"apires"] objectForKey:@"smscode"];
                 SettingPasswordViewController *vc = [[SettingPasswordViewController alloc] initWithNibName:nil bundle:nil smscode:smscode];
+                if ([ApplicationDelegate.topViewController isKindOfClass:NSClassFromString(@"FindoutPaymentPwdViewController")])
+                {
+                    vc.type = @"1";
+                }
+                else
+                {
+                    vc.type = @"0";
+                }
+                
                 [[ApplicationDelegate topViewController].navigationController pushViewController:vc animated:YES];
             }else{
                 [ApplicationDelegate gotoFailureViewController:@"找回密码失败,请重新尝试"];

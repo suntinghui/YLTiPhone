@@ -14,6 +14,7 @@
     NSString            *_smsCode;
 }
 @property (nonatomic, copy) NSString        *smsCode;
+@property (nonatomic, strong) NSString *type; //0:找回登录密码 1：找回支付密码
 @property(nonatomic, strong) PwdLeftTextField *freshPwdTF;
 @property(nonatomic, strong) PwdLeftTextField *confirmPwdTF;
 

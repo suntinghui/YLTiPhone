@@ -42,6 +42,7 @@
 @property (nonatomic, strong) NSString          *merchant_id;//商户编号
 @property (nonatomic, strong) NSString          *terminal_id;//终端号码
 @property (nonatomic, strong) NSString          *note;
+@property (nonatomic, strong) NSString          *image;
 
 
 @end

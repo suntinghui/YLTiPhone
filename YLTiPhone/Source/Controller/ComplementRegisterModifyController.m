@@ -9,6 +9,8 @@
 #import "ComplementRegisterModifyController.h"
 #import "UITextField+HideKeyBoard.h"
 
+#define Action_Tag_TypeSelect  100
+
 @interface ComplementRegisterModifyController ()
 
 @end
@@ -34,32 +36,79 @@
     self.navigationItem.title = @"完善注册信息";
     self.hasTopView = true;
     
-    //商户姓名
-    self.et_merchant_name = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 50, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 10, 19, 22) prompt:@"商户名称" keyBoardType:UIKeyboardTypeDefault];
+    
+    
+    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 40, 320, VIEWHEIGHT)];
+    scrollView.contentSize = CGSizeMake(320, 520);
+    [self.view addSubview:scrollView];
+    
+    UILabel *typeLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 15, 100, 30)];
+    typeLabel.backgroundColor = [UIColor clearColor];
+    typeLabel.text = @"商户类型";
+    [scrollView addSubview:typeLabel];
+    
+    UIButton *typeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    typeButton.frame = CGRectMake(110, 10, 200, 40);
+    typeButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [typeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [typeButton setBackgroundImage:[UIImage imageNamed:@"selectbg.jpg"] forState:UIControlStateNormal];
+    typeButton.tag = Action_Tag_TypeSelect;
+    typeButton.titleEdgeInsets = UIEdgeInsetsMake(0,-20,0,0);
+    [typeButton addTarget:self action:@selector(typeSelect:) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:typeButton];
+    
+    
+    
+    //商户名称
+    self.et_merchant_name = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 60, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 10, 19, 22) prompt:@"商户名称" keyBoardType:UIKeyboardTypeDefault];
     self.et_merchant_name.contentTF.delegate = self;
-    [self.et_merchant_name.contentTF hideKeyBoard:self.view:2 hasNavBar:NO];
-    [self.view addSubview:self.et_merchant_name];
+    self.et_merchant_name.contentTF.enabled = NO;
+    self.et_merchant_name.contentTF.text = self.userModel.merchant_name;
+    [scrollView addSubview:self.et_merchant_name];
+    
+    //姓名
+    self.et_name = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 115, 300, 44) leftImage:@"realname.png" leftImageFrame:CGRectMake(15, 10, 19, 22) prompt:@"姓名" keyBoardType:UIKeyboardTypeDefault];
+    self.et_name.contentTF.delegate = self;
+    self.et_name.contentTF.text = self.userModel.mastername;
+    [scrollView addSubview:self.et_name];
     
     //身份证
-    self.et_pid = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 105, 300, 44) leftImage:@"cardID.png" leftImageFrame:CGRectMake(15, 15, 23, 15) prompt:@"身份证号码" keyBoardType:UIKeyboardTypeDefault];
+    self.et_pid = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 165, 300, 44) leftImage:@"cardID.png" leftImageFrame:CGRectMake(15, 15, 23, 15) prompt:@"身份证号码" keyBoardType:UIKeyboardTypeDefault];
     self.et_pid.contentTF.delegate = self;
-    [self.view addSubview:self.et_pid];
+    self.et_pid.contentTF.text = self.userModel.pid;
+    [scrollView addSubview:self.et_pid];
     
     //email
-    self.et_email = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 155, 300, 44) leftImage:@"cardID.png" leftImageFrame:CGRectMake(15, 15, 23, 15) prompt:@"邮箱" keyBoardType:UIKeyboardTypeDefault];
+    self.et_email = [[LeftImageTextField alloc] initWithFrame:CGRectMake(10, 215, 300, 44) leftImage:@"cardID.png" leftImageFrame:CGRectMake(15, 15, 23, 15) prompt:@"邮箱" keyBoardType:UIKeyboardTypeDefault];
     self.et_email.contentTF.delegate = self;
-    [self.view addSubview:self.et_email];
+    self.et_email.contentTF.text = self.userModel.email;
+    [self.et_email.contentTF hideKeyBoard:self.view:2 hasNavBar:YES];
+    [scrollView addSubview:self.et_email];
     
     //支付密码
-    self.pwd_pay = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 205, 300, 44) left:@"" prompt:@"请输入原支付密码"];
-    [self.view addSubview:self.pwd_pay];
+    self.pwd_pay = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 265, 300, 44) left:@"" prompt:@"请输入原支付密码"];
+    [self.pwd_pay.pwdTF hideKeyBoard:self.view:2 hasNavBar:YES];
+    [scrollView addSubview:self.pwd_pay];
     
-    self.pwd_pay_confirm = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 255, 300, 44) left:@"" prompt:@"请输入6位支付密码"];
-    [self.view addSubview:self.pwd_pay_confirm];
+    self.pwd_pay_confirm = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 315, 300, 44) left:@"" prompt:@"请输入6位支付密码"];
+    [self.pwd_pay_confirm.pwdTF hideKeyBoard:self.view:2 hasNavBar:YES];
+    [scrollView addSubview:self.pwd_pay_confirm];
     
+    if([self.userModel.merchant_type isEqualToString:@"2"])
+    {
+        type = 1;
+        [typeButton setTitle:@"企业商户" forState:UIControlStateNormal];
+        [self.et_name.contentTF setPlaceholder:@"法人"];
+    }
+    else
+    {
+        type = 1;
+        [typeButton setTitle:@"个人商户" forState:UIControlStateNormal];
+        [self.et_name.contentTF setPlaceholder:@"姓名"];
+    }
     
     UIButton *btn_confirm = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn_confirm setFrame:CGRectMake(10, 320, 300, 44)];
+    [btn_confirm setFrame:CGRectMake(10, 380, 300, 44)];
     [btn_confirm setTitle:@"确认" forState:UIControlStateNormal];
     [btn_confirm setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btn_confirm.titleLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -67,7 +116,7 @@
     [btn_confirm setBackgroundImage:[UIImage imageNamed:@"confirmButtonNomal.png"] forState:UIControlStateNormal];
     [btn_confirm setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateSelected];
     [btn_confirm setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
-    [self.view addSubview:btn_confirm];
+    [scrollView addSubview:btn_confirm];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,13 +125,51 @@
     // Dispose of any resources that can be recreated.
     
 }
+
+#pragma mark - UIActionsheetdelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self clearInput];
+    UIButton *button = (UIButton*)[scrollView viewWithTag:Action_Tag_TypeSelect];
+    if (buttonIndex==0)
+    {
+        [button setTitle:@"个人商户" forState:UIControlStateNormal];
+        [self.et_name.contentTF setPlaceholder:@"姓名"];
+        [self.et_pid.contentTF setPlaceholder:@"身份证号码"];
+        type = 1;
+        self.et_merchant_name.contentTF.enabled = NO;
+    }
+    else if(buttonIndex == 1)
+    {
+        [button setTitle:@"企业商户" forState:UIControlStateNormal];
+        [self.et_name.contentTF setPlaceholder:@"法人"];
+        [self.et_pid.contentTF setPlaceholder:@"法人身份证号码"];
+        type = 2;
+        self.et_merchant_name.contentTF.enabled = YES;
+    }
+}
+
+#pragma mark -UITextFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField==self.et_name.contentTF&&type==1&&textField.text.length>0)
+    {
+        self.et_merchant_name.contentTF.text = [NSString stringWithFormat:@"个体户-%@",self.et_name.contentTF.text];
+    }
+}
+
 - (BOOL)checkInput
 {
     NSString *err  = nil;
     if (self.et_merchant_name.contentTF.text==nil||
         [self.et_merchant_name.contentTF.text isEqualToString:@""])
     {
-        err = @"请输入商户姓名";
+        err = @"请输入商户名称";
+    }
+    if (self.et_name.contentTF.text==nil||
+        [self.et_name.contentTF.text isEqualToString:@""])
+    {
+        err = @"请输入姓名";
     }
     else if (self.et_pid.contentTF.text==nil||
              [self.et_pid.contentTF.text isEqualToString:@""])
@@ -94,11 +181,11 @@
     {
         err = @"请输入邮箱";
     }
-    else if (self.pwd_pay.rsaValue==nil)
+    else if (self.pwd_pay.md5Value==nil)
     {
         err = @"请输入原支付密码";
     }
-    else if (self.pwd_pay_confirm.rsaValue==nil)
+    else if (self.pwd_pay_confirm.md5Value==nil)
     {
         err = @"请输入支付密码";
     }
@@ -110,6 +197,21 @@
     
     return YES;
 }
+
+- (void)clearInput
+{
+    self.et_merchant_name.contentTF.text = nil;
+    self.et_name.contentTF.text = nil;
+    self.et_pid.contentTF.text = nil;
+    self.pwd_pay.pwdTF.text = nil;
+    self.pwd_pay_confirm.pwdTF.text = nil;
+}
+
+- (void)typeSelect:(UIButton*)button
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"个人商户",@"企业商户", nil];
+    [sheet showInView:self.view];
+}
 -(IBAction)confirmAction:(id)sender
 {
     if (![self checkInput]) {
@@ -118,10 +220,12 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
     [dic setObject:[et_merchant_name contentTF].text forKey:@"merchant_name"];
+    [dic setObject:[self.et_name contentTF].text forKey:@"mastername"];
     [dic setObject:[et_pid contentTF].text forKey:@"pid"];
     [dic setObject:[et_email contentTF].text forKey:@"email"];
-    [dic setObject:[pwd_pay_confirm rsaValue] forKey:@"paypass"];
-    
+    [dic setObject:[pwd_pay_confirm md5Value] forKey:@"paypass"];
+    [dic setObject:[NSString stringWithFormat:@"%d",type] forKey:@"merchant_type"];
+   
     [[Transfer sharedTransfer] startTransfer:@"089010" fskCmd:nil paramDic:dic];
 }
 @end

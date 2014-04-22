@@ -422,6 +422,16 @@
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
 		B84AB35A18FE6CDF00CCEDF2 /* head_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
+		B87700DA19037269002BF873 /* selectbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B87700D919037269002BF873 /* selectbg.jpg */; };
+		B8B66564190612F900FC7E57 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B6655B190612F900FC7E57 /* app.png */; };
+		B8B66565190612F900FC7E57 /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B6655C190612F900FC7E57 /* app@2x.png */; };
+		B8B66566190612F900FC7E57 /* beginguide01.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B6655D190612F900FC7E57 /* beginguide01.png */; };
+		B8B66567190612F900FC7E57 /* beginguide02.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B6655E190612F900FC7E57 /* beginguide02.png */; };
+		B8B66568190612F900FC7E57 /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B6655F190612F900FC7E57 /* beginguide03.png */; };
+		B8B66569190612F900FC7E57 /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B66560190612F900FC7E57 /* beginguide04.png */; };
+		B8B6656A190612F900FC7E57 /* beginguide05.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B66561190612F900FC7E57 /* beginguide05.png */; };
+		B8B6656B190612F900FC7E57 /* catalog_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B66562190612F900FC7E57 /* catalog_nav.png */; };
+		B8B6656C190612F900FC7E57 /* LoginViewBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B66563190612F900FC7E57 /* LoginViewBG.png */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
 		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
@@ -1013,6 +1023,16 @@
 		B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_small@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
+		B87700D919037269002BF873 /* selectbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectbg.jpg; sourceTree = "<group>"; };
+		B8B6655B190612F900FC7E57 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B8B6655C190612F900FC7E57 /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
+		B8B6655D190612F900FC7E57 /* beginguide01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide01.png; sourceTree = "<group>"; };
+		B8B6655E190612F900FC7E57 /* beginguide02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide02.png; sourceTree = "<group>"; };
+		B8B6655F190612F900FC7E57 /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
+		B8B66560190612F900FC7E57 /* beginguide04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide04.png; sourceTree = "<group>"; };
+		B8B66561190612F900FC7E57 /* beginguide05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide05.png; sourceTree = "<group>"; };
+		B8B66562190612F900FC7E57 /* catalog_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog_nav.png; sourceTree = "<group>"; };
+		B8B66563190612F900FC7E57 /* LoginViewBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginViewBG.png; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		B8E57F3F18FA8B98001EBE0B /* revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revoked.png; sourceTree = "<group>"; };
@@ -1633,6 +1653,7 @@
 		055B2F8C18629C22000373FE /* Image3 */ = {
 			isa = PBXGroup;
 			children = (
+				B87700D919037269002BF873 /* selectbg.jpg */,
 				8D801CA318EBA3F800CEE39B /* beginguide03.png */,
 				8D801CA418EBA3F800CEE39B /* beginguide04.png */,
 				8D281C9018F2F8DF00457792 /* receipt_bg.png */,
@@ -1991,6 +2012,7 @@
 		B8E57F2A18FA76B3001EBE0B /* common */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				8D00E5F01906420B00AB6EDD /* Default-568h@2x.png */,
 				8D00E5F11906420B00AB6EDD /* catalog_nav.png */,
 				8D00E5F21906420B00AB6EDD /* LoginViewBG.png */,
@@ -2000,6 +2022,17 @@
 				8D00E5F61906420B00AB6EDD /* catalog_nav@2x.png */,
 				8D00E5F71906420B00AB6EDD /* LoginViewBG@2x.png */,
 				8D00E5F81906420B00AB6EDD /* aboutSystemBg@2x.png */,
+=======
+				B8B6655B190612F900FC7E57 /* app.png */,
+				B8B6655C190612F900FC7E57 /* app@2x.png */,
+				B8B6655D190612F900FC7E57 /* beginguide01.png */,
+				B8B6655E190612F900FC7E57 /* beginguide02.png */,
+				B8B6655F190612F900FC7E57 /* beginguide03.png */,
+				B8B66560190612F900FC7E57 /* beginguide04.png */,
+				B8B66561190612F900FC7E57 /* beginguide05.png */,
+				B8B66562190612F900FC7E57 /* catalog_nav.png */,
+				B8B66563190612F900FC7E57 /* LoginViewBG.png */,
+>>>>>>> f899581e5f4d85e2308448958a593d4439c302c8
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2086,6 +2119,10 @@
 				0554B123187113AF00C75DCD /* back_button_normal@2x.png in Resources */,
 				0554B19318711EEC00C75DCD /* inputmoney_button_9@2x.png in Resources */,
 				0558265A186C097C0002AE2E /* cardID@2x.png in Resources */,
+<<<<<<< HEAD
+=======
+				B87700DA19037269002BF873 /* selectbg.jpg in Resources */,
+>>>>>>> f899581e5f4d85e2308448958a593d4439c302c8
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
 				8D3CA18218C6C9C800C119DA /* con_req_200001111.xml in Resources */,
@@ -2105,6 +2142,7 @@
 				8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */,
 				0515D2BA188CF51E0092C8E5 /* division.xml in Resources */,
 				0554B19818711EEC00C75DCD /* inputmoney_show_bg_nonumber@2x.png in Resources */,
+				B8B66564190612F900FC7E57 /* app.png in Resources */,
 				0554B18B18711EEC00C75DCD /* inputmoney_button_1@2x.png in Resources */,
 				0558264B186BF8660002AE2E /* paymentPwd.png in Resources */,
 				05582668186C0E6C0002AE2E /* confirmButtonPress.png in Resources */,
@@ -2153,6 +2191,7 @@
 				8D00E5FE1906420B00AB6EDD /* app.png in Resources */,
 				0520796D1863E190004BF055 /* btn_comment_sametime_unselect@2x.png in Resources */,
 				0558266C186C0E7D0002AE2E /* confirmButtonPress@2x.png in Resources */,
+				B8B6656A190612F900FC7E57 /* beginguide05.png in Resources */,
 				0515D2BC188CF66C0092C8E5 /* province.xml in Resources */,
 				050B01791867E40B009432CD /* child_catalog_select.png in Resources */,
 				8D3CA17418C6C9C800C119DA /* con_req_050000.xml in Resources */,
@@ -2171,6 +2210,7 @@
 				0554B18318711EEC00C75DCD /* digit_little_5.png in Resources */,
 				0554B1CF18715DE200C75DCD /* suffix_selected.png in Resources */,
 				0554B17B18711EEC00C75DCD /* digit_green_8.png in Resources */,
+				B8B66568190612F900FC7E57 /* beginguide03.png in Resources */,
 				B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */,
 				0558265C186C09F20002AE2E /* paymentPwd@2x.png in Resources */,
 				8D3CA18118C6C9C800C119DA /* con_req_100005.xml in Resources */,
@@ -2218,11 +2258,16 @@
 				05582652186BFBEA0002AE2E /* password@2x.png in Resources */,
 				8D3CA15918C6C9C800C119DA /* con_req_080003.xml in Resources */,
 				8D3CA16E18C6C9C800C119DA /* con_req_089017.xml in Resources */,
+				B8B6656B190612F900FC7E57 /* catalog_nav.png in Resources */,
 				8D3CA18418C6C9C800C119DA /* con_req_400000022.xml in Resources */,
 				0558267C186C16B60002AE2E /* pwdinput@2x.png in Resources */,
 				050B01711867E3A4009432CD /* icon_5@2x.png in Resources */,
 				050B01701867E3A4009432CD /* icon_4@2x.png in Resources */,
 				8D3CA16518C6C9C800C119DA /* con_req_089004.xml in Resources */,
+<<<<<<< HEAD
+=======
+				B8B66565190612F900FC7E57 /* app@2x.png in Resources */,
+>>>>>>> f899581e5f4d85e2308448958a593d4439c302c8
 				8D3CA18618C6C9C800C119DA /* con_req_500000001.xml in Resources */,
 				05582658186C08F10002AE2E /* email@2x.png in Resources */,
 				B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */,
@@ -2230,12 +2275,14 @@
 				0554B1B018714C7300C75DCD /* collectCashButton_normal@2x.png in Resources */,
 				050B016F1867E3A4009432CD /* icon_3@2x.png in Resources */,
 				0554B1DF1871647C00C75DCD /* selectField_highlight.png in Resources */,
+				B8B66569190612F900FC7E57 /* beginguide04.png in Resources */,
 				8D3CA17018C6C9C800C119DA /* con_req_089020.xml in Resources */,
 				050B016D1867E3A4009432CD /* icon_1@2x.png in Resources */,
 				0554B1261871142400C75DCD /* back_button_normal.png in Resources */,
 				8D00E6001906420B00AB6EDD /* LoginViewBG@2x.png in Resources */,
 				0554B17318711EEC00C75DCD /* digit_green_0.png in Resources */,
 				8D801CA818EBA3F800CEE39B /* beginguide03.png in Resources */,
+				B8B66566190612F900FC7E57 /* beginguide01.png in Resources */,
 				0554B18818711EEC00C75DCD /* digit_little_dash.png in Resources */,
 				B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */,
 				8D00E5FA1906420B00AB6EDD /* catalog_nav.png in Resources */,
@@ -2256,6 +2303,7 @@
 				0554B1E61871665500C75DCD /* selectBank_normal.png in Resources */,
 				0554B17A18711EEC00C75DCD /* digit_green_7.png in Resources */,
 				8DE4E85918EFC531003F222E /* agreement.html in Resources */,
+				B8B6656C190612F900FC7E57 /* LoginViewBG.png in Resources */,
 				8D3CA18B18C6C9C800C119DA /* con_req_999000001.xml in Resources */,
 				0554B1DA1871647400C75DCD /* selectField_normal@2x.png in Resources */,
 				05B06D1E187FDFC800757F6C /* catalog.xml in Resources */,
@@ -2276,6 +2324,7 @@
 				050B016E1867E3A4009432CD /* icon_2@2x.png in Resources */,
 				055BA0F318750B7E005E7E7A /* fail@2x.png in Resources */,
 				0554B1E71871665500C75DCD /* selectBank_highlight.png in Resources */,
+				B8B66567190612F900FC7E57 /* beginguide02.png in Resources */,
 				8D3CA16418C6C9C800C119DA /* con_req_089003.xml in Resources */,
 				0537AF691858419D005F84D1 /* ResultViewController.xib in Resources */,
 				0520797F1863EC0D004BF055 /* delete_select.png in Resources */,
@@ -2564,7 +2613,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "32645E98-7BF7-48BB-B021-52D070BD9BCA";
+				PROVISIONING_PROFILE = "289C2CC6-BC0D-427B-AF9B-171452A356BE";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2574,8 +2623,8 @@
 		0537AE4718583B39005F84D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2587,7 +2636,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "32645E98-7BF7-48BB-B021-52D070BD9BCA";
+				PROVISIONING_PROFILE = "289C2CC6-BC0D-427B-AF9B-171452A356BE";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

@@ -87,6 +87,7 @@
 
 @property (nonatomic, strong) NSString * status;
 @property (nonatomic)         BOOL                                  hasSign;
+@property (nonatomic, strong) NSString *temPhone;
 
 + (AppDataCenter *) sharedAppDataCenter;
 

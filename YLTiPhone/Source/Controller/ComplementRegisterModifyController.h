@@ -10,15 +10,22 @@
 #import "AbstractViewController.h"
 #import "LeftImageTextField.h"
 #import "PwdLeftTextField.h"
-@interface ComplementRegisterModifyController : AbstractViewController<UITextFieldDelegate>
+#import "UserModel.h"
+@interface ComplementRegisterModifyController : AbstractViewController<UITextFieldDelegate,
+    UIActionSheetDelegate,
+    UIScrollViewDelegate,
+    UITextFieldDelegate>
 {
-    
+    UIScrollView *scrollView;
+    int type;
 }
 
 @property(nonatomic, strong)LeftImageTextField *et_merchant_name;
+@property(nonatomic, strong)LeftImageTextField *et_name;
 @property(nonatomic, strong)LeftImageTextField *et_pid;
 @property(nonatomic, strong)LeftImageTextField *et_email;
 @property(nonatomic, strong)PwdLeftTextField *pwd_pay;
 @property(nonatomic, strong)PwdLeftTextField *pwd_pay_confirm;
+@property(nonatomic, strong)UserModel *userModel;
 
 @end
