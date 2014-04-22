@@ -230,7 +230,8 @@ static AppDataCenter *instance = nil;
     
     __PHONENUM = [UserDefaults stringForKey:PHONENUM];
     if (__PHONENUM == nil) {
-        __PHONENUM = @"";
+        
+        __PHONENUM = self.temPhone;
     }
     
     return __PHONENUM;

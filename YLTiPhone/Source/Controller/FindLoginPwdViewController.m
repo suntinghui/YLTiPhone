@@ -166,6 +166,7 @@
 {
     
     if ([self checkValue]) {
+        [AppDataCenter sharedAppDataCenter].temPhone = self.phoneNumTF.contentTF.text;
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:self.phoneNumTF.contentTF.text forKey:@"tel"];
         [dic setObject:self.securityCodeTF.contentTF.text forKey:@"smscode"];
