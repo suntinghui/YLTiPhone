@@ -169,8 +169,8 @@
             
             [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
             [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
-//            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
-            [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"pwd"]; //TODO
+            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+//            [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"pwd"]; //TODO
             //080002 商户提款
             [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
         }
