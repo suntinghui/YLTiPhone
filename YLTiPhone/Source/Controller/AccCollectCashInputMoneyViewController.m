@@ -166,7 +166,7 @@
     self.inputMoneyTF = [[LeftTextField alloc] initWithFrame:CGRectMake(10, 285+ios7_h, 300, 45) isLong:true];
     [self.inputMoneyTF.contentTF setPlaceholder:@"请输入金额"];
     self.inputMoneyTF.contentTF.delegate = self;
-//    [self.inputMoneyTF.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.inputMoneyTF.contentTF setKeyboardType:UIKeyboardTypeNumberPad];
     [self.inputMoneyTF.contentTF hideKeyBoard:scrView:2 hasNavBar:YES];
     [scrView addSubview:self.inputMoneyTF];
     
@@ -219,17 +219,17 @@
 #pragma mark - 功能函数
 -(BOOL)checkValue
 {
-//    if([self.inputMoneyTF.contentTF.text isEqualToString:@""]||
-//       self.inputMoneyTF.contentTF.text==nil){
-//        [ApplicationDelegate showErrorPrompt:@"请输入金额"];
-//        return NO;
-//        
-//    }
-//    else if([self.inputMoneyTF.contentTF.text floatValue]<100)
-//    {
-//        [ApplicationDelegate showErrorPrompt:@"最小金额为100元"];
-//        return NO;
-//    }
+    if([self.inputMoneyTF.contentTF.text isEqualToString:@""]||
+       self.inputMoneyTF.contentTF.text==nil){
+        [ApplicationDelegate showErrorPrompt:@"请输入金额"];
+        return NO;
+        
+    }
+    else if([self.inputMoneyTF.contentTF.text floatValue]<100)
+    {
+        [ApplicationDelegate showErrorPrompt:@"最小金额为100元"];
+        return NO;
+    }
     
     if (type==0) //普通提现
     {
