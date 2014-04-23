@@ -89,7 +89,7 @@
         [dic setObject:self.smsCode forKey:@"smscode"];
         [dic setObject:self.type forKey:@"type"]; //0是登录密码 1是支付密码
         
-        if (self.type==0)
+        if ([self.type isEqualToString:@"0"])
         {[dic setObject:self.freshPwdTF.md5Value forKey:@"logpass"];
             //089015 修改登录密码
             [[Transfer sharedTransfer] startTransfer:@"089015" fskCmd:nil paramDic:dic];
