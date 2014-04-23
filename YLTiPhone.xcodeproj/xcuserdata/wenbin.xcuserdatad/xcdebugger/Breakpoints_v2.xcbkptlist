@@ -217,13 +217,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Client/Transfer.m"
-            timestampString = "419501162.552803"
+            filePath = "YLTiPhone/Source/Controller/InputPasswordViewController.m"
+            timestampString = "419760894.616948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
-            landmarkName = "-sendPacket"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-confirmButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -233,13 +233,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Controller/InputPasswordViewController.m"
-            timestampString = "419760894.616948"
+            filePath = "YLTiPhone/Source/Controller/ModifyPaymentPwdViewController.m"
+            timestampString = "419870149.77728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-confirmButtonAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/View/PwdLeftTextField.m"
+            timestampString = "419853508.295515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-numberKeyBoardInput:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
