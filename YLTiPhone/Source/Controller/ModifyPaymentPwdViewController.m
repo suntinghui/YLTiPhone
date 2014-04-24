@@ -145,6 +145,12 @@
 
 -(IBAction)confirmButtonAction:(id)sender
 {
+    if(![self.freshPwdTF.md5Value isEqualToString:self.originalPwdTF.md5Value]){
+        [ApplicationDelegate showErrorPrompt:@"两次新密码输入不一致"];
+        
+    }
+
+    
     if ([self checkValue]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];

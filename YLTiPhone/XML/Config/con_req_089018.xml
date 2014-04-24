@@ -2,5 +2,5 @@
 <!-- 版本号 getVersion-->
 <root isJson = "true">
 	<field key="fieldTrancode" value="089018" />
-	<field key="type" value="3" />	
+	<field key="type" value="9" /> 
 </root>
