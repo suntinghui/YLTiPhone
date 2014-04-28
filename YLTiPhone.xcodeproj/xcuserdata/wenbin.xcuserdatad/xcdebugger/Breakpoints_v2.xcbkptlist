@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Controller/CatalogViewController.m"
-            timestampString = "419247546.566517"
+            timestampString = "420295120.341871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
             landmarkName = "-doAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YLTiPhone/Source/Controller/CatalogViewController.m"
-            timestampString = "419247546.566517"
+            timestampString = "420295120.341871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "-doAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -144,22 +144,6 @@
             startingLineNumber = "468"
             endingLineNumber = "468"
             landmarkName = "-getMerchantInfoDone"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YLTiPhone/Source/Client/Transfer+Action.m"
-            timestampString = "419763639.704963"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "834"
-            endingLineNumber = "834"
-            landmarkName = "-signWith8583Done"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -272,6 +256,38 @@
             startingLineNumber = "92"
             endingLineNumber = "92"
             landmarkName = "-confirmButtonAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Controller/AccCollectCashConfirmViewController.m"
+            timestampString = "420013653.394365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-confirmButtonAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YLTiPhone/Source/Controller/InputPasswordViewController.m"
+            timestampString = "420085413.99339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

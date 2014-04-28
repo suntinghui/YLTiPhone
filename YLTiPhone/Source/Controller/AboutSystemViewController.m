@@ -78,7 +78,11 @@
     UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 380+([UIDevice isRunningOniPhone5] ? 88:0), 100, 30)];
     versionLabel.backgroundColor = [UIColor clearColor];
     versionLabel.font = [UIFont boldSystemFontOfSize:17.0f];
-    versionLabel.text = @"V1.0.0";
+    
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *localVersion = [infoDic objectForKey:@"CFBundleVersion"];
+    
+    versionLabel.text = [NSString stringWithFormat:@"V%@",localVersion];
     [self.view addSubview:versionLabel];
     
 }
