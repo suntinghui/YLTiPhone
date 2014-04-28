@@ -456,7 +456,12 @@ static Transfer *instance = nil;
         [self sendRequestEFET];
     }
     
-    [ApplicationDelegate showProcess:@"正在加载..."];
+    //签购单上传不需要加载框
+    if (![self.transferCode isEqualToString:@"089014"])
+    {
+        [ApplicationDelegate showProcess:@"正在加载..."];
+    }
+    
 }
 
 //Json 返回数据解析

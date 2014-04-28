@@ -279,7 +279,17 @@
     
     CatalogModel *catalog = ((CatalogModel *)[self.currentCatalogArray objectAtIndex:indexPath.section]);
     
-    cell.textLabel.text = catalog.title;
+    if ([catalog.title isEqualToString:@"版本号"])
+    {
+         NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+        NSString *localVersion = [infoDic objectForKey:@"CFBundleVersion"];
+        cell.textLabel.text = [NSString stringWithFormat:@"版本号%@",localVersion];
+    }
+    else
+    {
+        cell.textLabel.text = catalog.title;
+    }
+    
     cell.textLabel.font = [UIFont systemFontOfSize:16];
     if (catalog.active) {
         cell.textLabel.textColor = [UIColor blackColor];
