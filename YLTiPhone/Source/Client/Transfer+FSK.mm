@@ -69,7 +69,9 @@
             [self.fskCmdArray removeObjectAtIndex:0];
             
         } else {
-            [ApplicationDelegate hideProcess];
+//            [ApplicationDelegate hideProcess];
+            
+            [ApplicationDelegate performSelectorOnMainThread:@selector(hideProcess) withObject:nil waitUntilDone:NO];
             
             if (self.tempTransferCode && self.transferCode) {
                 [self packet];
