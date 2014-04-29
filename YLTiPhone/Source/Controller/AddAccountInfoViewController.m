@@ -124,7 +124,6 @@
     [selectBankButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     selectBankButton.tag = 90001;
     [selectBankButton addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    [selectBankButton setTitle:[((BankModel *)[self.bankArray objectAtIndex:0]) name] forState:UIControlStateNormal];
     [scrollView addSubview:selectBankButton];
     
     //省份下拉框
@@ -134,7 +133,6 @@
     [selectAreaButton setBackgroundImage:[UIImage imageNamed:@"selectField_normal.png"] forState:UIControlStateNormal];
     selectAreaButton.tag = 90002;
     [selectAreaButton addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    [selectAreaButton setTitle:[((AreaModel *)[self.areaArray objectAtIndex:0]) name] forState:UIControlStateNormal];
     [scrollView addSubview:selectAreaButton];
     
     //城市下拉框
@@ -144,7 +142,6 @@
     [selectCityButton setBackgroundImage:[UIImage imageNamed:@"selectField_normal.png"] forState:UIControlStateNormal];
     selectCityButton.tag = 90003;
     [selectCityButton addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    [selectCityButton setTitle:[((CityModel *)[self.selectCityArray objectAtIndex:0]) name] forState:UIControlStateNormal];
     [scrollView addSubview:selectCityButton];
     
     
@@ -183,11 +180,52 @@
     [confirmButton setFrame:CGRectMake(10, 520, 297, 42)];
     if (self.pageType == 0)
     {
+         [selectBankButton setTitle:[((BankModel *)[self.bankArray objectAtIndex:0]) name] forState:UIControlStateNormal];
+        
+         [selectAreaButton setTitle:[((AreaModel *)[self.areaArray objectAtIndex:0]) name] forState:UIControlStateNormal];
+        
+        [selectCityButton setTitle:[((CityModel *)[self.selectCityArray objectAtIndex:0]) name] forState:UIControlStateNormal];
+        
         [confirmButton setTitle:@"确认添加" forState:UIControlStateNormal];
         self.accountInfo.contentTF.enabled = YES;
+        
     }
     else
     {
+         [selectBankButton setTitle:self.accountDict[@"banks"] forState:UIControlStateNormal];
+        
+        
+        for (AreaModel *model in self.areaArray)
+        {
+            if ([model.code isEqualToString:self.accountDict[@"area"]])
+            {
+                [selectAreaButton setTitle:model.name forState:UIControlStateNormal];
+                break;
+            }
+        }
+        
+        for (CityModel *model in cityArray)
+        {
+            if ([model.parentCode isEqualToString:self.accountDict[@"area"]]&&
+                [model.code isEqualToString:self.accountDict[@"city"]])
+            {
+                [selectCityButton setTitle:model.name forState:UIControlStateNormal];
+                
+                [selectCityArray removeAllObjects];
+                for (CityModel *model in cityArray)
+                {
+                    if ([model.parentCode isEqualToString:self.accountDict[@"area"]])
+                    {
+                        [selectCityArray  addObject:model];
+                    }
+                }
+
+                
+                break;
+            }
+        }
+   
+
         [confirmButton setTitle:@"确认修改" forState:UIControlStateNormal];
         self.accountInfo.contentTF.enabled = NO;
     }
