@@ -224,7 +224,6 @@
         [nextBtn setHidden:NO];
     }
     
-    
 }
 
 #pragma mark - http请求
@@ -278,11 +277,15 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
 	[picker dismissViewControllerAnimated:YES completion:^{}];
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
-    UIButton *button = (UIButton*)[scrollView viewWithTag:imageFlag];
-    [button setBackgroundImage:[self imageWithImage:image scaledToSize:CGSizeMake(640, 960)] forState:UIControlStateNormal];
-//     [button setBackgroundImage:image forState:UIControlStateNormal];
+    @autoreleasepool
+    {
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        UIButton *button = (UIButton*)[scrollView viewWithTag:imageFlag];
+        [button setBackgroundImage:[self imageWithImage:image scaledToSize:CGSizeMake(640, 960)] forState:UIControlStateNormal];
+        //     [button setBackgroundImage:image forState:UIControlStateNormal];
+    }
+
     
 
 }

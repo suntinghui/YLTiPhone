@@ -93,7 +93,7 @@
     UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(5, 215, 100, 25)];
     label7.backgroundColor = [UIColor clearColor];
     label7.font = [UIFont systemFontOfSize:15];
-    label7.text = @"银联号";
+    label7.text = @"联行号";
     [accountInfoView addSubview:label7];
     
     UILabel *namelabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 170, 25)];

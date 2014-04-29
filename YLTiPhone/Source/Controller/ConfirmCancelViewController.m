@@ -189,7 +189,7 @@
 - (BOOL) checkValue
 {
     if (self.pwdTF.rsaValue == nil || [self.pwdTF.rsaValue isEqualToString:@""]) {
-        [ApplicationDelegate showErrorPrompt:@"请输入6位商户密码"];
+        [ApplicationDelegate showErrorPrompt:@"请输入6位密码"];
         return NO;
     }
     

@@ -42,7 +42,7 @@
     [self.view addSubview:self.scrollView];
     
     self.bgImageView = [[UIImageView alloc] initWithImage:[self stretchImage:[UIImage imageNamed:@"salesslip.png"]]];
-    [self.bgImageView setFrame:CGRectMake(5, 5, 310, 570)];
+    [self.bgImageView setFrame:CGRectMake(5, 5+ios7_h, 310, 570)];
     [self.scrollView addSubview:self.bgImageView];
     
     UIImageView *iv_logo = [[UIImageView alloc] initWithFrame:CGRectMake(47, 22+ios7_h, 86/2, 54/2)];
