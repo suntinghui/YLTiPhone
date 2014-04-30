@@ -4,3 +4,13 @@
 	<field key="fieldTrancode" value="089018" />
 	<field key="type" value="9" />
 </root>
+
+
+<!--   type
+ 
+ 2:便付宝
+ 3：盒付宝
+ 8：广付宝
+ 9：优乐通
+ 
+ -->
