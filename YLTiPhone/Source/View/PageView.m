@@ -20,16 +20,22 @@
         [pageIV setImage:[UIImage imageNamed:@"pagebg.png"]];
         [self addSubview:pageIV];
         
-        UIButton *firstPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [firstPageButton setFrame:CGRectMake(20, 7, 15, 15)];
-        [firstPageButton setBackgroundImage:[UIImage imageNamed:@"firstpage.png"] forState:UIControlStateNormal];
-        [firstPageButton addTarget:self action:@selector(firstPageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:firstPageButton];
+//        UIButton *firstPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [firstPageButton setFrame:CGRectMake(20, 7, 30, 20)];
+//        [firstPageButton setBackgroundImage:[UIImage imageNamed:@"firstpage.png"] forState:UIControlStateNormal];
+//        [firstPageButton addTarget:self action:@selector(firstPageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [firstPageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [firstPageButton setTitle:@"首页" forState:UIControlStateNormal];
+//        firstPageButton.titleLabel.font = [UIFont systemFontOfSize:15];
+//        [self addSubview:firstPageButton];
         
         UIButton *previousPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [previousPageButton setFrame:CGRectMake(70, 7, 15, 15)];
+        [previousPageButton setFrame:CGRectMake(30, 7, 50, 20)];
         [previousPageButton setBackgroundImage:[UIImage imageNamed:@"previouspage.png"] forState:UIControlStateNormal];
         [previousPageButton addTarget:self action:@selector(previousPageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [previousPageButton setTitle:@"上一页" forState:UIControlStateNormal];
+         [previousPageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        previousPageButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [self addSubview:previousPageButton];
         
         self.pageCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 0, 100, 30)];
@@ -40,16 +46,22 @@
         [self addSubview:self.pageCountLabel];
         
         UIButton *nextPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [nextPageButton setFrame:CGRectMake(235, 7, 15, 15)];
+        [nextPageButton setFrame:CGRectMake(235, 7, 50, 20)];
         [nextPageButton setBackgroundImage:[UIImage imageNamed:@"nextpage.png"] forState:UIControlStateNormal];
         [nextPageButton addTarget:self action:@selector(nextPageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [nextPageButton setTitle:@"下一页" forState:UIControlStateNormal];
+        nextPageButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        [nextPageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:nextPageButton];
         
-        UIButton *lastPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [lastPageButton setFrame:CGRectMake(285, 7, 15, 15)];
-        [lastPageButton setBackgroundImage:[UIImage imageNamed:@"lastpage.png"] forState:UIControlStateNormal];
-        [lastPageButton addTarget:self action:@selector(lastPageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:lastPageButton];
+//        UIButton *lastPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [lastPageButton setFrame:CGRectMake(285, 7, 30, 20)];
+//        [lastPageButton setBackgroundImage:[UIImage imageNamed:@"lastpage.png"] forState:UIControlStateNormal];
+//        [lastPageButton setTitle:@"末页" forState:UIControlStateNormal];
+//        lastPageButton.titleLabel.font = [UIFont systemFontOfSize:15];
+//        [previousPageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [lastPageButton addTarget:self action:@selector(lastPageButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:lastPageButton];
         
     }
     return self;

@@ -61,7 +61,12 @@
 {
     if (pswTxtField.pwdTF.text==nil||[pswTxtField.pwdTF.text isEqualToString:@""])
     {
-        [ApplicationDelegate showErrorPrompt:@"请输入密码"];
+        [ApplicationDelegate showErrorPrompt:@"请输入支付密码"];
+        return;
+    }
+    else if(pswTxtField.pwdTF.text.length<6)
+    {
+        [ApplicationDelegate showErrorPrompt:@"请输入6位支付密码"];
         return;
     }
     

@@ -690,6 +690,8 @@ static Transfer *instance = nil;
 
 - (void) sendRequestEFET
 {
+    
+    [ApplicationDelegate showProcess:@"正在加载..."];
     _asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     
     NSError *err = nil;
@@ -730,7 +732,6 @@ static Transfer *instance = nil;
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    [ApplicationDelegate hideProcess];
     
     NSLog(@"EFET收到响应...");
     NSLog(@"RESP:%@", data);
@@ -751,10 +752,13 @@ static Transfer *instance = nil;
 }
 
 
+
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
 {
 	// Since we requested HTTP/1.0, we expect the server to close the connection as soon as it has sent the response.
-	
+//	 [ApplicationDelegate hideProcess];
+//    [ApplicationDelegate showErrorPrompt:@"服务器连接失败，请稍后再试！"];
+    
 	NSLog(@"socketDidDisconnect:withError: \"%@\"", err);
 }
 

@@ -81,7 +81,7 @@
     UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(5, 155, 150, 25)];
     label5.backgroundColor = [UIColor clearColor];
     label5.font = [UIFont systemFontOfSize:15];
-    label5.text = @"开启行所在城市";
+    label5.text = @"开户行所在城市";
     [accountInfoView addSubview:label5];
     
     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(5, 185, 100, 25)];
@@ -93,7 +93,7 @@
     UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(5, 215, 100, 25)];
     label7.backgroundColor = [UIColor clearColor];
     label7.font = [UIFont systemFontOfSize:15];
-    label7.text = @"银联号";
+    label7.text = @"联行号";
     [accountInfoView addSubview:label7];
     
     UILabel *namelabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 170, 25)];

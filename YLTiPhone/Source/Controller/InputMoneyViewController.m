@@ -68,6 +68,7 @@
 }
 
 #pragma mark  -按钮点击
+
 -(IBAction)buttonAction:(id)sender{
     switch (((UIButton*)sender).tag) {
         case 1001://1

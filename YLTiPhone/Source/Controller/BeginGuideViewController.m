@@ -125,13 +125,22 @@
     
 }
 
-//按钮行为，跳转入主界面
+//按钮行为，跳转入登录界面
 - (void)enterLoginView:(UIButton *)sender
 {
-    //LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
     self.navigationController.navigationBarHidden = NO;
-    CatalogViewController *controller = [[CatalogViewController alloc] initWithNibName:nil bundle:nil];
-    [ApplicationDelegate.rootNavigationController pushViewController:controller animated:YES];
+//    CatalogViewController *controller = [[CatalogViewController alloc] initWithNibName:nil bundle:nil];
+    [ApplicationDelegate.rootNavigationController pushViewController:loginViewController animated:YES];
+    
+    //优乐通有提示页  在此处将提示页从导航栈里移除  否则其他地方的逻辑得修改
+    if (APPTYPE ==CAppTypeYLT)
+    {
+        NSMutableArray *temArr = [NSMutableArray arrayWithArray:ApplicationDelegate.rootNavigationController.viewControllers];
+        [temArr removeObjectAtIndex:0];
+        ApplicationDelegate.rootNavigationController.viewControllers = temArr;
+    }
+   
     
 }
 @end

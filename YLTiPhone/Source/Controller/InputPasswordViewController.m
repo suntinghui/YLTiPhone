@@ -64,6 +64,11 @@
         [ApplicationDelegate showErrorPrompt:@"请输入密码"];
         return;
     }
+    else if(pswTxtField.pwdTF.text.length<6)
+    {
+        [ApplicationDelegate showErrorPrompt:@"请输入6位长度密码"];
+        return;
+    }
     
     //NSDictionary *cardInfo = [AppDataCenter sharedAppDataCenter].cardInfoDict;
     

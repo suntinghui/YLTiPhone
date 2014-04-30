@@ -309,7 +309,8 @@
     [self.gotoSignButton removeFromSuperview];
     
     [self.scrollView setContentSize:CGSizeMake(320, 660)];
-    [self.bgImageView setFrame:CGRectMake(5, 0, 310, 640)];
+    [self.bgImageView setFrame:CGRectMake(5, 10+ios7_h, 310, 670)];
+    
     self.bgImageView = [[UIImageView alloc] initWithImage:[self stretchImage:[UIImage imageNamed:@"salesslip.png"]]];
     [self.imageView setImage:obj];
     [self.scrollView addSubview:self.imageView];
