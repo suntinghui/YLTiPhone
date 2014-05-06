@@ -247,7 +247,6 @@
         {
             if ([model.code isEqualToString:self.accountDict[@"city"]])
             {
-                [selectCityArray  addObject:model];
                 cityFlag = index;
             }
             
