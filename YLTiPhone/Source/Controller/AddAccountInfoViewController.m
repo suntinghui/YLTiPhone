@@ -43,9 +43,11 @@
     {
         self.navigationItem.title = @"新增账户记录";
         NSString *accountname = self.accountDict[@"accountname"];
+        NSString *merchannae = self.accountDict[@"merchant_name"];
         
         self.accountDict = [[NSMutableDictionary alloc]init];
         [self.accountDict setObject:accountname forKey:@"accountname"];
+        [self.accountDict setObject:merchannae forKey:@"merchant_name"];
         
     }
     else
