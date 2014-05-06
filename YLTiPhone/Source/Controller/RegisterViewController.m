@@ -162,6 +162,7 @@
 
 -(BOOL)checkValue
 {
+  
     if([self.phoneNumTF.contentTF.text isEqualToString:@""]){
         [ApplicationDelegate showErrorPrompt:@"请输入手机号码"];
         return NO;
@@ -180,6 +181,12 @@
         
     }else if(![self.passwordTF.md5Value isEqualToString:self.confirmPasswordTF.md5Value]){
         [ApplicationDelegate showErrorPrompt:@"两次支付密码输入不一致"];
+        return NO;
+    }
+    
+    if (!agreeButtonTouch)
+    {
+        [ApplicationDelegate showErrorPrompt:@"请先同意阅读协议"];
         return NO;
     }
     return YES;

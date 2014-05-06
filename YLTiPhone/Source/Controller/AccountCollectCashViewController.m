@@ -109,7 +109,11 @@
     NSString *phone;
     if (APPTYPE == CAppTypeBFB)
     {
-        phone = @"4008-2660-77";
+        phone = @"400-826-6077";
+    }
+    else if(APPTYPE== CAppTypeGFB)
+    {
+        phone = @"400-021-1515";
     }
     else
     {

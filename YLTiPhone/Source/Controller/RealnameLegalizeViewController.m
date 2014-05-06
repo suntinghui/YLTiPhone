@@ -282,8 +282,8 @@
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         
         UIButton *button = (UIButton*)[scrollView viewWithTag:imageFlag];
-        [button setBackgroundImage:[self imageWithImage:image scaledToSize:CGSizeMake(640, 960)] forState:UIControlStateNormal];
-        //     [button setBackgroundImage:image forState:UIControlStateNormal];
+//        [button setBackgroundImage:[self imageWithImage:image scaledToSize:CGSizeMake(640, 960)] forState:UIControlStateNormal];
+        [button setBackgroundImage:image forState:UIControlStateNormal];
     }
 
     

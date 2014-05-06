@@ -1106,7 +1106,7 @@
     NSLog(flag?@"已将签购单写入数据库，等待上传...":@"签购单写入数据库 失败！");
     
     
-//    // 启动线程上传签购单图片  //TODO 去掉判断  防止联系做交易时 签购单上传延时
+//    // 启动线程上传签购单图片  //TODO 去掉判断  防止连续做交易时 签购单上传延时
 //    if (self.uploadSignImageTimer && [self.uploadSignImageTimer isValid]) {
 //        NSLog(@"试图开启上传签购单服务，服务已开启，运行中...");
 //        return;

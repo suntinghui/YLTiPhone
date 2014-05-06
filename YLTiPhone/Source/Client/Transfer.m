@@ -728,6 +728,7 @@ static Transfer *instance = nil;
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
 	NSLog(@"socket:didWriteDataWithTag:");
+    
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
