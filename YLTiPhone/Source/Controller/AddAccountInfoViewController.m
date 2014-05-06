@@ -42,9 +42,10 @@
     if (self.pageType == 0)
     {
         self.navigationItem.title = @"新增账户记录";
-        NSString *merchant_name = self.accountDict[@"merchant_name"];
+        NSString *accountname = self.accountDict[@"accountname"];
+        
         self.accountDict = [[NSMutableDictionary alloc]init];
-        [self.accountDict setObject:merchant_name forKey:@"merchant_name"];
+        [self.accountDict setObject:accountname forKey:@"accountname"];
         
     }
     else
@@ -180,6 +181,9 @@
     [confirmButton setFrame:CGRectMake(10, 520, 297, 42)];
     if (self.pageType == 0)
     {
+        self.accountInfo.contentTF.enabled = NO;
+         self.accountInfo.contentTF.text = self.accountDict[@"accountname"];
+        
          [selectBankButton setTitle:[((BankModel *)[self.bankArray objectAtIndex:0]) name] forState:UIControlStateNormal];
         
          [selectAreaButton setTitle:[((AreaModel *)[self.areaArray objectAtIndex:0]) name] forState:UIControlStateNormal];
@@ -187,7 +191,6 @@
         [selectCityButton setTitle:[((CityModel *)[self.selectCityArray objectAtIndex:0]) name] forState:UIControlStateNormal];
         
         [confirmButton setTitle:@"确认添加" forState:UIControlStateNormal];
-        self.accountInfo.contentTF.enabled = YES;
         
     }
     else
