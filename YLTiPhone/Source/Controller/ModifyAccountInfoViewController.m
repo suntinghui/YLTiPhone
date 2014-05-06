@@ -288,7 +288,9 @@
         [dic setObject:self.accountInfoTF.contentTF.text forKey:@"mastername"];
         [dic setObject:self.receiveAcctNumTF.contentTF.text forKey:@"bankaccount"];//银行卡号
         [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) name] forKey:@"banks"];
-        [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankno"];
+//        [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankno"];
+        [dic setObject:self.respBankCode forKey:@"bankno"];
+
         [dic setObject:[((AreaModel *)[self.areaArray objectAtIndex:areaFlag]) code] forKey:@"area"];
         [dic setObject:[((CityModel *)[self.selectCityArray objectAtIndex:cityFlag]) code] forKey:@"city"];
         [dic setObject:self.respBankCode forKey:@"addr"];

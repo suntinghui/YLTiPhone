@@ -194,14 +194,28 @@
     {
          [selectBankButton setTitle:self.accountDict[@"banks"] forState:UIControlStateNormal];
         
+        int index=0;
         
+        for (BankModel *model in self.bankArray)
+        {
+            if ([model.name isEqualToString:self.accountDict[@"banks"]])
+            {
+                bankFlag = index;
+                break;
+            }
+            index++;
+        }
+        
+        index=0;
         for (AreaModel *model in self.areaArray)
         {
             if ([model.code isEqualToString:self.accountDict[@"area"]])
             {
                 [selectAreaButton setTitle:model.name forState:UIControlStateNormal];
+                areaFlag = index;
                 break;
             }
+            index++;
         }
         
         for (CityModel *model in cityArray)
@@ -219,12 +233,21 @@
                         [selectCityArray  addObject:model];
                     }
                 }
-
-                
                 break;
             }
         }
    
+        index=0;
+        for (CityModel *model in selectCityArray)
+        {
+            if ([model.code isEqualToString:self.accountDict[@"city"]])
+            {
+                [selectCityArray  addObject:model];
+                cityFlag = index;
+            }
+            
+              index++;
+        }
 
         [confirmButton setTitle:@"确认修改" forState:UIControlStateNormal];
         self.accountInfo.contentTF.enabled = NO;
@@ -379,7 +402,9 @@
         [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
         [dic setObject:self.receiveAcctNumConfirmTF.contentTF.text forKey:@"bankaccount"];//银行卡号
         [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) name] forKey:@"banks"];
-        [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankno"];
+//        [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankno"];
+        [dic setObject:self.respBankCode forKey:@"bankno"];
+
         [dic setObject:[((AreaModel *)[self.areaArray objectAtIndex:areaFlag]) code] forKey:@"area"];
         [dic setObject:[((CityModel *)[self.selectCityArray objectAtIndex:cityFlag]) code] forKey:@"city"];
         [dic setObject:self.respBankCode forKey:@"addr"];

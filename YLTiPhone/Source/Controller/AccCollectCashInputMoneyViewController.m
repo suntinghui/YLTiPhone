@@ -11,6 +11,8 @@
 #import "UITextField+HideKeyBoard.h"
 #import "StringUtil.h"
 #import "AccCollectCashConfirmViewController.h"
+#import "ParseXMLUtil.h"
+#import "CityModel.h"
 
 #define Action_Tag_SelectType  100
 
@@ -137,8 +139,17 @@
     citylabel.backgroundColor = [UIColor clearColor];
     citylabel.font = [UIFont systemFontOfSize:15];
     [citylabel setTextAlignment:NSTextAlignmentRight];
-    citylabel.text = [self.receiveDic objectForKey:@"area"];
     [accountInfoView addSubview:citylabel];
+    NSArray *cityArray = [[NSArray alloc] initWithArray:[ParseXMLUtil parseCityXML]];
+    for (CityModel *model in cityArray)
+    {
+        if ([model.parentCode isEqualToString:self.receiveDic[@"area"]]&&
+            [model.code isEqualToString:self.receiveDic[@"city"]])
+        {
+            citylabel.text = model.name;
+            break;
+        }
+    }
     
     UILabel *acclabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 185, 170, 25)];
     acclabel.backgroundColor = [UIColor clearColor];

@@ -325,19 +325,19 @@
 {
     if ([self checkValue]) {
         //sdk中提供了方法可以直接调用
-        UIImage *image13 = [[(UIButton*)[scrollView viewWithTag:10001]  backgroundImageForState:UIControlStateNormal]  imageByScalingAndCroppingForSize:CGSizeMake(150, 150)];
+        UIImage *image13 = [[(UIButton*)[scrollView viewWithTag:10001]  backgroundImageForState:UIControlStateNormal]  imageByScalingAndCroppingForSize:CGSizeMake(320, 480)];
         NSData *dataObj13 = UIImageJPEGRepresentation(image13, 1.0);
         NSString *image13Base64 = [dataObj13 base64EncodedString];
         
-        UIImage *image14 = [[(UIButton*)[scrollView viewWithTag:10002]  backgroundImageForState:UIControlStateNormal] imageByScalingAndCroppingForSize:CGSizeMake(150, 150)];
+        UIImage *image14 = [[(UIButton*)[scrollView viewWithTag:10002]  backgroundImageForState:UIControlStateNormal] imageByScalingAndCroppingForSize:CGSizeMake(320, 480)];
         NSData *dataObj14 = UIImageJPEGRepresentation(image14, 1.0);
         NSString *image14Base64 = [dataObj14 base64EncodedString];
         
-        UIImage *image15 = [[(UIButton*)[scrollView viewWithTag:10003]  backgroundImageForState:UIControlStateNormal] imageByScalingAndCroppingForSize:CGSizeMake(150, 150)];
+        UIImage *image15 = [[(UIButton*)[scrollView viewWithTag:10003]  backgroundImageForState:UIControlStateNormal] imageByScalingAndCroppingForSize:CGSizeMake(320, 480)];
         NSData *dataObj15 = UIImageJPEGRepresentation(image15, 1.0);
         NSString *image15Base64 = [dataObj15 base64EncodedString];
         
-        UIImage *image17 = [[(UIButton*)[scrollView viewWithTag:10004]  backgroundImageForState:UIControlStateNormal] imageByScalingAndCroppingForSize:CGSizeMake(150, 150)];
+        UIImage *image17 = [[(UIButton*)[scrollView viewWithTag:10004]  backgroundImageForState:UIControlStateNormal] imageByScalingAndCroppingForSize:CGSizeMake(320, 480)];
         NSData *dataObj17 = UIImageJPEGRepresentation(image17, 1.0);
         NSString *image17Base64 = [dataObj17 base64EncodedString];
         
