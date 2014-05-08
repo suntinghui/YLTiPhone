@@ -212,10 +212,12 @@
         }
         
         index=0;
+        NSString *proinceCode;
         for (AreaModel *model in self.areaArray)
         {
-            if ([model.code isEqualToString:self.accountDict[@"area"]])
+            if ([model.name isEqualToString:self.accountDict[@"area"]])
             {
+                proinceCode = model.code;
                 [selectAreaButton setTitle:model.name forState:UIControlStateNormal];
                 areaFlag = index;
                 break;
@@ -223,17 +225,18 @@
             index++;
         }
         
+       
         for (CityModel *model in cityArray)
         {
-            if ([model.parentCode isEqualToString:self.accountDict[@"area"]]&&
-                [model.code isEqualToString:self.accountDict[@"city"]])
+            if ([model.parentCode isEqualToString:proinceCode]&&
+                [model.name isEqualToString:self.accountDict[@"city"]])
             {
                 [selectCityButton setTitle:model.name forState:UIControlStateNormal];
                 
                 [selectCityArray removeAllObjects];
                 for (CityModel *model in cityArray)
                 {
-                    if ([model.parentCode isEqualToString:self.accountDict[@"area"]])
+                    if ([model.parentCode isEqualToString:proinceCode])
                     {
                         [selectCityArray  addObject:model];
                     }
@@ -245,7 +248,7 @@
         index=0;
         for (CityModel *model in selectCityArray)
         {
-            if ([model.code isEqualToString:self.accountDict[@"city"]])
+            if ([model.name isEqualToString:self.accountDict[@"city"]])
             {
                 cityFlag = index;
             }
@@ -409,9 +412,9 @@
 //        [dic setObject:[((BankModel *)[self.bankArray objectAtIndex:bankFlag]) code] forKey:@"bankno"];
         [dic setObject:self.respBankCode forKey:@"bankno"];
 
-        [dic setObject:[((AreaModel *)[self.areaArray objectAtIndex:areaFlag]) code] forKey:@"area"];
-        [dic setObject:[((CityModel *)[self.selectCityArray objectAtIndex:cityFlag]) code] forKey:@"city"];
-        [dic setObject:self.respBankCode forKey:@"addr"];
+        [dic setObject:[((AreaModel *)[self.areaArray objectAtIndex:areaFlag]) name] forKey:@"area"];
+        [dic setObject:[((CityModel *)[self.selectCityArray objectAtIndex:cityFlag]) name] forKey:@"city"];
+        [dic setObject:self.respBankName forKey:@"addr"];
         if (self.pageType==0)
         {
             [dic setObject:self.accountDict[@"merchant_name"] forKey:@"merchant_name"];
