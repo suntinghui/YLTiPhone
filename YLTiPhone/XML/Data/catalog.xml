@@ -113,7 +113,7 @@
 		<needReverse>false</needReverse>
 		<isActive>true</isActive>
 	</catalog>
-	
+<!--
     <catalog>
         <catalogId>16</catalogId>
         <title>签到</title>
@@ -124,6 +124,7 @@
         <needReverse>true</needReverse>
         <isActive>true</isActive>
     </catalog>
+-->
     
 	<catalog>
 		<catalogId>21</catalogId>

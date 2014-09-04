@@ -106,6 +106,7 @@ static MessageFactory *instance;
     int postion = 5+6+msgTypeData.length+8;
     
     NSDictionary *parseGuide = [self.allTransferFieldDic objectForKey:message.msgType];
+    
     NSArray *indexArray = [self.allTransferFieldOrderDic objectForKey:message.msgType];
     if (indexArray == nil) {
         NSLog(@"在XML文件中未定义报文类型[%@]的解析配置, 无法解析该类型的报文!! 请完善配置!", message.msgType);

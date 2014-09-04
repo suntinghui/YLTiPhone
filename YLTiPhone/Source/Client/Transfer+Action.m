@@ -51,6 +51,8 @@
 #import "MerchantQueryBalanceResultViewController.h"
 #import "CardBalanceResultViewController.h"
 #import "CatalogViewController.h"
+#import "Transfer.h"
+
 @implementation Transfer (Action)
 
 
@@ -169,6 +171,10 @@
     {
         [self ConfirmCancelDone];
     }
+    else if ([self.transferCode isEqualToString:@"100005"]) //更换设备
+    {
+        [self changeDeviceDone];
+    }
     else
     {
         [self transferSuccessDone];
@@ -278,9 +284,13 @@
                 NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
                 [dic setObject:arrayModel forKey:@"object"];
                 [dic setObject:[[self.receDic objectForKey:@"apires"] objectForKey:@"page_count"] forKey:@"page_Count"];
-                //传回界面 展示内容
-                ((SearchBankViewController*)[ApplicationDelegate topViewController]).bankDic = dic;
-                [(SearchBankViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+                if ([[ApplicationDelegate topViewController] isKindOfClass:[SearchBankViewController class]])
+                {
+                    //传回界面 展示内容
+                    ((SearchBankViewController*)[ApplicationDelegate topViewController]).bankDic = dic;
+                    [(SearchBankViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+                }
+               
             }else{
                 [ApplicationDelegate gotoFailureViewController:@"获取支行信息失败"];
             }
@@ -337,9 +347,14 @@
                         [arrayModel addObject:model];
                     }
                 }
-                //传回界面 展示内容
-                ((AnnouncementListViewController*)[ApplicationDelegate topViewController]).announcementList = arrayModel;
-                [(AnnouncementListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+                
+                if ([[ApplicationDelegate topViewController] isKindOfClass:[AnnouncementListViewController class]])
+                {
+                    //传回界面 展示内容
+                    ((AnnouncementListViewController*)[ApplicationDelegate topViewController]).announcementList = arrayModel;
+                    [(AnnouncementListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+
+                }
             }
             @catch (NSException *exception) {
             
@@ -360,9 +375,13 @@
                 [self.receDic setObject:jsonStr forKey:@"apires"];
                 NSDictionary *accountDic = [self.receDic objectForKey:@"apires"];
                 
-                //传回界面 展示内容
-                ((AccountCollectCashViewController*)[ApplicationDelegate topViewController]).accountDic = accountDic;
-                [(AccountCollectCashViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+                if ([[ApplicationDelegate topViewController] isMemberOfClass:[AccountCollectCashViewController class]])
+                {
+                    //传回界面 展示内容
+                    ((AccountCollectCashViewController*)[ApplicationDelegate topViewController]).accountDic = accountDic;
+                    [(AccountCollectCashViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+                }
+               
                 
             }else{
 
@@ -427,18 +446,24 @@
             [mapDic setObject:page_count forKey:@"page_count"];
             [mapDic setObject:transModelArray forKey:@"list"];
             
-            ((TransListViewController*)[ApplicationDelegate topViewController]).totalCount = page_count;
-            ((TransListViewController*)[ApplicationDelegate topViewController]).array = transModelArray;
+            if ([[ApplicationDelegate topViewController] isKindOfClass:[TransListViewController class]])
+            {
+                ((TransListViewController*)[ApplicationDelegate topViewController]).totalCount = page_count;
+                ((TransListViewController*)[ApplicationDelegate topViewController]).array = transModelArray;
+                
+                //            if (((TransListViewController*)[ApplicationDelegate topViewController]).array ==nil)
+                //            {
+                //                ((TransListViewController*)[ApplicationDelegate topViewController]).array = [NSMutableArray arrayWithArray:transModelArray];
+                //            }
+                //            else
+                //            {
+                //                [((TransListViewController*)[ApplicationDelegate topViewController]).array addObjectsFromArray:transModelArray];
+                //            }
+                [(TransListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+            }
             
-            //            if (((TransListViewController*)[ApplicationDelegate topViewController]).array ==nil)
-            //            {
-            //                ((TransListViewController*)[ApplicationDelegate topViewController]).array = [NSMutableArray arrayWithArray:transModelArray];
-            //            }
-            //            else
-            //            {
-            //                [((TransListViewController*)[ApplicationDelegate topViewController]).array addObjectsFromArray:transModelArray];
-            //            }
-            [(TransListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
+          
+            
         }else{
             [(TransListViewController*)[ApplicationDelegate topViewController] refreshTabelView];
         }
@@ -709,6 +734,57 @@
             [UserDefaults setObject:[[self.receDic objectForKey:@"apires"] objectForKey:@"md5key"] forKey:MD5KEY];
             [UserDefaults synchronize];
             [AppDataCenter sharedAppDataCenter].status = [NSString stringWithFormat:@"%@",self.receDic[@"apires"][@"status"]];
+            [AppDataCenter sharedAppDataCenter].__VENDOR = self.receDic[@"apires"][@"merchant_id"];
+            [AppDataCenter sharedAppDataCenter].macKey = self.receDic[@"apires"][@"mackey"];
+            [AppDataCenter sharedAppDataCenter].md5Key = self.receDic[@"apires"][@"md5key"];
+            [AppDataCenter sharedAppDataCenter].terminal_id = self.receDic[@"apires"][@"terminal_id"];
+            NSString *signState = self.receDic[@"apires"][@"signInStatus"];
+            NSString *batchNum = self.receDic[@"apires"][@"cycle_no"];
+            [[AppDataCenter sharedAppDataCenter] setBatchNum:batchNum];
+            
+            [UserDefaults setObject:self.receDic[@"apires"][@"merchant_name"]  forKey:MERCHERNAME];
+            [UserDefaults synchronize];
+            if ([signState isEqualToString:@"1"]) //1：签到成功 0：签到失败 2：未审核(不让签到，不能进入交易类菜单)
+            {
+                [AppDataCenter sharedAppDataCenter].hasSign = YES;
+            }
+            else
+            {
+                [AppDataCenter sharedAppDataCenter].hasSign = NO;
+            }
+            [AppDataCenter sharedAppDataCenter].signState = signState;
+            
+           
+            
+            NSString *newKey = [self.receDic[@"apires"][@"mackey"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            NSString *pinKey = nil; //(0, 40)
+            NSString *macKey = nil;//newKey.substring(40, 56) + newKey.substring(72);
+            NSString *stackKey = nil;//pinKey
+            
+            if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+            {
+                
+                pinKey = self.receDic[@"apires"][@"workingkey"];
+                macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
+                macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
+            }
+            else
+            {
+                
+                stackKey = self.receDic[@"apires"][@"tackey"];
+                pinKey = self.receDic[@"apires"][@"workingkey"];
+                macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
+                macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
+            }
+            
+            
+            NSLog(@"pinkey:%@ mackey:%@ stackKey:%@",stackKey,macKey,stackKey);
+            
+            [AppDataCenter sharedAppDataCenter].pinKey = pinKey;
+            [AppDataCenter sharedAppDataCenter].macKey = macKey;
+            [AppDataCenter sharedAppDataCenter].stackKey = stackKey;
+            
 //            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
 
             
@@ -719,10 +795,14 @@
 //                BeginGuideViewController *beginGuideViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
 //                [ApplicationDelegate.rootNavigationController pushViewController:beginGuideViewController animated:YES];
 //            }else{
+            
+             [[Transfer sharedTransfer] performSelector:@selector(initFSK) withObject:nil]; //在登录页面选择了设备类型  所以登录成功后再初始化刷卡操作类
+            
                 CatalogViewController *controller = [[CatalogViewController alloc] initWithNibName:nil bundle:nil];
                 [ApplicationDelegate.rootNavigationController pushViewController:controller animated:YES];
 //            }
             
+           
         
             
         } else {
@@ -824,21 +904,22 @@
 {
     
     //保存field41  终端代码
-    if ([self.receDic objectForKey:@"field41"]) {
-        [AppDataCenter sharedAppDataCenter].__TERID = [self.receDic objectForKey:@"field41"];
+    if ([self.receDic objectForKey:@"TID"]) {
+        [AppDataCenter sharedAppDataCenter].terminal_id = self.receDic[@"apires"][@"TID"];
     }
     //保存field42  商户代码
-    if ([self.receDic objectForKey:@"field42"]) {
-        [AppDataCenter sharedAppDataCenter].__VENDOR = [self.receDic objectForKey:@"field42"];
+    if ([self.receDic objectForKey:@"MID"]) {
+        [AppDataCenter sharedAppDataCenter].__VENDOR = self.receDic[@"apires"][@"MID"];
     }
     // 保存商户名称 field43 有就存
     if ([self.receDic objectForKey:@"field43"]) {
-        [UserDefaults setObject:[self.receDic objectForKey:@"field43"] forKey:MERCHERNAME];
+        [UserDefaults setObject:self.receDic[@"apires"][@"field43"]  forKey:MERCHERNAME];
         [UserDefaults synchronize];
     }
     
     // 更新批次号
-    NSString *batchNum = [[self.receDic objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)];
+//    NSString *batchNum = [[self.receDic objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)];
+     NSString *batchNum = self.receDic[@"apires"][@"cycle_no"];
     [[AppDataCenter sharedAppDataCenter] setBatchNum:batchNum];
     
     // 清空上一个批次的交易成功的信息，即用于消费撤销和查询签购单的数据库表
@@ -850,38 +931,50 @@
     }
     @try {
         // 根据62域字符串切割得到工作密钥
-        NSString *newKey = [[self.receDic objectForKey:@"field62"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *newKey = [self.receDic[@"apires"][@"MACK"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
         NSString *pinKey = nil; //(0, 40)
         NSString *macKey = nil;//newKey.substring(40, 56) + newKey.substring(72);
         NSString *stackKey = nil;//pinKey
         
-        if (ApplicationDelegate.isAishua)
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
         {
-            pinKey = [newKey substringWithRange:NSMakeRange(0, 32)];
-            macKey = [[NSString alloc] initWithFormat:@"%@",[newKey substringWithRange:NSMakeRange(40, 16)]];
+            
+//            pinKey = [newKey substringWithRange:NSMakeRange(0, 32)];
+//            macKey = [[NSString alloc] initWithFormat:@"%@",[newKey substringWithRange:NSMakeRange(40, 16)]];
+            pinKey = self.receDic[@"apires"][@"WKKY"];
+            macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
+            macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
         }
         else
         {
-            pinKey = [newKey substringWithRange:NSMakeRange(0, 40)];
-            macKey = [[NSString alloc] initWithFormat:@"%@%@",[newKey substringWithRange:NSMakeRange(40, 16)],[newKey substringFromIndex:72]];
+//            pinKey = [newKey substringWithRange:NSMakeRange(0, 40)];
+//            macKey = [[NSString alloc] initWithFormat:@"%@%@",[newKey substringWithRange:NSMakeRange(40, 16)],[newKey substringFromIndex:72]];
+            
+            stackKey = self.receDic[@"apires"][@"TACK"];
+            pinKey = self.receDic[@"apires"][@"WKKY"];
+            macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
+            macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
         }
         
         
-        stackKey = pinKey;
+        NSLog(@"pinkey:%@ mackey:%@ stackKey:%@",pinKey,macKey,stackKey);
         
         [AppDataCenter sharedAppDataCenter].pinKey = pinKey;
         [AppDataCenter sharedAppDataCenter].macKey = macKey;
+        [AppDataCenter sharedAppDataCenter].stackKey = stackKey;
         
-        if (ApplicationDelegate.isAishua)
+       
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
         {
-            [AppDataCenter sharedAppDataCenter].hasSign = true;
+             [AppDataCenter sharedAppDataCenter].hasSign = YES;
             [ApplicationDelegate gotoSuccessViewController:@"签到成功"];
         }
-        else
+        else if(ApplicationDelegate.deviceType==CDeviceTypeDianFuBao||
+                ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
         {
             // 更新工作密钥
             [[Transfer sharedTransfer] startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_ReNewKey|string:%@,string:%@,string:%@", pinKey, macKey, stackKey] paramDic:nil];
- 
         }
         
     }
@@ -894,7 +987,12 @@
 // 更新工作密钥成功
 - (void) updateWorkingKeyDone
 {
+    [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = YES;
+    [AppDataCenter sharedAppDataCenter].hasSign = YES;
     [ApplicationDelegate gotoSuccessViewController:@"签到成功\n\n[设备已成功更新工作密钥]"];
+    
+    //更新商户号和终端号
+    [[Transfer sharedTransfer] startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_ReNewVT|string:%@,string:%@",[AppDataCenter sharedAppDataCenter].__VENDOR,[AppDataCenter sharedAppDataCenter].terminal_id ]paramDic:nil];
 }
 
 // 签退
@@ -952,10 +1050,10 @@
 - (void) recordSuccessTransfer
 {
     SuccessTransferModel *model = [[SuccessTransferModel alloc] init];
-    [model setAmount:[self.receDic objectForKey:@"field4"]];
-    [model setTraceNum:[self.receDic objectForKey:@"field11"]];
-    model.transCode = [self.receDic objectForKey:@"fieldTrancode"];
-    [model setDate:[self.receDic objectForKey:@"field13"]];
+    [model setAmount:self.receDic[@"apires"][@"JE"]];  //00001
+    [model setTraceNum:self.receDic[@"apires"][@"SLSH"]]; //908001
+    model.transCode = self.transferCode; //020022
+    [model setDate:[self.receDic[@"apires"][@"XTDE"] substringFromIndex:4]] ; //0901
     [model setContent:self.receDic];
     
     TransferSuccessDBHelper *helper = [[TransferSuccessDBHelper alloc] init];
@@ -989,11 +1087,20 @@
  **/
 -(void)inputMoneyDone
 {
-    if (self.receDic) {
-        [self recordSuccessTransfer];
-        
-        ConfirmCancelResultViewController *resultVC = [[ConfirmCancelResultViewController alloc] initWithResultMessage:@"收款成功"];
-        [[ApplicationDelegate topViewController].navigationController pushViewController:resultVC animated:YES];
+    if (self.receDic)
+    {
+        if ([self.receDic[@"respmsg"] isEqualToString:@"1"])
+        {
+            [self recordSuccessTransfer];
+            
+            ConfirmCancelResultViewController *resultVC = [[ConfirmCancelResultViewController alloc] initWithResultMessage:@"收款成功"];
+            [[ApplicationDelegate topViewController].navigationController pushViewController:resultVC animated:YES];
+        }
+        else
+        {
+           [ApplicationDelegate gotoFailureViewController:self.receDic[@"apires"]];
+        }
+      
     }else{
         [ApplicationDelegate gotoFailureViewController:@"收款交易服务器返回数据错误"];
     }
@@ -1008,8 +1115,8 @@
     [self recordSuccessTransfer];
     
     TransferSuccessDBHelper *helper = [[TransferSuccessDBHelper alloc] init];
-    [helper updateRevokeFalg:[[self.sendDic objectForKey:@"field61"] substringWithRange:NSMakeRange(6, 6)]];
-    
+//    [helper updateRevokeFalg:[[self.sendDic objectForKey:@"field61"] substringWithRange:NSMakeRange(6, 6)]];
+  [helper updateRevokeFalg:self.receDic[@"apires"][@"OSLS"]];
     ConfirmCancelResultViewController *resultVC = [[ConfirmCancelResultViewController alloc] initWithResultMessage:@"收款撤销成功"];
     [[ApplicationDelegate topViewController].navigationController pushViewController:resultVC animated:YES];
 }
@@ -1066,6 +1173,7 @@
 
 - (void) uploadSignImageDone
 {
+    NSLog(@"签购单上传完成:%@",self.sendDic);
     // TODO 服务器返回的数据竟然又将图片反传回来了。。。。
     NSString *field11 = [self.sendDic objectForKey:@"field11"];
     UploadSignImageDBHelper *helper = [[UploadSignImageDBHelper alloc] init];
@@ -1091,12 +1199,19 @@
 //    [tempDic setObject:[[self.receDic objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)] forKey:@"batchNum"];
     
     [tempDic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
-    [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"send_tel"];
-    [tempDic setObject:[self.receDic objectForKey:@"field11"] forKey:@"field11"];
     
-    [tempDic setObject:[self.receDic objectForKey:@"field37"] forKey:@"local_log"];
-    [tempDic setObject:[self.receDic objectForKey:@"field42"] forKey:@"merchant_id"];
-
+//    [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"send_tel"];
+//    [tempDic setObject:[self.receDic objectForKey:@"field11"] forKey:@"field11"];
+//    [tempDic setObject:[self.receDic objectForKey:@"field37"] forKey:@"local_log"];
+//    [tempDic setObject:[self.receDic objectForKey:@"field42"] forKey:@"merchant_id"];
+//    [tempDic setObject:[self.receDic objectForKey:@"imei"] forKey:@"filedIMEI"];
+//    [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"fieldMobile"];
+//    [tempDic setObject:[self.receDic objectForKey:@"fieldImage"] forKey:@"img"];
+    
+    [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"send_tel"];
+    [tempDic setObject:self.receDic[@"apires"][@"SLSH"] forKey:@"field11"];
+    [tempDic setObject:self.receDic[@"apires"][@"XTLS"] forKey:@"local_log"];
+    [tempDic setObject:self.receDic[@"apires"][@"MID"] forKey:@"merchant_id"];
     [tempDic setObject:[self.receDic objectForKey:@"imei"] forKey:@"filedIMEI"];
     [tempDic setObject:[self.receDic objectForKey:@"receivePhoneNo"] forKey:@"fieldMobile"];
     [tempDic setObject:[self.receDic objectForKey:@"fieldImage"] forKey:@"img"];
@@ -1130,6 +1245,25 @@
         [self.uploadSignImageTimer invalidate];
         self.uploadSignImageTimer = nil;
     }
+}
+
+- (void)changeDeviceDone
+{
+    [UserDefaults setObject:[NSString stringWithFormat:@"%d",ApplicationDelegate.deviceType] forKey:kUserPosType];
+    [UserDefaults synchronize];
+    [AppDataCenter sharedAppDataCenter].hasSign = NO;
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    {
+        [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = YES;
+        
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+            ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+    {
+        [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = NO;
+    }
+    
+    [ApplicationDelegate gotoSuccessViewController:@"设备修改成功"];
 }
 
 @end

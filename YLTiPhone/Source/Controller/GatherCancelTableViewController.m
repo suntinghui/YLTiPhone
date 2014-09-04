@@ -46,14 +46,19 @@
     self.array = [helper queryAllTransfer];
     [ApplicationDelegate hideProcess];
     
-    if (self.array && [self.array count] > 0) {
-        self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, VIEWHEIGHT+41) style:UITableViewStylePlain];
+    if (self.array && [self.array count] > 0)
+    {
+        self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, VIEWHEIGHT) style:UITableViewStylePlain];
         self.myTableView.delegate = self;
         self.myTableView.dataSource = self;
         [self.myTableView setBackgroundColor:[UIColor clearColor]];
         self.myTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
         [self.view addSubview:self.myTableView];
-    } else {
+        
+
+    }
+    else
+    {
         UIImageView *emptyView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emptyImage.png"]];
         [emptyView setFrame:CGRectMake(97, 180, 126, 80)];
         [self.view addSubview:emptyView];
@@ -110,9 +115,10 @@
         imageView.image = [UIImage imageNamed:@"revoked"];
         [cell.contentView addSubview:imageView];
     }
-    cell.accountLabel.text = [StringUtil formatAccountNo:[model.content objectForKey:@"field2"]];
-    cell.timeLabel.text = [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [model.content objectForKey:@"field13"], [model.content objectForKey:@"field12"]]];
-    cell.amountLabel.text = [StringUtil string2SymbolAmount:[model.content objectForKey:@"field4"]];
+    cell.accountLabel.text = model.content[@"apires"][@"CARD"];
+    cell.timeLabel.text =model.content[@"apires"][@"XTDE"];
+    
+    cell.amountLabel.text =[NSString stringWithFormat:@"￥%@", model.content[@"apires"][@"JE"]];
     
     return cell;
 }
@@ -129,9 +135,15 @@
     }
 
     selectRow = indexPath.row;
-    if (ApplicationDelegate.isAishua)
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
     {
-        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+            ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+    {
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetTrackPlaintext#Request_GetPin|string:%@",[StringUtil amount2String:@""]] paramDic:nil];
+
     }
 }
 

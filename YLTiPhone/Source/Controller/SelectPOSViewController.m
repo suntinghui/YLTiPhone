@@ -47,6 +47,30 @@
     [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_highlight.png"] forState:UIControlStateHighlighted];
     [self.view addSubview:selectPosButton];
     
+    selectPosButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [selectPosButton setFrame:CGRectMake(10, 110, 297, 45)];
+    [selectPosButton setTitle:@"音频POS" forState:UIControlStateNormal];
+    [selectPosButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    selectPosButton.titleLabel .font = [UIFont boldSystemFontOfSize:18];
+    [selectPosButton addTarget:self action:@selector(selectPOSButton) forControlEvents:UIControlEventTouchUpInside];
+    [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_normal.png"] forState:UIControlStateNormal];
+    [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_highlight.png"] forState:UIControlStateSelected];
+    [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_highlight.png"] forState:UIControlStateHighlighted];
+    [self.view addSubview:selectPosButton];
+    
+    selectPosButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [selectPosButton setFrame:CGRectMake(10, 170, 297, 45)];
+    [selectPosButton setTitle:@"点付宝" forState:UIControlStateNormal];
+    [selectPosButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    selectPosButton.titleLabel .font = [UIFont boldSystemFontOfSize:18];
+    [selectPosButton addTarget:self action:@selector(selectPOSButton) forControlEvents:UIControlEventTouchUpInside];
+    [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_normal.png"] forState:UIControlStateNormal];
+    [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_highlight.png"] forState:UIControlStateSelected];
+    [selectPosButton setBackgroundImage:[UIImage imageNamed:@"selectField_highlight.png"] forState:UIControlStateHighlighted];
+    [self.view addSubview:selectPosButton];
+    
+    
+    
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setFrame:CGRectMake(10, 120, 297, 42)];
     [confirmButton setTitle:@"确   认" forState:UIControlStateNormal];

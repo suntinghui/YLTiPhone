@@ -68,7 +68,7 @@
     [tmpFlowNumLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tmpFlowNumLabel];
     UILabel *flowNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(ORIGIN_X, HEIGHT, WIDTH_1, 30)];
-    [flowNumLabel setText:[self.model.content objectForKey:@"field11"]];
+    [flowNumLabel setText:self.model.content[@"apires"][@"SLSH"]];
     [flowNumLabel setTextAlignment:NSTextAlignmentLeft];
     [flowNumLabel setTextColor:[UIColor blackColor]];
     [flowNumLabel setFont:[UIFont systemFontOfSize:15]];
@@ -83,7 +83,7 @@
     [tmpBatchNumLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tmpBatchNumLabel];
     UILabel *batchNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(ORIGIN_X, HEIGHT + 30, WIDTH_1, 30)];
-    [batchNumLabel setText:[[self.model.content objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)]];
+    [batchNumLabel setText:self.model.content[@"apires"][@"cycle_no"]];
     [batchNumLabel setTextAlignment:NSTextAlignmentLeft];
     [batchNumLabel setTextColor:[UIColor blackColor]];
     [batchNumLabel setFont:[UIFont systemFontOfSize:15]];
@@ -98,7 +98,7 @@
     [tmpSearchNumLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tmpSearchNumLabel];
     UILabel *searchNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(ORIGIN_X, HEIGHT + 30*2, WIDTH_1, 30)];
-    [searchNumLabel setText:[self.model.content objectForKey:@"field37"]];
+    [searchNumLabel setText:self.model.content[@"apires"][@"XTLS"]];
     [searchNumLabel setTextAlignment:NSTextAlignmentLeft];
     [searchNumLabel setTextColor:[UIColor blackColor]];
     [searchNumLabel setFont:[UIFont systemFontOfSize:15]];
@@ -113,7 +113,7 @@
     [tmpTradeCdNumLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tmpTradeCdNumLabel];
     UILabel *tradeCdNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(ORIGIN_X, HEIGHT + 30*3, WIDTH_1, 30)];
-    [tradeCdNumLabel setText:[StringUtil formatAccountNo:[self.model.content objectForKey:@"field2"]]];
+    [tradeCdNumLabel setText:self.model.content[@"apires"][@"CARD"]];
     [tradeCdNumLabel setTextAlignment:NSTextAlignmentLeft];
     [tradeCdNumLabel setTextColor:[UIColor blackColor]];
     [tradeCdNumLabel setFont:[UIFont systemFontOfSize:15]];
@@ -128,7 +128,7 @@
     [tmpTradeAmountLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tmpTradeAmountLabel];
     UILabel *tradeAmountLabel = [[UILabel alloc] initWithFrame:CGRectMake(ORIGIN_X, HEIGHT + 30*4, WIDTH_1, 30)];
-    [tradeAmountLabel setText:[StringUtil string2SymbolAmount:[self.model.content objectForKey:@"field4"]]];
+    [tradeAmountLabel setText:[NSString stringWithFormat:@"￥%@",self.model.content[@"apires"][@"JE"]]];
     [tradeAmountLabel setTextAlignment:NSTextAlignmentLeft];
     [tradeAmountLabel setTextColor:[UIColor blueColor]];
     [tradeAmountLabel setFont:[UIFont systemFontOfSize:16]];
@@ -143,15 +143,19 @@
     [tmpTradeTimeLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tmpTradeTimeLabel];
     UILabel *tradeTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(ORIGIN_X, HEIGHT + 30*5, WIDTH_1, 30)];
-    [tradeTimeLabel setText:[DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [self.model.content objectForKey:@"field13"], [self.model.content objectForKey:@"field12"]]]];
+    [tradeTimeLabel setText:self.model.content[@"apires"][@"XTDE"]];
     [tradeTimeLabel setTextAlignment:NSTextAlignmentLeft];
     [tradeTimeLabel setTextColor:[UIColor blackColor]];
     [tradeTimeLabel setFont:[UIFont systemFontOfSize:15]];
     [tradeTimeLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tradeTimeLabel];
     
-    self.pwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 250, 300, 44) left:@"" prompt:@"请输入卡密码"];
-    [scrollView addSubview:self.pwdTF];
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    {
+        self.pwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 250, 300, 44) left:@"" prompt:@"请输入卡密码"];
+        [scrollView addSubview:self.pwdTF];
+    }
+ 
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setFrame:CGRectMake(10, 315, 298, 42)];
@@ -188,6 +192,11 @@
 
 - (BOOL) checkValue
 {
+    if (ApplicationDelegate.deviceType!=CDeviceTypeShuaKaTou)
+    {
+        return YES;
+    }
+    
     if (self.pwdTF.rsaValue == nil || [self.pwdTF.rsaValue isEqualToString:@""]) {
         [ApplicationDelegate showErrorPrompt:@"请输入6位密码"];
         return NO;
@@ -208,20 +217,28 @@
         [DemoClient setDemoAmount:[self.model.content objectForKey:@"field4"]];
 #endif
         
-    
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:self.model.content];
         
 //        [dic setObject:[self.pwdTF rsaValue] forKey:@"fieldMerchPWD"];
 //        
 //        [[Transfer sharedTransfer] startTransfer:@"0020023" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetDes#Request_GetPin|string:%@",[self.model.content objectForKey:@"field4"]] paramDic:dic];
         
-        NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[AppDataCenter sharedAppDataCenter].pinKey];
-        NSString *key = [SecurityUtil encryptUseXOR16:temKey];
-        
-        NSString *psw = [NSString stringWithFormat:@"%@00",self.pwdTF.inputStr];
-        NSString *keyResult = [NSString stringWithFormat:@"%@%@",key,[key substringToIndex:16]];
-        NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
-        [dic setObject:enStr forKey:@"AISHUAPIN"];
+        if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+        {
+            NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[AppDataCenter sharedAppDataCenter].pinKey];
+            NSString *key = [SecurityUtil encryptUseXOR16:temKey];
+            
+            NSString *psw = [NSString stringWithFormat:@"%@00",self.pwdTF.inputStr];
+            NSString *keyResult = [NSString stringWithFormat:@"%@%@",key,[key substringToIndex:16]];
+            NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
+            [dic setObject:enStr forKey:@"PIN"];
+        }
+      
+        [dic setObject:[[AppDataCenter sharedAppDataCenter] getPosType] forKey:@"type"];
+        [dic setObject:self.model.content[@"apires"][@"JE"] forKey:@"JE"];
+        [dic setObject:self.model.content[@"apires"][@"SLSH"] forKey:@"OSLS"];
+        [dic setObject:self.model.content[@"apires"][@"SZQH"] forKey:@"OSZQ"];
+        [dic setObject:self.model.content[@"apires"][@"XTLS"] forKey:@"OXLS"];
         
         [[Transfer sharedTransfer] startTransfer:@"020023" fskCmd:nil paramDic:dic];
         

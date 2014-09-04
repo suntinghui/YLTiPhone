@@ -10,6 +10,14 @@
 #import "LoginViewController.h"
 #import "MBProgressHUD.h"
 
+
+typedef enum{
+    CDeviceTypeDianFuBao, //刷卡键盘
+    CDeviceTypeShuaKaTou, //小刷卡头
+    CDeviceTypeYinPinPOS  //大音频pos
+    
+}CDeviceType;
+
 @class Reachability;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UINavigationControllerDelegate, MBProgressHUDDelegate>
@@ -22,10 +30,11 @@
 @property (nonatomic, strong) UIWindow                          *window;
 @property (nonatomic, strong) UINavigationController            *rootNavigationController;
 @property (nonatomic, assign) BOOL                              hasLogin;
-@property (nonatomic, assign) BOOL                              isAishua;
+//@property (nonatomic, assign) BOOL                              isAishua;
 
 @property (nonatomic, assign) BOOL                              printVersion;
 @property (nonatomic, strong) NSString                          *proName; //程序名字
+@property (nonatomic, assign) CDeviceType   deviceType; //设备类型
 
 
 - (UIViewController *) topViewController;

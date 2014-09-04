@@ -9,6 +9,7 @@
 #import "HttpManager.h"
 #import "JSONKit.h"
 #import "DemoClient.h"
+#import "SecurityUtil.h"
 
 @implementation HttpManager
 
@@ -76,7 +77,37 @@ static HttpManager  *instance;
              NSLog(@"Data from server %@", [completedOperation responseString]);
          }
          
-         NSDictionary *respDic = [[completedOperation responseString] objectFromJSONString];
+         NSMutableDictionary *respDic = [NSMutableDictionary dictionaryWithDictionary:[[completedOperation responseString] objectFromJSONString]];
+         if ([actionString isEqualToString:@"transaction"]||//消费
+             [actionString isEqualToString:@"signIn"]||
+             [actionString isEqualToString:@"balance"]||
+             [actionString isEqualToString:@"revokeTrans"]||
+             [actionString isEqualToString:@"changePos"]
+             )
+         {
+             if ([respDic[@"respmsg"] isEqualToString:@"1"])
+             {
+                 NSString *arg = respDic[@"apires"];
+                 NSString *argde = [SecurityUtil decryptUseAES:arg];
+                 if (argde==nil) //解密失败
+                 {
+                     [respDic setObject:@"客户端解密失败" forKey:@"apires"];
+                     [respDic setObject:@"1" forKey:@"respmsg"];
+                 }
+                 else
+                 {
+                     NSDictionary *result = [NSJSONSerialization JSONObjectWithData:[argde dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+                     if (result!=nil)
+                     {
+                         [respDic setObject:result forKey:@"apires"];
+                     }
+                 }
+                
+                 NSLog(@"respDic:%@",respDic);
+             }
+       
+         }
+        
          successBlock(respDic);
      }errorHandler:^(MKNetworkOperation *errorOp, NSError* error) {
          NSLog(@"MKNetwork request error : %@", [error localizedDescription]);

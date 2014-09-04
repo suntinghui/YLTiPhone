@@ -14,8 +14,8 @@
 
 
 // HTTP
-#define HOST                                @"api.vastpay.cn:8443"
-//#define HOST                                @"58.221.92.138:8443"
+//#define HOST                                @"api.vastpay.cn:8443"
+#define HOST                                @"58.221.92.138:8443"
 #define FILEURL                             @"http://106.120.253.181:8888/pos/xmlFiles/"
 #define JSONURL                             @"yunpaiApi/api/"
 
@@ -24,10 +24,12 @@ typedef enum  //程序类型
     CAppTypeHFB, //盒付宝
     CAppTypeBFB, //便付宝
     CAppTypeGFB, //广付宝
-    CAppTypeYLT  //优乐通
+    CAppTypeYLT, //优乐通（不再使用）
+    CAppTypeTYB,  //通银宝
+    CAppTypeWYZF //沃银支付
 }CAppType;
 
-#define APPTYPE CAppTypeYLT   //打包时修改成对应标志
+#define APPTYPE CAppTypeWYZF   //打包时修改成对应标志
 
 //原以为iphone4和iphone5的self.view.bounds.size.height是不一样的，但错了，是一样的，都是548
 //所以不能这么设定适配的屏幕高度　4和5没区别
@@ -117,5 +119,15 @@ typedef enum  //程序类型
 #define version_num                         101
 
 #define IsFirstEnter                       @"ISFIRSTENTER"
+
+#define kTrac1Length  @"track1length"
+#define kTrac2Length  @"track2length"
+#define kTrac3Length  @"track3length"
+#define kTrack2 @"track2"
+#define kTrack3 @"track3"
+#define kCardNum @"cardnum"
+
+#define kUserPosType @"UserPosType"
+
 
 

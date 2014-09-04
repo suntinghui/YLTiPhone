@@ -74,7 +74,7 @@
     NSLog(@"enStr %@",enStr);
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:enStr forKey:@"AISHUAPIN"];
+    [dic setObject:enStr forKey:@"PIN"];
     
     [[Transfer sharedTransfer] startTransfer:@"020001" fskCmd:nil paramDic:dic];
     

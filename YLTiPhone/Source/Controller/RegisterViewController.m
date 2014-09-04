@@ -202,7 +202,16 @@
         [dic setObject:self.passwordTF.md5Value forKey:@"logpass"];
 //        [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"logpass"];
         [dic setObject:self.securityCodeTF.contentTF.text forKey:@"smscode"];
-        [[Transfer sharedTransfer] startTransfer:@"089001" fskCmd:@"Request_GetKsn" paramDic:dic];
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        {
+            [[Transfer sharedTransfer] startTransfer:@"089001" fskCmd:@"Request_GetKsn" paramDic:dic];
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+                ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+        {
+            [[Transfer sharedTransfer] startTransfer:@"089001" fskCmd:@"Request_GetExtKsn" paramDic:dic];
+        }
+        
     }
 }
 @end

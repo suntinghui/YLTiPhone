@@ -87,7 +87,7 @@
     [bgIV1 addSubview:tmpNumLabel];
     UILabel *numLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 30, 150, 30)];
     [numLabel setTextAlignment:NSTextAlignmentRight];
-    [numLabel setText:[[Transfer sharedTransfer].receDic objectForKey:@"field42"]];
+    [numLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"MID"]];
     [self setLabelStyle:numLabel];
     [bgIV1 addSubview:numLabel];
     
@@ -97,7 +97,7 @@
     [bgIV1 addSubview:tmpTerminalNumLabel];
     UILabel *terminalNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 55, 150, 30)];
     [terminalNumLabel setTextAlignment:NSTextAlignmentRight];
-    [terminalNumLabel setText:[[Transfer sharedTransfer].receDic objectForKey:@"field41"]];
+    [terminalNumLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"TID"]];
     [self setLabelStyle:terminalNumLabel];
     [bgIV1 addSubview:terminalNumLabel];
     
@@ -113,7 +113,7 @@
     [bgIV2 addSubview:tmpCardNumLabel];
     UILabel *cardNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 5, 150, 30)];
     [cardNumLabel setTextAlignment:NSTextAlignmentRight];
-    [cardNumLabel setText:[StringUtil formatAccountNo:[[Transfer sharedTransfer].receDic objectForKey:@"field2"]]];
+    [cardNumLabel setText:[StringUtil formatAccountNo:[Transfer sharedTransfer].receDic[@"apires"][@"CARD"]]];
     [self setLabelStyle:cardNumLabel];
     [bgIV2 addSubview:cardNumLabel];
     
@@ -143,7 +143,7 @@
     [bgIV2 addSubview:tmptradeDateLabel];
     UILabel *tradeDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 80, 150, 30)];
     [tradeDateLabel setTextAlignment:NSTextAlignmentRight];
-    [tradeDateLabel setText:[DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [[Transfer sharedTransfer].receDic objectForKey:@"field13"], [[Transfer sharedTransfer].receDic  objectForKey:@"field12"]]]];
+    [tradeDateLabel setText:[DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [Transfer sharedTransfer].receDic[@"apires"][@"XTDE"], [Transfer sharedTransfer].receDic[@"apires"][@"XTTM"]]]];
     [self setLabelStyle:tradeDateLabel];
     [bgIV2 addSubview:tradeDateLabel];
     
@@ -163,7 +163,7 @@
     [bgIV2 addSubview:tmpFlowNumLabel];
     UILabel *flowNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 130, 150, 30)];
     [flowNumLabel setTextAlignment:NSTextAlignmentRight];
-    [flowNumLabel setText:[[Transfer sharedTransfer].receDic objectForKey:@"field11"]];
+    [flowNumLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"SLSH"]];
     [self setLabelStyle:flowNumLabel];
     [bgIV2 addSubview:flowNumLabel];
     
@@ -183,7 +183,7 @@
     [bgIV2 addSubview:tmpReferenceLabel];
     UILabel *referenceLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 180, 150, 30)];
     [referenceLabel setTextAlignment:NSTextAlignmentRight];
-    [referenceLabel setText:[[Transfer sharedTransfer].receDic objectForKey:@"field37"]];
+    [referenceLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"XTLS"]];
     [self setLabelStyle:referenceLabel];
     [bgIV2 addSubview:referenceLabel];
     
@@ -193,7 +193,7 @@
     [bgIV2 addSubview:tmpbatchNumLabel];
     UILabel *batchNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 205, 150, 30)];
     [batchNumLabel setTextAlignment:NSTextAlignmentRight];
-    [batchNumLabel setText:[[[Transfer sharedTransfer].receDic objectForKey:@"field60"] substringWithRange:NSMakeRange(2, 6)]];
+    [batchNumLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"cycle_no"]];
     [self setLabelStyle:batchNumLabel];
     [bgIV2 addSubview:batchNumLabel];
     
@@ -203,7 +203,8 @@
     [bgIV2 addSubview:tmpTradeMoneyLabel];
     UILabel *tradeMoneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 230, 150, 40)];
     [tradeMoneyLabel setTextAlignment:NSTextAlignmentRight];
-    [tradeMoneyLabel setText:[StringUtil string2SymbolAmount:[[Transfer sharedTransfer].receDic objectForKey:@"field4"]]];
+//    [tradeMoneyLabel setText:[StringUtil string2SymbolAmount:[Transfer sharedTransfer].receDic[@"apires"][@"JE"]]];
+    [tradeMoneyLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"JE"]];
    
     [tradeMoneyLabel setBackgroundColor:[UIColor clearColor]];
     [tradeMoneyLabel setTextColor:[UIColor blueColor]];

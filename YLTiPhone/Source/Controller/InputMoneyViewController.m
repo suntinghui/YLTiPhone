@@ -111,18 +111,19 @@
                 [DemoClient setDemoAmount:[StringUtil amount2String:self.moneyStr]];
 #endif
                 
-                if (ApplicationDelegate.isAishua)
+                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
                 {
-                    [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
+                    [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
                 }
-                else
+                else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+                        ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
                 {
                     //提示用户刷卡 输入密码 然后跳转到签购单页面
                     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-                    [dic setObject:[StringUtil amount2String:self.moneyStr] forKey:@"field4"];
-                    [[Transfer sharedTransfer] startTransfer:@"020022" fskCmd:[NSString stringWithFormat:@"Request_GetDes#Request_GetPin|string:%@",[StringUtil amount2String:self.moneyStr]] paramDic:dic];
-                    //                ConfirmCancelResultViewController *confirmVC = [[ConfirmCancelResultViewController alloc] initWithNibName:nil bundle:nil];
-                    //                [self.navigationController pushViewController:confirmVC animated:YES];
+                    [dic setObject:self.moneyStr forKey:@"JE"];
+                    [dic setObject:[[AppDataCenter sharedAppDataCenter]getPosType] forKey:@"type"];
+                    [[Transfer sharedTransfer] startTransfer:@"020022" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetTrackPlaintext#Request_GetPin|string:%@",[StringUtil amount2String:self.moneyStr]] paramDic:dic];
+        
                 }
                 
             }

@@ -156,34 +156,44 @@
 {
     if ([self checkValue])
     {
-        if (ApplicationDelegate.isAishua)
-        {
+//        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+//        {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             
             int random = (arc4random() % 100) + 1;
-            [dic setObject:[NSString stringWithFormat:@"01%016d",random] forKey:@"RANDOM"];
             [AppDataCenter sharedAppDataCenter].__RANDOM = [NSString stringWithFormat:@"%016d",random];
             
-            //010000 普通提款  020000快速提款
-            [dic setObject:self.type==0?@"010000":@"020000" forKey:@"field3"];
+            //0 普通提款  1快速提款
+            [dic setObject:self.type==0?@"0":@"1" forKey:@"type"];
             
-            [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
+            [dic setObject:self.moneyString forKey:@"JE"]; 
             [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
-            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+            [dic setObject:self.paypassTF.md5Value forKey:@"paypass"];
 //            [dic setObject:@"2BFDD621B461950E3D7038391295B03B" forKey:@"pwd"]; //TODO
-            //080002 商户提款
-            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
-        }
-        else
-        {
-            //发送数据 走8583
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
-            [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
-            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
-            //080002 商户提款
-            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
-        }
+
+//            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
+            
+            if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+            {
+                [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
+            }
+            else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+                    ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+            {
+                [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:@"Request_VT" paramDic:dic];
+                
+            }
+//        }
+//        else
+//        {
+//            //发送数据 走8583
+//            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+//            [dic setObject:[StringUtil amount2String:self.moneyString] forKey:@"field4"]; //金额转12位
+//            [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"PHONENUM"];
+//            [dic setObject:self.paypassTF.md5Value forKey:@"pwd"];
+//            //080002 商户提款
+//            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:@"Request_GetExtKsn#Request_VT" paramDic:dic];
+//        }
       
     }
 }

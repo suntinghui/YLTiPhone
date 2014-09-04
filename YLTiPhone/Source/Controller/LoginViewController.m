@@ -20,6 +20,9 @@
 #import "ConvertUtil.h"
 #import "ShowContentViewController.h"
 
+#define ActionsheetTypeOne  100
+#define ActionsheetTypeTwo  101
+
 @interface LoginViewController ()
 
 @end
@@ -119,11 +122,23 @@
     
     [self.view addSubview:loginView];
 
-//暂时隐藏终端按钮
 //    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"终端" style:UIBarButtonItemStyleBordered target:self action:@selector(selectPost:)];
-//    self.navigationItem.rightBarButtonItem = rightButton;
-//    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 40, 30);
+    [button setTitle:@"终端" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(selectPost:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    
     [self checkUpdate];
+    
+    NSString *posType = [UserDefaults objectForKey:kUserPosType];
+    if (posType!=nil)
+    {
+        ApplicationDelegate.deviceType = [posType intValue];
+    }
+    
     
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -135,16 +150,54 @@
         self.passwordTF.md5Value = pwd;
         [self.passwordTF setTextFieldValue:@"******"];
     }
+   
+    
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self.passwordTF clearInput];
+    
+    if(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    {
+        [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = YES;
+    }
+    else
+    {
+        [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = NO;
+    }
+}
+
+- (void)showTypeSelectWithType:(int)type
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"点付宝", nil];
+    sheet.tag = type;
+    
+    if (type ==ActionsheetTypeOne)
+    {
+        for (UIView *view in sheet.subviews)
+        {
+            if ([view isKindOfClass:[UIButton class]])
+            {
+                UIButton *button = (UIButton*)view;
+                if([button.titleLabel.text isEqualToString:[[AppDataCenter sharedAppDataCenter] getPosName]])
+                {
+                    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                }
+                
+            }
+        }
+    }
+ 
+    [sheet showInView:self.view];
 }
 - (void)selectPost:(id)sender
 {
-    SelectPOSViewController *selectPosVC = [[SelectPOSViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:selectPosVC animated:YES];
+    [self showTypeSelectWithType:ActionsheetTypeOne];
+    
+    
+//    SelectPOSViewController *selectPosVC = [[SelectPOSViewController alloc] initWithNibName:nil bundle:nil];
+//    [self.navigationController pushViewController:selectPosVC animated:YES];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -155,6 +208,37 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==0)
+    {
+        return;
+    }
+    
+    if (buttonIndex==1)
+    {
+        ApplicationDelegate.deviceType = CDeviceTypeDianFuBao;
+    }
+    else if(buttonIndex==2)
+    {
+        ApplicationDelegate.deviceType = CDeviceTypeYinPinPOS;
+    }
+    else if(buttonIndex==3)
+    {
+        ApplicationDelegate.deviceType = CDeviceTypeShuaKaTou;
+    }
+    
+    [UserDefaults setObject:[NSString stringWithFormat:@"%d",ApplicationDelegate.deviceType] forKey:kUserPosType];
+    [UserDefaults synchronize];
+    
+    if (actionSheet.tag == ActionsheetTypeTwo)
+    {
+        RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:registerVC animated:YES];
+    }
 }
 
 - (void)agreeButtonAction:(UIButton *)button
@@ -188,6 +272,13 @@
     
     if ([self checkValue])
     {
+        if ([UserDefaults objectForKey:kUserPosType]==nil)
+        {
+            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"点付宝", nil];
+            [sheet showInView:self.view];
+            return;
+        }
+        
         [[AppDataCenter sharedAppDataCenter] setPhoneNum:[[self.phoneNumTF contentTF] text]];
 
         [UserDefaults setObject:self.passwordTF.md5Value forKey:PWDLOGIN];
@@ -212,8 +303,8 @@
 }
 - (IBAction)regesterAction:(id)sender
 {
-    RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:registerVC animated:YES];
+    [self  showTypeSelectWithType:ActionsheetTypeTwo];
+    
 }
 
 - (IBAction)forgetPwdAction:(id)sender

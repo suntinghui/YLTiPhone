@@ -101,7 +101,9 @@
 		<needReverse>true</needReverse>
 		<isActive>true</isActive>
 	</catalog>
+ 
 	
+<!--
 	<catalog>
 		<catalogId>14</catalogId>
 		<title>签到</title>
@@ -113,7 +115,7 @@
 		<needReverse>true</needReverse>
 		<isActive>true</isActive>
 	</catalog>
-	
+-->	
 	
 	
 	<catalog>
@@ -151,7 +153,7 @@
 		<needReverse>true</needReverse>
 		<isActive>true</isActive>
 	</catalog>
-	
+<!--
 	<catalog>
 		<catalogId>32</catalogId>
 		<title>商户余额查询</title>
@@ -163,6 +165,7 @@
 		<needReverse>true</needReverse>
 		<isActive>true</isActive>
 	</catalog>
+-->
 	
 	<catalog>
 		<catalogId>41</catalogId>
@@ -287,12 +290,22 @@
 		<needReverse>false</needReverse>
 		<isActive>true</isActive>
 	</catalog>
-    
     <catalog>
 		<catalogId>67</catalogId>
+		<title>更换设备</title>
+		<parentId>6</parentId>
+		<actionType>activity</actionType>
+		<actionId>ChangeDeveice</actionId>
+		<iconId>67</iconId>
+		<description>无</description>
+		<needReverse>true</needReverse>
+		<isActive>true</isActive>
+	</catalog>
+    <catalog>
+		<catalogId>68</catalogId>
 		<title>退出系统</title>
 		<parentId>6</parentId>
-		<iconId>67</iconId>
+		<iconId>68</iconId>
 		<description>无</description>
 		<needReverse>false</needReverse>
 		<isActive>true</isActive>

@@ -82,7 +82,7 @@
         }
     }
     
-    [self.amountLabel setText:[StringUtil string2SymbolAmount:[[Transfer sharedTransfer].receDic objectForKey:@"field4"]]];
+    [self.amountLabel setText:[Transfer sharedTransfer].receDic[@"apires"][@"JE"]];
     
     self.phoneNumTF.delegate = self;
     

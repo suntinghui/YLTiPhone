@@ -116,11 +116,32 @@ static AppDataCenter *instance = nil;
 //    else if([property isEqualToString:@"__ENCTRACKS"]) {
 //        return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
 //    }
-    else if([property isEqualToString:@"__FIELD35"]) {
-        return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
+    else if([property isEqualToString:@"__ENCTRACKS"]) {
+        
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        {
+            return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+                ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+        {
+            return @"";
+//            return [AppDataCenter sharedAppDataCenter].__PSAMTRACK;
+        }
+        
     }
     else if ([property isEqualToString:@"__TERID"]){
-        return self.__TERID;
+        
+        if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+        {
+               return self.__TERID;
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+                ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+        {
+            return self.__PSAMNO;
+        }
+     
     }
     else if([property isEqualToString:@"__TERSERIALNO"])
     {
@@ -129,6 +150,80 @@ static AppDataCenter *instance = nil;
     else if([property isEqualToString:@"__PSAMNO"])
     {
         return self.__PSAMNO;
+    }
+    else if ([property isEqualToString:@"__TRK2"])
+    {
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        {
+            if (self.cardInfoDict[kTrack2]==nil)
+            {
+                return @"";
+            }
+            return self.cardInfoDict[kTrack2];
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+                ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+        {
+            return self.__FIELD35;
+        }
+    
+    }
+    else if([property isEqualToString:@"__TRK3"])
+    {
+        return @"";
+        
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        {
+            if (self.cardInfoDict[kTrack3]==nil)
+            {
+                return @"";
+            }
+            return self.cardInfoDict[kTrack3];
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+                ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+        {
+            return self.__FIELD36;
+        }
+     
+    }
+    else if([property isEqualToString:@"__CARD"])
+    {
+        if (self.cardInfoDict[kCardNum]==nil)
+        {
+            return @"";
+        }
+        return  self.cardInfoDict[kCardNum];
+    }
+    else if([property isEqualToString:@"__TID"])
+    {
+        return self.terminal_id;
+    }
+    else if([property isEqualToString:@"__PIN"])
+    {
+        return self.__PSAMPIN;
+    }
+    else if([property isEqualToString:@"__RANDOM"])
+    {
+        if (self.__RANDOM==nil)
+        {
+            int random = (arc4random() % 100) + 1;
+            self.__RANDOM = [NSString stringWithFormat:@"%016d",random];
+        }
+        return self.__RANDOM;
+    }
+    else if([property isEqualToString:@"__MBSE"])
+    {
+        NSArray *arr = [self.__ADDRESS componentsSeparatedByString:@","];
+        if (arr.count==2) {
+            return [NSString stringWithFormat:@"%@,%@",arr[0],arr[1]];
+        }
+        else
+        {
+            return @"0,0";
+        }
+        
+        return @"";
     }
     else {
         SEL selector = NSSelectorFromString(property);
@@ -276,4 +371,55 @@ static AppDataCenter *instance = nil;
     return _reversalDic;
 }
 
+- (NSString *) getPosType
+{
+    NSString *type;
+    switch (ApplicationDelegate.deviceType) {
+        case CDeviceTypeShuaKaTou:
+        {
+            type = @"0";
+        }
+            break;
+        case CDeviceTypeDianFuBao:
+        {
+            type = @"3";
+        }
+            break;
+        case CDeviceTypeYinPinPOS:
+        {
+            type = @"4";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return type;
+}
+
+- (NSString *) getPosName
+{
+    NSString *type;
+    switch (ApplicationDelegate.deviceType) {
+        case CDeviceTypeShuaKaTou:
+        {
+            type = @"点付宝";
+        }
+            break;
+        case CDeviceTypeDianFuBao:
+        {
+            type = @"刷卡键盘";
+        }
+            break;
+        case CDeviceTypeYinPinPOS:
+        {
+            type = @"音频POS";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return type;
+}
 @end

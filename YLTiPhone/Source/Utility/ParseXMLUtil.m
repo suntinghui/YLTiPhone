@@ -50,7 +50,11 @@
     NSError *error = nil;
     
     NSString *tmp = @"catalog.xml";
-    if (ApplicationDelegate.isAishua) {
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou) {
+        tmp = @"catalog_aishua.xml";
+    }
+    else
+    {
         tmp = @"catalog_aishua.xml";
     }
     TBXML *tbXML = [[TBXML alloc] initWithXMLData:[FileOperatorUtil getDataFromXML:tmp] error:&error];
@@ -296,7 +300,7 @@
     NSError *error = nil;
 //    TBXML *tbXML = [[TBXML alloc] initWithXMLData:[FileOperatorUtil getDataFromXML:[NSString stringWithFormat:@"con_req_%@.xml", transferCode]] error:&error];
     NSString *formatStr = @"con_req_%@.xml";
-    if (ApplicationDelegate.isAishua ) {
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou ) {
         if([transferCode isEqualToString:@"086000"] || [transferCode isEqualToString:@"080003"] || [transferCode isEqualToString:@"086002"]
            || [transferCode isEqualToString:@"020001"] || [transferCode isEqualToString:@"020022"] || [transferCode isEqualToString:@"020023"]||[transferCode isEqualToString:@"080002"]){
             formatStr = @"con_req_%@_aishua.xml";    

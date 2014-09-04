@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef unsigned int uint;
+typedef unsigned char uint8;
+typedef unsigned int uint32;
 
 @interface SecurityUtil : NSObject
 
@@ -29,6 +32,10 @@
 + (NSString *) encryptUseXOR16:(NSString *) data;
 
 + (NSData *) encryptXORAndMac:(NSString *) data withKey:(NSString *) macKey;
+
++ (NSString *) encryptUseAES:(NSString *) plainText;
+
++ (NSString *) decryptUseAES:(NSString *) clearText;
 
 
 @end

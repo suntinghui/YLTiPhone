@@ -8,7 +8,7 @@
 	<field key="field11" value="__TRACEAUDITNUM" />
 	<field key="field22" value="__FIELD22" />
 	<field key="field25" value="00" />
-	<field key="field41" value="__TERID"  />
+	<field key="field41" value="__TID"  />
 	<field key="field42" value="__VENDOR"  />
 	<field key="field49" value="156" />
 	<field key="field60" value="00#__BATCHNUM#003000"/>

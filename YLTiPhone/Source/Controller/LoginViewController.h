@@ -12,7 +12,10 @@
 
 #import "YLTPasswordTextField.h"
 
-@interface LoginViewController : AbstractViewController<UITextFieldDelegate,UINavigationControllerDelegate, UIAlertViewDelegate>
+@interface LoginViewController : AbstractViewController<UITextFieldDelegate,
+    UINavigationControllerDelegate,
+    UIAlertViewDelegate,
+    UIActionSheetDelegate>
 {
     BOOL            agreeButtonTouch;
 

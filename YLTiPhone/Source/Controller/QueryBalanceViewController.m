@@ -82,9 +82,17 @@
 
 -(IBAction)confirmButtonAction:(id)sender
 {
-    if (ApplicationDelegate.isAishua)
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
     {
-        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_Pay" paramDic:nil];
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+            ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+    {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+        [dict setObject:[[AppDataCenter sharedAppDataCenter] getPosType] forKey:@"type"];
+        
+         [[Transfer sharedTransfer] startTransfer:@"020001" fskCmd:@"Request_GetExtKsn#Request_VT#Request_GetTrackPlaintext#Request_GetPin|string:0" paramDic:dict]; 
     }
 }
 

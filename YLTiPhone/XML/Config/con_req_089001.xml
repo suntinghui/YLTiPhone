@@ -6,5 +6,5 @@
 	<field key="tel" value="__tel"  />
 	<field key="smscode" value="__smscode" />
 	<field key="logpass" value="__logpass"/>
-	<field key="posno" value="__PSAMNO"/>
+	<field key="posno" value="__TERID"/>
 </root>

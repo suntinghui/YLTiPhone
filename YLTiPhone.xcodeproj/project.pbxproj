@@ -406,22 +406,30 @@
 		8DAF435918E2EE88001D0195 /* ComplementRegisterModifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF435718E2EE88001D0195 /* ComplementRegisterModifyController.m */; };
 		8DAF435D18E33BDE001D0195 /* TransferHistoryQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAF435C18E33BDE001D0195 /* TransferHistoryQueryViewController.m */; };
 		8DCB872218EABC930063CA78 /* FindLoginPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB872118EABC930063CA78 /* FindLoginPwdViewController.m */; };
-		8DCD3C9B190E069800179E50 /* beginguide02.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C92190E069800179E50 /* beginguide02.png */; };
-		8DCD3C9C190E069800179E50 /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C93190E069800179E50 /* app@2x.png */; };
-		8DCD3C9D190E069800179E50 /* beginguide01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C94190E069800179E50 /* beginguide01.png */; };
-		8DCD3C9E190E069800179E50 /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C95190E069800179E50 /* beginguide03.png */; };
-		8DCD3C9F190E069800179E50 /* beginguide05.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C96190E069800179E50 /* beginguide05.png */; };
-		8DCD3CA0190E069800179E50 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C97190E069800179E50 /* app.png */; };
-		8DCD3CA1190E069800179E50 /* catalog_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C98190E069800179E50 /* catalog_nav.png */; };
-		8DCD3CA2190E069800179E50 /* LoginViewBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C99190E069800179E50 /* LoginViewBG.png */; };
-		8DCD3CA3190E069800179E50 /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD3C9A190E069800179E50 /* beginguide04.png */; };
 		8DE4E85618EFA662003F222E /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4E85418EFA662003F222E /* AgreementViewController.m */; };
 		8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85518EFA662003F222E /* AgreementViewController.xib */; };
 		8DE4E85918EFC531003F222E /* agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85818EFC531003F222E /* agreement.html */; };
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
 		B84AB35A18FE6CDF00CCEDF2 /* head_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
+		B85F7EBF19B82CBC008616B5 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB519B82CBC008616B5 /* navbar@2x.png */; };
+		B85F7EC019B82CBC008616B5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB619B82CBC008616B5 /* Default@2x.png */; };
+		B85F7EC119B82CBC008616B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB719B82CBC008616B5 /* Default-568h@2x.png */; };
+		B85F7EC219B82CBC008616B5 /* beginguide05.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB819B82CBC008616B5 /* beginguide05.png */; };
+		B85F7EC319B82CBC008616B5 /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB919B82CBC008616B5 /* beginguide04.png */; };
+		B85F7EC419B82CBC008616B5 /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBA19B82CBC008616B5 /* beginguide03.png */; };
+		B85F7EC519B82CBC008616B5 /* beginguide02.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBB19B82CBC008616B5 /* beginguide02.png */; };
+		B85F7EC619B82CBC008616B5 /* beginguide01.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBC19B82CBC008616B5 /* beginguide01.png */; };
+		B85F7EC719B82CBC008616B5 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBD19B82CBC008616B5 /* app.png */; };
+		B85F7EC819B82CBC008616B5 /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBE19B82CBC008616B5 /* aboutSystemBg@2x.png */; };
+		B85F7ECC19B83361008616B5 /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7ECB19B83361008616B5 /* catalog_nav@2x.png */; };
+		B85F7ECE19B8382F008616B5 /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7ECD19B8382F008616B5 /* LoginViewBG@2x.png */; };
 		B87700DA19037269002BF873 /* selectbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B87700D919037269002BF873 /* selectbg.jpg */; };
+		B8A5E2E919B6DFB90080A1AF /* ChangeDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A5E2E719B6DFB90080A1AF /* ChangeDeviceViewController.m */; };
+		B8A5E2EA19B6DFB90080A1AF /* ChangeDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5E2E819B6DFB90080A1AF /* ChangeDeviceViewController.xib */; };
+		B8A5E2EE19B6E07E0080A1AF /* icon_device_0.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A5E2EB19B6E07E0080A1AF /* icon_device_0.png */; };
+		B8A5E2EF19B6E07E0080A1AF /* icon_device_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A5E2EC19B6E07E0080A1AF /* icon_device_3.png */; };
+		B8A5E2F019B6E07E0080A1AF /* icon_device_4.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A5E2ED19B6E07E0080A1AF /* icon_device_4.png */; };
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
 		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
@@ -996,15 +1004,6 @@
 		8DAF435C18E33BDE001D0195 /* TransferHistoryQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferHistoryQueryViewController.m; sourceTree = "<group>"; };
 		8DCB872018EABC930063CA78 /* FindLoginPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindLoginPwdViewController.h; sourceTree = "<group>"; };
 		8DCB872118EABC930063CA78 /* FindLoginPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindLoginPwdViewController.m; sourceTree = "<group>"; };
-		8DCD3C92190E069800179E50 /* beginguide02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide02.png; sourceTree = "<group>"; };
-		8DCD3C93190E069800179E50 /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
-		8DCD3C94190E069800179E50 /* beginguide01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide01.png; sourceTree = "<group>"; };
-		8DCD3C95190E069800179E50 /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
-		8DCD3C96190E069800179E50 /* beginguide05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide05.png; sourceTree = "<group>"; };
-		8DCD3C97190E069800179E50 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
-		8DCD3C98190E069800179E50 /* catalog_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog_nav.png; sourceTree = "<group>"; };
-		8DCD3C99190E069800179E50 /* LoginViewBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginViewBG.png; sourceTree = "<group>"; };
-		8DCD3C9A190E069800179E50 /* beginguide04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide04.png; sourceTree = "<group>"; };
 		8DE4E85318EFA662003F222E /* AgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
 		8DE4E85418EFA662003F222E /* AgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementViewController.m; sourceTree = "<group>"; };
 		8DE4E85518EFA662003F222E /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
@@ -1013,7 +1012,25 @@
 		B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_small@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
+		B85F7EB519B82CBC008616B5 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		B85F7EB619B82CBC008616B5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B85F7EB719B82CBC008616B5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B85F7EB819B82CBC008616B5 /* beginguide05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide05.png; sourceTree = "<group>"; };
+		B85F7EB919B82CBC008616B5 /* beginguide04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide04.png; sourceTree = "<group>"; };
+		B85F7EBA19B82CBC008616B5 /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
+		B85F7EBB19B82CBC008616B5 /* beginguide02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide02.png; sourceTree = "<group>"; };
+		B85F7EBC19B82CBC008616B5 /* beginguide01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide01.png; sourceTree = "<group>"; };
+		B85F7EBD19B82CBC008616B5 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B85F7EBE19B82CBC008616B5 /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
+		B85F7ECB19B83361008616B5 /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
+		B85F7ECD19B8382F008616B5 /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
 		B87700D919037269002BF873 /* selectbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectbg.jpg; sourceTree = "<group>"; };
+		B8A5E2E619B6DFB90080A1AF /* ChangeDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDeviceViewController.h; sourceTree = "<group>"; };
+		B8A5E2E719B6DFB90080A1AF /* ChangeDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeDeviceViewController.m; sourceTree = "<group>"; };
+		B8A5E2E819B6DFB90080A1AF /* ChangeDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeDeviceViewController.xib; sourceTree = "<group>"; };
+		B8A5E2EB19B6E07E0080A1AF /* icon_device_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_device_0.png; sourceTree = "<group>"; };
+		B8A5E2EC19B6E07E0080A1AF /* icon_device_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_device_3.png; sourceTree = "<group>"; };
+		B8A5E2ED19B6E07E0080A1AF /* icon_device_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_device_4.png; sourceTree = "<group>"; };
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		B8E57F3F18FA8B98001EBE0B /* revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revoked.png; sourceTree = "<group>"; };
@@ -1287,6 +1304,9 @@
 				0554B133187118D600C75DCD /* TransListDetailViewController.m */,
 				0554B12F187118BB00C75DCD /* TransListViewController.h */,
 				0554B130187118BB00C75DCD /* TransListViewController.m */,
+				B8A5E2E619B6DFB90080A1AF /* ChangeDeviceViewController.h */,
+				B8A5E2E719B6DFB90080A1AF /* ChangeDeviceViewController.m */,
+				B8A5E2E819B6DFB90080A1AF /* ChangeDeviceViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1634,6 +1654,9 @@
 		055B2F8C18629C22000373FE /* Image3 */ = {
 			isa = PBXGroup;
 			children = (
+				B8A5E2EB19B6E07E0080A1AF /* icon_device_0.png */,
+				B8A5E2EC19B6E07E0080A1AF /* icon_device_3.png */,
+				B8A5E2ED19B6E07E0080A1AF /* icon_device_4.png */,
 				B87700D919037269002BF873 /* selectbg.jpg */,
 				8D801CA318EBA3F800CEE39B /* beginguide03.png */,
 				8D801CA418EBA3F800CEE39B /* beginguide04.png */,
@@ -1993,15 +2016,18 @@
 		B8E57F2A18FA76B3001EBE0B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				8DCD3C92190E069800179E50 /* beginguide02.png */,
-				8DCD3C93190E069800179E50 /* app@2x.png */,
-				8DCD3C94190E069800179E50 /* beginguide01.png */,
-				8DCD3C95190E069800179E50 /* beginguide03.png */,
-				8DCD3C96190E069800179E50 /* beginguide05.png */,
-				8DCD3C97190E069800179E50 /* app.png */,
-				8DCD3C98190E069800179E50 /* catalog_nav.png */,
-				8DCD3C99190E069800179E50 /* LoginViewBG.png */,
-				8DCD3C9A190E069800179E50 /* beginguide04.png */,
+				B85F7ECD19B8382F008616B5 /* LoginViewBG@2x.png */,
+				B85F7ECB19B83361008616B5 /* catalog_nav@2x.png */,
+				B85F7EB519B82CBC008616B5 /* navbar@2x.png */,
+				B85F7EB619B82CBC008616B5 /* Default@2x.png */,
+				B85F7EB719B82CBC008616B5 /* Default-568h@2x.png */,
+				B85F7EB819B82CBC008616B5 /* beginguide05.png */,
+				B85F7EB919B82CBC008616B5 /* beginguide04.png */,
+				B85F7EBA19B82CBC008616B5 /* beginguide03.png */,
+				B85F7EBB19B82CBC008616B5 /* beginguide02.png */,
+				B85F7EBC19B82CBC008616B5 /* beginguide01.png */,
+				B85F7EBD19B82CBC008616B5 /* app.png */,
+				B85F7EBE19B82CBC008616B5 /* aboutSystemBg@2x.png */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2067,17 +2093,19 @@
 				0554B19518711EEC00C75DCD /* inputmoney_button_delete@2x.png in Resources */,
 				050B01631867E396009432CD /* icon_5.png in Resources */,
 				0537AE3618583B39005F84D1 /* InfoPlist.strings in Resources */,
+				B8A5E2F019B6E07E0080A1AF /* icon_device_4.png in Resources */,
 				8D3CA17718C6C9C800C119DA /* con_req_086000_aishua.xml in Resources */,
 				050B01621867E396009432CD /* icon_4.png in Resources */,
 				0554B19618711EEC00C75DCD /* inputmoney_button_dot@2x.png in Resources */,
 				8D32CA5318E7FFCA00633FEF /* explain.png in Resources */,
 				050B017D1867E45A009432CD /* child_catalog_select@2x.png in Resources */,
 				055BA0F018750B71005E7E7A /* success.png in Resources */,
+				B85F7ECE19B8382F008616B5 /* LoginViewBG@2x.png in Resources */,
+				B85F7EC719B82CBC008616B5 /* app.png in Resources */,
 				8D3CA16918C6C9C800C119DA /* con_req_089010.xml in Resources */,
 				05B06D1D187FDFC800757F6C /* bank.xml in Resources */,
 				0558267A186C16A30002AE2E /* pwdinput.png in Resources */,
 				8D3CA17F18C6C9C800C119DA /* con_req_100003.xml in Resources */,
-				8DCD3CA2190E069800179E50 /* LoginViewBG.png in Resources */,
 				0558266B186C0E7D0002AE2E /* confirmButtonNomal@2x.png in Resources */,
 				0554B1AC18714C6000C75DCD /* collectCashButton_highlight.png in Resources */,
 				050B01751867E3F3009432CD /* catalog_left_bg.png in Resources */,
@@ -2088,6 +2116,7 @@
 				0554B123187113AF00C75DCD /* back_button_normal@2x.png in Resources */,
 				0554B19318711EEC00C75DCD /* inputmoney_button_9@2x.png in Resources */,
 				0558265A186C097C0002AE2E /* cardID@2x.png in Resources */,
+				B85F7EC019B82CBC008616B5 /* Default@2x.png in Resources */,
 				B87700DA19037269002BF873 /* selectbg.jpg in Resources */,
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
@@ -2129,8 +2158,8 @@
 				052079611863DE45004BF055 /* RegisterButton_normal.png in Resources */,
 				0554B18418711EEC00C75DCD /* digit_little_6.png in Resources */,
 				0554B18218711EEC00C75DCD /* digit_little_4.png in Resources */,
+				B85F7EC319B82CBC008616B5 /* beginguide04.png in Resources */,
 				0558264A186BF8660002AE2E /* merchantName.png in Resources */,
-				8DCD3CA3190E069800179E50 /* beginguide04.png in Resources */,
 				050B015F1867E396009432CD /* icon_1.png in Resources */,
 				055BA0EF18750B71005E7E7A /* fail.png in Resources */,
 				0554B1AB18714C6000C75DCD /* collectCashButton_normal.png in Resources */,
@@ -2143,20 +2172,21 @@
 				0554B1CE18715DE200C75DCD /* suffix_normal.png in Resources */,
 				8D801CAA18EBA3F800CEE39B /* beginguide05.png in Resources */,
 				0554B1DE1871647C00C75DCD /* selectField_normal.png in Resources */,
-				8DCD3C9F190E069800179E50 /* beginguide05.png in Resources */,
 				8D3CA17B18C6C9C800C119DA /* con_req_089005.xml in Resources */,
 				8D3CA16218C6C9C800C119DA /* con_req_080002.xml in Resources */,
 				050B01601867E396009432CD /* icon_2.png in Resources */,
+				B85F7EC419B82CBC008616B5 /* beginguide03.png in Resources */,
 				0520797D1863EC0D004BF055 /* confirmButton_select.png in Resources */,
 				0554B18518711EEC00C75DCD /* digit_little_7.png in Resources */,
 				8D3CA15F18C6C9C800C119DA /* con_req_020022_aishua.xml in Resources */,
 				8D3CA17818C6C9C800C119DA /* con_req_086000.xml in Resources */,
-				8DCD3CA1190E069800179E50 /* catalog_nav.png in Resources */,
 				0554B19718711EEC00C75DCD /* inputmoney_button_submit@2x.png in Resources */,
 				8D3CA18918C6C9C800C119DA /* con_req_700000001.xml in Resources */,
-				8DCD3CA0190E069800179E50 /* app.png in Resources */,
 				0520796D1863E190004BF055 /* btn_comment_sametime_unselect@2x.png in Resources */,
+				B85F7EC219B82CBC008616B5 /* beginguide05.png in Resources */,
+				B85F7EC519B82CBC008616B5 /* beginguide02.png in Resources */,
 				0558266C186C0E7D0002AE2E /* confirmButtonPress@2x.png in Resources */,
+				B8A5E2EE19B6E07E0080A1AF /* icon_device_0.png in Resources */,
 				0515D2BC188CF66C0092C8E5 /* province.xml in Resources */,
 				050B01791867E40B009432CD /* child_catalog_select.png in Resources */,
 				8D3CA17418C6C9C800C119DA /* con_req_050000.xml in Resources */,
@@ -2166,12 +2196,12 @@
 				8D3CA18C18C6C9C800C119DA /* con_req_999000002.xml in Resources */,
 				8D801CAC18EBA3F800CEE39B /* beginguide02.png in Resources */,
 				8D3CA16D18C6C9C800C119DA /* con_req_089015.xml in Resources */,
-				8DCD3C9B190E069800179E50 /* beginguide02.png in Resources */,
 				050B01641867E396009432CD /* icon_6.png in Resources */,
 				8D32CA5118E7FB6B00633FEF /* icon_hand.png in Resources */,
 				0554B18D18711EEC00C75DCD /* inputmoney_button_3@2x.png in Resources */,
 				0554B18918711EEC00C75DCD /* digit_little_slash.png in Resources */,
 				05582680186C1D190002AE2E /* realname.png in Resources */,
+				B85F7EC619B82CBC008616B5 /* beginguide01.png in Resources */,
 				055B2F9618629F11000373FE /* navbar.png in Resources */,
 				0554B18318711EEC00C75DCD /* digit_little_5.png in Resources */,
 				0554B1CF18715DE200C75DCD /* suffix_selected.png in Resources */,
@@ -2182,6 +2212,7 @@
 				0520795F1863DE45004BF055 /* LoginButton_normal.png in Resources */,
 				050B01731867E3A4009432CD /* icon_7@2x.png in Resources */,
 				05578CDA186AC1BF00475B9C /* torn.png in Resources */,
+				B85F7EC119B82CBC008616B5 /* Default-568h@2x.png in Resources */,
 				05B06D21187FDFC800757F6C /* reversalmap.xml in Resources */,
 				0558267E186C1D160002AE2E /* realname@2x.png in Resources */,
 				054E5EA7188FA03F0071B8CC /* arrow.png in Resources */,
@@ -2194,6 +2225,7 @@
 				0554B12E187116FA00C75DCD /* swipcard.png in Resources */,
 				0554B18018711EEC00C75DCD /* digit_little_2.png in Resources */,
 				8D801CA918EBA3F800CEE39B /* beginguide04.png in Resources */,
+				B8A5E2EF19B6E07E0080A1AF /* icon_device_3.png in Resources */,
 				052079711863E1A0004BF055 /* btn_comment_sametime_unselect.png in Resources */,
 				8D3CA18E18C6C9C800C119DA /* con_req_readme.txt in Resources */,
 				8D3CA18A18C6C9C800C119DA /* con_req_700000002.xml in Resources */,
@@ -2213,7 +2245,6 @@
 				0554B18E18711EEC00C75DCD /* inputmoney_button_4@2x.png in Resources */,
 				05578CCE186AB11500475B9C /* slidebg.png in Resources */,
 				05582649186BF8660002AE2E /* email.png in Resources */,
-				8DCD3C9C190E069800179E50 /* app@2x.png in Resources */,
 				05582648186BF8660002AE2E /* cardID.png in Resources */,
 				0554B17618711EEC00C75DCD /* digit_green_3.png in Resources */,
 				8D3CA16818C6C9C800C119DA /* con_req_089009.xml in Resources */,
@@ -2228,7 +2259,6 @@
 				8D3CA18618C6C9C800C119DA /* con_req_500000001.xml in Resources */,
 				05582658186C08F10002AE2E /* email@2x.png in Resources */,
 				B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */,
-				8DCD3C9E190E069800179E50 /* beginguide03.png in Resources */,
 				05582642186BF7770002AE2E /* textInput.png in Resources */,
 				0554B1B018714C7300C75DCD /* collectCashButton_normal@2x.png in Resources */,
 				050B016F1867E3A4009432CD /* icon_3@2x.png in Resources */,
@@ -2254,9 +2284,9 @@
 				050B01721867E3A4009432CD /* icon_6@2x.png in Resources */,
 				0554B17F18711EEC00C75DCD /* digit_little_1.png in Resources */,
 				8D3CA17918C6C9C800C119DA /* con_req_089000.xml in Resources */,
-				8DCD3C9D190E069800179E50 /* beginguide01.png in Resources */,
 				0554B1E61871665500C75DCD /* selectBank_normal.png in Resources */,
 				0554B17A18711EEC00C75DCD /* digit_green_7.png in Resources */,
+				B85F7ECC19B83361008616B5 /* catalog_nav@2x.png in Resources */,
 				8DE4E85918EFC531003F222E /* agreement.html in Resources */,
 				8D3CA18B18C6C9C800C119DA /* con_req_999000001.xml in Resources */,
 				0554B1DA1871647400C75DCD /* selectField_normal@2x.png in Resources */,
@@ -2274,12 +2304,14 @@
 				8D3CA16118C6C9C800C119DA /* con_req_020023.xml in Resources */,
 				0520797C1863EC0D004BF055 /* confirmButton_nomal.png in Resources */,
 				8D56ACE718DD88930082E444 /* catalog_aishua.xml in Resources */,
+				B85F7EC819B82CBC008616B5 /* aboutSystemBg@2x.png in Resources */,
 				0554B1D51871601300C75DCD /* salesslip.png in Resources */,
 				050B016E1867E3A4009432CD /* icon_2@2x.png in Resources */,
 				055BA0F318750B7E005E7E7A /* fail@2x.png in Resources */,
 				0554B1E71871665500C75DCD /* selectBank_highlight.png in Resources */,
 				8D3CA16418C6C9C800C119DA /* con_req_089003.xml in Resources */,
 				0537AF691858419D005F84D1 /* ResultViewController.xib in Resources */,
+				B8A5E2EA19B6DFB90080A1AF /* ChangeDeviceViewController.xib in Resources */,
 				0520797F1863EC0D004BF055 /* delete_select.png in Resources */,
 				8D3CA17618C6C9C800C119DA /* con_req_082001.xml in Resources */,
 				8D3CA17118C6C9C800C119DA /* con_req_020001.xml in Resources */,
@@ -2294,6 +2326,7 @@
 				0554B17918711EEC00C75DCD /* digit_green_6.png in Resources */,
 				05582664186C0DDB0002AE2E /* shade-5.png in Resources */,
 				6CB1F39018EFF104009E2287 /* README.txt in Resources */,
+				B85F7EBF19B82CBC008616B5 /* navbar@2x.png in Resources */,
 				8D3CA17218C6C9C800C119DA /* con_req_020022.xml in Resources */,
 				0554B1D318715E0500C75DCD /* suffix_selected@2x.png in Resources */,
 				8D3CA18D18C6C9C800C119DA /* con_req_999000003.xml in Resources */,
@@ -2376,6 +2409,7 @@
 				0537AEE718583EE6005F84D1 /* DateTextField.m in Sources */,
 				0537AEE818583EE6005F84D1 /* InputTextField.m in Sources */,
 				6CB1F38B18EFF104009E2287 /* DDLog.m in Sources */,
+				B8A5E2E919B6DFB90080A1AF /* ChangeDeviceViewController.m in Sources */,
 				0537AEE918583EE6005F84D1 /* LeftTextField.m in Sources */,
 				0537AEEA18583EE6005F84D1 /* PageView.m in Sources */,
 				0537AEEB18583EE6005F84D1 /* PasswordTextField.m in Sources */,
@@ -2566,7 +2600,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "289C2CC6-BC0D-427B-AF9B-171452A356BE";
+				PROVISIONING_PROFILE = "cdbe115a-a4bd-4368-ba42-231bdac3be6e";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2589,7 +2623,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "289C2CC6-BC0D-427B-AF9B-171452A356BE";
+				PROVISIONING_PROFILE = "cdbe115a-a4bd-4368-ba42-231bdac3be6e";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

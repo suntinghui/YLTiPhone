@@ -204,6 +204,30 @@ static Transfer *instance = nil;
         //实名认证
         return @"identifyMerchant";
     }
+    else if([self.transferCode isEqualToString:@"086000"]) //签到
+    {
+        return @"signIn";
+    }
+    else if([self.transferCode isEqualToString:@"080002"]) //提现
+    {
+        return @"draw";
+    }
+    else if ([self.transferCode isEqualToString:@"020022"]) //消费
+    {
+        return @"transaction";
+    }
+    else if([self.transferCode isEqualToString:@"020001"]) //余额查询
+    {
+        return @"balance";
+    }
+    else if([self.transferCode isEqualToString:@"020023"]) //消费撤销
+    {
+        return @"revokeTrans";
+    }
+    else if([self.transferCode isEqualToString:@"100005"]) //更换设备
+    {
+        return @"changePos";
+    }
     
     return nil;
 }
@@ -328,6 +352,18 @@ static Transfer *instance = nil;
             [helper insertATransfer:model];
         }
         
+        isSpecialTrade = NO;
+        if ([self.transferCode isEqualToString:@"086000"]||  //签到
+            [self.transferCode isEqualToString:@"080002"]||   //提现
+            [self.transferCode isEqualToString:@"020022"]|| //消费
+            [self.transferCode isEqualToString:@"020001"]||   //余额查询
+            [self.transferCode isEqualToString:@"020023"]||   //消费撤销
+            [self.transferCode isEqualToString:@"100005"]    //更换设备
+            )
+        {
+            isSpecialTrade = YES;
+        }
+        
         //走 json
         if ([self.transferModel.isJson isEqualToString:@"true"]){
             [self.sendDic removeAllObjects];
@@ -339,17 +375,79 @@ static Transfer *instance = nil;
                 for (int i=0; i<[jsonArray count]; i++) {
                     [macString appendString:[self.jsonDic objectForKey:[jsonArray objectAtIndex:i]]];
                 }
-                //去掉空格，逗号，中文
-                [macString appendString:[UserDefaults objectForKey:MD5KEY]];
+                if (![self.transferCode isEqualToString:@"020022"]&&
+                    ![self.transferCode isEqualToString:@"020023"]&&
+                    ![self.transferCode isEqualToString:@"020001"])
+                {
+                    NSLog(@"md5key is:%@",[UserDefaults objectForKey:MD5KEY]);
+                    //去掉空格，逗号，中文
+                    [macString appendString:[UserDefaults objectForKey:MD5KEY]];
+                }
+                
             }
             //把 jsonDic中的数据转换格式 变为json格式
 //            NSLog(@"%@", [self.jsonDic JSONString]);
-            NSLog(@"------%@", [self DataTOjsonString:self.jsonDic]);
-            [self.sendDic setObject:[self.jsonDic JSONString] forKey:@"arg"];
-            if (![tmp_mac isEqualToString:@""]) {
-                [self.sendDic setObject:[EncryptionUtil MD5Encrypt:macString] forKey:@"mac"];
+            NSLog(@"sendict:%@",self.jsonDic);
+            
+            BOOL isDeveceMac = NO;
+         
+            if (isSpecialTrade)
+            {
+               [self.sendDic setObject:[SecurityUtil encryptUseAES:[self.jsonDic JSONString]] forKey:@"arg"];
+                
+                if (ApplicationDelegate.deviceType ==CDeviceTypeShuaKaTou)
+                {
+                    
+                    //消费、消费撤销、银行卡余额查询
+                    if ([self.transferCode isEqualToString:@"020022"]||[self.transferCode isEqualToString:@"020023"]||[self.transferCode isEqualToString:@"020001"])
+                    {
+//                        [self getMacWithStr:@"50000005099007050000075622848427362284800181901242732310220216584000082246A79FA7F18D412300="];
+                        [self.sendDic setObject:[self getMacWithStr:macString] forKey:@"mac"];
+                    }
+                    else
+                    {
+                        if (![tmp_mac isEqualToString:@""])
+                        {
+                            [self.sendDic setObject:[EncryptionUtil MD5Encrypt:macString] forKey:@"mac"];
+                        }
+                    }
+                    
+                }
+                else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+                        ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+                {
+                    //消费、消费撤销、银行卡余额查询
+                    if ([self.transferCode isEqualToString:@"020022"]||[self.transferCode isEqualToString:@"020023"]||[self.transferCode isEqualToString:@"020001"])
+                    {
+                        NSLog(@"macstr is:%@",macString); // 进行MAC计算
+                        
+                        [self startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_GetMac|string:%@", macString] paramDic:nil];
+                        isDeveceMac = YES;
+                    }
+                    else
+                    {
+                        if (![tmp_mac isEqualToString:@""])
+                        {
+                            [self.sendDic setObject:[EncryptionUtil MD5Encrypt:macString] forKey:@"mac"];
+                        }
+                    }
+                }
             }
-            [self sendPacket];
+            else
+            {
+                [self.sendDic setObject:[self.jsonDic JSONString] forKey:@"arg"];
+                
+                if (![tmp_mac isEqualToString:@""])
+                {
+                    [self.sendDic setObject:[EncryptionUtil MD5Encrypt:macString] forKey:@"mac"];
+                }
+            }
+            
+            if (!isDeveceMac)
+            {
+               [self sendPacket];
+            }
+            
         }
         //走8583
         else
@@ -357,11 +455,12 @@ static Transfer *instance = nil;
             NSLog(@"EFET...");
             NSLog(@"sendDic:%@",self.sendDic);
             self.action = [[TxActionImp alloc] init];
-            _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:ApplicationDelegate.isAishua?@"msg_config_aishua.xml":@"msg_config.xml"]];
+            _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou?@"msg_config_aishua.xml":@"msg_config.xml"]];
            
             
             if ([self.transferModel.shouldMac isEqualToString:@"true"]) {// 需要进行MAC计算
-                if (ApplicationDelegate.isAishua) {
+                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                {
                     NSData *randomData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].__RANDOM];
                     NSLog(@"random--- %@", [AppDataCenter sharedAppDataCenter].__RANDOM);
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
@@ -381,9 +480,13 @@ static Transfer *instance = nil;
                     
                 } else {
                     NSMutableData *data = [[NSMutableData alloc] init];
-                    NSData *tempByte = [_reqData subdataWithRange:NSMakeRange(1,19)];
-                    [data appendData:[_reqData subdataWithRange:NSMakeRange(11,tempByte.length)]];
-                    [data appendData:tempByte];
+                    
+                    NSLog(@"全部 %@",[_reqData description]);
+                    [data appendData:[_reqData subdataWithRange:NSMakeRange(13,_reqData.length-13-8)]];
+                    
+//                    NSData *tempByte = [_reqData subdataWithRange:NSMakeRange(1,19)];
+//                    [data appendData:[_reqData subdataWithRange:NSMakeRange(11,tempByte.length)]];
+//                    [data appendData:tempByte];
                     
                     NSString *bitmapHexStr = [[data description] stringByReplacingOccurrencesOfString:@" " withString:@""];
                     NSLog(@"进行MAC计算bitmapHexStr:%@",bitmapHexStr);
@@ -418,6 +521,37 @@ static Transfer *instance = nil;
     }
     return jsonString;
 }
+
+
+- (NSString*)getMacWithStr:(NSString*)str
+{
+    NSLog(@"macstr:%@",str);
+    
+    if ([AppDataCenter sharedAppDataCenter].__RANDOM==nil)
+    {
+        int random = (arc4random() % 100) + 1;
+        [AppDataCenter sharedAppDataCenter].__RANDOM = [NSString stringWithFormat:@"%016d",random];
+    }
+    
+//    [AppDataCenter sharedAppDataCenter].md5Key = @"3955587A787A3670";
+//    [AppDataCenter sharedAppDataCenter].__RANDOM = @"A26900DD00000059";
+    
+    NSData *randomData = [ConvertUtil hexStrToByte:[AppDataCenter sharedAppDataCenter].__RANDOM];
+    NSLog(@"randon: %@ md5key:%@", [AppDataCenter sharedAppDataCenter].__RANDOM,[AppDataCenter sharedAppDataCenter].md5Key);
+    
+    NSData *macData = [ConvertUtil hexStrToByte:[AppDataCenter sharedAppDataCenter].md5Key];
+    
+    NSString *macKeyStr = [SecurityUtil encryptUseDES:randomData key:macData];
+    
+    NSString *tmpString = [ConvertUtil stringToHexStr:str];
+    NSData *macValueData = [SecurityUtil encryptXORAndMac:tmpString withKey:macKeyStr];
+    NSString *tmp_str = [[NSString alloc]initWithData:macValueData encoding:NSASCIIStringEncoding];
+    
+    NSLog(@"mac is:%@",tmp_str);
+    return tmp_str;
+    
+}
+
 //json 连服务器 发送数据 接收数据
 - (void) sendPacket
 {
@@ -449,7 +583,7 @@ static Transfer *instance = nil;
     }else{
         //8583
         
-        _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:ApplicationDelegate.isAishua?@"msg_config_aishua.xml":@"msg_config.xml"]];
+        _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou?@"msg_config_aishua.xml":@"msg_config.xml"]];
      
         
         [self setReqData:_reqData];
@@ -469,29 +603,75 @@ static Transfer *instance = nil;
 {
     //在这处理json字符串是不是好些?
     @try {
+       
+        BOOL isSpecial = NO;
+        BOOL isSpecailAndMd5 = NO;
+        //消费、消费撤销、银行卡余额查询
+        if ([self.transferCode isEqualToString:@"020022"]||[self.transferCode isEqualToString:@"020023"]||[self.transferCode isEqualToString:@"020001"])
+        {
+            isSpecial = YES;
+        }
+        if ([self.transferCode isEqualToString:@"080002"]||[self.transferCode isEqualToString:@"100005"])
+        {
+            isSpecailAndMd5 = YES;
+        }
         //如果resmsg 是1 则交易成功 返回0则失败
-        if ( ![[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"])
+        if ( (!isSpecial&&![[self.receDic objectForKey:@"respmsg"] isEqualToString:@"0"]&&!isSpecailAndMd5)
+            ||((isSpecial||isSpecailAndMd5)&&[[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]))
         {
             
             if ([self.transferModel.shouldMac isEqualToString:@"true"])
             {
                 //此处校验MAC好一些吧
-                //取出返回报文中的 macstr 加上md5key 进行MD5加密 结果与返回值中得mac比较 相同则成功
+                
                 NSMutableString *macstrPlasMd5key = [[NSMutableString alloc] init];
                 [macstrPlasMd5key appendString:[self.receDic objectForKey:@"macstr"]];
-                [macstrPlasMd5key appendString:[UserDefaults objectForKey:MD5KEY]];
-                NSString *md5str = [EncryptionUtil MD5Encrypt:macstrPlasMd5key];
-                if ([md5str isEqualToString:[self.receDic objectForKey:@"mac"]])
+                
+                NSString *md5str;
+                BOOL isDeviceMacCau = NO;
+                if (!isSpecial)
                 {
-                    [self actionDone];
+                    //取出返回报文中的 macstr 加上md5key 进行MD5加密 结果与返回值中得mac比较 相同则成功
+                   [macstrPlasMd5key appendString:[UserDefaults objectForKey:MD5KEY]];
+                    md5str= [EncryptionUtil MD5Encrypt:macstrPlasMd5key];
+                }
+                else
+                {
+                    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                    {
+                        md5str = [self getMacWithStr:macstrPlasMd5key];
+                    }
+                    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
+                            ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS) //调用设备校验mac
+                    {
+                         [self startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_CheckMac|string:%@,string:%@", [self.receDic objectForKey:@"macstr"], [self.receDic objectForKey:@"mac"]] paramDic:nil];
+                        
+                        isDeviceMacCau = YES;
+                    
+                    }
+                    
+                }
+                
+                if (!isDeviceMacCau)
+                {
+                    if ([md5str isEqualToString:[self.receDic objectForKey:@"mac"]])
+                    {
+                        [self actionDone];
+                    }
+                    else
+                    {
+                        [ApplicationDelegate gotoFailureViewController:@"服务器返回数据MAC校验失败"];
+                    }
                 }
             }
-            else{
+            else
+            {
                 [self actionDone];
             }
             
         }
-        else{
+        else
+        {
 
             if ([self.transferCode isEqualToString:@"089014"]) //签购单上传特殊处理 不弹出到错误页面
             {
@@ -502,11 +682,22 @@ static Transfer *instance = nil;
             }
             else
             {
-                [ApplicationDelegate showErrorPrompt:@"获取数据出错，请重新尝试!"];
+                if (isSpecial||isSpecailAndMd5)
+                {
+                    [ApplicationDelegate gotoFailureViewController:self.receDic[@"apires"]];
+                }
+                else
+                {
+                    if (self.receDic[@"apires"]==nil||[self.receDic[@"apires"] isEqualToString:@""])
+                    {
+                        [ApplicationDelegate showErrorPrompt:@"服务器返回数据有误，请重试。"];
+                    }
+                    else
+                    {
+                        [ApplicationDelegate showErrorPrompt:self.receDic[@"apires"]];
+                    }
+                }
             }
-            
-
-
         }
     }
     @catch (NSException *exception) {
@@ -514,6 +705,7 @@ static Transfer *instance = nil;
         NSLog(@"--%@", [exception callStackSymbols]);
         
         [ApplicationDelegate gotoFailureViewController:@"服务器返回数据有误，请重试。"];
+        
     }
 }
 
@@ -539,7 +731,7 @@ static Transfer *instance = nil;
         {
             if ([self.transferModel.shouldMac isEqualToString:@"true"])
             {
-                if(ApplicationDelegate.isAishua){
+                if(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou){
                     NSData *randomData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].__RANDOM];
                     NSLog(@"randon: %@", [AppDataCenter sharedAppDataCenter].__RANDOM);
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];
@@ -569,6 +761,7 @@ static Transfer *instance = nil;
                     [data appendData:tempByte];
                     
                     NSString *bitmapHexStr = [[data description] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                    
                     [self startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_CheckMac|string:%@,string:%@", bitmapHexStr, [self.receDic objectForKey:@"field64"]] paramDic:nil];
     
                 }
@@ -605,13 +798,16 @@ static Transfer *instance = nil;
             [helper deleteAReversalTrans:[self.receDic objectForKey:@"field11"]];
         }
         
-        if ([field39 isEqualToString:@"00"]) {
+        if ([field39 isEqualToString:@"00"])
+        {
             // 只有在交易成功的时候取服务器日期
-            if ([self.receDic objectForKey:@"field13"]) {
+            if ([self.receDic objectForKey:@"field13"])
+            {
                 [[AppDataCenter sharedAppDataCenter] setServerDate:[self.receDic objectForKey:@"field13"]];
             }
             
-            if ([[AppDataCenter sharedAppDataCenter].reversalDic.allValues containsObject:self.transferCode]) {
+            if ([[AppDataCenter sharedAppDataCenter].reversalDic.allValues containsObject:self.transferCode])
+            {
                 // 交易成功。如果这笔交易是冲正交易，则要更新冲正表，将这笔交易的状态置为冲正成功。
                 ReversalDBHelper *helper = [[ReversalDBHelper alloc] init];
                 [helper updateReversalState:[self.receDic objectForKey:@"field11"]];
@@ -619,12 +815,16 @@ static Transfer *instance = nil;
             
             [self actionDone];
             
-        } else if ([field39 isEqualToString:@"98"]){
+        }
+        else if ([field39 isEqualToString:@"98"])
+        {
             // 当39域为98时要冲正。98 - 银联收不到发卡行应答
             [ApplicationDelegate gotoFailureViewController:@"没有收到发卡行应答"];
             [self reversalAction];
             
-        } else {
+        }
+        else
+        {
             // 39域不为00，交易失败，跳转到交易失败界面。其它失败情况比如MAC计算失败直接弹窗提示用户重新交易。
             // 如果是点付宝出现异常，将在点付宝逻辑内直接处理掉
             [ApplicationDelegate gotoFailureViewController:[self failMessageOfField39:field39]];

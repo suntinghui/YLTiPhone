@@ -78,9 +78,17 @@
 -(IBAction)confirmButtonAction:(id)sender
 {
     NSDictionary *dict = @{@"username":[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"]};
-    [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetKsn" paramDic:dict];
+    if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+    {
+       [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetKsn" paramDic:dict];
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+            ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+    {
+       [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_VT" paramDic:dict];
+        
+    }
+    
 }
-
-
 
 @end

@@ -29,7 +29,11 @@
 {
     [super viewDidLoad];
 
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    if (DeviceVersion>=7)
+//    {
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//    }
+    
     
     //iphone5适配更改背景图大小　统一使用大背景 by xs 
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"shade-5.png"]]];

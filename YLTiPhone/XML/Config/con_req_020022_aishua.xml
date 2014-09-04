@@ -2,26 +2,22 @@
 
 <!-- 消费 -->
 
-<root shouldMac="true" isJson="false">
+<root shouldMac="true" isJson="true">
     
 	<field key="fieldTrancode" value="020022"  />
-	
-	<field key="fieldTransType" value="0200"  />
-	<field key="field2" value=""  />
-	<field key="field3" value="000000"  />
-	<field key="field4" value="__field4"  />
-	<field key="field11" value="__TRACEAUDITNUM"  />
-	<field key="field22" value="__FIELD22" />
-	<field key="field25" value="00"  />
-	<field key="field41" value="__TERID"  />
-	<field key="field42" value="__VENDOR"  />
-	<field key="field49" value="156" />
-	<field key="field52" value="__AISHUAPIN" />
-	<field key="field53" value="0600000000000000"  />
-	<field key="field60" value="22#__BATCHNUM" />
-	<field key="field62" value="01#__RANDOM#__ENCTRACKS" />
-	<field key="field64" value="00000000" />
-	
-</root>
-	
+	<field key="tel" value="__PHONENUM"/>
+    <field key="MID" value="__VENDOR"  />
+	<field key="TID" value="__TID"  />
+    <field key="ENCTRACKS" value="__ENCTRACKS"/>
+    <field key="SLSH" value="__TRACEAUDITNUM"  />
+	<field key="JE" value="__JE"  />
+    <field key="CARD" value="__CARD"/>
+    <field key="TRK2" value="__TRK2"  />
+	<field key="TRK3" value="__TRK3"  />
+    <field key="MBSE" value="__MBSE"  />
+    <field key="PIN" value="__PIN"/>  <!-- 卡密码 -->
+    <field key="RAND" value="__RANDOM"  />
+	<field key="pos_type" value="__type"  />
+    <field key="posno" value="__TERID"  />
+    <field key="macstr" value="MID,TID,ENCTRACKS,PIN,RAND" />
 </root>

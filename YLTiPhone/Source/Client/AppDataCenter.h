@@ -80,13 +80,21 @@
 
 @property (nonatomic, strong) NSString                              *pinKey; //签到获取到的pinKey
 @property (nonatomic, strong) NSString                              *macKey;
+@property (nonatomic, strong) NSString                              *md5Key;
+@property (nonatomic, strong) NSString                              *stackKey;
 //@property (nonatomic, strong) NSDictionary                          *cardInfoDict; //刷卡获取到的卡信息
 
 @property (nonatomic, strong) NSString                              *__RANDOM;
 @property (nonatomic, strong) NSString                              *__ENCTRACKS;
+@property (nonatomic, strong) NSDictionary                          *cardInfoDict;
+@property (nonatomic, assign) int                              track2Len;
+@property (nonatomic, assign) int                              track3Len;
+@property (nonatomic, strong) NSString                        *terminal_id; //登陆返回
+@property (nonatomic, strong) NSString                         *signState; //0：签到失败 1：签到成功 2：未审核
 
 @property (nonatomic, strong) NSString * status;
 @property (nonatomic)         BOOL                                  hasSign;
+@property (nonatomic) BOOL hasUpdateWorkKey;  //是否更新工作密钥
 @property (nonatomic, strong) NSString *temPhone;
 
 + (AppDataCenter *) sharedAppDataCenter;
@@ -98,5 +106,7 @@
 - (void) setVersionCode:(NSInteger) versionCode;
 - (void) setServerDate:(NSString *) date;
 - (NSString *) getServerDate;
+- (NSString *) getPosType;
+- (NSString *) getPosName;
 
 @end

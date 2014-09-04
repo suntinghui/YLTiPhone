@@ -138,7 +138,23 @@
         
         return;
     }
-    
+ 
+    if ([self.resultMsg isEqualToString:@"设备修改成功"])
+    {
+        NSDictionary *dict = @{@"username":[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"]};
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        {
+            [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetKsn" paramDic:dict];
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+                ||ApplicationDelegate.deviceType  == CDeviceTypeYinPinPOS)
+        {
+            [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_VT" paramDic:dict];
+        }
+        
+        [self popToCatalogViewController];
+        return;
+    }
     if ([ApplicationDelegate hasLogin]) {
         [self popToCatalogViewController];
     }else{

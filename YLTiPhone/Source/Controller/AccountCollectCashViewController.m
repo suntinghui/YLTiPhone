@@ -115,6 +115,10 @@
     {
         phone = @"400-021-1515";
     }
+    else if (APPTYPE ==CAppTypeWYZF)
+    {
+        phone = @" 400-867-1116";
+    }
     else
     {
         phone = @"4008-0166-88";

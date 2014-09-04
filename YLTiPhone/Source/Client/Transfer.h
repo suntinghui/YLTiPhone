@@ -47,6 +47,7 @@
     NSData                  *_reqData;
     
     TransferModel           *_transferModel;
+     BOOL                   isSpecialTrade;
 }
 @property (nonatomic, strong)TransferModel                  *transferModel;
 

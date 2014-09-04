@@ -23,15 +23,15 @@
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 #import "DDDispatchQueueLogFormatter.h"
-
 #import "BeginGuideViewController.h"
+
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize rootNavigationController = _rootNavigationController;
 @synthesize hasLogin = _hasLogin;
-@synthesize isAishua = _isAishua;
+//@synthesize isAishua = _isAishua;
 @synthesize printVersion = _printVersion;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -40,7 +40,7 @@
 
     NSString *isFirstEnter = [UserDefaults objectForKey:IsFirstEnter];
     
-    if (APPTYPE == CAppTypeYLT&&isFirstEnter==nil)
+    if ((APPTYPE == CAppTypeYLT||APPTYPE==CAppTypeWYZF)&&isFirstEnter==nil)
     {
         BeginGuideViewController *slitViewController = [[BeginGuideViewController alloc] initWithNibName:nil bundle:nil];
         self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:slitViewController];
@@ -60,14 +60,16 @@
     [self.window makeKeyAndVisible];
     
     self.hasLogin = NO;
-    self.isAishua = true;
+    
+//    self.isAishua = NO; //TODO
     
     [[LocationHelper sharedLocationHelper] startLocate];
     
     // 初始化应用
     [self initApp];
     
-    [[Transfer sharedTransfer] initFSK];
+    [[Transfer sharedTransfer]initFSK];
+    
     
     /**
      // 监测网络情况
@@ -229,6 +231,26 @@
                                               cancelButtonTitle:@"确定"
                                               otherButtonTitles:nil, nil];
         [alert show];
+    }
+}
+
+- (void)setDeviceType:(CDeviceType)deviceType
+{
+    _deviceType = deviceType;
+    
+//    [[Transfer sharedTransfer]initFSK]; //修改设备类型后重新初始化刷卡操作类
+    
+    if(ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+    {
+        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
+        [[Transfer sharedTransfer].m_vcom setMac:false]; //add wenbin 20140328
+        
+        [ApplicationDelegate setPrintVersion:NO];
+        
+    }else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+             ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+    {
+        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
     }
 }
 

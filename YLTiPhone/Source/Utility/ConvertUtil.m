@@ -639,20 +639,43 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 
 + (NSString *) stringToHexStr:(NSString *)str
 {
-    NSUInteger len = [str length];
-    unichar *chars = malloc(len * sizeof(unichar));
-    [str getCharacters:chars];
+//    NSUInteger len = [str length];
+//    unichar *chars = malloc(len * sizeof(unichar));
+//    [str getCharacters:chars];
+//    
+//    NSMutableString *hexString = [[NSMutableString alloc] init];
+//    
+//    for(NSUInteger i = 0; i < len; i++ )
+//    {
+//        // [hexString [NSString stringWithFormat:@"%02x", chars[i]]]; /*previous input*/
+//        [hexString appendFormat:@"%02x", chars[i]]; /*EDITED PER COMMENT BELOW*/
+//    }
+//    free(chars);
+//    
+//    return hexString ;
     
-    NSMutableString *hexString = [[NSMutableString alloc] init];
     
-    for(NSUInteger i = 0; i < len; i++ )
+    
+    NSData *myD = [str dataUsingEncoding:NSUTF8StringEncoding];
+    Byte *bytes = (Byte *)[myD bytes];
+    //下面是Byte 转换为16进制。
+    NSString *hexStr=@"";
+    for(int i=0;i<[myD length];i++)
+        
     {
-        // [hexString [NSString stringWithFormat:@"%02x", chars[i]]]; /*previous input*/
-        [hexString appendFormat:@"%02x", chars[i]]; /*EDITED PER COMMENT BELOW*/
-    }
-    free(chars);
+        NSString *newHexStr = [NSString stringWithFormat:@"%x",bytes[i]&0xff];///16进制数
+        
+        if([newHexStr length]==1)
+            
+            hexStr = [NSString stringWithFormat:@"%@0%@",hexStr,newHexStr];
+        
+        else
+            
+            hexStr = [NSString stringWithFormat:@"%@%@",hexStr,newHexStr]; 
+    } 
+    return hexStr;
     
-    return hexString ;
+    
 }
 
 // 十六进制转换为普通字符串的。
@@ -755,6 +778,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
  return true;
  }
  */
+
 
 
 @end

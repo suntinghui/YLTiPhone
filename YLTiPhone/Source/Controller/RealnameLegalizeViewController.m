@@ -344,10 +344,10 @@
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PHONENUM"] forKey:@"tel"];
         [dic setObject:self.userModel.merchant_id forKey:@"merchant_id"];
-        [dic setObject:image13Base64 forKey:@"img13"];
-        [dic setObject:image14Base64 forKey:@"img14"];
-        [dic setObject:image15Base64 forKey:@"img15"];
-        [dic setObject:image17Base64 forKey:@"img17"];
+        [dic setObject:image13Base64 forKey:@"img15"];
+        [dic setObject:image14Base64 forKey:@"img13"];
+        [dic setObject:image15Base64 forKey:@"img17"];
+        [dic setObject:image17Base64 forKey:@"img14"];
         //089020 实名认证
         [[Transfer sharedTransfer] startTransfer:@"089020" fskCmd:nil paramDic:dic];
     }

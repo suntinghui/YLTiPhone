@@ -46,7 +46,7 @@
     {
          webSite.text = @"-- http://www.payhfb.com  --";
     }
-    else if(APPTYPE == CAppTypeYLT)
+    else if(APPTYPE == CAppTypeYLT||APPTYPE==CAppTypeTYB)
     {
          webSite.text = @"-- www.youlepos.com  --";
     }

@@ -80,14 +80,23 @@
     NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
     NSLog(@"enStr %@",enStr);
     
-    
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:enStr forKey:@"AISHUAPIN"];
+    [dic setObject:enStr forKey:@"PIN"];
+    
+ 
+    [dic setObject:[[AppDataCenter sharedAppDataCenter] getPosType] forKey:@"type"];
+    
 
     NSString *transferCode = @"020022";
-    if (self.fromVC == 0) {// 收款
-        [dic setObject:self.moneyStr forKey:@"field4"];
-    }else if(self.fromVC == 1) {// 余额查询
+    if (self.fromVC == 0)
+    {// 收款
+        [dic setObject:@"" forKey:@"MBSE"];
+        [dic setObject:self.moneyStr forKey:@"JE"];
+        
+        
+    }else if(self.fromVC == 1)
+    {// 余额查询
+       
         transferCode = @"020001";
     }
     [[Transfer sharedTransfer] startTransfer:transferCode fskCmd:nil paramDic:dic];

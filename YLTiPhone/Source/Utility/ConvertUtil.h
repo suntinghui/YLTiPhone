@@ -78,4 +78,5 @@
 
 + (NSString *) GBKToUTF8:(NSString *) str;
 
+
 @end

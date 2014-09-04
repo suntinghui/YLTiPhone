@@ -248,7 +248,7 @@
         {
             [ApplicationDelegate showErrorPrompt:@"余额不足"];
             return NO;
-        }
+        } 
     }
     else //快速提现
     {

@@ -37,7 +37,7 @@
     [self.view addSubview:imageView];
     
     NSString *field54 = [self.dic_rece objectForKey:@"field54"];
-    NSString *field2 = [self.dic_rece objectForKey:@"field2"];
+    NSString *field2 = self.dic_rece[@"apires"][@"CARD"];
     NSString *balance = [field54 substringFromIndex:8];
     NSString *cardNo = field2;
     UILabel *label_one = [[UILabel alloc] initWithFrame:CGRectMake(40, 175, 85, 40)];
@@ -47,7 +47,8 @@
     [self.view addSubview:label_one];
     UILabel *label_had = [[UILabel alloc] initWithFrame:CGRectMake(130, 175, 150, 40)];
     
-    [label_had setText:[StringUtil stringWithMoney:[NSNumber numberWithFloat:[balance floatValue]/100.0] locale:@"zh_CN"]];
+//    [label_had setText:[StringUtil stringWithMoney:[NSNumber numberWithFloat:[balance floatValue]/100.0] locale:@"zh_CN"]];
+   [label_had setText:self.dic_rece[@"apires"][@"BAL"]];
     [label_had setTextAlignment:NSTextAlignmentRight];
     [label_had setBackgroundColor:[UIColor clearColor]];
     [label_had setFont:[UIFont systemFontOfSize:15]];

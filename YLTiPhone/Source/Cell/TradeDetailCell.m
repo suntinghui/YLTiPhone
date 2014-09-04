@@ -48,14 +48,14 @@
         
       
         
-//        UILabel *tmpTime = [[UILabel alloc] initWithFrame:CGRectMake(10, 71, 68, 21)];
-//        [tmpTime setText:@"交易时间"];
-//        [self setLabelStyle:tmpTime];
-//        [self addSubview:tmpTime];
-//        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 71, 200, 21)];
-//        [_timeLabel setText:@"_timeLabel"];
-//        [self setLabelStyle:_timeLabel];
-//        [self addSubview:_timeLabel];
+        UILabel *tmpTime = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 80, 21)];
+        [tmpTime setText:@"交易时间"];
+        [self setLabelStyle:tmpTime];
+        [self addSubview:tmpTime];
+        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 21)];
+        [_timeLabel setText:@"_timeLabel"];
+        [self setLabelStyle:_timeLabel];
+        [self addSubview:_timeLabel];
         
      
     }

@@ -12,12 +12,13 @@
 
 
 
-#define jcount 5//引导图片的数量
+
 @interface BeginGuideViewController ()<UIScrollViewDelegate>{
     UIScrollView *_scrollView;
     UIPageControl *_pageControl;
     float viewwide;
     float viewheight;
+    int jcount;
 }
 
 @end
@@ -55,6 +56,14 @@
             break;
     }
     
+    if (APPTYPE==CAppTypeYLT)
+    {
+        jcount = 5;
+    }
+    else if(APPTYPE == CAppTypeWYZF)
+    {
+        jcount = 5;
+    }
     
     self.navigationController.navigationBarHidden = YES;
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
@@ -134,7 +143,7 @@
     [ApplicationDelegate.rootNavigationController pushViewController:loginViewController animated:YES];
     
     //优乐通有提示页  在此处将提示页从导航栈里移除  否则其他地方的逻辑得修改
-    if (APPTYPE ==CAppTypeYLT)
+    if (APPTYPE ==CAppTypeYLT||APPTYPE==CAppTypeWYZF)
     {
         NSMutableArray *temArr = [NSMutableArray arrayWithArray:ApplicationDelegate.rootNavigationController.viewControllers];
         [temArr removeObjectAtIndex:0];

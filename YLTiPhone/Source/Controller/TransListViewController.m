@@ -14,7 +14,7 @@
 #import "TransferDetailModel.h"
 #import "TradeDetailTableViewController.h"
 
-#define HEIGHTFORROW 100
+#define HEIGHTFORROW 130
 
 @interface TransListViewController ()
 
@@ -177,6 +177,24 @@
         cell.accountLabel.text = model.account1;
         cell.amountLabel.text = [NSString stringWithFormat:@"￥%@",model.amount];
         cell.typeLabel.text = model.snd_log;
+        
+        NSMutableString *date = [NSMutableString stringWithFormat:@"%@",model.localdate];
+        [date insertString:@"-" atIndex:4];
+        [date insertString:@"-" atIndex:7];
+        
+        NSMutableString *time = [NSMutableString stringWithFormat:@"%@",model.localtime];
+        [time insertString:@":" atIndex:2];
+        [time insertString:@":" atIndex:5];
+        
+        cell.timeLabel.text = [NSString stringWithFormat:@"%@   %@",date,time];
+        
+        if ([model.flag isEqualToString:@"3"])
+        {
+            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(200, 20, 80, 45)];
+            imageView.backgroundColor = [UIColor clearColor];
+            imageView.image = [UIImage imageNamed:@"revoked"];
+            [cell.contentView addSubview:imageView];
+        }
         
     }
     
