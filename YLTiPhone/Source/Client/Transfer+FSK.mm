@@ -17,6 +17,7 @@
 #import "InputMoneyViewController.h"
 #import "QueryBalanceViewController.h"
 #import "GatherCancelTableViewController.h"
+#import "TradeDetailTableViewController.h"
 
 @implementation Transfer (FSK)
 
@@ -40,8 +41,6 @@
     }
     
     [self.m_vcom setVloumn:75];
-    
-   
     
     self.fskCmdArray = [[NSMutableArray alloc] init];
 }
@@ -202,7 +201,7 @@
     NSLog(@"onDeviceReady...");
 }
 
-//收到数据
+//收到数据  小刷卡不再回调该函数
 -(void) dataArrive:(vcom_Result*) vs  Status:(int) status
 {
     if (status == -3) {
@@ -233,8 +232,16 @@
             
         } else if(vs->res == 0x40 || vs->res == 0x41 || vs->res == 0x42 || vs->res == 0x43 || vs->res == 0x44 || vs->res == 0x45){
             
-            // 这样写可能不是很好，如果有需要请优化实现方式！
-            [(ConfirmCancelResultViewController *)ApplicationDelegate.topViewController repeatPrint:[self getErrorMsg:vs->res]];
+            if ([ApplicationDelegate.topViewController isKindOfClass:[ConfirmCancelResultViewController class]])
+            {
+                // 这样写可能不是很好，如果有需要请优化实现方式！
+                [(ConfirmCancelResultViewController *)ApplicationDelegate.topViewController repeatPrint:[self getErrorMsg:vs->res]];
+            }
+            else if ([ApplicationDelegate.topViewController isKindOfClass:[TradeDetailTableViewController class]])
+            {
+                [(TradeDetailTableViewController *)ApplicationDelegate.topViewController repeatPrint:[self getErrorMsg:vs->res]];
+            }
+           
             
         } else if(vs->res == 0x0B){
             // MAC校验失败
@@ -280,6 +287,10 @@
 - (void)onGetKsnCompleted:(NSString *)ksn
 {
     [AppDataCenter sharedAppDataCenter].__TERID = [StringUtil ASCII2Hex:ksn];
+    
+    [self performSelectorOnMainThread:@selector(fskActionDone) withObject:nil waitUntilDone:NO];
+    // 执行下一个方法
+    [self runFSKCmd];
 }
 
 -(void)onDecodeCompleted:(NSString*) formatID
@@ -292,6 +303,8 @@
             andMaskedPAN:(NSString*) maskedPAN
            andExpiryDate:(NSString*) expiryDate
        andCardHolderName:(NSString*) cardHolderName
+                  andMac:mac
+        andQTPlayReadBuf:(NSString *)readBuf
 {
     [ApplicationDelegate hideProcess];
     
@@ -339,6 +352,11 @@
            [ApplicationDelegate.topViewController performSelector:@selector(gotoNextControl) withObject:nil];
         }
     }
+    
+    [self performSelectorOnMainThread:@selector(fskActionDone) withObject:nil waitUntilDone:NO];
+    
+    // 执行下一个方法
+    [self runFSKCmd];
 }
 
 #pragma mark -
@@ -444,40 +462,37 @@
         
         // 磁道明文
         if (vs->trackPlaintextLen > 0) {
-            
-//            NSLog(@"l:%d d:%s",vs->trackPlaintextLen,vs->trackPlaintext);
-//            
-//              [AppDataCenter sharedAppDataCenter].__PSAMTRACK = [[self.m_vcom HexValue:vs->trackEncryption Len:vs->trackEncryptionLen] uppercaseString];
-//            int totalLength = [AppDataCenter sharedAppDataCenter].__PSAMTRACK.length * 2;
-//            NSString *str1 = [[AppDataCenter sharedAppDataCenter].__PSAMTRACK substringToIndex:2];
-//            int field35Length = [[str1 substringToIndex:1] intValue] *16 + [[str1 substringFromIndex:1] intValue] *2;
-//            
-//            if (totalLength == field35Length+2){ // 只有35域
-//				[AppDataCenter sharedAppDataCenter].__FIELD35 = [[AppDataCenter sharedAppDataCenter].__PSAMTRACK substringFromIndex:2];
-//				[AppDataCenter sharedAppDataCe].__FIELD36 = @"";
-//				NSLog(@"磁道明文__FIELD35App Data:%@", [AppDataCenter sharedAppDataCenter].__FIELD35);
-//                NSLog(@"磁道明文__FIELD36App Data:%@", [AppDataCenter sharedAppDataCenter].__FIELD36);
-//			} else {
-//				[AppDataCenter sharedAppDataCenter].__FIELD35 = [[AppDataCenter sharedAppDataCenter].__PSAMTRACK substringWithRange:NSMakeRange(2, 2+field35Length)];
-//				[AppDataCenter sharedAppDataCenter].__FIELD36 = [[AppDataCenter sharedAppDataCenter].__PSAMTRACK substringFromIndex:2+field35Length+2];
-//                NSLog(@"磁道明文__FIELD35App Data:%@", [AppDataCenter sharedAppDataCenter].__FIELD35);
-//                NSLog(@"磁道明文__FIELD36App Data:%@", [AppDataCenter sharedAppDataCenter].__FIELD36);
-//			}
+
             
             NSString *track = [[self.m_vcom HexValue:vs->trackPlaintext Len:vs->trackPlaintextLen] uppercaseString];
             
             NSLog(@"磁道明文App Data:%@", track);
-            NSString *track2 = [track substringToIndex:48];
-            track2= [track2 stringByReplacingOccurrencesOfString:@"F" withString:@""];
             
-            [AppDataCenter sharedAppDataCenter].__FIELD35 =track2;
+//            NSString *track2 = [track substringToIndex:48];
+////            track2= [track2 stringByReplacingOccurrencesOfString:@"F" withString:@""];
+//            
+//            [AppDataCenter sharedAppDataCenter].__FIELD35 =track2;
+//            
+//            NSString *track3 = [track substringFromIndex:48];
+////            track3= [track3 stringByReplacingOccurrencesOfString:@"F" withString:@""];
+//            [AppDataCenter sharedAppDataCenter].__FIELD36 = track3;
+//            
+//          NSLog(@"磁道2：%@  磁道3:%@",[AppDataCenter sharedAppDataCenter].__FIELD35, [AppDataCenter sharedAppDataCenter].__FIELD36);
             
-            NSString *track3 = [track substringFromIndex:48];
-            track3= [track3 stringByReplacingOccurrencesOfString:@"F" withString:@""];
-            [AppDataCenter sharedAppDataCenter].__FIELD36 = track3;
+        }
+        // 磁道2
+        if (vs->track2Len > 0) {
             
-          
+              NSString *track = [[self.m_vcom HexValue:vs->Track2 Len:vs->track2Len] uppercaseString];
+            [AppDataCenter sharedAppDataCenter].__FIELD35 =track;
+             NSLog(@"磁道2:%@", track);
+        }
+        // 磁道3
+        if (vs->track3Len > 0) {
             
+            NSString *track = [[self.m_vcom HexValue:vs->Track3 Len:vs->track3Len] uppercaseString];
+            [AppDataCenter sharedAppDataCenter].__FIELD36 =track;
+               NSLog(@"磁道3:%@", track);
         }
         
         
@@ -684,7 +699,7 @@
 {
     [self.m_vcom StopRec];
     
-//    [self.m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
+    [self.m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
     
     int smode=[self.m_vcom getSendMode];
     
@@ -717,6 +732,7 @@
 {
     NSLog(@"点付宝：获取ksn");
     
+    [self.m_vcom setVloumn:95];
     [self.m_vcom Request_GetKsn];
 
 //    [self performSelector:@selector(aishuaGetFSK) withObject:nil afterDelay:3];
@@ -752,9 +768,9 @@
 // 获取pin密文数据
 -(void) Request_GetPin:(NSString *) cash  
 {
-    NSLog(@"点付宝:获取pin密文数据");
-    NSString *pan = [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PAN"];
     
+    NSString *pan = [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__PAN"];
+    NSLog(@"点付宝:获取pin密文数据 PIN:%@",pan);
     [self.m_vcom Request_GetPin:0 keyIndex:0 cash:[StringUtil string2char:cash] cashLen:[cash length] random:[StringUtil string2char:@""] randomLen:0 panData:HexToBin([StringUtil string2char:pan]) pandDataLen:8 time:60];
 }
 
@@ -866,7 +882,7 @@
     }
      ***/
     
-    NSDictionary *dic = [NSDictionary dictionaryWithDictionary:[Transfer sharedTransfer].receDic][@"apires"];
+
     
     NSMutableArray* array=[[NSMutableArray alloc] init];
     
@@ -891,23 +907,68 @@
     [array addObject:@"21持卡人签名\n\n\n\n\n\n本人确认以上交易，同意将其计入本卡账户\nI ACKNOWLEDGE SATISFACTORY RECEIPT OF RELATIVE GOODS/SERVICES"];
     [array addObject:@"22"];
      ****/
+    
+    NSString *merchantid;
+    NSString *terminaid;
+    NSString *cardNum;
+    NSString *tradeType;
+    NSString *tradeDate;
+    NSString *tradeTime;
+    NSString *amout;
+    NSString *ckNum;
+    NSString *pcNum;
+    NSString *lsNum;
+    NSString *note;
+    if ([AppDataCenter sharedAppDataCenter].detailModel!=nil)
+    {
+        TransferDetailModel *detailModel =[AppDataCenter sharedAppDataCenter].detailModel;
+        merchantid = detailModel.merchant_id;
+        terminaid = detailModel.terminal_id;
+        cardNum = detailModel.account1;
+        tradeType = detailModel.note;
+        tradeDate = detailModel.localdate;
+        tradeTime = detailModel.localtime;
+        amout = detailModel.amount;
+        ckNum = detailModel.local_log;
+        pcNum = detailModel.snd_cycle;
+        lsNum = detailModel.snd_log;
+        note = detailModel.note;
+    }
+    else
+    {
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:[Transfer sharedTransfer].receDic][@"apires"];
+        
+        merchantid = [dic objectForKey:@"MID"];
+        terminaid =[dic objectForKey:@"TID"];
+        cardNum =dic[@"CARD"];
+        tradeType =[[AppDataCenter sharedAppDataCenter].transferNameDic objectForKey:self.transferCode];
+        tradeDate =[dic objectForKey:@"XTDE"];
+        tradeTime =[dic objectForKey:@"XTTM"];
+        amout =dic[@"JE"];
+        ckNum =[dic objectForKey:@"XTLS"];
+        pcNum =dic[@"cycle_no"];
+        lsNum =[dic objectForKey:@"SLSH"];
+        note = [dic objectForKey:@"TSXX"];
+    }
+    
     [array addObject:[NSString stringWithFormat:@"11\n商户存根            请妥善保管\n"]];
     [array addObject:[NSString stringWithFormat:@"12商户名称(MERCHANT NAME):\n    %@", [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__MERCHERNAME"]]];
-    [array addObject:[NSString stringWithFormat:@"00商户编号(MERCHANT NO):\n    %@", [dic objectForKey:@"MID"]]];
-    [array addObject:[NSString stringWithFormat:@"00终端编号(TERMINAL NAME):\n    %@", [dic objectForKey:@"TID"]]];
+    [array addObject:[NSString stringWithFormat:@"00商户编号(MERCHANT NO):\n    %@", merchantid]];
+    [array addObject:[NSString stringWithFormat:@"00终端编号(TERMINAL NAME):\n    %@", terminaid]];
 //    [array addObject:[NSString stringWithFormat:@"00发卡行(ISSUER)\n    %@", [dic objectForKey:@"issuerBank"]]];
 //    [array addObject:[NSString stringWithFormat:@"00卡号(CARD NO):\n    %@", [StringUtil formatAccountNo:[dic objectForKey:@"field2"]]]];
     
-    [array addObject:[NSString stringWithFormat:@"00卡号(CARD NO):\n    %@", dic[@"CARD"]]];
+    [array addObject:[NSString stringWithFormat:@"00卡号(CARD NO):\n    %@", cardNum]];
     
-    [array addObject:[NSString stringWithFormat:@"00交易类型(TRANS TYPE):\n          %@", [[AppDataCenter sharedAppDataCenter].transferNameDic objectForKey:self.transferCode]]];
-    [array addObject:[NSString stringWithFormat:@"00交易日期和时间(DATE/TIME):\n    %@", [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", [dic objectForKey:@"XTDE"],[dic objectForKey:@"XTTM"]]]]];
-    [array addObject:[NSString stringWithFormat:@"00交易金额(AMOUNT):\n    %@", dic[@"JE"]]];
-     [array addObject:[NSString stringWithFormat:@"00参考号(REFER NO):\n    %@", [dic objectForKey:@"XTLS"]]];
-    [array addObject:[NSString stringWithFormat:@"00交易批次号(BATCH NO):\n    %@", dic[@"cycle_no"]]];
-    [array addObject:[NSString stringWithFormat:@"00交易流水号(SERIAL NO):\n    %@", [dic objectForKey:@"SLSH"]]];
+    [array addObject:[NSString stringWithFormat:@"00交易类型(TRANS TYPE):\n          %@", tradeType]];
+    [array addObject:[NSString stringWithFormat:@"00交易日期和时间(DATE/TIME):\n    %@", [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", tradeDate,tradeTime]]]];
+    [array addObject:[NSString stringWithFormat:@"00交易金额(AMOUNT):\n    %@", amout]];
+     [array addObject:[NSString stringWithFormat:@"00参考号(REFER NO):\n    %@", ckNum]];
+    [array addObject:[NSString stringWithFormat:@"00交易批次号(BATCH NO):\n    %@", pcNum]];
+    [array addObject:[NSString stringWithFormat:@"00交易流水号(SERIAL NO):\n    %@", lsNum]];
  
-    [array addObject:[NSString stringWithFormat:@"00备注(REFERENCE):%@", [dic objectForKey:@"TSXX"]]];
+    [array addObject:[NSString stringWithFormat:@"00备注(REFERENCE):%@", note]];
     [array addObject:@"21持卡人签名\n\n\n\n\n\n本人确认以上交易，同意将其计入本卡账户\nI ACKNOWLEDGE SATISFACTORY RECEIPT OF RELATIVE GOODS/SERVICES"];
     [array addObject:@"22"];
     

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 获取用户扣率 -->
+
+<root isJson = "true" shouldMac = "false">
+	<field key="fieldTrancode" value="100006" />
+    <field key="tel" value="__PHONENUM" />
+</root>

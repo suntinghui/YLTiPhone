@@ -60,7 +60,7 @@
     
     selectPosButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [selectPosButton setFrame:CGRectMake(10, 170, 297, 45)];
-    [selectPosButton setTitle:@"点付宝" forState:UIControlStateNormal];
+    [selectPosButton setTitle:@"刷卡头" forState:UIControlStateNormal];
     [selectPosButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     selectPosButton.titleLabel .font = [UIFont boldSystemFontOfSize:18];
     [selectPosButton addTarget:self action:@selector(selectPOSButton) forControlEvents:UIControlEventTouchUpInside];

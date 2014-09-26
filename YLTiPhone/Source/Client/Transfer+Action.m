@@ -175,6 +175,16 @@
     {
         [self changeDeviceDone];
     }
+    else if([self.transferCode isEqualToString:@"100006"]) //获取扣率
+    {
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:[self.receDic[@"apires"] dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        if (result!=nil)
+        {
+            [self.receDic setObject:result forKey:@"apires"];
+        }
+      
+     [AppDataCenter sharedAppDataCenter].rateList = [NSArray arrayWithArray:self.receDic[@"apires"][@"object"]];
+    }
     else
     {
         [self transferSuccessDone];
@@ -742,6 +752,17 @@
             NSString *batchNum = self.receDic[@"apires"][@"cycle_no"];
             [[AppDataCenter sharedAppDataCenter] setBatchNum:batchNum];
             
+            //流水号改为从后台获取  没有返回时默认为980001
+            NSString *traceNum = self.receDic[@"apires"][@"slsh"];
+            if (traceNum==nil)
+            {
+                [UserDefaults setInteger:980001 forKey:TRACEAUDITNUM];
+            }
+            else
+            {
+                [UserDefaults setInteger:[traceNum integerValue] forKey:TRACEAUDITNUM];
+            }
+            
             [UserDefaults setObject:self.receDic[@"apires"][@"merchant_name"]  forKey:MERCHERNAME];
             [UserDefaults synchronize];
             if ([signState isEqualToString:@"1"]) //1：签到成功 0：签到失败 2：未审核(不让签到，不能进入交易类菜单)
@@ -762,28 +783,33 @@
             NSString *macKey = nil;//newKey.substring(40, 56) + newKey.substring(72);
             NSString *stackKey = nil;//pinKey
             
-            if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+            //等于2和0时不会返回key
+            if (![signState isEqualToString:@"2"]&&![signState isEqualToString:@"0"]) 
             {
+                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                {
+                    
+                    pinKey = self.receDic[@"apires"][@"workingkey"];
+                    macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
+                    macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
+                }
+                else
+                {
+                    
+                    stackKey = self.receDic[@"apires"][@"tackey"];
+                    pinKey = self.receDic[@"apires"][@"workingkey"];
+                    macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
+                    macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
+                }
                 
-                pinKey = self.receDic[@"apires"][@"workingkey"];
-                macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
-                macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
-            }
-            else
-            {
                 
-                stackKey = self.receDic[@"apires"][@"tackey"];
-                pinKey = self.receDic[@"apires"][@"workingkey"];
-                macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
-                macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
+                NSLog(@"pinkey:%@ mackey:%@ stackKey:%@",stackKey,macKey,stackKey);
+                
+                [AppDataCenter sharedAppDataCenter].pinKey = pinKey;
+                [AppDataCenter sharedAppDataCenter].macKey = macKey;
+                [AppDataCenter sharedAppDataCenter].stackKey = stackKey;
             }
-            
-            
-            NSLog(@"pinkey:%@ mackey:%@ stackKey:%@",stackKey,macKey,stackKey);
-            
-            [AppDataCenter sharedAppDataCenter].pinKey = pinKey;
-            [AppDataCenter sharedAppDataCenter].macKey = macKey;
-            [AppDataCenter sharedAppDataCenter].stackKey = stackKey;
+           
             
 //            [AppDataCenter sharedAppDataCenter].status = @"9";//TODO 暂时先放开限制
 
@@ -797,7 +823,12 @@
 //            }else{
             
              [[Transfer sharedTransfer] performSelector:@selector(initFSK) withObject:nil]; //在登录页面选择了设备类型  所以登录成功后再初始化刷卡操作类
+            if ([[ApplicationDelegate.rootNavigationController topViewController] isKindOfClass:[LoginViewController class]])
+            {
             
+                LoginViewController *loginController = (LoginViewController*)[ApplicationDelegate.rootNavigationController topViewController];
+                [loginController getUserRate];
+            }
                 CatalogViewController *controller = [[CatalogViewController alloc] initWithNibName:nil bundle:nil];
                 [ApplicationDelegate.rootNavigationController pushViewController:controller animated:YES];
 //            }
@@ -940,16 +971,13 @@
         if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
         {
             
-//            pinKey = [newKey substringWithRange:NSMakeRange(0, 32)];
-//            macKey = [[NSString alloc] initWithFormat:@"%@",[newKey substringWithRange:NSMakeRange(40, 16)]];
             pinKey = self.receDic[@"apires"][@"WKKY"];
             macKey = [newKey substringWithRange:NSMakeRange(0, 16)];
             macKey = [NSString stringWithFormat:@"%@%@",macKey,[newKey substringFromIndex:32]];
         }
         else
         {
-//            pinKey = [newKey substringWithRange:NSMakeRange(0, 40)];
-//            macKey = [[NSString alloc] initWithFormat:@"%@%@",[newKey substringWithRange:NSMakeRange(40, 16)],[newKey substringFromIndex:72]];
+
             
             stackKey = self.receDic[@"apires"][@"TACK"];
             pinKey = self.receDic[@"apires"][@"WKKY"];

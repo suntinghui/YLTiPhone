@@ -155,12 +155,16 @@
         [self popToCatalogViewController];
         return;
     }
-    if ([ApplicationDelegate hasLogin]) {
+    if ([ApplicationDelegate hasLogin])
+    {
         [self popToCatalogViewController];
-    }else{
-        if (self.isSuccess) {
+    }else
+    {
+        if (self.isSuccess)
+        {
             [self popToLoginViewController];
-        }else{
+        }else
+        {
             [self.navigationController popViewControllerAnimated:YES];
         }
     }

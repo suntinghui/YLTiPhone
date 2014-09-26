@@ -78,5 +78,7 @@
 
 + (NSString *) GBKToUTF8:(NSString *) str;
 
+//获取汉字的uniode码
++ (NSString *)getUnicode:(NSString*)string;
 
 @end

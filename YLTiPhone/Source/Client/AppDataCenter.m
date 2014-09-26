@@ -153,6 +153,7 @@ static AppDataCenter *instance = nil;
     }
     else if ([property isEqualToString:@"__TRK2"])
     {
+        
         if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
         {
             if (self.cardInfoDict[kTrack2]==nil)
@@ -164,14 +165,17 @@ static AppDataCenter *instance = nil;
         else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
                 ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
         {
+            if (self.__FIELD35==nil)
+            {
+                return @"";
+            }
             return self.__FIELD35;
         }
     
     }
     else if([property isEqualToString:@"__TRK3"])
     {
-        return @"";
-        
+       
         if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
         {
             if (self.cardInfoDict[kTrack3]==nil)
@@ -183,6 +187,9 @@ static AppDataCenter *instance = nil;
         else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
                 ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
         {
+            if(self.__FIELD36==nil)
+                return @"";
+            
             return self.__FIELD36;
         }
      
@@ -215,12 +222,13 @@ static AppDataCenter *instance = nil;
     else if([property isEqualToString:@"__MBSE"])
     {
         NSArray *arr = [self.__ADDRESS componentsSeparatedByString:@","];
-        if (arr.count==2) {
-            return [NSString stringWithFormat:@"%@,%@",arr[0],arr[1]];
+        if (arr.count==3)
+        {
+            return self.__ADDRESS;
         }
         else
         {
-            return @"0,0";
+            return @"0,0,unknow";
         }
         
         return @"";
@@ -244,15 +252,25 @@ static AppDataCenter *instance = nil;
 
 - (NSString *) getTraceAuditNum
 {
+//    NSInteger number = [UserDefaults integerForKey:TRACEAUDITNUM];
+//    if (number == 0) {
+//        number = 1;
+//    }
+//    
+//    [UserDefaults setInteger:(number+1)==1000000?1:(number+1) forKey:TRACEAUDITNUM];
+//    [UserDefaults synchronize];
+//    
+//    number +=980000; //add wenbin 20140322
+//    
+//    __TRACEAUDITNUM = [NSString stringWithFormat:@"%06ld", (long)number];
+//    
+//    return self.__TRACEAUDITNUM;
+    
+    
     NSInteger number = [UserDefaults integerForKey:TRACEAUDITNUM];
-    if (number == 0) {
-        number = 1;
-    }
-    
-    [UserDefaults setInteger:(number+1)==1000000?1:(number+1) forKey:TRACEAUDITNUM];
+   
+    [UserDefaults setInteger:(number+1) forKey:TRACEAUDITNUM];
     [UserDefaults synchronize];
-    
-    number +=980000; //add wenbin 20140322
     
     __TRACEAUDITNUM = [NSString stringWithFormat:@"%06ld", (long)number];
     
@@ -403,7 +421,7 @@ static AppDataCenter *instance = nil;
     switch (ApplicationDelegate.deviceType) {
         case CDeviceTypeShuaKaTou:
         {
-            type = @"点付宝";
+            type = @"刷卡头";
         }
             break;
         case CDeviceTypeDianFuBao:

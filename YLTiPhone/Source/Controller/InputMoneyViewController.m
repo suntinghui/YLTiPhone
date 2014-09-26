@@ -101,30 +101,21 @@
             } else
             {
                 
-                
-                // 因为在这里有可能交易后验证服务器响应数据时点付宝发生异常，这时应该检查冲正。
-                if ([[Transfer sharedTransfer] reversalAction]) {
-                    return ;
-                }
-                
-#ifdef DEMO
-                [DemoClient setDemoAmount:[StringUtil amount2String:self.moneyStr]];
-#endif
-                
-                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                if ([AppDataCenter sharedAppDataCenter].rateList==nil||[AppDataCenter sharedAppDataCenter].rateList.count==0)
                 {
-                    [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
+                     [ApplicationDelegate showErrorPrompt:@"未获取到扣率数据，请重新登录后再操作"];
+                    return;
                 }
-                else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
-                        ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+                
+                UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"扣率选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles: nil];
+                for (NSDictionary *dict in [AppDataCenter sharedAppDataCenter].rateList)
                 {
-                    //提示用户刷卡 输入密码 然后跳转到签购单页面
-                    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-                    [dic setObject:self.moneyStr forKey:@"JE"];
-                    [dic setObject:[[AppDataCenter sharedAppDataCenter]getPosType] forKey:@"type"];
-                    [[Transfer sharedTransfer] startTransfer:@"020022" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetTrackPlaintext#Request_GetPin|string:%@",[StringUtil amount2String:self.moneyStr]] paramDic:dic];
-        
+                    [sheet addButtonWithTitle:dict[@"name"]];
                 }
+                [sheet showInView:self.view];
+                
+                return;
+      
                 
             }
             
@@ -147,8 +138,48 @@
     [self displayMoneyStr:self.moneyStr];
 }
 
-
+#pragma mark -UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex!=actionSheet.cancelButtonIndex)
+    {
+        NSLog(@"ddd%d",buttonIndex);
+        self.rate = [AppDataCenter sharedAppDataCenter].rateList[buttonIndex-1][@"mcc"];
+        [AppDataCenter sharedAppDataCenter].selectRate = self.rate;
+        [self startSwipe];
+        
+    }
+    
+}
 #pragma mark - 功能函数
+
+- (void)startSwipe
+{
+    // 因为在这里有可能交易后验证服务器响应数据时点付宝发生异常，这时应该检查冲正。
+    if ([[Transfer sharedTransfer] reversalAction]) {
+        return ;
+    }
+    
+#ifdef DEMO
+    [DemoClient setDemoAmount:[StringUtil amount2String:self.moneyStr]];
+#endif
+    
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    {
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+            ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+    {
+        //提示用户刷卡 输入密码 然后跳转到签购单页面
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:self.moneyStr forKey:@"JE"];
+        [dic setObject:self.rate forKey:@"mcc"];
+        [dic setObject:[[AppDataCenter sharedAppDataCenter]getPosType] forKey:@"type"];
+        [[Transfer sharedTransfer] startTransfer:@"020022" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetTrackPlaintext#Request_GetPin|string:%@",[StringUtil amount2String:self.moneyStr]] paramDic:dic];
+        
+    }
+}
 - (void)setCardInfoDic:(NSDictionary *)cardInfoDic
 {
     _cardInfoDic = cardInfoDic;

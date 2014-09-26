@@ -30,4 +30,5 @@
 -(IBAction)loginAction:(id)sender;
 -(IBAction)regesterAction:(id)sender;
 -(void)showAlertViewUpdate:(NSDictionary *) dic;
+- (void)getUserRate;
 @end

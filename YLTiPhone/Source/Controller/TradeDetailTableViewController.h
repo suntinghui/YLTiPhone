@@ -18,4 +18,6 @@
 @property (nonatomic, strong) UIImageView       *imageView;
 @property (nonatomic, strong) UIImageView       *bgImageView;
 
+- (void) repeatPrint:(NSString *) errReason;
+
 @end

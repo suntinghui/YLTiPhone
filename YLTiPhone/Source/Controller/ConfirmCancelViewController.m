@@ -225,7 +225,7 @@
         
         if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
         {
-            NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[AppDataCenter sharedAppDataCenter].pinKey];
+            NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[[AppDataCenter sharedAppDataCenter].pinKey substringToIndex:32]];
             NSString *key = [SecurityUtil encryptUseXOR16:temKey];
             
             NSString *psw = [NSString stringWithFormat:@"%@00",self.pwdTF.inputStr];
@@ -233,13 +233,13 @@
             NSString *enStr = [[SecurityUtil encryptUseTripleDES:[ConvertUtil stringToHexStr:psw] key:keyResult] substringWithRange:NSMakeRange(0, 16)];
             [dic setObject:enStr forKey:@"PIN"];
         }
-      
+        NSLog(@"ddd:%@",self.model.content[@"apires"]);
         [dic setObject:[[AppDataCenter sharedAppDataCenter] getPosType] forKey:@"type"];
         [dic setObject:self.model.content[@"apires"][@"JE"] forKey:@"JE"];
         [dic setObject:self.model.content[@"apires"][@"SLSH"] forKey:@"OSLS"];
         [dic setObject:self.model.content[@"apires"][@"SZQH"] forKey:@"OSZQ"];
         [dic setObject:self.model.content[@"apires"][@"XTLS"] forKey:@"OXLS"];
-        
+        [dic setObject:self.model.content[@"apires"][@"SYSI"] forKey:@"XTLS"];
         [[Transfer sharedTransfer] startTransfer:@"020023" fskCmd:nil paramDic:dic];
         
     }

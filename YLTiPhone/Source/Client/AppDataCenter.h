@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <voclib/vcom.h>
+#import "TransferDetailModel.h"
 
 @interface AppDataCenter : NSObject
 {
@@ -96,6 +97,9 @@
 @property (nonatomic)         BOOL                                  hasSign;
 @property (nonatomic) BOOL hasUpdateWorkKey;  //是否更新工作密钥
 @property (nonatomic, strong) NSString *temPhone;
+@property (nonatomic, strong) TransferDetailModel *detailModel;
+@property (nonatomic, strong) NSArray *rateList; //扣率数据
+@property (nonatomic, strong) NSString *selectRate; //选择的扣率
 
 + (AppDataCenter *) sharedAppDataCenter;
 

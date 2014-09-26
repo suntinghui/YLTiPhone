@@ -7,6 +7,7 @@
 //
 
 #import "TradeDetailTableViewController.h"
+#import "DateUtil.h"
 
 #define left_w  100
 @interface TradeDetailTableViewController ()
@@ -216,7 +217,15 @@
     
     self.confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.confirmButton setFrame:CGRectMake(35, 505+ios7_h, 250, 40)];
-    [self.confirmButton setTitle:@"确定" forState:UIControlStateNormal];
+    if (ApplicationDelegate.printVersion)
+    {
+        [self.confirmButton setTitle:@"打印凭条" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.confirmButton setTitle:@"确定" forState:UIControlStateNormal];
+    }
+    
     [self.confirmButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.confirmButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
     [self.confirmButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
@@ -224,6 +233,23 @@
     [self.confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateSelected];
     [self.confirmButton setBackgroundImage:[UIImage imageNamed:@"confirmButtonPress.png"] forState:UIControlStateHighlighted];
     [self.scrollView addSubview:self.confirmButton];
+    
+    
+//    [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetExtKsn" paramDic:nil];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [AppDataCenter sharedAppDataCenter].detailModel = self.detailModel;
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [AppDataCenter sharedAppDataCenter].detailModel = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -232,9 +258,58 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) repeatPrint:(NSString *) errReason
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"打印凭条失败。失败原因: %@ ,请检查设备并重新打印。", errReason] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"重新打印", nil];
+    [alert show];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex!=alertView.cancelButtonIndex)
+    {
+        if (ApplicationDelegate.printVersion)
+        {
+            [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Print" paramDic:nil];
+        }
+    }
+}
+
 -(IBAction)close:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+
+    if (ApplicationDelegate.printVersion)
+    {
+           [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Print" paramDic:nil];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+//    NSMutableArray* array=[[NSMutableArray alloc] init];
+//    
+//    [array addObject:[NSString stringWithFormat:@"11\n商户存根            请妥善保管\n"]];
+//    [array addObject:[NSString stringWithFormat:@"12商户名称(MERCHANT NAME):\n    %@", [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__MERCHERNAME"]]];
+//    [array addObject:[NSString stringWithFormat:@"00商户编号(MERCHANT NO):\n    %@", self.detailModel.merchant_id]];
+//    [array addObject:[NSString stringWithFormat:@"00终端编号(TERMINAL NAME):\n    %@", self.detailModel.terminal_id]];
+//
+//    
+//    [array addObject:[NSString stringWithFormat:@"00卡号(CARD NO):\n    %@",self.detailModel.account1]];
+//    
+//    [array addObject:[NSString stringWithFormat:@"00交易类型(TRANS TYPE):\n          %@", self.detailModel.note]];
+//    [array addObject:[NSString stringWithFormat:@"00交易日期和时间(DATE/TIME):\n    %@", [DateUtil formatDateTime:[NSString stringWithFormat:@"%@%@", self.detailModel.localdate,self.detailModel.localtime]]]];
+//    [array addObject:[NSString stringWithFormat:@"00交易金额(AMOUNT):\n    %@", self.detailModel.amount]];
+//    [array addObject:[NSString stringWithFormat:@"00参考号(REFER NO):\n    %@", self.detailModel.local_log]];
+//    [array addObject:[NSString stringWithFormat:@"00交易批次号(BATCH NO):\n    %@",self.detailModel.snd_cycle]];
+//    [array addObject:[NSString stringWithFormat:@"00交易流水号(SERIAL NO):\n    %@", self.detailModel.snd_log]];
+//    
+//    [array addObject:[NSString stringWithFormat:@"00备注(REFERENCE):%@", self.detailModel.note]];
+//    [array addObject:@"21持卡人签名\n\n\n\n\n\n本人确认以上交易，同意将其计入本卡账户\nI ACKNOWLEDGE SATISFACTORY RECEIPT OF RELATIVE GOODS/SERVICES"];
+//    [array addObject:@"22"];
+//    
+//    [[Transfer sharedTransfer].m_vcom rmPrint3:array pCnt:2 pakLen:350];
 }
 
 //#pragma mark- tableview delegate

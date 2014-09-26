@@ -25,7 +25,6 @@
 #import "DDDispatchQueueLogFormatter.h"
 #import "BeginGuideViewController.h"
 
-
 @implementation AppDelegate
 
 @synthesize window = _window;

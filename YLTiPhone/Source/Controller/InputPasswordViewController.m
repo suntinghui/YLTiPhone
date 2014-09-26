@@ -72,7 +72,7 @@
     
     //NSDictionary *cardInfo = [AppDataCenter sharedAppDataCenter].cardInfoDict;
     
-    NSString *temKey = [NSString stringWithFormat:@"%@%@", [AppDataCenter sharedAppDataCenter].__ENCTRACKS, [AppDataCenter sharedAppDataCenter].pinKey ];
+    NSString *temKey = [NSString stringWithFormat:@"%@%@", [AppDataCenter sharedAppDataCenter].__ENCTRACKS, [[AppDataCenter sharedAppDataCenter].pinKey  substringToIndex:32]];
     NSString *key = [SecurityUtil encryptUseXOR16:temKey];
     
     NSString *psw = [NSString stringWithFormat:@"%@00",pswTxtField.inputStr];
@@ -90,8 +90,8 @@
     NSString *transferCode = @"020022";
     if (self.fromVC == 0)
     {// 收款
-        [dic setObject:@"" forKey:@"MBSE"];
         [dic setObject:self.moneyStr forKey:@"JE"];
+        [dic setObject:[AppDataCenter sharedAppDataCenter].selectRate forKey:@"mcc"];
         
         
     }else if(self.fromVC == 1)

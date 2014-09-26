@@ -33,7 +33,7 @@
     self.listTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     
     images = @[@"0",@"3",@"4"];
-    titles = @[@"点付宝",@"刷卡键盘",@"音频POS"];
+    titles = @[@"刷卡头",@"刷卡键盘",@"音频POS"];
 
 }
 

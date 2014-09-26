@@ -13,6 +13,7 @@
  **/
 
 #import "LocationHelper.h"
+#import "ConvertUtil.h"
 
 @implementation LocationHelper
 
@@ -108,7 +109,8 @@ static LocationHelper *instance = nil;
              
              **/
             
-            [[AppDataCenter sharedAppDataCenter] setAddress:[NSString stringWithFormat:@"%f,%f,%@%@%@", placemark.location.coordinate.longitude,placemark.location.coordinate.latitude, placemark.country, placemark.administrativeArea, placemark.subLocality]];
+            
+            [[AppDataCenter sharedAppDataCenter] setAddress:[NSString stringWithFormat:@"%f,%f,%@", placemark.location.coordinate.longitude,placemark.location.coordinate.latitude,[ConvertUtil getUnicode:placemark.name]]];
             
             NSLog(@"ADDRESS:%@", [[AppDataCenter sharedAppDataCenter] getValueWithKey:@"__ADDRESS"]);
             

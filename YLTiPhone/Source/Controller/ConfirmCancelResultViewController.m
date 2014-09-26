@@ -120,7 +120,7 @@
 
 - (void) repeatPrint:(NSString *) errReason
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"打印凭条失败。失败原因: %@ ,请检查设备并重新打印。", errReason] delegate:self cancelButtonTitle:@"重新打印" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"打印凭条失败。失败原因: %@ ,请检查设备并重新打印。", errReason] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"重新打印", nil];
     [alert show];
 }
 
@@ -144,7 +144,10 @@
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [self print];
+    if (buttonIndex!=alertView.cancelButtonIndex)
+    {
+        [self print];
+    }
 }
 
 @end

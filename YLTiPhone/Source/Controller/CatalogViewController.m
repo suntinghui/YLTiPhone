@@ -170,6 +170,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [ApplicationDelegate hideProcess];
+    
 }
 
 - (void)backButtonAction

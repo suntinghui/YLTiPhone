@@ -2,16 +2,15 @@
 <!-- 版本号 getVersion-->
 <root isJson = "true">
 	<field key="fieldTrancode" value="089018" />
-	<field key="type" value="1" />
+	<field key="type" value="9" />
 </root>
 
 
 <!--   type
- 1:沃银支付
  2:便付宝
  3：盒付宝
  8：广付宝
- 9：优乐通
+ 9：沃银支付
  11：通银宝
  
  -->

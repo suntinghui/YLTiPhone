@@ -778,6 +778,28 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
  return true;
  }
  */
++ (NSString *)getUnicode:(NSString*)string
+{
+    if (string==nil)
+    {
+        return nil;
+    }
+    
+    NSMutableString *result = [[NSMutableString alloc] init];
+    for (int i=0; i<string.length; i++)
+    {
+        NSString *str = [string substringWithRange:NSMakeRange(i, 1)];
+        NSData *data =  [str dataUsingEncoding:NSUTF16BigEndianStringEncoding];
+        NSString *unicodeStr = [NSString stringWithFormat:@"%@",[data debugDescription]];
+        unicodeStr = [unicodeStr stringByReplacingOccurrencesOfString:@"<" withString:@""];
+        unicodeStr = [unicodeStr stringByReplacingOccurrencesOfString:@">" withString:@""];
+    
+        [result appendString:[NSString stringWithFormat:@"\\u%@",unicodeStr]];
+    }
+    
+    return result;
+ 
+}
 
 
 

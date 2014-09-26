@@ -170,7 +170,7 @@
 
 - (void)showTypeSelectWithType:(int)type
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"点付宝", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", nil];
     sheet.tag = type;
     
     if (type ==ActionsheetTypeOne)
@@ -182,7 +182,7 @@
                 UIButton *button = (UIButton*)view;
                 if([button.titleLabel.text isEqualToString:[[AppDataCenter sharedAppDataCenter] getPosName]])
                 {
-                    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
                 }
                 
             }
@@ -202,6 +202,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 //    [self.passwordTF clearInput];
+    
+    [super viewDidAppear:animated];
+    
+    [AppDataCenter sharedAppDataCenter].rateList = nil; //回到登录页面时 清空扣率数据
 }
 
 - (void)didReceiveMemoryWarning
@@ -274,7 +278,7 @@
     {
         if ([UserDefaults objectForKey:kUserPosType]==nil)
         {
-            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"点付宝", nil];
+            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", nil];
             [sheet showInView:self.view];
             return;
         }
@@ -331,6 +335,14 @@
         }
     }
     return YES;
+}
+
+/**
+ *  获取用户扣率
+ */
+- (void)getUserRate
+{
+    [[Transfer sharedTransfer] startTransfer:@"100006" fskCmd:nil paramDic:@{@"tel":self.phoneNumTF.contentTF.text}];
 }
 
 #pragma mark - UINavigationControllerDelegate Method

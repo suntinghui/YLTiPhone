@@ -228,6 +228,10 @@ static Transfer *instance = nil;
     {
         return @"changePos";
     }
+    else if([self.transferCode isEqualToString:@"100006"]) //获取扣率
+    {
+        return @"mccList";
+    }
     
     return nil;
 }
@@ -387,6 +391,7 @@ static Transfer *instance = nil;
             }
             //把 jsonDic中的数据转换格式 变为json格式
 //            NSLog(@"%@", [self.jsonDic JSONString]);
+        
             NSLog(@"sendict:%@",self.jsonDic);
             
             BOOL isDeveceMac = NO;
@@ -401,7 +406,6 @@ static Transfer *instance = nil;
                     //消费、消费撤销、银行卡余额查询
                     if ([self.transferCode isEqualToString:@"020022"]||[self.transferCode isEqualToString:@"020023"]||[self.transferCode isEqualToString:@"020001"])
                     {
-//                        [self getMacWithStr:@"50000005099007050000075622848427362284800181901242732310220216584000082246A79FA7F18D412300="];
                         [self.sendDic setObject:[self getMacWithStr:macString] forKey:@"mac"];
                     }
                     else

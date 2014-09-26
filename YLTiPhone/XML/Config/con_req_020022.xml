@@ -19,6 +19,7 @@
     <field key="RAND" value="__RANDOM"  />
 	<field key="pos_type" value="__type"  />
     <field key="posno" value="__TERID"  />
+    <field key="mcc" value="__mcc"  />
     <field key="macstr" value="MID,TID,ENCTRACKS,PIN,RAND" />
 	
 </root>

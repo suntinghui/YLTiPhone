@@ -22,6 +22,8 @@
 //通讯模式定义
 #define  VCOM_TYPE_F2F 0
 #define  VCOM_TYPE_FSK 1
+
+
 //控制标志定义
 #define CTRL_FLAG_REPORT_TRACK_ORG_LENGTH 0x8
 #define CTRL_FLAG_REPORT_MASK_CARD_NUM    0xC
@@ -34,9 +36,20 @@
 #define  ERROR_DUPLICATE_SWIPER -4
 #define  ERROR_AUDIO_INITIALIZATION_FAIL -5
 #define  ERROR_AUDIO_SESSION_SET_FAIL -6
+#define  ERROR_AUDIO_TIMEOUT -7
 
 #define NOTIFY_CHECKMIC @"NOTIFY_CHECKMIC"
 #define NOTIFY_RECORDDATA @"NOTIFY_RECORDDATA"
+
+enum {
+    
+    dianFB,                 //点付宝，fsk,f2f
+    BLE_DianFB,             //蓝牙点付宝f2f
+    aiShua,                 //爱刷f2f
+    zhangFB,                //掌付宝fsk,fsk
+    
+};
+typedef NSInteger CommunicationMode;
 
 extern bool recflag;
 extern char ppdata[20][800];
@@ -56,20 +69,24 @@ extern int  ppDataPos;
 @property(nonatomic) int retdatalen;
 @property(nonatomic,retain) id<CSwiperStateChangedListener> eventListener;
 
+/******************************************************/
 //得到音频对象的全局变量
 +(vcom*)getInstance;
 //打开音频收发数据功能
 -(void)open;
 //关闭音频收发数据功能
 -(void)close;
-//初始化,一般在viewDidLoad函数中创建对象后调用一次，
-- (id)init;
+////初始化,一般在viewDidLoad函数中创建对象后调用一次，
+//- (id)init;
 //初始化后，赋值SDK版本信息.
 - (NSString*)GetSDKVerson;
+//设置是否为4K的通讯模式
+-(void) setF2F4k:(bool)value;
 //工具函数,返回bin二进制数据，长度为binlen的十六进制字符串
 -(NSString*) HexValue:(char*)bin Len:(int)binlen;
 //工具函数，打印二进制缓冲区内容
 -(void)HexPrint:(char*)data Len:(int)_len;
+/******************************************************/
 
 //放音音量控制,该函数暂时没有用处，100最大，0最小
 -(void)setVloumn:(NSInteger )vol;
@@ -79,6 +96,11 @@ extern int  ppDataPos;
 
 //停止录音，停止数据接收
 -(void)StopRec;
+
+/******************************************************/
+
+//新的方法，设置通讯模式，byHEZEWEN
+- (void)setCommmunicatinMode:(CommunicationMode)cmode;
 
 //设置通讯模式，发送和接收采用fsk还是f2f，VCOM_TYPE_F2F和VCOM_TYPE_FSK
 -(void) setMode:(int)smode recvMode:(int)rmode;
@@ -94,8 +116,12 @@ extern int  ppDataPos;
 //0-ok -1 失败
 -(int) playCmd:(char*)cmdstr;
 
-
+//是否需要mac
 -(void)setMac:(bool) state;
+
+
+//设置是否打印日志
+-(void)setDebug:(int)value;
 //*****************************************************
 //fsk发送指令封装
 //播放内存的语音。内部调用。
@@ -107,7 +133,7 @@ extern int  ppDataPos;
 
 //获取随机数
 -(void) Request_GetRandom:(int)randLen;
-
+//
 -(void)startDetector:(int)desMode
               random:(char*)_random
            randomLen:(int)_randomLen
@@ -132,7 +158,7 @@ extern int  ppDataPos;
 //获取磁卡卡号明文
 -(void) Request_GetCardNo:(int)timeout;
 
-//获取磁道信息明文
+//+获取磁道信息明文
 -(void) Request_GetTrackPlaintext:(int)timeout;
 
 /*!
@@ -153,7 +179,7 @@ extern int  ppDataPos;
 
 /*!
  @method
- @abstract 获取pin密文数据
+ @abstract 获取pin密文数据,输入密码
  @discussion 传入金额，请求用户输入密码时候调用
  @param desMode 模式 请填0
  @param _keyIndex PSAM卡秘钥索引
@@ -363,7 +389,7 @@ extern int  ppDataPos;
 //显示信息
 //info信息内容
 //timer-显示时间（秒）
--(void) display:(NSString*) strinfo  timer:(int)_time;
+-(void) display:(NSString*)strinfo  timer:(int)_time;
 
 //返回结果报文解析函数
 //返回 -1-报文错误 0-报文格式正确 其他，错误的结果
@@ -429,6 +455,32 @@ extern int  ppDataPos;
 //fjLen fjData-附件数据长度和附加数据
 -(void)f2f_getMiWenCiKa:(char) ctrlFlag tiemout:(char)tout  randLen:(int)_randLen rand:(char*)_rand
                   fjLen:(int) _fjLen fjData:(char*)_fjData;
+
+
+//PSAM卡货IC卡透传指令
+/*
+ * PSAM或IC卡透传指令
+ * @param mode 卡类型 0 PSAM卡 1 IC卡
+ * @param Ordersindex 命令个数
+ * @param orders 命令集合 (A命令长度+ A命令内容 + B命令长度 + B命令内容 +C.....)
+ * @param ordersLength 命令长度
+ * @param timer 超时时间
+ * @return
+ *///PSAM卡货IC卡透传指令
+/*
+ * PSAM或IC卡透传指令
+ * @param mode 卡类型 0 PSAM卡 1 IC卡
+ * @param Ordersindex 命令个数
+ * @param orders 命令集合 (A命令长度+ A命令内容 + B命令长度 + B命令内容 +C.....)
+ * @param ordersLength 命令长度
+ * @param timer 超时时间
+ * @return
+ */
+- (void)Request_ThroughOrders:(int)mode
+                  OrdersIndex:(int)ordersIndex
+                   OrdersData:(char *)orderData
+                  OrdersLegth:(int)dataLength
+                      TimeOut:(int)time;
 
 char* HexToBin(char* hex);
 

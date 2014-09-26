@@ -9,9 +9,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CSwiperStateChangedListener 
+@protocol CSwiperStateChangedListener
 @required
 typedef struct{
+    //保存了6D开头的整串返回数据
+    char readbuf[1024];
+    int readbufLen;
+    
     //数据结果
     int res;
     // 发送指令
@@ -43,10 +47,15 @@ typedef struct{
     //磁道明文
     char trackPlaintext[200];
     int  trackPlaintextLen;
+    char Track2[100];
+    int  track2Len;
+    char Track3[100];
+    int  track3Len;
+    
     
     //pin密文
     char pinEncryption[20];
-    int  pinEncryptionLen;    
+    int  pinEncryptionLen;
     
     //mac计算结果
     char macres[100];
@@ -89,7 +98,10 @@ typedef struct{
     //加密指令放回数据
     char Return_DataEnc[100];
     int Return_DataEnclen;
-    
+    //透传命令返回数据
+    int orderLen;
+    int orderNum;
+    char Return_orders[500];
 }vcom_Result;
 
 /****************************************
@@ -123,23 +135,41 @@ typedef struct{
 //通知监听器开始解析或读取卡号、磁道等相关信息
 -(void)onDecodingStart;
 
+/*!
+ @method
+ @abstract 错误提示
+ @discussion 出现错误。可能偶然的错误，设备与手机的适配问题，或者设备与驱动不符。
+ @param errorCode 错误代码。
+ @param errorMessage 错误信息。
+ */
+
+#define VCOM_ERROR 1 //提供errorMsg，描述错误原因
+#define VCOM_ERROR_FAIL_TO_START  2//CSwiperController创建失败
+#define VCOM_ERROR_FAIL_TO_GET_KSN   3//取ksn失败
+- (void)onError:(int)errorCode ErrorMessage:(NSString *)errorMessage;
+
 /**
  *	@注释	通知电话中断结束设备准备好了
  */
 -(void)onDeviceReady;
 
-#define VCOM_ERROR 1 //提供errorMsg，描述错误原因                 
-#define VCOM_ERROR_FAIL_TO_START  2//CSwiperController创建失败
-#define VCOM_ERROR_FAIL_TO_GET_KSN   3//取ksn失败
--(void)onError:(int)errorCode andMsg:(NSString*)errorMsg;   
 
 //通知监听器控制器CSwiperController的操作被中断
--(void)onInterrupted;            
+-(void)onInterrupted;
 
 //通知监听器控制器CSwiperController的操作超时
 //(超出预定的操作时间，30秒)
--(void)onTimeout;              
+-(void)onTimeout;
 
+/*!
+ @method
+ @abstract 通知ksn
+ @discussion 正常启动刷卡器后，将返回ksn
+ @param ksn 取得的ksn
+ */
+- (void)onGetKsnCompleted:(NSString *)ksn;
+// @2014.8.8修改，把版本也传过去
+- (void)onGetKsnAndVersionCompleted:(NSArray *)ksnAndVerson;
 //通知监听器解码刷卡器输出数据完毕。
 /*
  formatID　　　　　此参数保留
@@ -155,15 +185,31 @@ typedef struct{
  cardHolderName　　持卡人姓名
  */
 -(void)onDecodeCompleted:(NSString*) formatID
-                  andKsn:(NSString*) ksn 
+                  andKsn:(NSString*) ksn
             andencTracks:(NSString*) encTracks
-            andTrack1Length:(int) track1Length
+         andTrack1Length:(int) track1Length
          andTrack2Length:(int) track2Length
          andTrack3Length:(int) track3Length
          andRandomNumber:(NSString*) randomNumber
             andMaskedPAN:(NSString*) maskedPAN
            andExpiryDate:(NSString*) expiryDate
-       andCardHolderName:(NSString*) cardHolderName;
+       andCardHolderName:(NSString*) cardHolderName
+                  andMac:(NSString*) mac;
+
+//钱拓需要7.9
+-(void)onDecodeCompleted:(NSString*) formatID
+                  andKsn:(NSString*) ksn
+            andencTracks:(NSString*) encTracks
+         andTrack1Length:(int) track1Length
+         andTrack2Length:(int) track2Length
+         andTrack3Length:(int) track3Length
+         andRandomNumber:(NSString*) randomNumber
+            andMaskedPAN:(NSString*) maskedPAN
+           andExpiryDate:(NSString*) expiryDate
+       andCardHolderName:(NSString*) cardHolderName
+                  andMac:(NSString *)mac
+        andQTPlayReadBuf:(NSString*) readBuf;
+
 
 enum
 {
