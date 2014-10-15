@@ -118,7 +118,8 @@ static AppDataCenter *instance = nil;
 //    }
     else if([property isEqualToString:@"__ENCTRACKS"]) {
         
-        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+            ApplicationDelegate.deviceType==CDeviceTypeIbanShuaKaTou)
         {
             return [AppDataCenter sharedAppDataCenter].__ENCTRACKS;
         }
@@ -132,7 +133,8 @@ static AppDataCenter *instance = nil;
     }
     else if ([property isEqualToString:@"__TERID"]){
         
-        if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+        if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou||
+            ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
         {
                return self.__TERID;
         }
@@ -408,6 +410,11 @@ static AppDataCenter *instance = nil;
             type = @"4";
         }
             break;
+        case CDeviceTypeIbanShuaKaTou: //TODO 
+        {
+            type = @"2";
+        }
+            break;
         default:
             break;
     }
@@ -432,6 +439,11 @@ static AppDataCenter *instance = nil;
         case CDeviceTypeYinPinPOS:
         {
             type = @"音频POS";
+        }
+            break;
+        case CDeviceTypeIbanShuaKaTou:
+        {
+            type = @"I版刷卡头";
         }
             break;
         default:

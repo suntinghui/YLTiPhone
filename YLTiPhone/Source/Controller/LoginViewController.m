@@ -19,6 +19,8 @@
 #import "SecurityUtil.h"
 #import "ConvertUtil.h"
 #import "ShowContentViewController.h"
+#import "ICSwiperHandle.h"
+#import "Transfer_CSwiper.h"
 
 #define ActionsheetTypeOne  100
 #define ActionsheetTypeTwo  101
@@ -131,7 +133,7 @@
     [button addTarget:self action:@selector(selectPost:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
     
-    [self checkUpdate];
+   
     
     NSString *posType = [UserDefaults objectForKey:kUserPosType];
     if (posType!=nil)
@@ -139,7 +141,12 @@
         ApplicationDelegate.deviceType = [posType intValue];
     }
     
+    cSwiperController = [ICSwiperController shareInstance];
+//    cSwiperController.delegate = self;
     
+    [self checkUpdate];
+    
+  
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -150,15 +157,16 @@
         self.passwordTF.md5Value = pwd;
         [self.passwordTF setTextFieldValue:@"******"];
     }
-   
-    
+
 }
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self.passwordTF clearInput];
     
-    if(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    if(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+       ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
     {
         [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = YES;
     }
@@ -170,7 +178,7 @@
 
 - (void)showTypeSelectWithType:(int)type
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",@"I版刷卡头", nil];
     sheet.tag = type;
     
     if (type ==ActionsheetTypeOne)
@@ -206,6 +214,8 @@
     [super viewDidAppear:animated];
     
     [AppDataCenter sharedAppDataCenter].rateList = nil; //回到登录页面时 清空扣率数据
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -234,7 +244,10 @@
     {
         ApplicationDelegate.deviceType = CDeviceTypeShuaKaTou;
     }
-    
+    else if (buttonIndex==4)
+    {
+        ApplicationDelegate.deviceType = CDeviceTypeIbanShuaKaTou;
+    }
     [UserDefaults setObject:[NSString stringWithFormat:@"%d",ApplicationDelegate.deviceType] forKey:kUserPosType];
     [UserDefaults synchronize];
     
@@ -278,7 +291,7 @@
     {
         if ([UserDefaults objectForKey:kUserPosType]==nil)
         {
-            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", nil];
+            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", @"I版刷卡头",nil];
             [sheet showInView:self.view];
             return;
         }
@@ -393,4 +406,6 @@
         }
     }
 }
+
+
 @end

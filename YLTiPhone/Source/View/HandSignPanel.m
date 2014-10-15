@@ -20,7 +20,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self drawWaterMarked:md5Str];
+//        [self drawWaterMarked:md5Str];
+      
+        self.backgroundColor  = [UIColor whiteColor];
     }
     
     return self;
@@ -102,11 +104,12 @@
     [myImage drawAtPoint: CGPointZero];
     [[UIColor lightGrayColor] set];
     
-    int a = iPhone5 ? 64 :20;
+//    int a = iPhone5 ? 64 :20;
+    int a = iPhone5 ? 24 :4;
     
     for (int i=0; i<4; i++) {
         for (int j=0; j<8; j++) {
-            [[md5Str substringWithRange:NSMakeRange((i*8)+j, 1)] drawAtPoint: CGPointMake(a+58*j, 20+42*i) withFont: [UIFont italicSystemFontOfSize:35]];
+            [[md5Str substringWithRange:NSMakeRange((i*8)+j, 1)] drawAtPoint: CGPointMake(a+42*j, 20+58*i) withFont: [UIFont italicSystemFontOfSize:35]];
         }
     }
     watermarkedImage = UIGraphicsGetImageFromCurrentImageContext();

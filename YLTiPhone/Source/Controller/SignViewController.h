@@ -9,6 +9,7 @@
 #import "AbstractViewController.h"
 #import "HandSignPanel.h"
 #import "InputTextField.h"
+#import "PaintMaskView.h"
 
 @interface SignViewController : UIViewController<UITextFieldDelegate>
 {
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) HandSignPanel *signPanel;
 @property (nonatomic, weak )id <AbstractViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *phoneNumTF;
+@property (nonatomic, strong) PaintMaskView *painCanvasView;
 
 
 -(IBAction)myPalttealllineclear;

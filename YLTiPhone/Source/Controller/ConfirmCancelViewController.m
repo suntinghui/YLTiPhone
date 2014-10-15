@@ -150,7 +150,8 @@
     [tradeTimeLabel setBackgroundColor:[UIColor clearColor]];
     [gbIV addSubview:tradeTimeLabel];
     
-    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+        ApplicationDelegate.deviceType==CDeviceTypeIbanShuaKaTou)
     {
         self.pwdTF = [[PwdLeftTextField alloc] initWithFrame:CGRectMake(10, 250, 300, 44) left:@"" prompt:@"请输入卡密码"];
         [scrollView addSubview:self.pwdTF];
@@ -223,7 +224,8 @@
 //        
 //        [[Transfer sharedTransfer] startTransfer:@"0020023" fskCmd:[NSString stringWithFormat:@"Request_GetExtKsn#Request_VT#Request_GetDes#Request_GetPin|string:%@",[self.model.content objectForKey:@"field4"]] paramDic:dic];
         
-        if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+        if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou||
+            ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
         {
             NSString *temKey = [NSString stringWithFormat:@"%@%@",[AppDataCenter sharedAppDataCenter].__ENCTRACKS,[[AppDataCenter sharedAppDataCenter].pinKey substringToIndex:32]];
             NSString *key = [SecurityUtil encryptUseXOR16:temKey];

@@ -12,6 +12,7 @@
 #import "MKNetworkKit.h"
 #import "TxActionImp.h"
 #import "GCDAsyncSocket.h"
+#import "ICSwiper.h"
 
 @class TransferModel;
 

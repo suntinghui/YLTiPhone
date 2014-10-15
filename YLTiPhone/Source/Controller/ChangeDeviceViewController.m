@@ -32,8 +32,8 @@
     self.listTableView.backgroundColor = [UIColor clearColor];
     self.listTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     
-    images = @[@"0",@"3",@"4"];
-    titles = @[@"刷卡头",@"刷卡键盘",@"音频POS"];
+    images = @[@"0",@"3",@"4",@"0"];
+    titles = @[@"刷卡头",@"刷卡键盘",@"音频POS",@"I版刷卡头"];
 
 }
 
@@ -93,21 +93,30 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSString *method;
     if (indexPath.row==0) //点付宝
     {
         ApplicationDelegate.deviceType = CDeviceTypeShuaKaTou;
-        [[Transfer sharedTransfer] startTransfer:@"100005" fskCmd:@"Request_GetKsn" paramDic:nil];
+        method = @"Request_GetKsn";
     }
     else if(indexPath.row==1) //刷卡键盘、
     {
         ApplicationDelegate.deviceType = CDeviceTypeDianFuBao;
-        [[Transfer sharedTransfer] startTransfer:@"100005" fskCmd:@"Request_GetExtKsn" paramDic:nil];
+        method = @"Request_GetExtKsn";
     }
     else if(indexPath.row==2) //音频pos
     {
         ApplicationDelegate.deviceType = CDeviceTypeYinPinPOS;
-        [[Transfer sharedTransfer] startTransfer:@"100005" fskCmd:@"Request_GetExtKsn" paramDic:nil];
+        method = @"Request_GetExtKsn";
     }
+    else if (indexPath.row==3) //I版刷卡头
+    {
+        ApplicationDelegate.deviceType = CDeviceTypeIbanShuaKaTou;
+        method = @"iTypeGetKsn";
+    }
+    
+    [[Transfer sharedTransfer] startTransfer:@"100005" fskCmd:method paramDic:nil];
+    
     NSLog(@"post type:%d",ApplicationDelegate.deviceType);
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

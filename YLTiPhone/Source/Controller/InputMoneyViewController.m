@@ -13,6 +13,7 @@
 #import "Transfer+Action.h"
 #import "Transfer.h"
 #import "InputPasswordViewController.h"
+#import "SignViewController.h"
 
 @interface InputMoneyViewController ()
 
@@ -92,6 +93,10 @@
         }
         case 1011://确定
         {
+//            SignViewController *sign = [[SignViewController alloc]init];
+//            [self.navigationController pushViewController:sign animated:YES];
+//            return;
+            
             if ([self.moneyStr isEqualToString:@"0.00"]) {
                 [ApplicationDelegate showErrorPrompt:@"请输入有效金额"];
                 
@@ -167,6 +172,11 @@
     if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
     {
         [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
+    {
+        
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"startSwiper" paramDic:nil];
     }
     else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
             ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)

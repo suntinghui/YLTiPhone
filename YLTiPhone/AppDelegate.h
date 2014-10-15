@@ -14,7 +14,9 @@
 typedef enum{
     CDeviceTypeDianFuBao, //刷卡键盘
     CDeviceTypeShuaKaTou, //小刷卡头
-    CDeviceTypeYinPinPOS  //大音频pos
+    CDeviceTypeYinPinPOS,  //大音频pos
+    CDeviceTypeIbanShuaKaTou //I版刷卡头
+    
     
 }CDeviceType;
 
@@ -48,6 +50,7 @@ typedef enum{
 - (void) showText:(NSString *) msg;
 - (void) showProcess:(NSString *) msg;
 - (void) hideProcess;
+- (void) hideProcessNow;
 
 - (void) showSuccessPrompt:(NSString *) msg;
 - (void) showErrorPrompt:(NSString *) msg;

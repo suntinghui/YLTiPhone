@@ -400,7 +400,8 @@ static Transfer *instance = nil;
             {
                [self.sendDic setObject:[SecurityUtil encryptUseAES:[self.jsonDic JSONString]] forKey:@"arg"];
                 
-                if (ApplicationDelegate.deviceType ==CDeviceTypeShuaKaTou)
+                if (ApplicationDelegate.deviceType ==CDeviceTypeShuaKaTou||
+                    ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
                 {
                     
                     //消费、消费撤销、银行卡余额查询
@@ -459,11 +460,12 @@ static Transfer *instance = nil;
             NSLog(@"EFET...");
             NSLog(@"sendDic:%@",self.sendDic);
             self.action = [[TxActionImp alloc] init];
-            _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou?@"msg_config_aishua.xml":@"msg_config.xml"]];
+            _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:(ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou||ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)?@"msg_config_aishua.xml":@"msg_config.xml"]];
            
             
             if ([self.transferModel.shouldMac isEqualToString:@"true"]) {// 需要进行MAC计算
-                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+                    ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
                 {
                     NSData *randomData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].__RANDOM];
                     NSLog(@"random--- %@", [AppDataCenter sharedAppDataCenter].__RANDOM);
@@ -587,7 +589,7 @@ static Transfer *instance = nil;
     }else{
         //8583
         
-        _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou?@"msg_config_aishua.xml":@"msg_config.xml"]];
+        _reqData = [self.action first:self.sendDic withXMLData:[FileOperatorUtil getDataFromXML:(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)?@"msg_config_aishua.xml":@"msg_config.xml"]];
      
         
         [self setReqData:_reqData];
@@ -641,7 +643,8 @@ static Transfer *instance = nil;
                 }
                 else
                 {
-                    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+                        ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
                     {
                         md5str = [self getMacWithStr:macstrPlasMd5key];
                     }
@@ -735,7 +738,8 @@ static Transfer *instance = nil;
         {
             if ([self.transferModel.shouldMac isEqualToString:@"true"])
             {
-                if(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou){
+                if(ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+                   ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou){
                     NSData *randomData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].__RANDOM];
                     NSLog(@"randon: %@", [AppDataCenter sharedAppDataCenter].__RANDOM);
                     NSData *macData = [ConvertUtil parseHexToByteArray:[AppDataCenter sharedAppDataCenter].macKey];

@@ -14,6 +14,8 @@
 //加一句下面的语句可以忽略掉这个警告
 #pragma clang diagnostic ignored "-Wmissing-selector-name"
 
+#define IOS7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue ]>=7.0)
+
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif

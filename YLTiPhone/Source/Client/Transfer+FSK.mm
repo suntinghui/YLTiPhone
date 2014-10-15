@@ -18,29 +18,39 @@
 #import "QueryBalanceViewController.h"
 #import "GatherCancelTableViewController.h"
 #import "TradeDetailTableViewController.h"
-
+#import "Transfer_CSwiper.h"
+#import "ICSwiperHandle.h"
 @implementation Transfer (FSK)
 
 - (void) initFSK
 {
     NSLog(@"Init Transfer FSK ...");
     // 初始化对象
-    self.m_vcom = [vcom getInstance];
-    [self.m_vcom open];
     
-    self.m_vcom.eventListener = self;
-    
-    if(ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+    //!!! 必须做判断  一次只能初始化一种sdk  否则出现诡异bug 貌似两个sdk之间有影响
+    if (ApplicationDelegate.deviceType==CDeviceTypeDianFuBao||
+        ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS||
+        ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
     {
-        [self.m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
-         [self.m_vcom setMac:false]; //add wenbin 20140328
-    }else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
-             ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
-    {
-        [self.m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
+        self.m_vcom = [vcom getInstance];
+        [self.m_vcom open];
+        
+        self.m_vcom.eventListener = self;
+        [self.m_vcom setVloumn:75];
+        
+        if(ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+        {
+            [self.m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
+            [self.m_vcom setMac:false];
+        }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+                ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+        {
+            [self.m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
+        }
+        
     }
     
-    [self.m_vcom setVloumn:75];
     
     self.fskCmdArray = [[NSMutableArray alloc] init];
 }
@@ -67,9 +77,12 @@
             
             [self performSelectorOnMainThread:@selector(showFSKProgress) withObject:nil waitUntilDone:NO];
             
+            //???
+            [self.fskCmdArray removeObjectAtIndex:0];
+            
             [self invokeFSKCmd:cmd];
             
-            [self.fskCmdArray removeObjectAtIndex:0];
+          
             
         } else {
 //            [ApplicationDelegate hideProcess];
@@ -689,6 +702,9 @@
     
     return methodName;
 }
+
+
+
 
 #pragma mark -
 

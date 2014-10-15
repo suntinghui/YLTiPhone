@@ -9,15 +9,18 @@
 #import "AbstractViewController.h"
 #import "LeftTextField.h"
 #import "PasswordTextField.h"
-
 #import "YLTPasswordTextField.h"
+
+#import "ICSwiper.h"
 
 @interface LoginViewController : AbstractViewController<UITextFieldDelegate,
     UINavigationControllerDelegate,
     UIAlertViewDelegate,
-    UIActionSheetDelegate>
+    UIActionSheetDelegate,
+    ICSwiperStateChangedListener>
 {
     BOOL            agreeButtonTouch;
+    ICSwiperController *cSwiperController;
 
 }
 @property(nonatomic, strong)IBOutlet LeftTextField    *phoneNumTF;

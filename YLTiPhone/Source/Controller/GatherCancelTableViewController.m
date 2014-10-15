@@ -139,6 +139,10 @@
     {
         [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"Request_GetKsn#Request_Pay" paramDic:nil];
     }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
+    {
+        [[Transfer sharedTransfer] startTransfer:nil fskCmd:@"startSwiper" paramDic:nil];
+    }
     else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
             ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
     {

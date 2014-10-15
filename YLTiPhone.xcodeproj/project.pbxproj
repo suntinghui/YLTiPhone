@@ -410,22 +410,25 @@
 		8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85518EFA662003F222E /* AgreementViewController.xib */; };
 		8DE4E85918EFC531003F222E /* agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85818EFC531003F222E /* agreement.html */; };
 		8DE4E86018EFCE15003F222E /* con_req_089001.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4E85F18EFCE15003F222E /* con_req_089001.xml */; };
+		B814A58219E51B150017EB53 /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57919E51B150017EB53 /* aboutSystemBg@2x.png */; };
+		B814A58319E51B150017EB53 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57A19E51B150017EB53 /* app.png */; };
+		B814A58419E51B150017EB53 /* app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57B19E51B150017EB53 /* app@2x.png */; };
+		B814A58519E51B150017EB53 /* app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57C19E51B150017EB53 /* app@3x.png */; };
+		B814A58619E51B150017EB53 /* catalog_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57D19E51B150017EB53 /* catalog_nav.png */; };
+		B814A58719E51B150017EB53 /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57E19E51B150017EB53 /* catalog_nav@2x.png */; };
+		B814A58819E51B150017EB53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A57F19E51B150017EB53 /* Default-568h@2x.png */; };
+		B814A58919E51B150017EB53 /* LoginViewBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A58019E51B150017EB53 /* LoginViewBG.png */; };
+		B814A58A19E51B150017EB53 /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B814A58119E51B150017EB53 /* LoginViewBG@2x.png */; };
+		B81B47CC19EE56C600548EE0 /* PaintMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B47CB19EE56C600548EE0 /* PaintMaskView.m */; };
 		B8311BC319D54B8200E17BA4 /* con_req_100006.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8311BC219D54B8200E17BA4 /* con_req_100006.xml */; };
 		B84AB35A18FE6CDF00CCEDF2 /* head_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
-		B85F7EBF19B82CBC008616B5 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB519B82CBC008616B5 /* navbar@2x.png */; };
-		B85F7EC019B82CBC008616B5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB619B82CBC008616B5 /* Default@2x.png */; };
-		B85F7EC119B82CBC008616B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB719B82CBC008616B5 /* Default-568h@2x.png */; };
-		B85F7EC219B82CBC008616B5 /* beginguide05.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB819B82CBC008616B5 /* beginguide05.png */; };
-		B85F7EC319B82CBC008616B5 /* beginguide04.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EB919B82CBC008616B5 /* beginguide04.png */; };
-		B85F7EC419B82CBC008616B5 /* beginguide03.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBA19B82CBC008616B5 /* beginguide03.png */; };
-		B85F7EC519B82CBC008616B5 /* beginguide02.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBB19B82CBC008616B5 /* beginguide02.png */; };
-		B85F7EC619B82CBC008616B5 /* beginguide01.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBC19B82CBC008616B5 /* beginguide01.png */; };
-		B85F7EC719B82CBC008616B5 /* app.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBD19B82CBC008616B5 /* app.png */; };
-		B85F7EC819B82CBC008616B5 /* aboutSystemBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7EBE19B82CBC008616B5 /* aboutSystemBg@2x.png */; };
-		B85F7ECC19B83361008616B5 /* catalog_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7ECB19B83361008616B5 /* catalog_nav@2x.png */; };
-		B85F7ECE19B8382F008616B5 /* LoginViewBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F7ECD19B8382F008616B5 /* LoginViewBG@2x.png */; };
+		B86F6A7C19E633C7004D1C4B /* Transfer_CSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = B86F6A7B19E633C7004D1C4B /* Transfer_CSwiper.m */; };
 		B87700DA19037269002BF873 /* selectbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B87700D919037269002BF873 /* selectbg.jpg */; };
+		B882415019E91A4600D63F68 /* libICSwiper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B882414E19E91A4600D63F68 /* libICSwiper.a */; };
+		B882415819E91D9100D63F68 /* ICSwiperHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B882415719E91D9100D63F68 /* ICSwiperHandle.m */; };
+		B8A11F5119EBD4220027672B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8A11F4E19EBD4220027672B /* SVProgressHUD.bundle */; };
+		B8A11F5219EBD4230027672B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A11F5019EBD4220027672B /* SVProgressHUD.m */; };
 		B8A5E2E919B6DFB90080A1AF /* ChangeDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A5E2E719B6DFB90080A1AF /* ChangeDeviceViewController.m */; };
 		B8A5E2EA19B6DFB90080A1AF /* ChangeDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5E2E819B6DFB90080A1AF /* ChangeDeviceViewController.xib */; };
 		B8A5E2EE19B6E07E0080A1AF /* icon_device_0.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A5E2EB19B6E07E0080A1AF /* icon_device_0.png */; };
@@ -434,6 +437,7 @@
 		B8C5171C18E86112009A676A /* msg_config_aishua.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8C5171B18E86112009A676A /* msg_config_aishua.xml */; };
 		B8E57F3E18FA80BA001EBE0B /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */; };
 		B8E57F4018FA8B98001EBE0B /* revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E57F3F18FA8B98001EBE0B /* revoked.png */; };
+		B8EFCD1E19E7C0EE00FA9FA6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFCD1D19E7C0EE00FA9FA6 /* CoreBluetooth.framework */; };
 		FC1FC6C118EC090F004488CF /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BD18EC090F004488CF /* libcrypto.a */; };
 		FC1FC6C218EC090F004488CF /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BE18EC090F004488CF /* libcurl.a */; };
 		FC1FC6C318EC090F004488CF /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1FC6BF18EC090F004488CF /* libssl.a */; };
@@ -1010,23 +1014,31 @@
 		8DE4E85518EFA662003F222E /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		8DE4E85818EFC531003F222E /* agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = agreement.html; sourceTree = "<group>"; };
 		8DE4E85F18EFCE15003F222E /* con_req_089001.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = con_req_089001.xml; sourceTree = "<group>"; };
+		B814A57919E51B150017EB53 /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
+		B814A57A19E51B150017EB53 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B814A57B19E51B150017EB53 /* app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@2x.png"; sourceTree = "<group>"; };
+		B814A57C19E51B150017EB53 /* app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app@3x.png"; sourceTree = "<group>"; };
+		B814A57D19E51B150017EB53 /* catalog_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog_nav.png; sourceTree = "<group>"; };
+		B814A57E19E51B150017EB53 /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
+		B814A57F19E51B150017EB53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B814A58019E51B150017EB53 /* LoginViewBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginViewBG.png; sourceTree = "<group>"; };
+		B814A58119E51B150017EB53 /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
+		B81B47CA19EE56C600548EE0 /* PaintMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintMaskView.h; sourceTree = "<group>"; };
+		B81B47CB19EE56C600548EE0 /* PaintMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintMaskView.m; sourceTree = "<group>"; };
 		B8311BC219D54B8200E17BA4 /* con_req_100006.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = con_req_100006.xml; sourceTree = "<group>"; };
 		B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_small@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
-		B85F7EB519B82CBC008616B5 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
-		B85F7EB619B82CBC008616B5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B85F7EB719B82CBC008616B5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B85F7EB819B82CBC008616B5 /* beginguide05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide05.png; sourceTree = "<group>"; };
-		B85F7EB919B82CBC008616B5 /* beginguide04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide04.png; sourceTree = "<group>"; };
-		B85F7EBA19B82CBC008616B5 /* beginguide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide03.png; sourceTree = "<group>"; };
-		B85F7EBB19B82CBC008616B5 /* beginguide02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide02.png; sourceTree = "<group>"; };
-		B85F7EBC19B82CBC008616B5 /* beginguide01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginguide01.png; sourceTree = "<group>"; };
-		B85F7EBD19B82CBC008616B5 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
-		B85F7EBE19B82CBC008616B5 /* aboutSystemBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutSystemBg@2x.png"; sourceTree = "<group>"; };
-		B85F7ECB19B83361008616B5 /* catalog_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalog_nav@2x.png"; sourceTree = "<group>"; };
-		B85F7ECD19B8382F008616B5 /* LoginViewBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginViewBG@2x.png"; sourceTree = "<group>"; };
+		B86F6A7A19E633C7004D1C4B /* Transfer_CSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer_CSwiper.h; sourceTree = "<group>"; };
+		B86F6A7B19E633C7004D1C4B /* Transfer_CSwiper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer_CSwiper.m; sourceTree = "<group>"; };
 		B87700D919037269002BF873 /* selectbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectbg.jpg; sourceTree = "<group>"; };
+		B882414E19E91A4600D63F68 /* libICSwiper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libICSwiper.a; sourceTree = "<group>"; };
+		B882414F19E91A4600D63F68 /* ICSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSwiper.h; sourceTree = "<group>"; };
+		B882415619E91D9100D63F68 /* ICSwiperHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSwiperHandle.h; sourceTree = "<group>"; };
+		B882415719E91D9100D63F68 /* ICSwiperHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSwiperHandle.m; sourceTree = "<group>"; };
+		B8A11F4E19EBD4220027672B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		B8A11F4F19EBD4220027672B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		B8A11F5019EBD4220027672B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		B8A5E2E619B6DFB90080A1AF /* ChangeDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDeviceViewController.h; sourceTree = "<group>"; };
 		B8A5E2E719B6DFB90080A1AF /* ChangeDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChangeDeviceViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B8A5E2E819B6DFB90080A1AF /* ChangeDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeDeviceViewController.xib; sourceTree = "<group>"; };
@@ -1036,6 +1048,7 @@
 		B8C5171B18E86112009A676A /* msg_config_aishua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = msg_config_aishua.xml; path = XML/Config/msg_config_aishua.xml; sourceTree = "<group>"; };
 		B8E57F3D18FA80BA001EBE0B /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		B8E57F3F18FA8B98001EBE0B /* revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revoked.png; sourceTree = "<group>"; };
+		B8EFCD1D19E7C0EE00FA9FA6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		FC1FC6BD18EC090F004488CF /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		FC1FC6BE18EC090F004488CF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = lib/libcurl.a; sourceTree = "<group>"; };
 		FC1FC6BF18EC090F004488CF /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
@@ -1049,6 +1062,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EFCD1E19E7C0EE00FA9FA6 /* CoreBluetooth.framework in Frameworks */,
 				0537AFAA18584584005F84D1 /* libz.dylib in Frameworks */,
 				0537AFA818584579005F84D1 /* libsqlite3.dylib in Frameworks */,
 				FC1FC6C318EC090F004488CF /* libssl.a in Frameworks */,
@@ -1065,6 +1079,7 @@
 				0537AF9618584537005F84D1 /* MediaPlayer.framework in Frameworks */,
 				FC1FC6C118EC090F004488CF /* libcrypto.a in Frameworks */,
 				0537AF9418584532005F84D1 /* AudioToolbox.framework in Frameworks */,
+				B882415019E91A4600D63F68 /* libICSwiper.a in Frameworks */,
 				0537AF921858452B005F84D1 /* CoreAudio.framework in Frameworks */,
 				0537AF9018584525005F84D1 /* SystemConfiguration.framework in Frameworks */,
 				0537AF8E1858451F005F84D1 /* ImageIO.framework in Frameworks */,
@@ -1097,6 +1112,7 @@
 		0537AE2A18583B39005F84D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8EFCD1D19E7C0EE00FA9FA6 /* CoreBluetooth.framework */,
 				0537AFA918584584005F84D1 /* libz.dylib */,
 				0537AFA718584579005F84D1 /* libsqlite3.dylib */,
 				0537AFA51858456F005F84D1 /* libicucore.dylib */,
@@ -1218,8 +1234,12 @@
 				0537AF2A18583F44005F84D1 /* Transfer+Action.m */,
 				0537AF2B18583F44005F84D1 /* Transfer+FSK.h */,
 				0537AF2C18583F44005F84D1 /* Transfer+FSK.mm */,
+				B86F6A7A19E633C7004D1C4B /* Transfer_CSwiper.h */,
+				B86F6A7B19E633C7004D1C4B /* Transfer_CSwiper.m */,
 				0537AF2D18583F44005F84D1 /* UpdateAppHelper.h */,
 				0537AF2E18583F44005F84D1 /* UpdateAppHelper.m */,
+				B882415619E91D9100D63F68 /* ICSwiperHandle.h */,
+				B882415719E91D9100D63F68 /* ICSwiperHandle.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -1397,6 +1417,8 @@
 		0537AE6718583DB3005F84D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B81B47CA19EE56C600548EE0 /* PaintMaskView.h */,
+				B81B47CB19EE56C600548EE0 /* PaintMaskView.m */,
 				0537AEC918583EE6005F84D1 /* HandSignPanel.h */,
 				0537AECA18583EE6005F84D1 /* HandSignPanel.m */,
 				0537AECB18583EE6005F84D1 /* AFPickerView.h */,
@@ -1436,6 +1458,8 @@
 		0537AE6C18583E1B005F84D1 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				B8A11F4D19EBD4220027672B /* SVProgressHUD */,
+				B86F6A7619E6335A004D1C4B /* CSwiper */,
 				6CB1F37418EFF104009E2287 /* CocoaLumberjack */,
 				6CB1F33218EFD23F009E2287 /* EFET */,
 				0537AE6D18583E1B005F84D1 /* AFNetworking */,
@@ -2016,21 +2040,37 @@
 			name = ReceviMony;
 			sourceTree = "<group>";
 		};
+		B86F6A7619E6335A004D1C4B /* CSwiper */ = {
+			isa = PBXGroup;
+			children = (
+				B882414E19E91A4600D63F68 /* libICSwiper.a */,
+				B882414F19E91A4600D63F68 /* ICSwiper.h */,
+			);
+			path = CSwiper;
+			sourceTree = "<group>";
+		};
+		B8A11F4D19EBD4220027672B /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B8A11F4E19EBD4220027672B /* SVProgressHUD.bundle */,
+				B8A11F4F19EBD4220027672B /* SVProgressHUD.h */,
+				B8A11F5019EBD4220027672B /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		B8E57F2A18FA76B3001EBE0B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				B85F7ECD19B8382F008616B5 /* LoginViewBG@2x.png */,
-				B85F7ECB19B83361008616B5 /* catalog_nav@2x.png */,
-				B85F7EB519B82CBC008616B5 /* navbar@2x.png */,
-				B85F7EB619B82CBC008616B5 /* Default@2x.png */,
-				B85F7EB719B82CBC008616B5 /* Default-568h@2x.png */,
-				B85F7EB819B82CBC008616B5 /* beginguide05.png */,
-				B85F7EB919B82CBC008616B5 /* beginguide04.png */,
-				B85F7EBA19B82CBC008616B5 /* beginguide03.png */,
-				B85F7EBB19B82CBC008616B5 /* beginguide02.png */,
-				B85F7EBC19B82CBC008616B5 /* beginguide01.png */,
-				B85F7EBD19B82CBC008616B5 /* app.png */,
-				B85F7EBE19B82CBC008616B5 /* aboutSystemBg@2x.png */,
+				B814A57919E51B150017EB53 /* aboutSystemBg@2x.png */,
+				B814A57A19E51B150017EB53 /* app.png */,
+				B814A57B19E51B150017EB53 /* app@2x.png */,
+				B814A57C19E51B150017EB53 /* app@3x.png */,
+				B814A57D19E51B150017EB53 /* catalog_nav.png */,
+				B814A57E19E51B150017EB53 /* catalog_nav@2x.png */,
+				B814A57F19E51B150017EB53 /* Default-568h@2x.png */,
+				B814A58019E51B150017EB53 /* LoginViewBG.png */,
+				B814A58119E51B150017EB53 /* LoginViewBG@2x.png */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2099,12 +2139,11 @@
 				B8A5E2F019B6E07E0080A1AF /* icon_device_4.png in Resources */,
 				8D3CA17718C6C9C800C119DA /* con_req_086000_aishua.xml in Resources */,
 				050B01621867E396009432CD /* icon_4.png in Resources */,
+				B814A58419E51B150017EB53 /* app@2x.png in Resources */,
 				0554B19618711EEC00C75DCD /* inputmoney_button_dot@2x.png in Resources */,
 				8D32CA5318E7FFCA00633FEF /* explain.png in Resources */,
 				050B017D1867E45A009432CD /* child_catalog_select@2x.png in Resources */,
 				055BA0F018750B71005E7E7A /* success.png in Resources */,
-				B85F7ECE19B8382F008616B5 /* LoginViewBG@2x.png in Resources */,
-				B85F7EC719B82CBC008616B5 /* app.png in Resources */,
 				8D3CA16918C6C9C800C119DA /* con_req_089010.xml in Resources */,
 				05B06D1D187FDFC800757F6C /* bank.xml in Resources */,
 				0558267A186C16A30002AE2E /* pwdinput.png in Resources */,
@@ -2119,15 +2158,16 @@
 				0554B123187113AF00C75DCD /* back_button_normal@2x.png in Resources */,
 				0554B19318711EEC00C75DCD /* inputmoney_button_9@2x.png in Resources */,
 				0558265A186C097C0002AE2E /* cardID@2x.png in Resources */,
-				B85F7EC019B82CBC008616B5 /* Default@2x.png in Resources */,
 				B87700DA19037269002BF873 /* selectbg.jpg in Resources */,
 				052079701863E1A0004BF055 /* btn_comment_sametime_select.png in Resources */,
+				B814A58719E51B150017EB53 /* catalog_nav@2x.png in Resources */,
 				0554B14B18711E6F00C75DCD /* InputMoneyViewController.xib in Resources */,
 				8D3CA18218C6C9C800C119DA /* con_req_200001111.xml in Resources */,
 				8D281C9218F2F8DF00457792 /* receipt_bg.png in Resources */,
 				8D3CA16618C6C9C800C119DA /* con_req_089007.xml in Resources */,
 				0554B1AF18714C7300C75DCD /* collectCashButton_highlight@2x.png in Resources */,
 				0554B1D218715E0500C75DCD /* suffix_normal@2x.png in Resources */,
+				B814A58619E51B150017EB53 /* catalog_nav.png in Resources */,
 				0554B1E31871664D00C75DCD /* selectBank_highlight@2x.png in Resources */,
 				0554B1D71871602600C75DCD /* salesslip@2x.png in Resources */,
 				0554B18A18711EEC00C75DCD /* inputmoney_button_0@2x.png in Resources */,
@@ -2135,6 +2175,7 @@
 				0554B11B187111C500C75DCD /* catalog_nav.png in Resources */,
 				05582640186BF76A0002AE2E /* textInput@2x.png in Resources */,
 				8D3CA15C18C6C9C800C119DA /* con_req_089006.xml in Resources */,
+				B814A58519E51B150017EB53 /* app@3x.png in Resources */,
 				0554B17E18711EEC00C75DCD /* digit_little_0.png in Resources */,
 				05B06D1F187FDFC800757F6C /* phonerecharge.xml in Resources */,
 				8DE4E85718EFA662003F222E /* AgreementViewController.xib in Resources */,
@@ -2161,11 +2202,11 @@
 				052079611863DE45004BF055 /* RegisterButton_normal.png in Resources */,
 				0554B18418711EEC00C75DCD /* digit_little_6.png in Resources */,
 				0554B18218711EEC00C75DCD /* digit_little_4.png in Resources */,
-				B85F7EC319B82CBC008616B5 /* beginguide04.png in Resources */,
 				0558264A186BF8660002AE2E /* merchantName.png in Resources */,
 				050B015F1867E396009432CD /* icon_1.png in Resources */,
 				055BA0EF18750B71005E7E7A /* fail.png in Resources */,
 				0554B1AB18714C6000C75DCD /* collectCashButton_normal.png in Resources */,
+				B814A58919E51B150017EB53 /* LoginViewBG.png in Resources */,
 				050B01651867E396009432CD /* icon_7.png in Resources */,
 				8D3CA18718C6C9C800C119DA /* con_req_600000001.xml in Resources */,
 				05582656186C00410002AE2E /* merchantNamebg.png in Resources */,
@@ -2176,9 +2217,9 @@
 				8D801CAA18EBA3F800CEE39B /* beginguide05.png in Resources */,
 				0554B1DE1871647C00C75DCD /* selectField_normal.png in Resources */,
 				8D3CA17B18C6C9C800C119DA /* con_req_089005.xml in Resources */,
+				B8A11F5119EBD4220027672B /* SVProgressHUD.bundle in Resources */,
 				8D3CA16218C6C9C800C119DA /* con_req_080002.xml in Resources */,
 				050B01601867E396009432CD /* icon_2.png in Resources */,
-				B85F7EC419B82CBC008616B5 /* beginguide03.png in Resources */,
 				0520797D1863EC0D004BF055 /* confirmButton_select.png in Resources */,
 				0554B18518711EEC00C75DCD /* digit_little_7.png in Resources */,
 				8D3CA15F18C6C9C800C119DA /* con_req_020022_aishua.xml in Resources */,
@@ -2186,8 +2227,6 @@
 				0554B19718711EEC00C75DCD /* inputmoney_button_submit@2x.png in Resources */,
 				8D3CA18918C6C9C800C119DA /* con_req_700000001.xml in Resources */,
 				0520796D1863E190004BF055 /* btn_comment_sametime_unselect@2x.png in Resources */,
-				B85F7EC219B82CBC008616B5 /* beginguide05.png in Resources */,
-				B85F7EC519B82CBC008616B5 /* beginguide02.png in Resources */,
 				0558266C186C0E7D0002AE2E /* confirmButtonPress@2x.png in Resources */,
 				B8A5E2EE19B6E07E0080A1AF /* icon_device_0.png in Resources */,
 				0515D2BC188CF66C0092C8E5 /* province.xml in Resources */,
@@ -2204,7 +2243,6 @@
 				0554B18D18711EEC00C75DCD /* inputmoney_button_3@2x.png in Resources */,
 				0554B18918711EEC00C75DCD /* digit_little_slash.png in Resources */,
 				05582680186C1D190002AE2E /* realname.png in Resources */,
-				B85F7EC619B82CBC008616B5 /* beginguide01.png in Resources */,
 				055B2F9618629F11000373FE /* navbar.png in Resources */,
 				0554B18318711EEC00C75DCD /* digit_little_5.png in Resources */,
 				0554B1CF18715DE200C75DCD /* suffix_selected.png in Resources */,
@@ -2215,7 +2253,6 @@
 				0520795F1863DE45004BF055 /* LoginButton_normal.png in Resources */,
 				050B01731867E3A4009432CD /* icon_7@2x.png in Resources */,
 				05578CDA186AC1BF00475B9C /* torn.png in Resources */,
-				B85F7EC119B82CBC008616B5 /* Default-568h@2x.png in Resources */,
 				05B06D21187FDFC800757F6C /* reversalmap.xml in Resources */,
 				0558267E186C1D160002AE2E /* realname@2x.png in Resources */,
 				054E5EA7188FA03F0071B8CC /* arrow.png in Resources */,
@@ -2237,6 +2274,7 @@
 				0554B18118711EEC00C75DCD /* digit_little_3.png in Resources */,
 				055BA0F418750B7E005E7E7A /* success@2x.png in Resources */,
 				0554B19118711EEC00C75DCD /* inputmoney_button_7@2x.png in Resources */,
+				B814A58A19E51B150017EB53 /* LoginViewBG@2x.png in Resources */,
 				8D3CA16C18C6C9C800C119DA /* con_req_089013.xml in Resources */,
 				8D3CA16A18C6C9C800C119DA /* con_req_089011.xml in Resources */,
 				055B2F9218629D42000373FE /* loginshade-5.png in Resources */,
@@ -2290,9 +2328,9 @@
 				8D3CA17918C6C9C800C119DA /* con_req_089000.xml in Resources */,
 				0554B1E61871665500C75DCD /* selectBank_normal.png in Resources */,
 				0554B17A18711EEC00C75DCD /* digit_green_7.png in Resources */,
-				B85F7ECC19B83361008616B5 /* catalog_nav@2x.png in Resources */,
 				8DE4E85918EFC531003F222E /* agreement.html in Resources */,
 				8D3CA18B18C6C9C800C119DA /* con_req_999000001.xml in Resources */,
+				B814A58219E51B150017EB53 /* aboutSystemBg@2x.png in Resources */,
 				0554B1DA1871647400C75DCD /* selectField_normal@2x.png in Resources */,
 				05B06D1E187FDFC800757F6C /* catalog.xml in Resources */,
 				8D3CA16B18C6C9C800C119DA /* con_req_089012.xml in Resources */,
@@ -2308,12 +2346,12 @@
 				8D3CA16118C6C9C800C119DA /* con_req_020023.xml in Resources */,
 				0520797C1863EC0D004BF055 /* confirmButton_nomal.png in Resources */,
 				8D56ACE718DD88930082E444 /* catalog_aishua.xml in Resources */,
-				B85F7EC819B82CBC008616B5 /* aboutSystemBg@2x.png in Resources */,
 				0554B1D51871601300C75DCD /* salesslip.png in Resources */,
 				050B016E1867E3A4009432CD /* icon_2@2x.png in Resources */,
 				055BA0F318750B7E005E7E7A /* fail@2x.png in Resources */,
 				0554B1E71871665500C75DCD /* selectBank_highlight.png in Resources */,
 				8D3CA16418C6C9C800C119DA /* con_req_089003.xml in Resources */,
+				B814A58819E51B150017EB53 /* Default-568h@2x.png in Resources */,
 				0537AF691858419D005F84D1 /* ResultViewController.xib in Resources */,
 				B8A5E2EA19B6DFB90080A1AF /* ChangeDeviceViewController.xib in Resources */,
 				0520797F1863EC0D004BF055 /* delete_select.png in Resources */,
@@ -2330,7 +2368,6 @@
 				0554B17918711EEC00C75DCD /* digit_green_6.png in Resources */,
 				05582664186C0DDB0002AE2E /* shade-5.png in Resources */,
 				6CB1F39018EFF104009E2287 /* README.txt in Resources */,
-				B85F7EBF19B82CBC008616B5 /* navbar@2x.png in Resources */,
 				8D3CA17218C6C9C800C119DA /* con_req_020022.xml in Resources */,
 				0554B1D318715E0500C75DCD /* suffix_selected@2x.png in Resources */,
 				8D3CA18D18C6C9C800C119DA /* con_req_999000003.xml in Resources */,
@@ -2339,6 +2376,7 @@
 				0554B17418711EEC00C75DCD /* digit_green_1.png in Resources */,
 				050B01771867E3FD009432CD /* catalogwhite.png in Resources */,
 				0554B1271871142400C75DCD /* back_button_pressed.png in Resources */,
+				B814A58319E51B150017EB53 /* app.png in Resources */,
 				8D3CA17C18C6C9C800C119DA /* con_req_089016.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2379,6 +2417,7 @@
 				0554B142187119C400C75DCD /* ChongZhengCell.m in Sources */,
 				0515D2C4188D20040092C8E5 /* CityModel.m in Sources */,
 				0537AEB618583E1B005F84D1 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
+				B882415819E91D9100D63F68 /* ICSwiperHandle.m in Sources */,
 				0537AEB718583E1B005F84D1 /* NSData+MKBase64.m in Sources */,
 				05640EA51883BF190053E2AF /* FileOperatorUtil.m in Sources */,
 				0537AEB818583E1B005F84D1 /* NSDate+RFC1123.m in Sources */,
@@ -2410,6 +2449,7 @@
 				0554B12A187115B200C75DCD /* QueryBalanceViewController.m in Sources */,
 				0537AEE618583EE6005F84D1 /* AFPickerView.m in Sources */,
 				6CB1F35E18EFD23F009E2287 /* TxActionImp.m in Sources */,
+				B81B47CC19EE56C600548EE0 /* PaintMaskView.m in Sources */,
 				0537AEE718583EE6005F84D1 /* DateTextField.m in Sources */,
 				0537AEE818583EE6005F84D1 /* InputTextField.m in Sources */,
 				6CB1F38B18EFF104009E2287 /* DDLog.m in Sources */,
@@ -2451,8 +2491,10 @@
 				0537AF2F18583F44005F84D1 /* AppDataCenter.m in Sources */,
 				0537AF3118583F44005F84D1 /* BaseDBHelper.m in Sources */,
 				0554B134187118D600C75DCD /* TransListDetailViewController.m in Sources */,
+				B86F6A7C19E633C7004D1C4B /* Transfer_CSwiper.m in Sources */,
 				0554B19B1871411700C75DCD /* GatherCancelTableViewController.m in Sources */,
 				0534998A1887F3500043442C /* YLTPasswordTextField.m in Sources */,
+				B8A11F5219EBD4230027672B /* SVProgressHUD.m in Sources */,
 				0537AF3218583F44005F84D1 /* PayeeAccountDBHelper.m in Sources */,
 				0537AF3318583F44005F84D1 /* ReversalDBHelper.m in Sources */,
 				0537AF3418583F44005F84D1 /* TransferSuccessDBHelper.m in Sources */,
@@ -2591,8 +2633,8 @@
 		0537AE4618583B39005F84D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (87AJP22Y78)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (87AJP22Y78)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Hou (N7WJS8QVW5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chao Hou (N7WJS8QVW5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2602,9 +2644,11 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/YLTiPhone/External/CSwiper",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "cdbe115a-a4bd-4368-ba42-231bdac3be6e";
+				PROVISIONING_PROFILE = "8f2c1a17-32f0-4f73-8f69-130ec042408c";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2614,8 +2658,8 @@
 		0537AE4718583B39005F84D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YunFu Co., Ltd. (8UPUNE2T88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YunFu Co., Ltd. (8UPUNE2T88)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YLTiPhone/YLTiPhone-Prefix.pch";
 				HEADER_SEARCH_PATHS = include;
@@ -2625,9 +2669,11 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/YLTiPhone/External/CSwiper",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "优乐通";
-				PROVISIONING_PROFILE = "cdbe115a-a4bd-4368-ba42-231bdac3be6e";
+				PROVISIONING_PROFILE = "8f2c1a17-32f0-4f73-8f69-130ec042408c";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR) ../lib";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

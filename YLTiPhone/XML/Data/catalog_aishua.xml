@@ -260,17 +260,17 @@
 		<isActive>true</isActive>
 	</catalog>
 	
-	<catalog>
-		<catalogId>65</catalogId>
-		<title>软件更新</title>
-		<parentId>6</parentId>
-		<actionType>alert</actionType>
-		<iconId>65</iconId>
-		<description>无</description>
-		<needReverse>false</needReverse>
-		<isActive>true</isActive>
-	</catalog>
-	
+<!--	<catalog>-->
+<!--		<catalogId>65</catalogId>-->
+<!--		<title>软件更新</title>-->
+<!--		<parentId>6</parentId>-->
+<!--		<actionType>alert</actionType>-->
+<!--		<iconId>65</iconId>-->
+<!--		<description>无</description>-->
+<!--		<needReverse>false</needReverse>-->
+<!--		<isActive>true</isActive>-->
+<!--	</catalog>-->
+
 	<!-- <catalog>
 		<catalogId>66</catalogId>
 		<title>用户帮助</title>

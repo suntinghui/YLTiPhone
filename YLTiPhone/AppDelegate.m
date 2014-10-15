@@ -24,6 +24,7 @@
 #import "DDTTYLogger.h"
 #import "DDDispatchQueueLogFormatter.h"
 #import "BeginGuideViewController.h"
+#import "SVProgressHUD.h"
 
 @implementation AppDelegate
 
@@ -60,14 +61,19 @@
     
     self.hasLogin = NO;
     
+    NSString *posType = [UserDefaults objectForKey:kUserPosType];
+    if (posType!=nil)
+    {
+        ApplicationDelegate.deviceType = [posType intValue];
+        [[Transfer sharedTransfer]initFSK];
+    }
+    
 //    self.isAishua = NO; //TODO
     
     [[LocationHelper sharedLocationHelper] startLocate];
     
     // 初始化应用
     [self initApp];
-    
-    [[Transfer sharedTransfer]initFSK];
     
     
     /**
@@ -79,13 +85,7 @@
      hostReach = [Reachability reachabilityWithHostname:HOST];
      [hostReach startNotifier];
      ***/
-    
-    // 请求允许通知
-    //    [[UIApplication sharedApplication]
-    //     registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |
-    //                                         UIRemoteNotificationTypeBadge |
-    //                                         UIRemoteNotificationTypeSound)];
-    
+
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     DDDispatchQueueLogFormatter *formatter = [[DDDispatchQueueLogFormatter alloc] init];
 	[formatter setReplacementString:@"socket" forQueueLabel:GCDAsyncSocketQueueName];
@@ -251,11 +251,19 @@
     {
         [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
     }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
+    {
+         [ApplicationDelegate setPrintVersion:NO];
+    }
 }
 
 #pragma mark - MBHUD
 - (void) showText:(NSString *)msg
 {
+    
+    [SVProgressHUD showWithStatus:msg];
+    return;
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view.window animated:YES];
 	
 	// Configure for text only and offset down
@@ -267,10 +275,18 @@
 	hud.removeFromSuperViewOnHide = YES;
 	
 	[hud hide:YES afterDelay:2];
+    
+    
+    
 }
 
 - (void) showProcess:(NSString *) msg
 {
+    
+    [SVProgressHUD showWithStatus:msg maskType:SVProgressHUDMaskTypeClear cancelBlock:nil];
+    return;
+    
+    
     @try {
         if (!HUD){
             // 使用window是为了屏蔽左上角的返回按纽在弹出等待框后仍然可响应点击事件。
@@ -301,18 +317,40 @@
     }
 }
 
+- (void) hideProcessNow
+{
+    [SVProgressHUD dismiss];
+    return;
+    
+    [self performSelector:@selector(hideHUD) withObject:nil afterDelay:0];
+}
+
+
 - (void) hideProcess
 {
+    [SVProgressHUD dismiss];
+    return;
+    
+    
     [self performSelector:@selector(hideHUD) withObject:nil afterDelay:0.5];
 }
 
 - (void) hideHUD
 {
+    [SVProgressHUD dismiss];
+    return;
+    
+    
     [HUD hide:YES];
 }
 
 - (void) showSuccessPrompt:(NSString *) msg
 {
+    
+    [SVProgressHUD showSuccessWithStatus:msg];
+    return;
+    
+    
     if(HUD){
         [self hideProcess];
     }
@@ -333,8 +371,14 @@
 
 - (void) showErrorPrompt:(NSString *) msg
 {
+    
+    [SVProgressHUD showErrorWithStatus:msg];
+    return;
+    
+    
     if(HUD){
-        [self hideProcess];
+//        [self hideProcess];
+        [self hideProcessNow];
     }
     
     MBProgressHUD *errHUD = [[MBProgressHUD alloc] initWithView:[self topViewController].view.window];
