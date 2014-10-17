@@ -21,6 +21,7 @@
 #import "ShowContentViewController.h"
 #import "ICSwiperHandle.h"
 #import "Transfer_CSwiper.h"
+#import "SVProgressHUD.h"
 
 #define ActionsheetTypeOne  100
 #define ActionsheetTypeTwo  101

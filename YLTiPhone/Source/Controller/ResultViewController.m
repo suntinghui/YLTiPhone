@@ -146,6 +146,11 @@
         {
             [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_GetKsn" paramDic:dict];
         }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
+        {
+             [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"iTypeGetKsn" paramDic:dict];
+            
+        }
         else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
                 ||ApplicationDelegate.deviceType  == CDeviceTypeYinPinPOS)
         {

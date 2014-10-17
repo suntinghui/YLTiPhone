@@ -50,6 +50,10 @@
         }
         
     }
+    else
+    {
+        self.m_vcom.eventListener = nil;
+    }
     
     
     self.fskCmdArray = [[NSMutableArray alloc] init];

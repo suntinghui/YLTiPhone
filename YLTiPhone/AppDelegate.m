@@ -241,15 +241,17 @@
     
     if(ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
     {
-        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
-        [[Transfer sharedTransfer].m_vcom setMac:false]; //add wenbin 20140328
-        
+//        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_F2F recvMode:VCOM_TYPE_F2F];
+//        [[Transfer sharedTransfer].m_vcom setMac:false];
+        [[Transfer sharedTransfer] initFSK];
         [ApplicationDelegate setPrintVersion:NO];
         
-    }else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
+    }
+    else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao
              ||ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
     {
-        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
+//        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
+        [[Transfer sharedTransfer] initFSK];
     }
     else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
     {
@@ -261,7 +263,7 @@
 - (void) showText:(NSString *)msg
 {
     
-    [SVProgressHUD showWithStatus:msg];
+    [SVProgressHUD showErrorWithStatus:msg];
     return;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view.window animated:YES];

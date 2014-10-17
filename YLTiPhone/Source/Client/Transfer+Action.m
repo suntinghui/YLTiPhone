@@ -786,7 +786,8 @@
             //等于2和0时不会返回key
             if (![signState isEqualToString:@"2"]&&![signState isEqualToString:@"0"]) 
             {
-                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+                if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+                    ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
                 {
                     
                     pinKey = self.receDic[@"apires"][@"workingkey"];
@@ -968,7 +969,8 @@
         NSString *macKey = nil;//newKey.substring(40, 56) + newKey.substring(72);
         NSString *stackKey = nil;//pinKey
         
-        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+            ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
         {
             
             pinKey = self.receDic[@"apires"][@"WKKY"];
@@ -993,7 +995,8 @@
         [AppDataCenter sharedAppDataCenter].stackKey = stackKey;
         
        
-        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+        if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+            ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
         {
              [AppDataCenter sharedAppDataCenter].hasSign = YES;
             [ApplicationDelegate gotoSuccessViewController:@"签到成功"];
@@ -1038,7 +1041,7 @@
         {
             if ([[self.receDic objectForKey:@"respmsg"] isEqualToString:@"1"]) {
                 //提醒用户注册成功
-                [ApplicationDelegate showText:@"注册成功，请用新账号登录"];
+                [SVProgressHUD showSuccessWithStatus:@"注册成功，请用新账号登录"];
                 
                 //注册成功跳转到登录界面 让用户重新登录
                 ApplicationDelegate.hasLogin = YES;
@@ -1280,7 +1283,8 @@
     [UserDefaults setObject:[NSString stringWithFormat:@"%d",ApplicationDelegate.deviceType] forKey:kUserPosType];
     [UserDefaults synchronize];
     [AppDataCenter sharedAppDataCenter].hasSign = NO;
-    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou)
+    if (ApplicationDelegate.deviceType == CDeviceTypeShuaKaTou||
+        ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
     {
         [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = YES;
         

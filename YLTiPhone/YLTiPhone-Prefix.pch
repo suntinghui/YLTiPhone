@@ -27,5 +27,6 @@
     #import "Constants.h"
     #import "Transfer.h"
     #import "AppDataCenter.h"
+    #import "SVProgressHUD.h"
 
 #endif

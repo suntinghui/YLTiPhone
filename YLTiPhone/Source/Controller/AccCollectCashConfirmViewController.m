@@ -173,7 +173,8 @@
 
 //            [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
             
-            if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou)
+            if (ApplicationDelegate.deviceType==CDeviceTypeShuaKaTou||
+                ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
             {
                 [[Transfer sharedTransfer] startTransfer:@"080002" fskCmd:nil paramDic:dic];
             }

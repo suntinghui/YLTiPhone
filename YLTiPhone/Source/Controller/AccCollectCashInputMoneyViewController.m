@@ -230,6 +230,7 @@
 #pragma mark - 功能函数
 -(BOOL)checkValue
 {
+    
     if([self.inputMoneyTF.contentTF.text isEqualToString:@""]||
        self.inputMoneyTF.contentTF.text==nil){
         [ApplicationDelegate showErrorPrompt:@"请输入金额"];
