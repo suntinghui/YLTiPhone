@@ -23,6 +23,8 @@
 #import "Transfer_CSwiper.h"
 #import "SVProgressHUD.h"
 
+#import "ConfirmCancelViewController.h"
+
 #define ActionsheetTypeOne  100
 #define ActionsheetTypeTwo  101
 
@@ -179,7 +181,8 @@
 
 - (void)showTypeSelectWithType:(int)type
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",@"I版刷卡头", nil];
+//    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",@"I版刷卡头", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", nil];
     sheet.tag = type;
     
     if (type ==ActionsheetTypeOne)
@@ -287,12 +290,16 @@
 
 -(IBAction)loginAction:(id)sender
 {
+//    ConfirmCancelViewController *confirm = [[ConfirmCancelViewController alloc]init];
+//    [self.navigationController pushViewController:confirm animated:YES];
+//    return;
     
     if ([self checkValue])
     {
         if ([UserDefaults objectForKey:kUserPosType]==nil)
         {
-            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", @"I版刷卡头",nil];
+//            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", @"I版刷卡头",nil];
+            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",nil];
             [sheet showInView:self.view];
             return;
         }

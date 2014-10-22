@@ -310,7 +310,7 @@
     if ([catalog.title isEqualToString:@"版本号"])
     {
          NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
-        NSString *localVersion = [infoDic objectForKey:@"CFBundleVersion"];
+        NSString *localVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
         cell.textLabel.text = [NSString stringWithFormat:@"版本号%@",localVersion];
     }
     else

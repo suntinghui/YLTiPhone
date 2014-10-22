@@ -62,7 +62,6 @@
 - (void) fskAction
 {
     self.fskCmdArray = [NSMutableArray arrayWithArray:[self.fskCommand componentsSeparatedByString:@"#"]];
-    
     [self.m_vcom StartRec];
     
     //[self.m_vcom StopRec];
@@ -76,7 +75,7 @@
 {
     @try {
         if ([self.fskCmdArray count] > 0) {
-
+            
             NSString *cmd = [self.fskCmdArray objectAtIndex:0];
             
             [self performSelectorOnMainThread:@selector(showFSKProgress) withObject:nil waitUntilDone:NO];

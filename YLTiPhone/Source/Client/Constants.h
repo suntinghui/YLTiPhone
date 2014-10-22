@@ -29,7 +29,7 @@ typedef enum  //程序类型
     CAppTypeWYZF //沃银支付
 }CAppType;
 
-#define APPTYPE CAppTypeWYZF   //打包时修改成对应标志
+#define APPTYPE CAppTypeGFB   //打包时修改成对应标志
 
 //原以为iphone4和iphone5的self.view.bounds.size.height是不一样的，但错了，是一样的，都是548
 //所以不能这么设定适配的屏幕高度　4和5没区别
