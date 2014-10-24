@@ -63,7 +63,7 @@
          
          // 取当前系统最新版本号
          NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
-         NSString *localVersion = [infoDic objectForKey:@"CFBundleVersion"];
+         NSString *localVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
          
          // 取appstore上的版本号
          int count = [[respDic objectForKey:@"resultCount"] intValue];

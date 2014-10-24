@@ -15,8 +15,8 @@ typedef enum{
     CDeviceTypeDianFuBao, //刷卡键盘
     CDeviceTypeShuaKaTou, //小刷卡头
     CDeviceTypeYinPinPOS,  //大音频pos
-    CDeviceTypeIbanShuaKaTou //I版刷卡头
-    
+    CDeviceTypeIbanShuaKaTou, //I版刷卡头
+    CDeviceTypeSbanShuaKaTou //S版刷卡头
     
 }CDeviceType;
 

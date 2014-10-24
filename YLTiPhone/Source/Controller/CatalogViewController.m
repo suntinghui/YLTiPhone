@@ -661,7 +661,7 @@
     self.url = [dic_version objectForKey:@"url"];
     NSString *version = [dic_version objectForKey:@"version"];
     version = [version stringByReplacingOccurrencesOfString:@"." withString:@""];
-    NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     localVersion = [localVersion stringByReplacingOccurrencesOfString:@"." withString:@""];
     int version_d = [version intValue];
     int loacerVer_d = [localVersion intValue];

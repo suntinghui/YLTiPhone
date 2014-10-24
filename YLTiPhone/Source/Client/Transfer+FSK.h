@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Transfer.h"
 #import <voclib/CSwiperStateChangedListener.h>
+#import "ZftZXBS.h"
 
 @interface Transfer (FSK) <CSwiperStateChangedListener>
 

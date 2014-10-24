@@ -48,7 +48,7 @@
     scrollView.showsVerticalScrollIndicator = false;
     [self.view addSubview:scrollView];
     
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 250, 30)];
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 250, 30)];
     [messageLabel setTextColor:[UIColor grayColor]];
     messageLabel.text = @"请仔细核对以下交易信息";
     [messageLabel setBackgroundColor:[UIColor clearColor]];

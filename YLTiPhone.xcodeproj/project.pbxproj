@@ -423,10 +423,12 @@
 		B8311BC319D54B8200E17BA4 /* con_req_100006.xml in Resources */ = {isa = PBXBuildFile; fileRef = B8311BC219D54B8200E17BA4 /* con_req_100006.xml */; };
 		B84AB35A18FE6CDF00CCEDF2 /* head_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */; };
 		B85A142018E5AAB700804152 /* InputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A141E18E5AAB700804152 /* InputPasswordViewController.m */; };
+		B860A59719F8F48E00EB3546 /* Transfer+StypeSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = B860A59619F8F48E00EB3546 /* Transfer+StypeSwiper.m */; };
+		B860A59B19F8F55800EB3546 /* libZftZXBS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B860A59919F8F55800EB3546 /* libZftZXBS.a */; };
 		B86F6A7C19E633C7004D1C4B /* Transfer_CSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = B86F6A7B19E633C7004D1C4B /* Transfer_CSwiper.m */; };
 		B87700DA19037269002BF873 /* selectbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B87700D919037269002BF873 /* selectbg.jpg */; };
 		B882415019E91A4600D63F68 /* libICSwiper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B882414E19E91A4600D63F68 /* libICSwiper.a */; };
-		B882415819E91D9100D63F68 /* ICSwiperHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B882415719E91D9100D63F68 /* ICSwiperHandle.m */; };
+		B89AA41819F79DA500F742BA /* flowbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B89AA41719F79DA500F742BA /* flowbg.png */; };
 		B8A11F5119EBD4220027672B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8A11F4E19EBD4220027672B /* SVProgressHUD.bundle */; };
 		B8A11F5219EBD4230027672B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A11F5019EBD4220027672B /* SVProgressHUD.m */; };
 		B8A5E2E919B6DFB90080A1AF /* ChangeDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A5E2E719B6DFB90080A1AF /* ChangeDeviceViewController.m */; };
@@ -1029,13 +1031,16 @@
 		B84AB35918FE6CDF00CCEDF2 /* head_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_small@2x.png"; sourceTree = "<group>"; };
 		B85A141D18E5AAB700804152 /* InputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPasswordViewController.h; sourceTree = "<group>"; };
 		B85A141E18E5AAB700804152 /* InputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPasswordViewController.m; sourceTree = "<group>"; };
+		B860A59519F8F48E00EB3546 /* Transfer+StypeSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Transfer+StypeSwiper.h"; sourceTree = "<group>"; };
+		B860A59619F8F48E00EB3546 /* Transfer+StypeSwiper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Transfer+StypeSwiper.m"; sourceTree = "<group>"; };
+		B860A59919F8F55800EB3546 /* libZftZXBS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZftZXBS.a; sourceTree = "<group>"; };
+		B860A59A19F8F55800EB3546 /* ZftZXBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZftZXBS.h; sourceTree = "<group>"; };
 		B86F6A7A19E633C7004D1C4B /* Transfer_CSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer_CSwiper.h; sourceTree = "<group>"; };
 		B86F6A7B19E633C7004D1C4B /* Transfer_CSwiper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer_CSwiper.m; sourceTree = "<group>"; };
 		B87700D919037269002BF873 /* selectbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectbg.jpg; sourceTree = "<group>"; };
 		B882414E19E91A4600D63F68 /* libICSwiper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libICSwiper.a; sourceTree = "<group>"; };
 		B882414F19E91A4600D63F68 /* ICSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSwiper.h; sourceTree = "<group>"; };
-		B882415619E91D9100D63F68 /* ICSwiperHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSwiperHandle.h; sourceTree = "<group>"; };
-		B882415719E91D9100D63F68 /* ICSwiperHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSwiperHandle.m; sourceTree = "<group>"; };
+		B89AA41719F79DA500F742BA /* flowbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flowbg.png; sourceTree = "<group>"; };
 		B8A11F4E19EBD4220027672B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		B8A11F4F19EBD4220027672B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		B8A11F5019EBD4220027672B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -1082,6 +1087,7 @@
 				B882415019E91A4600D63F68 /* libICSwiper.a in Frameworks */,
 				0537AF921858452B005F84D1 /* CoreAudio.framework in Frameworks */,
 				0537AF9018584525005F84D1 /* SystemConfiguration.framework in Frameworks */,
+				B860A59B19F8F55800EB3546 /* libZftZXBS.a in Frameworks */,
 				0537AF8E1858451F005F84D1 /* ImageIO.framework in Frameworks */,
 				0537AE2C18583B39005F84D1 /* UIKit.framework in Frameworks */,
 				0537AE2E18583B39005F84D1 /* Foundation.framework in Frameworks */,
@@ -1236,10 +1242,10 @@
 				0537AF2C18583F44005F84D1 /* Transfer+FSK.mm */,
 				B86F6A7A19E633C7004D1C4B /* Transfer_CSwiper.h */,
 				B86F6A7B19E633C7004D1C4B /* Transfer_CSwiper.m */,
+				B860A59519F8F48E00EB3546 /* Transfer+StypeSwiper.h */,
+				B860A59619F8F48E00EB3546 /* Transfer+StypeSwiper.m */,
 				0537AF2D18583F44005F84D1 /* UpdateAppHelper.h */,
 				0537AF2E18583F44005F84D1 /* UpdateAppHelper.m */,
-				B882415619E91D9100D63F68 /* ICSwiperHandle.h */,
-				B882415719E91D9100D63F68 /* ICSwiperHandle.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -1458,6 +1464,7 @@
 		0537AE6C18583E1B005F84D1 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				B860A59819F8F55800EB3546 /* StypeSwiper */,
 				B8A11F4D19EBD4220027672B /* SVProgressHUD */,
 				B86F6A7619E6335A004D1C4B /* CSwiper */,
 				6CB1F37418EFF104009E2287 /* CocoaLumberjack */,
@@ -1680,6 +1687,7 @@
 		055B2F8C18629C22000373FE /* Image3 */ = {
 			isa = PBXGroup;
 			children = (
+				B89AA41719F79DA500F742BA /* flowbg.png */,
 				B8A5E2EB19B6E07E0080A1AF /* icon_device_0.png */,
 				B8A5E2EC19B6E07E0080A1AF /* icon_device_3.png */,
 				B8A5E2ED19B6E07E0080A1AF /* icon_device_4.png */,
@@ -2040,6 +2048,15 @@
 			name = ReceviMony;
 			sourceTree = "<group>";
 		};
+		B860A59819F8F55800EB3546 /* StypeSwiper */ = {
+			isa = PBXGroup;
+			children = (
+				B860A59919F8F55800EB3546 /* libZftZXBS.a */,
+				B860A59A19F8F55800EB3546 /* ZftZXBS.h */,
+			);
+			path = StypeSwiper;
+			sourceTree = "<group>";
+		};
 		B86F6A7619E6335A004D1C4B /* CSwiper */ = {
 			isa = PBXGroup;
 			children = (
@@ -2201,6 +2218,7 @@
 				8D3CA18018C6C9C800C119DA /* con_req_100004.xml in Resources */,
 				052079611863DE45004BF055 /* RegisterButton_normal.png in Resources */,
 				0554B18418711EEC00C75DCD /* digit_little_6.png in Resources */,
+				B89AA41819F79DA500F742BA /* flowbg.png in Resources */,
 				0554B18218711EEC00C75DCD /* digit_little_4.png in Resources */,
 				0558264A186BF8660002AE2E /* merchantName.png in Resources */,
 				050B015F1867E396009432CD /* icon_1.png in Resources */,
@@ -2404,6 +2422,7 @@
 				8D281C9618F308F100457792 /* InputPwdQueryBalanceViewController.m in Sources */,
 				0537AEB018583E1B005F84D1 /* FMDatabasePool.m in Sources */,
 				8DAF435D18E33BDE001D0195 /* TransferHistoryQueryViewController.m in Sources */,
+				B860A59719F8F48E00EB3546 /* Transfer+StypeSwiper.m in Sources */,
 				0537AEB118583E1B005F84D1 /* FMDatabaseQueue.m in Sources */,
 				0537AEB218583E1B005F84D1 /* FMResultSet.m in Sources */,
 				0554B19E1871417100C75DCD /* ConfirmCancelViewController.m in Sources */,
@@ -2417,7 +2436,6 @@
 				0554B142187119C400C75DCD /* ChongZhengCell.m in Sources */,
 				0515D2C4188D20040092C8E5 /* CityModel.m in Sources */,
 				0537AEB618583E1B005F84D1 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
-				B882415819E91D9100D63F68 /* ICSwiperHandle.m in Sources */,
 				0537AEB718583E1B005F84D1 /* NSData+MKBase64.m in Sources */,
 				05640EA51883BF190053E2AF /* FileOperatorUtil.m in Sources */,
 				0537AEB818583E1B005F84D1 /* NSDate+RFC1123.m in Sources */,
@@ -2645,6 +2663,7 @@
 					"\"$(SRCROOT)/lib\"",
 					"$(PROJECT_DIR)/lib",
 					"$(PROJECT_DIR)/YLTiPhone/External/CSwiper",
+					"$(PROJECT_DIR)/YLTiPhone/External/StypeSwiper",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "优乐通";
@@ -2670,6 +2689,7 @@
 					"\"$(SRCROOT)/lib\"",
 					"$(PROJECT_DIR)/lib",
 					"$(PROJECT_DIR)/YLTiPhone/External/CSwiper",
+					"$(PROJECT_DIR)/YLTiPhone/External/StypeSwiper",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "优乐通";

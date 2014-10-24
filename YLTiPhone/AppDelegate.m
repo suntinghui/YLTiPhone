@@ -253,7 +253,8 @@
 //        [[Transfer sharedTransfer].m_vcom setMode:VCOM_TYPE_FSK recvMode:VCOM_TYPE_F2F];
         [[Transfer sharedTransfer] initFSK];
     }
-    else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou)
+    else if(ApplicationDelegate.deviceType == CDeviceTypeIbanShuaKaTou||
+            ApplicationDelegate.deviceType == CDeviceTypeSbanShuaKaTou)
     {
          [ApplicationDelegate setPrintVersion:NO];
     }

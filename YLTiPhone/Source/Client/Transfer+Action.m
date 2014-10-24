@@ -1007,6 +1007,11 @@
             // 更新工作密钥
             [[Transfer sharedTransfer] startTransfer:nil fskCmd:[NSString stringWithFormat:@"Request_ReNewKey|string:%@,string:%@,string:%@", pinKey, macKey, stackKey] paramDic:nil];
         }
+        else if (ApplicationDelegate.deviceType == CDeviceTypeSbanShuaKaTou)
+        {
+            // 更新工作密钥
+            [[Transfer sharedTransfer] startTransfer:nil fskCmd:[NSString stringWithFormat:@"sTypeUpdateKey|string:%@,string:%@,string:%@", pinKey, macKey, stackKey] paramDic:nil];
+        }
         
     }
     @catch (NSException *exception) {
@@ -1290,7 +1295,8 @@
         
     }
     else if(ApplicationDelegate.deviceType == CDeviceTypeDianFuBao||
-            ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS)
+            ApplicationDelegate.deviceType == CDeviceTypeYinPinPOS||
+            ApplicationDelegate.deviceType == CDeviceTypeSbanShuaKaTou)
     {
         [AppDataCenter sharedAppDataCenter].hasUpdateWorkKey = NO;
     }

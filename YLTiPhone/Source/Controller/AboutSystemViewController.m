@@ -80,7 +80,7 @@
     versionLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
-    NSString *localVersion = [infoDic objectForKey:@"CFBundleVersion"];
+    NSString *localVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
     
     versionLabel.text = [NSString stringWithFormat:@"V%@",localVersion];
     [self.view addSubview:versionLabel];

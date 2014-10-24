@@ -19,9 +19,9 @@
 #import "SecurityUtil.h"
 #import "ConvertUtil.h"
 #import "ShowContentViewController.h"
-#import "ICSwiperHandle.h"
 #import "Transfer_CSwiper.h"
 #import "SVProgressHUD.h"
+#import "Transfer+StypeSwiper.h"
 
 #import "ConfirmCancelViewController.h"
 
@@ -147,7 +147,7 @@
     cSwiperController = [ICSwiperController shareInstance];
 //    cSwiperController.delegate = self;
     
-    [self checkUpdate];
+//    [self checkUpdate]; TODO !!!
     
   
 }
@@ -181,8 +181,8 @@
 
 - (void)showTypeSelectWithType:(int)type
 {
-//    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",@"I版刷卡头", nil];
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",@"I版刷卡头", @"S版刷卡头",nil];
+   
     sheet.tag = type;
     
     if (type ==ActionsheetTypeOne)
@@ -252,6 +252,10 @@
     {
         ApplicationDelegate.deviceType = CDeviceTypeIbanShuaKaTou;
     }
+    else if (buttonIndex==5)
+    {
+        ApplicationDelegate.deviceType = CDeviceTypeSbanShuaKaTou;
+    }
     [UserDefaults setObject:[NSString stringWithFormat:@"%d",ApplicationDelegate.deviceType] forKey:kUserPosType];
     [UserDefaults synchronize];
     
@@ -290,16 +294,13 @@
 
 -(IBAction)loginAction:(id)sender
 {
-//    ConfirmCancelViewController *confirm = [[ConfirmCancelViewController alloc]init];
-//    [self.navigationController pushViewController:confirm animated:YES];
-//    return;
     
     if ([self checkValue])
     {
         if ([UserDefaults objectForKey:kUserPosType]==nil)
         {
-//            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", @"I版刷卡头",nil];
-            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头",nil];
+            UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择选择终端类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"刷卡键盘",@"音频POS",@"刷卡头", @"I版刷卡头",@"S版刷卡头",nil];
+           
             [sheet showInView:self.view];
             return;
         }
@@ -390,7 +391,7 @@
     self.url = [dic_version objectForKey:@"url"];
     NSString *version = [dic_version objectForKey:@"version"];
     version = [version stringByReplacingOccurrencesOfString:@"." withString:@""];
-    NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     localVersion = [localVersion stringByReplacingOccurrencesOfString:@"." withString:@""];
     int version_d = [version intValue];
     int loacerVer_d = [localVersion intValue];

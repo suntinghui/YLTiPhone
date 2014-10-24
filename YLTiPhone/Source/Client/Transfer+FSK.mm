@@ -19,7 +19,7 @@
 #import "GatherCancelTableViewController.h"
 #import "TradeDetailTableViewController.h"
 #import "Transfer_CSwiper.h"
-#import "ICSwiperHandle.h"
+
 @implementation Transfer (FSK)
 
 - (void) initFSK

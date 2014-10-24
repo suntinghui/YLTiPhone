@@ -156,6 +156,10 @@
         {
             [[Transfer sharedTransfer] startTransfer:@"086000" fskCmd:@"Request_VT" paramDic:dict];
         }
+        else if(ApplicationDelegate.deviceType == CDeviceTypeSbanShuaKaTou)
+        {
+            
+        }
         
         [self popToCatalogViewController];
         return;
